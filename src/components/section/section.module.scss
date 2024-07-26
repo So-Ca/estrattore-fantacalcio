@@ -1,0 +1,443 @@
+/* Variabili */
+$logoColorLGreen: rgb(63, 109, 44);
+$logoColorGreen: rgb(42, 137, 68);
+$logoColorYellow: rgb(253, 221, 14);
+$logoColorSalmon: rgb(246, 178, 117);
+$logoColorRed: rgb(217, 13, 12);
+$logoColorBlack: rgb(3, 0, 8);
+$bgColor: linear-gradient(90deg, rgba(42, 137, 68, 0.5) 0%, rgba(253, 221, 14, 0.5) 100%);
+$titleShade: -1px 0 #3F6D2C, 0 2px #FDDD0E, 2px 0 #FDDD0E, 0 -1px #3F6D2C;
+$warningShade: -1px 0 #FDDD0E, 0 2px #030008, 2px 0 #030008, 0 -1px #FDDD0E;
+$titleFont: "Audiowide";
+$subTitleFont: "Rajdhani";
+$mainFont: "Roboto Flex";
+
+.section{
+  margin: 1%;
+  display: flex;
+  justify-content: space-around;
+  align-items: normal;
+  flex-direction: column;
+  border-left: 3px groove $logoColorSalmon;
+  border-right: 3px groove $logoColorSalmon;
+  box-shadow: 0 0 10px $logoColorBlack;
+  background: $bgColor;
+  min-height: 70vh;
+}
+
+.btn-section{
+  margin: 1%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 0 3px $logoColorBlack;
+  border-radius: 5px;
+}
+
+.btn-estrai,
+.btn-mostra-estratti,
+.btn-mostra-assegnati{
+  margin: 1% auto;
+  font-family: $mainFont;
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px;
+  background: rgb(42, 137, 68, 0.5);
+  color: $logoColorBlack;
+  border: 1px solid $logoColorYellow;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+}
+.btn-estrai:hover,
+.btn-mostra-estratti:hover,
+.btn-mostra-assegnati:hover{
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 5px $logoColorBlack;
+}
+.btn-estrai:active,
+.btn-mostra-estratti:active,
+.btn-mostra-assegnati:active{
+  background: $logoColorBlack;
+  color: $logoColorYellow;
+  box-shadow: 0 0 3px $logoColorRed;
+}
+
+.ultimo-estratto{
+  margin: 1%;
+  text-align: center;
+  text-wrap: nowrap;
+  box-shadow: 0 0 3px $logoColorBlack;
+  border-radius: 5px;
+}
+
+.h3-estratto{
+  margin: 1% auto;
+  font-size: 1.5rem;
+  font-family: $subTitleFont;
+  font-weight: bold;
+}
+
+.p-estratto{
+  margin: 1% auto;
+  font-size: 1.3rem;
+  font-family: $mainFont;
+}
+
+.lista-finita{
+  margin: 1% auto;
+  text-align: center;
+  font-size: 2rem;
+  font-family: $titleFont;
+  color: $logoColorRed;
+  text-shadow: $warningShade;
+}
+
+.commento{
+  margin: 1% auto;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: $mainFont;
+  color: $logoColorBlack;
+}
+
+.allenatori-container{
+  margin: 1% auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.squadra-container{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 3px $logoColorGreen;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.nome-squadra{
+  margin: 2% auto;
+  font-family: $subTitleFont;
+  font-size: 1.2rem;
+  text-shadow: $titleShade;
+}
+
+.nome-allenatore,
+.crediti{
+  margin: 2% auto;
+  font-family: $mainFont;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.crediti-bassi{
+  margin: 2% auto;
+  padding: 2px;
+  border: 2px solid $logoColorRed;
+  border-radius: 10px;
+  color: $logoColorBlack;
+  background: rgb(246, 178, 117, 0.3);
+  font-family: $mainFont;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.crediti-esauriti{
+  margin: 2% auto;
+  padding: 2px;
+  border: 3px solid $logoColorBlack;
+  border-radius: 10px;
+  color: $logoColorRed;
+  background: $logoColorSalmon;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.cinquecento{
+  margin: 2% auto;
+  font-family: $mainFont;
+  font-size: 1.2rem;
+  font-weight: normal;
+  padding: 2px;
+  border: 2px solid $logoColorLGreen;
+  border-radius: 10px;
+  color: $logoColorBlack;
+  background: rgb(253, 221, 14, 0.3);
+}
+
+.sforato{
+  font-family: $mainFont;
+  font-size: 2.5rem;
+  color: $logoColorRed;
+  font-weight: bold;
+}
+
+.btn-assegna-giocatore{
+  margin: 2% auto;
+  font-family: $mainFont;
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px;
+  background: rgb(42, 137, 68, 0.5);
+  color: $logoColorBlack;
+  border: 1px solid $logoColorYellow;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+}
+.btn-assegna-giocatore:hover{
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 5px $logoColorBlack;
+}
+.btn-assegna-giocatore:active{
+  background: $logoColorBlack;
+  color: $logoColorYellow;
+  box-shadow: 0 0 3px $logoColorRed;
+}
+
+.input-prezzo{
+  margin: auto;
+  width: 100px;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 0 3px $logoColorBlack;
+  background: rgb(253, 221, 14, 0.3);
+}
+.input-prezzo:focus{
+  outline: none;
+}
+
+.giocatori-acquistati{
+  margin: auto;
+  font-family: $subTitleFont;
+  font-size: 1.1rem;
+}
+
+.lista-squadra{
+  padding: 25px;
+}
+
+.lista-intera{
+  margin: 1%;
+  text-wrap: nowrap;
+  box-shadow: 0 0 3px $logoColorBlack;
+  border-radius: 5px;
+}
+
+.box-aggiungi-manualmente{
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.input-aggiungi-manualmente{
+  margin: 2% auto;
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0 0 3px $logoColorBlack;
+  background: rgb(253, 221, 14, 0.3);
+}
+.input-aggiungi-manualmente:focus{
+  outline: none;
+}
+
+.btn-aggiungi-manualmente{
+    margin: 2% auto;
+    width: 100%;
+    font-family: $mainFont;
+    text-align: center;
+    font-size: 1rem;
+    background: rgb(42, 137, 68, 0.5);
+    color: $logoColorBlack;
+    border: 1px solid $logoColorYellow;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+  }
+  .btn-aggiungi-manualmente:hover{
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 5px $logoColorBlack;
+  }
+  .btn-aggiungi-manualmente:active{
+    background: $logoColorBlack;
+    color: $logoColorYellow;
+    box-shadow: 0 0 3px $logoColorRed;
+  }
+
+.h3-lista-intera{
+  margin: 1% auto;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: $subTitleFont;
+  font-weight: bold;
+}
+
+.p-lista-intera{
+  margin: 1%;
+  font-size: 1.3rem;
+  font-family: $mainFont;
+}
+
+.gia-assegnato{
+  margin: 1% auto;
+  border: 3px solid $logoColorLGreen;
+  background: rgb(246, 178, 117, 0.3);
+}
+
+.span-gia-assegnato{
+  margin-left: 100px;
+  font-family: $titleFont;
+  color: $logoColorRed;
+}
+
+
+/* media query */
+@media (max-width: 400px){
+  .h3-estratto{
+    font-size: 1.2rem;
+  }
+  .p-estratto{
+    font-size: 0.7rem;
+  }
+  .allenatori-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .squadra-container{
+    margin: 1% auto;
+  }
+  .sforato{
+    font-size: 1.6rem;
+  }
+  .p-lista-intera{
+    font-size: 0.7rem;
+  }
+  .span-gia-assegnato{
+    display: none;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 500px){
+  .h3-estratto{
+    font-size: 1.2rem;
+  }
+  .p-estratto{
+    font-size: 0.7rem;
+  }
+  .allenatori-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .squadra-container{
+    margin: 1% auto;
+  }
+  .sforato{
+    font-size: 1.6rem;
+  }
+  .p-lista-intera{
+    font-size: 0.7rem;
+  }
+  .span-gia-assegnato{
+    display: none;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 750px){
+  .h3-estratto{
+    font-size: 1.2rem;
+  }
+  .p-estratto{
+    font-size: 1rem;
+  }
+  .allenatori-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .squadra-container{
+    margin: 1% auto;
+  }
+  .sforato{
+    font-size: 1.6rem;
+  }
+  .p-lista-intera{
+    font-size: 1rem;
+  }
+  .span-gia-assegnato{
+    display: none;
+  }
+}
+
+@media (min-width: 751px) and (max-width: 999px){
+  .h3-estratto{
+    font-size: 1.5rem;
+  }
+  .p-estratto{
+    font-size: 1.2rem;
+  }
+  .allenatori-container{
+    display: grid;
+    grid-template: auto auto / repeat(2, 1fr);
+  }
+  .squadra-container{
+    margin: 1% auto;
+  }
+  .sforato{
+    font-size: 1.6rem;
+  }
+  .p-lista-intera{
+    font-size: 1rem;
+  }
+  .span-gia-assegnato{
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1299px){
+  .allenatori-container{
+    display: grid;
+    grid-template: auto auto / repeat(4, 1fr);
+  }
+  .sforato{
+    font-size: 1.6rem;
+  }
+  .p-lista-intera{
+    font-size: 1.3rem;
+  }
+  .span-gia-assegnato{
+    margin-left: 25px;
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1700px){
+  .allenatori-container{
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+  }
+  .sforato{
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1700px) and (max-width: 2300px){
+  .allenatori-container{
+    display: grid;
+    grid-template: auto auto / repeat(5, 1fr);
+  }
+  .sforato{
+    font-size: 1.6rem;
+  }
+}

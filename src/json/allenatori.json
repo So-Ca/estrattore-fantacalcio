@@ -1,0 +1,53 @@
+[
+    {
+        "Id" : 1,
+        "Nome" : "Valerio",
+        "Squadra": "Muppet"
+    },
+    {
+        "Id" : 2,
+        "Nome" : "Riccardo",
+        "Squadra": "Don Abbondio"
+    },
+    {
+        "Id" : 3,
+        "Nome" : "Jimmy",
+        "Squadra": "Venti2"
+    },
+    {
+        "Id" : 4,
+        "Nome" : "Sonny",
+        "Squadra": "MasterChef United"
+    },
+    {
+        "Id" : 5,
+        "Nome" : "Fulvio",
+        "Squadra": "Piretta Leotta"
+    },
+    {
+        "Id" : 6,
+        "Nome" : "Alessio",
+        "Squadra": "Scarsenal"
+    },
+    {
+        "Id" : 7,
+        "Nome" : "Eugenio",
+        "Squadra": "Real Madrink"
+    },
+    {
+        "Id" : 8,
+        "Nome" : "Marco",
+        "Squadra": "The Best-Emmia"
+    },
+    {
+        "Id" : 9,
+        "Nome" : "Daniele",
+        "Squadra": "ancoranonloso"
+    },
+    {
+        "Id" : 10,
+        "Nome" : "Gianluca",
+        "Squadra": "New Devils"
+    }
+
+]
