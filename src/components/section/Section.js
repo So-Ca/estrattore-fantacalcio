@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import listaGiocatori from "../../json/prove.json";
+import listaGiocatori from "../../json/giocatori.json";
 import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
 
