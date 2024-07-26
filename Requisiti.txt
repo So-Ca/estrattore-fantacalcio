@@ -1,5 +1,0 @@
-COMANDI DA IMPLEMENTARE
-- quando scrivo in un input "aggiungi-manualmente" la scritta compare in tutti gli input anche se poi il valore viene aggiunto in uno solo.
-
-DISTRIBUZIONE
-- publicare su netlify
