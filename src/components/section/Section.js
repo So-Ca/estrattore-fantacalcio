@@ -44,6 +44,8 @@ const Section = () => {
 
   const listaFinita = nonEstratti.length === 0;
 
+  console.log(squadre);
+
 // funzione per gestire l'input di aggiungi giocatore
   function gestisciInput(e){
     const { name, value } = e.target;
