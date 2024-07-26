@@ -84,7 +84,7 @@
   <a name="contacts"></a>
   <h3>Contatti</h3>
 
-  <a href="">Estrattore Fantafavaro</a><br>
+  <a href="https://fantafavaro.netlify.app/">Estrattore Fantafavaro</a><br>
   <a href="https://sonny-caputo-portfolio.netlify.app/">Portfolio</a><br>
   <a href="https://github.com/So-Ca">GitHub</a><br>
   <a href="https://www.linkedin.com/in/sonny-caputo-554315185">Likedin</a><br>
