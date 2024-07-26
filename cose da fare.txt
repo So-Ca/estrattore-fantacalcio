@@ -1,0 +1,5 @@
+sul mio progetto fare new branch (db)
+
+prima di fare il fetch fare partire il comando artisan
+
+cercare i file csv su fantacalcio.it
