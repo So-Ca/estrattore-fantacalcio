@@ -9,12 +9,13 @@ use App\Http\Controllers\AllenatoreController;
 use App\Http\Controllers\GiocatoreController;
 
 use App\Http\Middleware\EnsureGiocatoriSubsetIsValid;
+use App\Http\Middleware\EnsureGiocatoreIdIsValid;
 
 Route::get('/giocatori/{tipo?}', [GiocatoreController::class, 'getGiocatori'])
     ->name('list-giocatori')
     ->middleware(EnsureGiocatoriSubsetIsValid::class);
 Route::get('/giocatore/{id}', [GiocatoreController::class, 'showGiocatore'])
-->where('id', '[0-9]+')
+->middleware(EnsureGiocatoreIdIsValid::class)
 ->name('giocatore');
 Route::post('estrai', [GiocatoreController::class, 'extractGiocatore'])->name('estrai');
 Route::post('riponi', [GiocatoreController::class, 'riponiGiocatore'])->name('riponi');
