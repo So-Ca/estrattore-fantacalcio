@@ -24,8 +24,8 @@
     L'applicazione è costruita con React, ed è strutturata in maniera classica: i file di sviluppo nella cartella "src", mentre i file di distribuzione sono nella cartella public.<br/>
   </p>
 
-  <ul>Struttura Cartelle
-    <li>estrattore-sonny: cartella sorgente</li>
+  <ul>Struttura Cartelle:
+    <li>estrattore-fantacalcio: cartella sorgente</li>
     <li>src: cartella principale sviluppo</li>
     <li>assets: file accessori</li>
     <li>components: contiene i componenti in jsx/js ed i loro relativi file css/scss della applicazione</li>
@@ -84,7 +84,7 @@
   <a name="contacts"></a>
   <h3>Contatti</h3>
 
-  <a href="">Estrattore Fantafavaro</a><br>
+  <a href="https://fantafavaro.netlify.app/">Estrattore Fantafavaro</a><br>
   <a href="https://sonny-caputo-portfolio.netlify.app/">Portfolio</a><br>
   <a href="https://github.com/So-Ca">GitHub</a><br>
   <a href="https://www.linkedin.com/in/sonny-caputo-554315185">Likedin</a><br>
