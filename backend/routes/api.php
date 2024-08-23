@@ -5,10 +5,12 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
+use App\Http\Controllers\AllenatoreController;
+
 Route::get('/giocatori/{tipo?}', function (Request $r) {
 
     $giocatori = Storage::json('public\giocatori.json');
-    //dd(Storage::json('public\giocatori.json'));
+
     if ($r->tipo === 'estratti') {
         $giocatori = array_values(array_filter($giocatori, fn($item) => isset($item['Estratto'])));
     } elseif ($r->tipo === 'non-estratti') {
@@ -23,12 +25,14 @@ Route::get('/giocatore/{id}', function ($id) {
     return array_filter($giocatori, fn($item) => $item['Id'] == $id);
 })->where('id', '[0-9]+');
 
-Route::get('/allenatori', function () {
+/* Route::get('/allenatori', function () {
     $allenatori = Storage::json('public\allenatori.json');
     return $allenatori;
-})->name('allenatori');
+})->name('allenatori'); */
 
-Route::get('/allenatore/{id}', function ($id) {
+Route::get('/allenatori', [AllenatoreController::class, 'getAllenatori'])->name('allenatori');
+
+/* Route::get('/allenatore/{id}', function ($id) {
     $allenatori = Storage::json('public\allenatori.json');
     $giocatori = Storage::json('public\giocatori.json');
     $allenatore = array_values(array_filter($allenatori, fn($item) => $item['Id'] == $id));
@@ -46,7 +50,8 @@ Route::get('/allenatore/{id}', function ($id) {
         $allenatore['CreditiSpesi'] = $crediti_spesi;
         return $allenatore;
     }
-})->where('id', '[0-9]+')->name('allenatore');
+})->where('id', '[0-9]+')->name('allenatore'); */
+Route::get('/allenatore/{id}', [AllenatoreController::class, 'showAllenatore'])->where('id', '[0-9]+')->name('allenatore');
 
 Route::post('estrai', function (Request $request) {
 
