@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\Storage;
 class GiocatoreController extends Controller
 {
 
+    private $allenatori_path = 'public\allenatori.json';
+    private $giocatori_path = 'public\giocatori.json';
+
     function getGiocatori(Request $r)
     {
-        $giocatori = Storage::json('public\giocatori.json');
+        $giocatori = Storage::json($this->giocatori_path);
 
         if ($r->tipo === 'estratti') {
             $giocatori = array_values(array_filter($giocatori, fn($item) => isset($item['Estratto'])));
@@ -24,7 +27,7 @@ class GiocatoreController extends Controller
 
     function showGiocatore($id)
     {
-        $giocatori = Storage::json('public\giocatori.json');
+        $giocatori = Storage::json($this->giocatori_path);
         return array_filter($giocatori, fn($item) => $item['Id'] == $id);
     }
 
@@ -41,7 +44,7 @@ class GiocatoreController extends Controller
                 'message' => 'Param \'id_giocatore\' must be integer string'
             ], 400);
         }
-        $giocatori = Storage::json('public\giocatori.json');
+        $giocatori = Storage::json($this->giocatori_path);
         $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
         if (empty($giocatore)) {
             return response()->json([
@@ -55,7 +58,7 @@ class GiocatoreController extends Controller
                     if (!isset($giocatori[$key]['Estratto'])) {
                         $giocatori[$key]['Estratto'] = true;
                         $giocatore_risposta = $giocatori[$key];
-                        Storage::disk('local')->put('public\giocatori.json', json_encode($giocatori));
+                        Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
     
                         return response()->json([
                             'code' => 'success',
@@ -86,7 +89,7 @@ class GiocatoreController extends Controller
                 'message' => 'Param \'id_giocatore\' must be integer string'
             ], 400);
         }
-        $giocatori = Storage::json('public\giocatori.json');
+        $giocatori = Storage::json($this->giocatori_path);
         $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
         if (empty($giocatore)) {
             return response()->json([
@@ -99,7 +102,7 @@ class GiocatoreController extends Controller
                     $giocatore_risposta = $giocatori[$key];
                     if (isset($giocatori[$key]['Estratto'])) {
                         unset($giocatori[$key]['Estratto']);
-                        Storage::disk('local')->put('public\giocatori.json', json_encode($giocatori));
+                        Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
                         $giocatore_risposta = $giocatori[$key];
                         return response()->json([
                             'code' => 'success',
@@ -140,9 +143,9 @@ class GiocatoreController extends Controller
                 'message' => 'Param \'prezzo\' must be integer string'
             ], 400);
         }
-        $giocatori = Storage::json('public\giocatori.json');
+        $giocatori = Storage::json($this->giocatori_path);
         $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
-        $allenatori = Storage::json('public\allenatori.json');
+        $allenatori = Storage::json($this->allenatori_path);
         $allenatore = array_values(array_filter($allenatori, fn($item) => $item['Id'] == $request->input('id_allenatore')));
         if (empty($giocatore)) {
             return response()->json([
@@ -167,7 +170,7 @@ class GiocatoreController extends Controller
                     $giocatori[$key]['AllenatoreId'] = $request->input('id_allenatore');
                     $giocatori[$key]['Prezzo'] = (int)$request->input('prezzo');
                     $giocatore_risposta = $giocatori[$key];
-                    Storage::disk('local')->put('public\giocatori.json', json_encode($giocatori));
+                    Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
     
                     return response()->json([
                         'code' => 'success',
@@ -192,7 +195,7 @@ class GiocatoreController extends Controller
                 'message' => 'Param \'id_giocatore\' must be integer string'
             ], 400);
         }
-        $giocatori = Storage::json('public\giocatori.json');
+        $giocatori = Storage::json($this->giocatori_path);
         $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
         if (empty($giocatore)) {
             return response()->json([
@@ -206,7 +209,7 @@ class GiocatoreController extends Controller
                     if (isset($giocatori[$key]['Prezzo'])) {
                         unset($giocatori[$key]['Prezzo']);
                         unset($giocatori[$key]['AllenatoreId']);
-                        Storage::disk('local')->put('public\giocatori.json', json_encode($giocatori));
+                        Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
                         $giocatore_risposta = $giocatori[$key];
                         return response()->json([
                             'code' => 'success',

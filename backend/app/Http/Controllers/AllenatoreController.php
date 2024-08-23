@@ -8,16 +8,20 @@ use Illuminate\Support\Facades\Storage;
 
 class AllenatoreController extends Controller
 {
+
+    private $allenatori_path = 'public\allenatori.json';
+    private $giocatori_path = 'public\giocatori.json';
+    
     public function getAllenatori()
     {
-        $allenatori = Storage::json('public\allenatori.json');
+        $allenatori = Storage::json($this->allenatori_path);
         return $allenatori;
     }
 
     public function showAllenatore($id)
     {
-        $allenatori = Storage::json('public\allenatori.json');
-        $giocatori = Storage::json('public\giocatori.json');
+        $allenatori = Storage::json($this->allenatori_path);
+        $giocatori = Storage::json($this->giocatori_path);
         $allenatore = array_values(array_filter($allenatori, fn($item) => $item['Id'] == $id));
         if (!empty($allenatore)) {
             $allenatore = $allenatore[0];
