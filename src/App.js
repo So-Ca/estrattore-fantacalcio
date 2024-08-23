@@ -12,8 +12,8 @@ const App = () => {
   return(
     <main>
       <Header/>
-      <Section/>
-      {/* <Prove/> */}
+      {/* <Section/> */}
+      <Prove/>
       <Footer/>
     </main>
   )

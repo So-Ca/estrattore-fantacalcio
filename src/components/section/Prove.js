@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import listaGiocatori from "../../json/giocatori.json";
+// import listaGiocatori from "../../json/giocatori.json";
 import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
 
@@ -46,13 +46,58 @@ const Section = () => {
 
   console.log("Inutile", squadre);
 
-// // Fetch del listone
-//   useEffect(()=>{
-//     fetch(url)
-//     .then(response => response.json())
-//     .then(data => setNonEstratti(data))
-//     .catch(error => console.error("Ci sono problemi con il fetch: ", error));
-//   }, []);
+
+  
+
+// Fetch del listone
+  useEffect(()=>{
+    fetch("../../../backend/api/allenatori")
+    .then(response => response.json())
+    .then(data => {
+      console.log("Dati Fetchati: ", data);
+      setNonEstratti(data);
+    })
+    .catch(error => console.error("Errore nel fetch: ", error));
+  }, []);
+
+
+// Fetch con controllo errori
+  // useEffect(()=>{
+  //   fetch("../../../backend/api/giocatori/non-estratti")
+  //   .then(response => {
+  //     console.warn("status della risposta: ", response.status); // controlla il codice di stato
+  //     console.log("Headers della risposta: ", response.headers); // controlla gli headers
+  //     // verifica se la risposta è in json
+  //     const contentType = response.headers.get("content-type");
+  //     if(response.ok) { // verifica se ci sono errori http
+  //       if(contentType && contentType.includes("application/json")){
+  //         return response.json()
+  //         .then(data => {
+  //           console.log("Dati Fetchati: ", data);
+  //           setNonEstratti(data);
+  //         })
+  //         .catch(error => {
+  //           console.error("Errore nel parsing del json: ", error);
+  //         });
+  //       } else { // se la risposta non è in json
+  //         return response.text()
+  //         .then(text => { // restituisce la risposta come stringa
+  //           console.log("contenuto della risposta: ", text);
+  //         });
+  //       }
+  //     } else {
+  //       return response.text()
+  //       .then(text => {
+  //         console.error("Errore HTTP: ", response.status, text);
+  //       });
+  //     }
+  //   })
+  //   .catch(error => console.error("Ci sono problemi con il fetch: ", error));
+  // }, []);
+
+
+
+
 
 // funzione per gestire l'input di aggiungi giocatore
   function gestisciInput(e){
