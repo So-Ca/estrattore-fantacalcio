@@ -17,14 +17,14 @@ class EnsureAllenatoreIdIsValid
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!is_numeric($request->id) || $request->id != (int)$request->id) {
+        if(!is_numeric($request->id_allenatore) || $request->id_allenatore != (int)$request->id_allenatore) {
             return response()->json([
                 'code' => 'invalid_param',
                 'message' => 'Il parametro \'id\' deve essere un numero intero'
             ], 400);
         } else {
             $giocatori = Storage::json('public/allenatori.json');
-            if(!in_array($request->id, array_column($giocatori, 'Id'))) {
+            if(!in_array($request->id_allenatore, array_column($giocatori, 'Id'))) {
                 return response()->json([
                     'code' => 'not_found',
                     'message' => 'Allenatore non trovato'

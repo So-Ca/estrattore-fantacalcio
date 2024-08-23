@@ -17,14 +17,19 @@ class EnsureGiocatoreIdIsValid
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!is_numeric($request->id) || $request->id != (int)$request->id) {
+        if(!isset($request->id_giocatore)) {
+            return response()->json([
+                'code' => 'missing_param',
+                'message' => 'Il parametro \'id\' è obbligatorio'
+            ], 400);
+        } elseif (!is_numeric($request->id_giocatore) || $request->id_giocatore != (int)$request->id_giocatore) {
             return response()->json([
                 'code' => 'invalid_param',
                 'message' => 'Il parametro \'id\' deve essere un numero intero'
             ], 400);
         } else {
             $giocatori = Storage::json('public/giocatori.json');
-            if (!in_array($request->id, array_column($giocatori, 'Id'))) {
+            if (!in_array($request->id_giocatore, array_column($giocatori, 'Id'))) {
                 return response()->json([
                     'code' => 'not_found',
                     'message' => 'Giocatore non trovato'

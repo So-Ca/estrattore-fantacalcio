@@ -1,0 +1,19 @@
+### Tutti gli allenatori
+GET http://localhost:8000/api/allenatori
+
+### Singolo allenatore
+GET http://localhost:8000/api/allenatore/1
+
+### Tutti i giocatori
+GET http://localhost:8000/api/giocatori
+
+### Singolo giocatore
+GET http://localhost:8000/api/giocatore/3
+
+### Estrai giocatore
+POST http://localhost:8000/api/estrai
+Content-Type: application/json
+
+{
+    "id_giocatore": 4
+}

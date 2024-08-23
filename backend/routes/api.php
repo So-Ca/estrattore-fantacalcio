@@ -13,17 +13,21 @@ Route::get('/giocatori/{tipo?}', [GiocatoreController::class, 'getGiocatori'])
     ->middleware(EnsureGiocatoriSubsetIsValid::class)
     ->name('list-giocatori');
 
-Route::get('/giocatore/{id}', [GiocatoreController::class, 'showGiocatore'])
+Route::get('/giocatore/{id_giocatore}', [GiocatoreController::class, 'showGiocatore'])
     ->middleware(EnsureGiocatoreIdIsValid::class)
     ->name('giocatore');
 
-Route::post('estrai', [GiocatoreController::class, 'extractGiocatore'])->name('estrai');
+Route::post('estrai', [GiocatoreController::class, 'extractGiocatore'])
+    ->middleware(EnsureGiocatoreIdIsValid::class)
+    ->name('estrai');
 Route::post('riponi', [GiocatoreController::class, 'riponiGiocatore'])->name('riponi');
-Route::post('acquista', [GiocatoreController::class, 'buyGiocatore'])->name('acquista');
+Route::post('acquista', [GiocatoreController::class, 'buyGiocatore'])
+    ->middleware([EnsureGiocatoreIdIsValid::class, EnsureAllenatoreIdIsValid::class])
+    ->name('acquista');
 Route::post('svincola', [GiocatoreController::class, 'svincolaGiocatore'])->name('svincola');
 
 
 Route::get('/allenatori', [AllenatoreController::class, 'getAllenatori'])->name('allenatori');
-Route::get('/allenatore/{id}', [AllenatoreController::class, 'showAllenatore'])
+Route::get('/allenatore/{id_allenatore}', [AllenatoreController::class, 'showAllenatore'])
     ->middleware(EnsureAllenatoreIdIsValid::class)
     ->name('allenatore');
