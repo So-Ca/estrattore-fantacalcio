@@ -8,8 +8,11 @@ use Illuminate\Support\Str;
 use App\Http\Controllers\AllenatoreController;
 use App\Http\Controllers\GiocatoreController;
 
+use App\Http\Middleware\EnsureGiocatoriSubsetIsValid;
+
 Route::get('/giocatori/{tipo?}', [GiocatoreController::class, 'getGiocatori'])
-    ->name('list-giocatori');
+    ->name('list-giocatori')
+    ->middleware(EnsureGiocatoriSubsetIsValid::class);
 Route::get('/giocatore/{id}', [GiocatoreController::class, 'showGiocatore'])
 ->where('id', '[0-9]+')
 ->name('giocatore');

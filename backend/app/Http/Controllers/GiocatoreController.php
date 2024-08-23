@@ -32,12 +32,7 @@ class GiocatoreController extends Controller
             $filter = fn($item) => isset($item['Estratto']);
         } elseif (isset($request->tipo) && $request->tipo === 'non-estratti') {
             $filter = fn($item) => !isset($item['Estratto']);
-        } elseif (isset($request->tipo) && ($request->tipo !== 'non-estratti' && $request->tipo !== 'estratti')) {
-            return response()->json([
-                'code' => 'invalid_param',
-                'message' => 'Il parametro \'tipo\', se presente, deve essere \'estratti\' o \'non-estratti\''
-            ], 404);
-        } else {
+        }  else {
             $filter = fn($item) => true;
         }
 
