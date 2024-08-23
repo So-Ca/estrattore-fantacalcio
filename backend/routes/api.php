@@ -7,7 +7,8 @@ use Illuminate\Support\Str;
 
 Route::get('/giocatori/{tipo?}', function (Request $r) {
 
-    $giocatori = Storage::json('giocatori.json');
+    $giocatori = Storage::json('public\giocatori.json');
+    //dd(Storage::json('public\giocatori.json'));
     if ($r->tipo === 'estratti') {
         $giocatori = array_values(array_filter($giocatori, fn($item) => isset($item['Estratto'])));
     } elseif ($r->tipo === 'non-estratti') {
@@ -18,18 +19,18 @@ Route::get('/giocatori/{tipo?}', function (Request $r) {
     ->name('list-giocatori');
 
 Route::get('/giocatore/{id}', function ($id) {
-    $giocatori = Storage::json('giocatori.json');
+    $giocatori = Storage::json('public\giocatori.json');
     return array_filter($giocatori, fn($item) => $item['Id'] == $id);
 })->where('id', '[0-9]+');
 
 Route::get('/allenatori', function () {
-    $allenatori = Storage::json('allenatori.json');
+    $allenatori = Storage::json('public\allenatori.json');
     return $allenatori;
 })->name('allenatori');
 
 Route::get('/allenatore/{id}', function ($id) {
-    $allenatori = Storage::json('allenatori.json');
-    $giocatori = Storage::json('giocatori.json');
+    $allenatori = Storage::json('public\allenatori.json');
+    $giocatori = Storage::json('public\giocatori.json');
     $allenatore = array_values(array_filter($allenatori, fn($item) => $item['Id'] == $id));
     if (!empty($allenatore)) {
         $allenatore = $allenatore[0];
@@ -60,7 +61,7 @@ Route::post('estrai', function (Request $request) {
             'message' => 'Param \'id_giocatore\' must be integer string'
         ], 400);
     }
-    $giocatori = Storage::json('giocatori.json');
+    $giocatori = Storage::json('public\giocatori.json');
     $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
     if (empty($giocatore)) {
         return response()->json([
@@ -74,7 +75,7 @@ Route::post('estrai', function (Request $request) {
                 if (!isset($giocatori[$key]['Estratto'])) {
                     $giocatori[$key]['Estratto'] = true;
                     $giocatore_risposta = $giocatori[$key];
-                    Storage::disk('local')->put('giocatori.json', json_encode($giocatori));
+                    Storage::disk('local')->put('public\giocatori.json', json_encode($giocatori));
 
                     return response()->json([
                         'code' => 'success',
@@ -105,7 +106,7 @@ Route::post('riponi', function (Request $request) {
             'message' => 'Param \'id_giocatore\' must be integer string'
         ], 400);
     }
-    $giocatori = Storage::json('giocatori.json');
+    $giocatori = Storage::json('public\giocatori.json');
     $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
     if (empty($giocatore)) {
         return response()->json([
@@ -118,7 +119,7 @@ Route::post('riponi', function (Request $request) {
                 $giocatore_risposta = $giocatori[$key];
                 if (isset($giocatori[$key]['Estratto'])) {
                     unset($giocatori[$key]['Estratto']);
-                    Storage::disk('local')->put('giocatori.json', json_encode($giocatori));
+                    Storage::disk('local')->put('public\giocatori.json', json_encode($giocatori));
                     $giocatore_risposta = $giocatori[$key];
                     return response()->json([
                         'code' => 'success',
@@ -160,9 +161,9 @@ Route::post('acquista', function (Request $request) {
             'message' => 'Param \'prezzo\' must be integer string'
         ], 400);
     }
-    $giocatori = Storage::json('giocatori.json');
+    $giocatori = Storage::json('public\giocatori.json');
     $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
-    $allenatori = Storage::json('allenatori.json');
+    $allenatori = Storage::json('public\allenatori.json');
     $allenatore = array_values(array_filter($allenatori, fn($item) => $item['Id'] == $request->input('id_allenatore')));
     if (empty($giocatore)) {
         return response()->json([
@@ -187,7 +188,7 @@ Route::post('acquista', function (Request $request) {
                 $giocatori[$key]['AllenatoreId'] = $request->input('id_allenatore');
                 $giocatori[$key]['Prezzo'] = (int)$request->input('prezzo');
                 $giocatore_risposta = $giocatori[$key];
-                Storage::disk('local')->put('giocatori.json', json_encode($giocatori));
+                Storage::disk('local')->put('public\giocatori.json', json_encode($giocatori));
 
                 return response()->json([
                     'code' => 'success',
@@ -215,7 +216,7 @@ Route::post('svincola', function (Request $request) {
             'message' => 'Param \'id_giocatore\' must be integer string'
         ], 400);
     }
-    $giocatori = Storage::json('giocatori.json');
+    $giocatori = Storage::json('public\giocatori.json');
     $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
     if (empty($giocatore)) {
         return response()->json([
@@ -229,7 +230,7 @@ Route::post('svincola', function (Request $request) {
                 if (isset($giocatori[$key]['Prezzo'])) {
                     unset($giocatori[$key]['Prezzo']);
                     unset($giocatori[$key]['AllenatoreId']);
-                    Storage::disk('local')->put('giocatori.json', json_encode($giocatori));
+                    Storage::disk('local')->put('public\giocatori.json', json_encode($giocatori));
                     $giocatore_risposta = $giocatori[$key];
                     return response()->json([
                         'code' => 'success',
