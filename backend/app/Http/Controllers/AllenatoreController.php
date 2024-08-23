@@ -11,7 +11,7 @@ class AllenatoreController extends Controller
     public function getAllenatori()
     {
         $allenatori = Storage::json('public\allenatori.json');
-        return $allenatori;
+        return response($allenatori)->header('Content-Type', 'application/json');
     }
 
     public function showAllenatore($id)

@@ -44,15 +44,23 @@ const Section = () => {
 
   const listaFinita = nonEstratti.length === 0;
 
-  console.log("Inutile", squadre);
+  //console.log("Inutile", squadre);
 
 
   
 
 // Fetch del listone
   useEffect(()=>{
-    fetch("../../../backend/api/allenatori")
-    .then(response => response.json())
+    //fetch("../../../backend/api/allenatori", {
+    fetch("http://localhost:8000/api/allenatori", {
+      headers : {
+        "Content-Type": "application/json",
+      }
+    })
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
     .then(data => {
       console.log("Dati Fetchati: ", data);
       setNonEstratti(data);
