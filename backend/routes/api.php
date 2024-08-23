@@ -9,7 +9,6 @@ use App\Http\Controllers\AllenatoreController;
 use App\Http\Controllers\GiocatoreController;
 
 Route::get('/giocatori/{tipo?}', [GiocatoreController::class, 'getGiocatori'])
-    ->whereIn('tipo', ['estratti', 'non-estratti'])
     ->name('list-giocatori');
 Route::get('/giocatore/{id}', [GiocatoreController::class, 'showGiocatore'])
 ->where('id', '[0-9]+')

@@ -13,15 +13,35 @@ class GiocatoreController extends Controller
     private $allenatori_path = 'public\allenatori.json';
     private $giocatori_path = 'public\giocatori.json';
 
-    function getGiocatori(Request $r)
+    /**
+     * Restituisce un sottoinsieme dei giocatori.
+     * Il sottoinsieme è filtrato in base al parametro 'tipo' passato nella richiesta
+     * e può coincidere con i giocatori estratti o con i giocatori non estratti
+     * o con tutti i giocatori.
+     * 
+     * @author Valerio Porporato
+     * 
+     * @param Request $request
+     * @return array $giocatori
+     */
+    function getGiocatori(Request $request)
     {
         $giocatori = Storage::json($this->giocatori_path);
 
-        if ($r->tipo === 'estratti') {
-            $giocatori = array_values(array_filter($giocatori, fn($item) => isset($item['Estratto'])));
-        } elseif ($r->tipo === 'non-estratti') {
-            $giocatori = array_values(array_filter($giocatori, fn($item) => !isset($item['Estratto'])));
+        if (isset($request->tipo) && $request->tipo === 'estratti') {
+            $filter = fn($item) => isset($item['Estratto']);
+        } elseif (isset($request->tipo) && $request->tipo === 'non-estratti') {
+            $filter = fn($item) => !isset($item['Estratto']);
+        } elseif (isset($request->tipo) && ($request->tipo !== 'non-estratti' && $request->tipo !== 'estratti')) {
+            return response()->json([
+                'code' => 'invalid_param',
+                'message' => 'Il parametro \'tipo\', se presente, deve essere \'estratti\' o \'non-estratti\''
+            ], 404);
+        } else {
+            $filter = fn($item) => true;
         }
+
+        $giocatori = array_values(array_filter($giocatori, $filter));
         return $giocatori;
     }
 
