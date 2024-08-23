@@ -20,9 +20,11 @@ Route::get('/giocatore/{id_giocatore}', [GiocatoreController::class, 'showGiocat
 Route::post('estrai', [GiocatoreController::class, 'extractGiocatore'])
     ->middleware(EnsureGiocatoreIdIsValid::class)
     ->name('estrai');
-Route::post('riponi', [GiocatoreController::class, 'riponiGiocatore'])->name('riponi');
+Route::post('riponi', [GiocatoreController::class, 'riponiGiocatore'])
+    ->middleware(EnsureGiocatoreIdIsValid::class)
+    ->name('riponi');
 Route::post('acquista', [GiocatoreController::class, 'buyGiocatore'])
-    ->middleware([EnsureGiocatoreIdIsValid::class, EnsureAllenatoreIdIsValid::class])
+    //->middleware([EnsureGiocatoreIdIsValid::class, EnsureAllenatoreIdIsValid::class])
     ->name('acquista');
 Route::post('svincola', [GiocatoreController::class, 'svincolaGiocatore'])->name('svincola');
 

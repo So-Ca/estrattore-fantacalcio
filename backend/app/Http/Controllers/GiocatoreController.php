@@ -79,7 +79,7 @@ class GiocatoreController extends Controller
     function riponiGiocatore(Request $request)
     {
 
-        if (!$request->has('id_giocatore')) {
+       /*  if (!$request->has('id_giocatore')) {
             return response()->json([
                 'code' => 'missing_param',
                 'message' => 'No \'id_giocatore\' provided'
@@ -89,15 +89,15 @@ class GiocatoreController extends Controller
                 'code' => 'bad_param',
                 'message' => 'Param \'id_giocatore\' must be integer string'
             ], 400);
-        }
-        $giocatori = Storage::json($this->giocatori_path);
-        $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
-        if (empty($giocatore)) {
+        } */
+         $giocatori = Storage::json($this->giocatori_path);
+       // $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
+        /*if (empty($giocatore)) {
             return response()->json([
                 'code' => 'not_found',
                 'message' => 'No player found with id ' . $request->input('id_giocatore')
             ], 404);
-        } else {
+        } else { */
             foreach ($giocatori as $key => $giocatore) {
                 if ($giocatore['Id'] == $request->input('id_giocatore')) {
                     $giocatore_risposta = $giocatori[$key];
@@ -118,7 +118,7 @@ class GiocatoreController extends Controller
                 'message' => 'Player with id ' . $request->input('id_giocatore') . ' is not drawn',
                 'player' => $giocatore_risposta
             ], 200);
-        }
+       // }
     }
 
     function buyGiocatore(Request $request)

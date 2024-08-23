@@ -17,3 +17,11 @@ Content-Type: application/json
 {
     "id_giocatore": 4
 }
+
+### Riponi giocatore
+POST http://localhost:8000/api/riponi
+Content-Type: application/json
+
+{
+    "id_giocatore": 4
+}

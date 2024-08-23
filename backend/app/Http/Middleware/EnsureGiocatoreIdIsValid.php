@@ -20,7 +20,7 @@ class EnsureGiocatoreIdIsValid
         if(!isset($request->id_giocatore)) {
             return response()->json([
                 'code' => 'missing_param',
-                'message' => 'Il parametro \'id\' è obbligatorio'
+                'message' => 'Il parametro \'id_giocatore\' è obbligatorio'
             ], 400);
         } elseif (!is_numeric($request->id_giocatore) || $request->id_giocatore != (int)$request->id_giocatore) {
             return response()->json([
