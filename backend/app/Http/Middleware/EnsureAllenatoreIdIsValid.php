@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 use Illuminate\Support\Facades\Storage;
 
-class EnsureGiocatoreIdIsValid
+class EnsureAllenatoreIdIsValid
 {
     /**
      * Handle an incoming request.
@@ -17,17 +17,17 @@ class EnsureGiocatoreIdIsValid
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!is_numeric($request->id) || $request->id != (int)$request->id) {
+        if(!is_numeric($request->id) || $request->id != (int)$request->id) {
             return response()->json([
                 'code' => 'invalid_param',
                 'message' => 'Il parametro \'id\' deve essere un numero intero'
             ], 400);
         } else {
-            $giocatori = Storage::json('public/giocatori.json');
-            if (!in_array($request->id, array_column($giocatori, 'Id'))) {
+            $giocatori = Storage::json('public/allenatori.json');
+            if(!in_array($request->id, array_column($giocatori, 'Id'))) {
                 return response()->json([
                     'code' => 'not_found',
-                    'message' => 'Giocatore non trovato'
+                    'message' => 'Allenatore non trovato'
                 ], 404);
             }
         }
