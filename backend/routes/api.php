@@ -9,37 +9,40 @@ use App\Http\Middleware\EnsureGiocatoriSubsetIsValid;
 use App\Http\Middleware\EnsureGiocatoreIdIsValid;
 use App\Http\Middleware\EnsureAllenatoreIdIsValid;
 use App\Http\Middleware\EnsurePrezzoIsValid;
-
-Route::get('/giocatori/{tipo?}', [GiocatoreController::class, 'getGiocatori'])
-    ->middleware(EnsureGiocatoriSubsetIsValid::class)
-    ->name('list-giocatori');
-
-Route::get('/giocatore/{id_giocatore}', [GiocatoreController::class, 'showGiocatore'])
-    ->middleware(EnsureGiocatoreIdIsValid::class)
-    ->name('giocatore');
-
-Route::post('estrai', [GiocatoreController::class, 'extractGiocatore'])
-    ->middleware(EnsureGiocatoreIdIsValid::class)
-    ->name('estrai');
-Route::post('riponi', [GiocatoreController::class, 'riponiGiocatore'])
-    ->middleware(EnsureGiocatoreIdIsValid::class)
-    ->name('riponi');
-Route::post('acquista', [GiocatoreController::class, 'buyGiocatore'])
-    ->middleware([
-        EnsureGiocatoreIdIsValid::class,
-        EnsureAllenatoreIdIsValid::class,
-        EnsurePrezzoIsValid::class
-    ])
-    ->name('acquista');
-Route::post('svincola', [GiocatoreController::class, 'svincolaGiocatore'])
-    ->middleware(EnsureGiocatoreIdIsValid::class)
-    ->name('svincola');
+use App\Http\Middleware\EnsureJsonsExist;
 
 
-Route::get('/allenatori', [AllenatoreController::class, 'getAllenatori'])->name('allenatori');
-Route::get('/allenatore/{id_allenatore}', [AllenatoreController::class, 'showAllenatore'])
-    ->middleware(EnsureAllenatoreIdIsValid::class)
-    ->name('allenatore');
+Route::middleware([EnsureJsonsExist::class])->group(function () {
+    Route::get('/giocatori/{tipo?}', [GiocatoreController::class, 'getGiocatori'])
+        ->middleware(EnsureGiocatoriSubsetIsValid::class)
+        ->name('list-giocatori');
+
+    Route::get('/giocatore/{id_giocatore}', [GiocatoreController::class, 'showGiocatore'])
+        ->middleware(EnsureGiocatoreIdIsValid::class)
+        ->name('giocatore');
+
+    Route::post('estrai', [GiocatoreController::class, 'extractGiocatore'])
+        ->middleware(EnsureGiocatoreIdIsValid::class)
+        ->name('estrai');
+    Route::post('riponi', [GiocatoreController::class, 'riponiGiocatore'])
+        ->middleware(EnsureGiocatoreIdIsValid::class)
+        ->name('riponi');
+    Route::post('acquista', [GiocatoreController::class, 'buyGiocatore'])
+        ->middleware([
+            EnsureGiocatoreIdIsValid::class,
+            EnsureAllenatoreIdIsValid::class,
+            EnsurePrezzoIsValid::class
+        ])
+        ->name('acquista');
+    Route::post('svincola', [GiocatoreController::class, 'svincolaGiocatore'])
+        ->middleware(EnsureGiocatoreIdIsValid::class)
+        ->name('svincola');
+
+    Route::get('/allenatori', [AllenatoreController::class, 'getAllenatori'])->name('allenatori');
+    Route::get('/allenatore/{id_allenatore}', [AllenatoreController::class, 'showAllenatore'])
+        ->middleware(EnsureAllenatoreIdIsValid::class)
+        ->name('allenatore');
+});
 
 Route::any('/', function () {
     return response()->json(['message' => 'Not Found'], 404);
