@@ -8,14 +8,14 @@ GET http://localhost:8000/api/allenatore/1
 GET http://localhost:8000/api/giocatori/estratti
 
 ### Singolo giocatore
-GET http://localhost:8000/api/giocatore/4
+GET http://localhost:8000/api/giocatore/3
 
 ### Estrai giocatore
 POST http://localhost:8000/api/estrai
 Content-Type: application/json
 
 {
-    "id_giocatore": 4
+    "id_giocatore": 3
 }
 
 ### Riponi giocatore
@@ -23,7 +23,7 @@ POST http://localhost:8000/api/riponi
 Content-Type: application/json
 
 {
-    "id_giocatore": 4
+    "id_giocatore": 3
 }
 
 ### Acquista giocatore

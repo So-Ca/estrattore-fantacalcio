@@ -23,13 +23,13 @@ POST api/estrai<br />
 {<br />
     id_giocatore : [id_giocatore]<br />
 }<br />
-Imposta l'attributo "Estratto": true al giocatore con id uguale a [id_giocatore]<br /><br />
+Imposta l'attributo "Estratto": true al giocatore con l'attributo Id uguale a [id_giocatore]<br /><br />
 
 POST api/riponi<br />
 {<br />
     id_giocatore : [id_giocatore]<br />
 }<br />
-Rimuove l'attributo "Estratto" al giocatore con id uguale a [id_giocatore]<br /><br />
+Rimuove l'attributo "Estratto" al giocatore con l'attributo Id uguale a [id_giocatore]<br /><br />
 
 POST api/acquista<br />
 {<br />
@@ -37,10 +37,10 @@ POST api/acquista<br />
     id_giocatore : [id_giocatore],<br />
     prezzo: [prezzo]<br />
 }<br />
-Assegna il giocatore con id uguale a [id_giocatore] all'allenatore con id uguale a [id_allenatore]<br />[id_allenatore] al prezzo di acquisto [prezzo]<br /><br />
+Assegna il giocatore con l'attributo Id uguale a [id_giocatore] all'allenatore con l'attributo Id uguale a [id_allenatore]<br />[id_allenatore] al prezzo di acquisto [prezzo]<br /><br />
 
 POST api/svincola<br />
 {<br />
     id_giocatore : [id_giocatore]<br />
 }<br />
-Rimuove gli attributi "AllenatoreId" e "Prezzo" al giocatore con id uguale a [id_giocatore]
+Rimuove gli attributi "AllenatoreId" e "Prezzo" al giocatore con l'attributo Id uguale a [id_giocatore]

@@ -19,7 +19,7 @@ class GiocatoreController extends Controller
      * e può coincidere con i giocatori estratti o con i giocatori non estratti
      * o con tutti i giocatori.
      * 
-     * @author Valerio Porporato
+     * @author Valerio Porporato <valerio.porpo@gmail.com>
      * 
      * @param Request $request
      * @return array $giocatori
@@ -40,12 +40,29 @@ class GiocatoreController extends Controller
         return $giocatori;
     }
 
+    /**
+     * Restituisce il giocatore con l'id passato nella richiesta.
+     * 
+     * @author Valerio Porporato <valerio.porpo@gmail.com>
+     * 
+     * @param int $id
+     * @return string
+     */
     function showGiocatore($id)
     {
         $giocatori = Storage::json($this->giocatori_path);
         return array_values(array_filter($giocatori, fn($item) => $item['Id'] == $id))[0];
     }
 
+    /**
+     * Marca come estratto il giocatore con l'id passato nella richiesta.
+     * Se il giocatore è già stato estratto, restituisce un messaggio di errore.
+     * 
+     * @author Valerio Porporato <valerio.porpo@gmail.com>
+     * 
+     * @param Request $request
+     * @return Response
+     */
     function extractGiocatore(Request $request)
     {
 
@@ -75,6 +92,15 @@ class GiocatoreController extends Controller
         ], 400);
     }
 
+    /**
+     * Ripone il giocatore con l'id passato nella richiesta.
+     * Se il giocatore non è stato estratto, restituisce un messaggio di errore.
+     * 
+     * @author Valerio Porporato <valerio.porpo@gmail.com>
+     * 
+     * @param Request $request
+     * @return Response
+     */
     function riponiGiocatore(Request $request)
     {
 
@@ -101,6 +127,15 @@ class GiocatoreController extends Controller
         ], 400);
     }
 
+    /**
+     * Assegna il giocatore con l'id passato nella richiesta all'allenatore con l'id passato nella richiesta.
+     * Se il giocatore è già stato assegnato ad un allenatore, restituisce un messaggio di errore.
+     * 
+     * @author Valerio Porporato <valerio.porpo@gmail.com>
+     * 
+     * @param Request $request
+     * @return Response
+     */
     function buyGiocatore(Request $request)
     {
 
@@ -129,6 +164,15 @@ class GiocatoreController extends Controller
         ], 400);
     }
 
+    /**
+     * Svincola il giocatore con l'id passato nella richiesta.
+     * Se il giocatore non è assegnato ad un allenatore, restituisce un messaggio di errore.
+     * 
+     * @author Valerio Porporato <valerio.porpo@gmail.com>
+     * 
+     * @param Request $request
+     * @return Response
+     */
     function svincolaGiocatore(Request $request)
     {
 
@@ -151,7 +195,6 @@ class GiocatoreController extends Controller
                     ], 200);
                 }
             }
-            
         }
 
         return response()->json([
