@@ -43,7 +43,7 @@ class GiocatoreController extends Controller
     function showGiocatore($id)
     {
         $giocatori = Storage::json($this->giocatori_path);
-        return array_filter($giocatori, fn($item) => $item['Id'] == $id);
+        return array_values(array_filter($giocatori, fn($item) => $item['Id'] == $id))[0];
     }
 
     function extractGiocatore(Request $request)
