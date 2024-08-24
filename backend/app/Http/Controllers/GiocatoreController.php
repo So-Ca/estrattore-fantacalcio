@@ -79,8 +79,8 @@ class GiocatoreController extends Controller
 
                     return response()->json([
                         'code' => 'success',
-                        'message' => 'Player with id ' . $request->input('id_giocatore') . ' drawn',
-                        'player' => $giocatore_risposta
+                        'message' => 'Giocatore con id ' . $request->input('id_giocatore') . ' estratto',
+                        'giocatore' => $giocatore_risposta
                     ], 200);
                 }
             }
@@ -115,8 +115,8 @@ class GiocatoreController extends Controller
                     $giocatore_risposta = $giocatori[$key];
                     return response()->json([
                         'code' => 'success',
-                        'message' => 'Player with id ' . $request->input('id_giocatore') . ' has been put away',
-                        'player' => $giocatore_risposta
+                        'message' => 'Giocatore con id ' . $request->input('id_giocatore') . ' riposto',
+                        'giocatore' => $giocatore_risposta
                     ], 200);
                 }
             }
@@ -152,8 +152,8 @@ class GiocatoreController extends Controller
 
                 return response()->json([
                     'code' => 'success',
-                    'message' => 'Player with id ' . $request->input('id_giocatore') . ' assigned to manager with id ' . $request->input('id_allenatore') . ' for ' . $request->input('prezzo') . ' credits',
-                    'player' => $giocatore_risposta
+                    'message' => 'Giocatore con id ' . $request->input('id_giocatore') . ' assegnato all\'allenatore con id ' . $request->input('id_allenatore') . ' per ' . $request->input('prezzo') . ' crediti',
+                    'giocatore' => $giocatore_risposta
                 ], 200);
             }
         }
@@ -190,8 +190,8 @@ class GiocatoreController extends Controller
                     $giocatore_risposta = $giocatori[$key];
                     return response()->json([
                         'code' => 'success',
-                        'message' => 'Player with id ' . $request->input('id_giocatore') . ' has been released',
-                        'player' => $giocatore_risposta
+                        'message' => 'Giocatore con id ' . $request->input('id_giocatore') . ' svincolato',
+                        'giocatore' => $giocatore_risposta
                     ], 200);
                 }
             }
