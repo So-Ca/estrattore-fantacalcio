@@ -17,10 +17,15 @@ class EnsureAllenatoreIdIsValid
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!is_numeric($request->id_allenatore) || $request->id_allenatore != (int)$request->id_allenatore) {
+        if(!isset($request->id_allenatore)) {
+            return response()->json([
+                'code' => 'missing_param',
+                'message' => 'Il parametro \'id_allenatore\' è obbligatorio'
+            ], 400);
+        } elseif(!is_numeric($request->id_allenatore) || $request->id_allenatore != (int)$request->id_allenatore) {
             return response()->json([
                 'code' => 'invalid_param',
-                'message' => 'Il parametro \'id\' deve essere un numero intero'
+                'message' => 'Il parametro \'id_allenatore\' deve essere un numero intero'
             ], 400);
         } else {
             $giocatori = Storage::json('public/allenatori.json');
