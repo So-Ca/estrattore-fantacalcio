@@ -40,3 +40,10 @@ Route::get('/allenatori', [AllenatoreController::class, 'getAllenatori'])->name(
 Route::get('/allenatore/{id_allenatore}', [AllenatoreController::class, 'showAllenatore'])
     ->middleware(EnsureAllenatoreIdIsValid::class)
     ->name('allenatore');
+
+Route::any('/', function () {
+    return response()->json(['message' => 'Not Found'], 404);
+});
+Route::fallback(function () {
+    return response()->json(['message' => 'Not Found'], 404);
+});
