@@ -25,7 +25,7 @@ class EnsureGiocatoreIdIsValid
         } elseif (!is_numeric($request->id_giocatore) || $request->id_giocatore != (int)$request->id_giocatore) {
             return response()->json([
                 'code' => 'invalid_param',
-                'message' => 'Il parametro \'id\' deve essere un numero intero'
+                'message' => 'Il parametro \'id_giocatore\' deve essere un numero intero'
             ], 400);
         } else {
             $giocatori = Storage::json('public/giocatori.json');

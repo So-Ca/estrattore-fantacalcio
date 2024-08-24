@@ -79,52 +79,34 @@ class GiocatoreController extends Controller
     function riponiGiocatore(Request $request)
     {
 
-       /*  if (!$request->has('id_giocatore')) {
-            return response()->json([
-                'code' => 'missing_param',
-                'message' => 'No \'id_giocatore\' provided'
-            ], 400);
-        } elseif ($request->input('id_giocatore') != (int) $request->input('id_giocatore')) {
-            return response()->json([
-                'code' => 'bad_param',
-                'message' => 'Param \'id_giocatore\' must be integer string'
-            ], 400);
-        } */
-         $giocatori = Storage::json($this->giocatori_path);
-       // $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
-        /*if (empty($giocatore)) {
-            return response()->json([
-                'code' => 'not_found',
-                'message' => 'No player found with id ' . $request->input('id_giocatore')
-            ], 404);
-        } else { */
-            foreach ($giocatori as $key => $giocatore) {
-                if ($giocatore['Id'] == $request->input('id_giocatore')) {
+        $giocatori = Storage::json($this->giocatori_path);
+
+        foreach ($giocatori as $key => $giocatore) {
+            if ($giocatore['Id'] == $request->input('id_giocatore')) {
+                $giocatore_risposta = $giocatori[$key];
+                if (isset($giocatori[$key]['Estratto'])) {
+                    unset($giocatori[$key]['Estratto']);
+                    Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
                     $giocatore_risposta = $giocatori[$key];
-                    if (isset($giocatori[$key]['Estratto'])) {
-                        unset($giocatori[$key]['Estratto']);
-                        Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
-                        $giocatore_risposta = $giocatori[$key];
-                        return response()->json([
-                            'code' => 'success',
-                            'message' => 'Player with id ' . $request->input('id_giocatore') . ' has been put away',
-                            'player' => $giocatore_risposta
-                        ], 200);
-                    }
+                    return response()->json([
+                        'code' => 'success',
+                        'message' => 'Player with id ' . $request->input('id_giocatore') . ' has been put away',
+                        'player' => $giocatore_risposta
+                    ], 200);
                 }
             }
-            return response()->json([
-                'code' => 'success',
-                'message' => 'Player with id ' . $request->input('id_giocatore') . ' is not drawn',
-                'player' => $giocatore_risposta
-            ], 200);
-       // }
+        }
+        return response()->json([
+            'code' => 'success',
+            'message' => 'Player with id ' . $request->input('id_giocatore') . ' is not drawn',
+            'player' => $giocatore_risposta
+        ], 200);
     }
 
     function buyGiocatore(Request $request)
     {
 
-        if (!$request->has('id_giocatore') || !$request->has('id_allenatore') || !$request->has('prezzo')) {
+        /* if (!$request->has('id_giocatore') || !$request->has('id_allenatore') || !$request->has('prezzo')) {
             return response()->json([
                 'code' => 'missing_param',
                 'message' => 'One of \'id_giocatore\', \'id_allenatore\' and \'prezzo\' is missing'
@@ -144,12 +126,12 @@ class GiocatoreController extends Controller
                 'code' => 'bad_param',
                 'message' => 'Param \'prezzo\' must be integer string'
             ], 400);
-        }
+        } */
         $giocatori = Storage::json($this->giocatori_path);
-        $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
+        //$giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
         $allenatori = Storage::json($this->allenatori_path);
-        $allenatore = array_values(array_filter($allenatori, fn($item) => $item['Id'] == $request->input('id_allenatore')));
-        if (empty($giocatore)) {
+        //$allenatore = array_values(array_filter($allenatori, fn($item) => $item['Id'] == $request->input('id_allenatore')));
+        /* if (empty($giocatore)) {
             return response()->json([
                 'code' => 'not_found',
                 'message' => 'no player found with id ' . $request->input('id_giocatore')
@@ -159,29 +141,29 @@ class GiocatoreController extends Controller
                 'code' => 'not_found',
                 'message' => 'no manager found with id ' . $request->input('id_allenatore')
             ], 404);
-        } elseif ($request->input('prezzo') < 1) {
+        } else *//* if ($request->input('prezzo') < 1) {
             return response()->json([
                 'code' => 'invalid_price',
                 'message' => '\'prezzo\' must be greater than 0'
             ], 404);
-        } else {
-            foreach ($giocatori as $key => $giocatore) {
-                if ($giocatore['Id'] == $request->input('id_giocatore')) {
-                    $giocatore_risposta = $giocatori[$key];
+        } else { */
+        foreach ($giocatori as $key => $giocatore) {
+            if ($giocatore['Id'] == $request->input('id_giocatore')) {
+                $giocatore_risposta = $giocatori[$key];
 
-                    $giocatori[$key]['AllenatoreId'] = $request->input('id_allenatore');
-                    $giocatori[$key]['Prezzo'] = (int)$request->input('prezzo');
-                    $giocatore_risposta = $giocatori[$key];
-                    Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
+                $giocatori[$key]['AllenatoreId'] = $request->input('id_allenatore');
+                $giocatori[$key]['Prezzo'] = (int)$request->input('prezzo');
+                $giocatore_risposta = $giocatori[$key];
+                Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
 
-                    return response()->json([
-                        'code' => 'success',
-                        'message' => 'Player with id ' . $request->input('id_giocatore') . ' assigned to manager with id ' . $request->input('id_allenatore') . ' for ' . $request->input('prezzo') . ' credits',
-                        'player' => $giocatore_risposta
-                    ], 200);
-                }
+                return response()->json([
+                    'code' => 'success',
+                    'message' => 'Player with id ' . $request->input('id_giocatore') . ' assigned to manager with id ' . $request->input('id_allenatore') . ' for ' . $request->input('prezzo') . ' credits',
+                    'player' => $giocatore_risposta
+                ], 200);
             }
         }
+        //}
     }
 
     function svincolaGiocatore(Request $request)

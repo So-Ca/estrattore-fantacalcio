@@ -8,6 +8,7 @@ use App\Http\Controllers\GiocatoreController;
 use App\Http\Middleware\EnsureGiocatoriSubsetIsValid;
 use App\Http\Middleware\EnsureGiocatoreIdIsValid;
 use App\Http\Middleware\EnsureAllenatoreIdIsValid;
+use App\Http\Middleware\EnsurePrezzoIsValid;
 
 Route::get('/giocatori/{tipo?}', [GiocatoreController::class, 'getGiocatori'])
     ->middleware(EnsureGiocatoriSubsetIsValid::class)
@@ -24,7 +25,11 @@ Route::post('riponi', [GiocatoreController::class, 'riponiGiocatore'])
     ->middleware(EnsureGiocatoreIdIsValid::class)
     ->name('riponi');
 Route::post('acquista', [GiocatoreController::class, 'buyGiocatore'])
-    //->middleware([EnsureGiocatoreIdIsValid::class, EnsureAllenatoreIdIsValid::class])
+    ->middleware([
+        EnsureGiocatoreIdIsValid::class,
+        EnsureAllenatoreIdIsValid::class,
+        EnsurePrezzoIsValid::class
+    ])
     ->name('acquista');
 Route::post('svincola', [GiocatoreController::class, 'svincolaGiocatore'])->name('svincola');
 
