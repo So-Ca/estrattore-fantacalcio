@@ -35,3 +35,11 @@ Content-Type: application/json
     "id_allenatore": 1,
     "prezzo": 100
 }
+
+### Svincola giocatore
+POST http://localhost:8000/api/svincola
+Content-Type: application/json
+
+{
+    "id_giocatore": 4
+}

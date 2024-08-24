@@ -31,7 +31,9 @@ Route::post('acquista', [GiocatoreController::class, 'buyGiocatore'])
         EnsurePrezzoIsValid::class
     ])
     ->name('acquista');
-Route::post('svincola', [GiocatoreController::class, 'svincolaGiocatore'])->name('svincola');
+Route::post('svincola', [GiocatoreController::class, 'svincolaGiocatore'])
+    ->middleware(EnsureGiocatoreIdIsValid::class)
+    ->name('svincola');
 
 
 Route::get('/allenatori', [AllenatoreController::class, 'getAllenatori'])->name('allenatori');

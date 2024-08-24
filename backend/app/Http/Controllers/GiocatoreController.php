@@ -125,53 +125,38 @@ class GiocatoreController extends Controller
 
         return response()->json([
             'code' => 'bad_request',
-            'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' non è assegnato a nessun allenatore'
+            'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' ha già una squadra',
         ], 400);
     }
 
     function svincolaGiocatore(Request $request)
     {
 
-        if (!$request->has('id_giocatore')) {
-            return response()->json([
-                'code' => 'missing_param',
-                'message' => 'No \'id_giocatore\' provided'
-            ], 400);
-        } elseif ($request->input('id_giocatore') != (int) $request->input('id_giocatore')) {
-            return response()->json([
-                'code' => 'bad_param',
-                'message' => 'Param \'id_giocatore\' must be integer string'
-            ], 400);
-        }
         $giocatori = Storage::json($this->giocatori_path);
-        $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
-        if (empty($giocatore)) {
-            return response()->json([
-                'code' => 'not_found',
-                'message' => 'No player found with id ' . $request->input('id_giocatore')
-            ], 404);
-        } else {
-            foreach ($giocatori as $key => $giocatore) {
-                if ($giocatore['Id'] == $request->input('id_giocatore')) {
+
+        foreach ($giocatori as $key => $giocatore) {
+            if ($giocatore['Id'] == $request->input('id_giocatore') && isset($giocatore['AllenatoreId']) && isset($giocatore['Prezzo'])) {
+                $giocatore_risposta = $giocatori[$key];
+                if (isset($giocatori[$key]['Prezzo'])) {
+
+                    unset($giocatori[$key]['Prezzo']);
+                    unset($giocatori[$key]['AllenatoreId']);
+                    Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
+
                     $giocatore_risposta = $giocatori[$key];
-                    if (isset($giocatori[$key]['Prezzo'])) {
-                        unset($giocatori[$key]['Prezzo']);
-                        unset($giocatori[$key]['AllenatoreId']);
-                        Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
-                        $giocatore_risposta = $giocatori[$key];
-                        return response()->json([
-                            'code' => 'success',
-                            'message' => 'Player with id ' . $request->input('id_giocatore') . ' has been released',
-                            'player' => $giocatore_risposta
-                        ], 200);
-                    }
+                    return response()->json([
+                        'code' => 'success',
+                        'message' => 'Player with id ' . $request->input('id_giocatore') . ' has been released',
+                        'player' => $giocatore_risposta
+                    ], 200);
                 }
             }
-            return response()->json([
-                'code' => 'success',
-                'message' => 'Player with id ' . $request->input('id_giocatore') . ' is not from any team',
-                'player' => $giocatore_risposta
-            ], 200);
+            
         }
+
+        return response()->json([
+            'code' => 'bad_request',
+            'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' non appartiene a nessuna squadra'
+        ], 400);
     }
 }
