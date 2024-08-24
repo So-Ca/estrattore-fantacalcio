@@ -1,11 +1,11 @@
-import React, {useState} from "react";
-import listaGiocatori from "../../json/giocatori.json";
+import React, {useState, useEffect} from "react";
+// import listaGiocatori from "../../json/giocatori.json";
 import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
 
 const Section = () => {
 
-  const [nonEstratti, setNonEstratti] = useState(listaGiocatori);
+  const [nonEstratti, setNonEstratti] = useState([]);
   const [estratti, setEstratti] = useState([]);
   const [ultimoEstratto, setUltimoEstratto] = useState(null);
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
@@ -44,7 +44,20 @@ const Section = () => {
 
   const listaFinita = nonEstratti.length === 0;
 
-  console.log(squadre);
+// Fetch del listone
+  useEffect(()=>{
+    fetch("http://localhost:8000/api/giocatori")
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
+    .then(data => {
+      console.log("Dati Fetchati: ", data);
+      setNonEstratti(data);
+    })
+    .catch(error => console.error("Errore nel fetch: ", error));
+  }, []);
+
 
 // funzione per gestire l'input di aggiungi giocatore
   function gestisciInput(e){
@@ -213,6 +226,7 @@ const Section = () => {
 // funzione per mostrare tutti i giocatori estratti
   function toggleEstratti(){
     setEstrattiVisibile(!estrattiVisibile);
+    console.log("Inutile:", squadre);
   }
 
 
