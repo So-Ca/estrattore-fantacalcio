@@ -70,10 +70,9 @@ class GiocatoreController extends Controller
         }
 
         return response()->json([
-            'code' => 'success',
-            'message' => 'Player with id ' . $request->input('id_giocatore') . ' has already been drawn',
-            'player' => $giocatore_risposta
-        ], 200);
+            'code' => 'bad_request',
+            'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' è già stato estratto'
+        ], 400);
     }
 
     function riponiGiocatore(Request $request)
@@ -97,58 +96,18 @@ class GiocatoreController extends Controller
             }
         }
         return response()->json([
-            'code' => 'success',
-            'message' => 'Player with id ' . $request->input('id_giocatore') . ' is not drawn',
-            'player' => $giocatore_risposta
-        ], 200);
+            'code' => 'bad_request',
+            'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' non è stato estratto'
+        ], 400);
     }
 
     function buyGiocatore(Request $request)
     {
 
-        /* if (!$request->has('id_giocatore') || !$request->has('id_allenatore') || !$request->has('prezzo')) {
-            return response()->json([
-                'code' => 'missing_param',
-                'message' => 'One of \'id_giocatore\', \'id_allenatore\' and \'prezzo\' is missing'
-            ], 400);
-        } elseif ($request->input('id_giocatore') != (int) $request->input('id_giocatore')) {
-            return response()->json([
-                'code' => 'bad_param',
-                'message' => 'Param \'id_giocatore\' must be integer string'
-            ], 400);
-        } elseif ($request->input('id_allenatore') != (int) $request->input('id_allenatore')) {
-            return response()->json([
-                'code' => 'bad_param',
-                'message' => 'Param \'id_allenatore\' must be integer string'
-            ], 400);
-        } elseif ($request->input('prezzo') != (int) $request->input('prezzo')) {
-            return response()->json([
-                'code' => 'bad_param',
-                'message' => 'Param \'prezzo\' must be integer string'
-            ], 400);
-        } */
         $giocatori = Storage::json($this->giocatori_path);
-        //$giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
-        $allenatori = Storage::json($this->allenatori_path);
-        //$allenatore = array_values(array_filter($allenatori, fn($item) => $item['Id'] == $request->input('id_allenatore')));
-        /* if (empty($giocatore)) {
-            return response()->json([
-                'code' => 'not_found',
-                'message' => 'no player found with id ' . $request->input('id_giocatore')
-            ], 404);
-        } elseif (empty($allenatore)) {
-            return response()->json([
-                'code' => 'not_found',
-                'message' => 'no manager found with id ' . $request->input('id_allenatore')
-            ], 404);
-        } else *//* if ($request->input('prezzo') < 1) {
-            return response()->json([
-                'code' => 'invalid_price',
-                'message' => '\'prezzo\' must be greater than 0'
-            ], 404);
-        } else { */
+
         foreach ($giocatori as $key => $giocatore) {
-            if ($giocatore['Id'] == $request->input('id_giocatore')) {
+            if ($giocatore['Id'] == $request->input('id_giocatore') && !isset($giocatore['AllenatoreId']) && !isset($giocatore['Prezzo'])) {
                 $giocatore_risposta = $giocatori[$key];
 
                 $giocatori[$key]['AllenatoreId'] = $request->input('id_allenatore');
@@ -163,7 +122,11 @@ class GiocatoreController extends Controller
                 ], 200);
             }
         }
-        //}
+
+        return response()->json([
+            'code' => 'bad_request',
+            'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' non è assegnato a nessun allenatore'
+        ], 400);
     }
 
     function svincolaGiocatore(Request $request)
