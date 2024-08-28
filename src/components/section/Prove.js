@@ -44,20 +44,25 @@ const Section = () => {
 
   const listaFinita = nonEstratti.length === 0;
 
-// Fetch del listone
+// Fetch dei giocatori estratti e nonEstratti al caricamento della pagina
   useEffect(()=>{
-    fetch("http://localhost:8000/api/giocatori")
-    .then(response => {
-      console.log(response);
-      return response.json();
-    })
-    .then(data => {
-      console.log("Dati Fetchati: ", data);
-      setNonEstratti(data);
-    })
-    .catch(error => console.error("Errore nel fetch: ", error));
-  }, []);
+    const fetchData = async ()=>{
+      try{
+        const estrattiResponse = await fetch("http://localhost:8000/api/giocatori/estratti");
+        const estrattiData = await estrattiResponse.json();
+        setEstratti(estrattiData.estratti);
+        setUltimoEstratto(estrattiData.ultimoEstratto);
 
+        const nonEstrattiResponse = await fetch("http://localhost:8000/api/giocatori");
+        const nonEstrattiData = await nonEstrattiResponse.json();
+        setNonEstratti(nonEstrattiData);
+      } catch(error) {
+        console.error("Errore nel fetch dei giocatori: ", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
 // funzione per gestire l'input di aggiungi giocatore
   function gestisciInput(e){
@@ -74,9 +79,22 @@ const Section = () => {
         const giocatore = {
           Nome: nome,
           R: ruolo,
-        }
+        };
 
-        setGAssegnati(prevAssegnati => ( {...prevAssegnati, [nomeSquadra]: [...prevAssegnati[nomeSquadra] || [], giocatore] }));
+        fetch("http://localhost:8000/api/giocatori", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(giocatore)
+        })
+        .then(response => response.json())
+        .then(data => {
+          setGAssegnati(prevAssegnati => ({
+            ...prevAssegnati, 
+            [nomeSquadra]: [...prevAssegnati[nomeSquadra] || [], data]
+          }));
+        })
+        .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
+
         setNuovoGiocatore({
           numero: "",
           nome: "",
@@ -158,11 +176,19 @@ const Section = () => {
       const indiceCasuale = Math.floor( Math.random() * nonEstratti.length );
       const giocatoreEstratto = nonEstratti.splice(indiceCasuale, 1)[0];
 
-      setEstratti( [...estratti, giocatoreEstratto] );
-      setUltimoEstratto(giocatoreEstratto);
-      setNonEstratti(nonEstratti); 
-
-      console.log("Lista giocatori estratti fino ad ora: ", [...estratti, giocatoreEstratto]);
+      fetch("http://localhost:8000/api/giocatori/estratti", { // Salvare estratto nel db
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(giocatoreEstratto)
+      })
+      .then(response => response.json())
+      .then(data => {
+        setEstratti( [...estratti, giocatoreEstratto] );
+        setUltimoEstratto(giocatoreEstratto);
+        setNonEstratti(nonEstratti); 
+        console.log("Lista giocatori estratti fino ad ora: ", [...estratti, giocatoreEstratto]);
+      })
+      .catch(error => console.error("Ci sono problemi con l'estrazione: ", error));
     } else {
       console.log("Lista finita");
     }
@@ -201,12 +227,23 @@ const Section = () => {
 
 // funzione per modificare il prezzo
   function modificaQuotazione(e, giocatore){
-    const nuovoPrezzo = parseInt(e.target.value);
-    const aggiornaGiocatoriAssegnati = Object.keys(gAssegnati).reduce((acc, squadra) => {
-      const giocatori = gAssegnati[squadra].map( g => ( g === giocatore ? {...g, prezzo: nuovoPrezzo} : g));
-      return {...acc, [squadra]: giocatori};
-    }, []);
-    setGAssegnati(aggiornaGiocatoriAssegnati);
+    const nuovoPrezzo = parseInt(e.target.value) || 0;
+    const giocatoreAggiornato = {...giocatore, prezzo: nuovoPrezzo};
+
+    fetch(`http://localhost:8000/api/giocatori/${giocatore.id}`, {
+      method: "PUT",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(giocatoreAggiornato)
+    })
+    .then(response => response.json())
+    .then(data => {
+      const aggiornaGiocatoriAssegnati = Object.keys(gAssegnati).reduce((acc, squadra) => {
+        const giocatori = gAssegnati[squadra].map( g => ( g === giocatore ? {...g, prezzo: nuovoPrezzo} : g));
+        return {...acc, [squadra]: giocatori};
+      }, []);
+      setGAssegnati(aggiornaGiocatoriAssegnati);
+    })
+    .catch(error => console.error("Ci sono problemi con l'aggiornamento del prezzo: ", error))
   }
 
 // Gestione della pressione di Enter
