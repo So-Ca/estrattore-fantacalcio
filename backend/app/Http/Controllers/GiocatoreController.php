@@ -67,6 +67,14 @@ class GiocatoreController extends Controller
     {
 
         $giocatori = Storage::json($this->giocatori_path);
+
+        $giocatori_estratti = array_filter($giocatori, fn($item) => isset($item['Estratto']));
+        if(empty($giocatori_estratti)) {
+            $order = 1;
+        } else {
+            $order = max(array_column($giocatori_estratti, 'Order')) + 1;
+        }
+
         $giocatore = array_values(array_filter($giocatori, fn($item) => $item['Id'] == $request->input('id_giocatore')));
 
         foreach ($giocatori as $key => $giocatore) {
@@ -74,6 +82,7 @@ class GiocatoreController extends Controller
                 $giocatore_risposta = $giocatori[$key];
                 if (!isset($giocatori[$key]['Estratto'])) {
                     $giocatori[$key]['Estratto'] = true;
+                    $giocatori[$key]['Order'] = $order;
                     $giocatore_risposta = $giocatori[$key];
                     Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
 
@@ -111,6 +120,7 @@ class GiocatoreController extends Controller
                 $giocatore_risposta = $giocatori[$key];
                 if (isset($giocatori[$key]['Estratto'])) {
                     unset($giocatori[$key]['Estratto']);
+                    unset($giocatori[$key]['Order']);
                     Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
                     $giocatore_risposta = $giocatori[$key];
                     return response()->json([

@@ -49,12 +49,30 @@ const Section = () => {
     const fetchData = async () => {
       try {
         const estrattiResponse = await fetch("http://localhost:8000/api/giocatori/estratti");
-        const estrattiData = await estrattiResponse.json();
-        setEstratti(estrattiData.estratti);
-        setUltimoEstratto(estrattiData.ultimoEstratto);
+        let estrattiData = await estrattiResponse.json();
+        
+        if(!estrattiData.length) {
+          setUltimoEstratto(null);
+        } else {
+          // dal più vecchio al più recente
+          estrattiData = estrattiData.sort(function(a, b) {
+            if(a.Order > b.Order) {
+              return 1;
+            } else if(a.Order < b.Order) {
+              return -1;
+            } else {
+              return 0;
+            }
+          });
+          setUltimoEstratto(estrattiData[estrattiData.length - 1]);
+        }
+
+        setEstratti(estrattiData);
+        
 
         const nonEstrattiResponse = await fetch("http://localhost:8000/api/giocatori/non-estratti");
         const nonEstrattiData = await nonEstrattiResponse.json();
+
         setNonEstratti(nonEstrattiData);
       } catch (error) {
         console.error("Errore nel fetch dei giocatori: ", error);
