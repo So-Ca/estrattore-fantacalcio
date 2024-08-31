@@ -53,7 +53,7 @@ const Section = () => {
         setEstratti(estrattiData.estratti);
         setUltimoEstratto(estrattiData.ultimoEstratto);
 
-        const nonEstrattiResponse = await fetch("http://localhost:8000/api/giocatori");
+        const nonEstrattiResponse = await fetch("http://localhost:8000/api/giocatori/non-estratti");
         const nonEstrattiData = await nonEstrattiResponse.json();
         setNonEstratti(nonEstrattiData);
       } catch (error) {
