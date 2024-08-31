@@ -10,29 +10,29 @@ const Section = () => {
   const [ultimoEstratto, setUltimoEstratto] = useState(null);
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
   const [squadre, setSquadre] = useState([
-    { nome: "squadra1", giocatori: [] },
-    { nome: "squadra2", giocatori: [] },
-    { nome: "squadra3", giocatori: [] },
-    { nome: "squadra4", giocatori: [] },
-    { nome: "squadra5", giocatori: [] },
-    { nome: "squadra6", giocatori: [] },
-    { nome: "squadra7", giocatori: [] },
-    { nome: "squadra8", giocatori: [] },
-    { nome: "squadra9", giocatori: [] },
-    { nome: "squadra10", giocatori: [] }
+    { nome: "Muppet", giocatori: [] },
+    { nome: "Don Abbondio", giocatori: [] },
+    { nome: "Venti2", giocatori: [] },
+    { nome: "MasterChef United", giocatori: [] },
+    { nome: "Piretta Leotta", giocatori: [] },
+    { nome: "Scarsenal", giocatori: [] },
+    { nome: "Real Madrink", giocatori: [] },
+    { nome: "The Best-Emmia", giocatori: [] },
+    { nome: "ancoranonloso", giocatori: [] },
+    { nome: "New Devils", giocatori: [] }
   ]);
   const [gAssegnati, setGAssegnati] = useState(
     {
-      squadra1: [],
-      squadra2: [],
-      squadra3: [],
-      squadra4: [],
-      squadra5: [],
-      squadra6: [],
-      squadra7: [],
-      squadra8: [],
-      squadra9: [],
-      squadra10: []
+      "Muppet": [],
+      "Don Abbondio": [],
+      "Venti2": [],
+      "MasterChef United": [],
+      "Piretta Leotta": [],
+      "Scarsenal": [],
+      "Real Madrink": [],
+      "The Best-Emmia": [],
+      "ancoranonloso": [],
+      "New Devils": []
     }
   );
   const [nuovoGiocatore, setNuovoGiocatore] = useState({
@@ -74,6 +74,10 @@ const Section = () => {
         const nonEstrattiData = await nonEstrattiResponse.json();
 
         setNonEstratti(nonEstrattiData);
+
+        const allenatoriResponse = await fetch("http://localhost:8000/api/allenatori");
+        const allenatori = await allenatoriResponse.json();
+        console.log(allenatori);
       } catch (error) {
         console.error("Errore nel fetch dei giocatori: ", error);
       }
@@ -230,6 +234,7 @@ const Section = () => {
     return function (event) {
 
       if (ultimoEstratto) {
+        console.log(gAssegnati);
         const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Nome === ultimoEstratto.Nome));
 
         if (!giaAssegnato) {
