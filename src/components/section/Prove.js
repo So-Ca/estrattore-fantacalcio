@@ -10,29 +10,29 @@ const Section = () => {
   const [ultimoEstratto, setUltimoEstratto] = useState(null);
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
   const [squadre, setSquadre] = useState([
-    { nome: "Muppet", giocatori: [] },
-    { nome: "Don Abbondio", giocatori: [] },
-    { nome: "Venti2", giocatori: [] },
-    { nome: "MasterChef United", giocatori: [] },
-    { nome: "Piretta Leotta", giocatori: [] },
-    { nome: "Scarsenal", giocatori: [] },
-    { nome: "Real Madrink", giocatori: [] },
-    { nome: "The Best-Emmia", giocatori: [] },
-    { nome: "ancoranonloso", giocatori: [] },
-    { nome: "New Devils", giocatori: [] }
+    { nome: "1", giocatori: [] },
+    { nome: "2", giocatori: [] },
+    { nome: "3", giocatori: [] },
+    { nome: "4", giocatori: [] },
+    { nome: "5", giocatori: [] },
+    { nome: "6", giocatori: [] },
+    { nome: "7", giocatori: [] },
+    { nome: "8", giocatori: [] },
+    { nome: "9", giocatori: [] },
+    { nome: "10", giocatori: [] }
   ]);
   const [gAssegnati, setGAssegnati] = useState(
     {
-      "Muppet": [],
-      "Don Abbondio": [],
-      "Venti2": [],
-      "MasterChef United": [],
-      "Piretta Leotta": [],
-      "Scarsenal": [],
-      "Real Madrink": [],
-      "The Best-Emmia": [],
-      "ancoranonloso": [],
-      "New Devils": []
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": [],
+      "8": [],
+      "9": [],
+      "10": []
     }
   );
   const [nuovoGiocatore, setNuovoGiocatore] = useState({
@@ -79,10 +79,18 @@ const Section = () => {
         const allenatori = await allenatoriResponse.json();
 
         let assegnati = {};
+        console.log(estrattiData);
         allenatori.forEach(allenatore => {
-          assegnati[allenatore.Squadra] = estrattiData.filter(giocatore => giocatore.AllenatoreId === allenatore.Id);
+          console.log(allenatore.Id);
+
+          assegnati[allenatore.Id] = estrattiData.filter(giocatore => {
+            console.log(giocatore.AllenatoreId === allenatore.Id);
+            return giocatore.AllenatoreId === allenatore.Id
+          });
         });
+        console.log(assegnati)
         setGAssegnati(assegnati);
+        console.log(gAssegnati)
       } catch (error) {
         console.error("Errore nel fetch dei giocatori: ", error);
       }
@@ -142,22 +150,23 @@ const Section = () => {
 
   // Componente Allenatori
   const allenatori = allenatoriData.map(allenatore => {
-    const nomeSquadra = allenatore.Squadra;
-    const giocatoriAssegnati = gAssegnati[nomeSquadra] || [];
-    const totaleSpeso = calcolaTotaleSpeso(nomeSquadra);
+    const idSquadra = allenatore.Id;
+    const giocatoriAssegnati = gAssegnati[idSquadra] || [];
+    const totaleSpeso = calcolaTotaleSpeso(idSquadra);
     const pochiCreditiRimasti = totaleSpeso > 500 ? style["crediti-esauriti"] : totaleSpeso === 500 ? style["cinquecento"] : totaleSpeso >= 450 ? style["crediti-bassi"] : style["crediti"];
     const sforato = totaleSpeso > 500;
-
+    
     return (
       <div className={style["squadra-container"]} key={allenatore.Id}>
         <h3 className={style["nome-squadra"]}>{allenatore.Squadra}</h3>
         {sforato && <span className={style["sforato"]}>Hai Sforato Testa di Cazzo!</span>}
         <p className={`${style["crediti"]} ${pochiCreditiRimasti}`}>Crediti Spesi: {totaleSpeso}</p>
         <h3 className={style["nome-allenatore"]}>Allenatore: <b>{allenatore.Nome}</b></h3>
-        <button className={style["btn-assegna-giocatore"]} onClick={assegnaGiocatore(allenatore.Squadra)}>Assegna a {allenatore.Nome}</button>
+        <button className={style["btn-assegna-giocatore"]} onClick={assegnaGiocatore(allenatore.Id)}>Assegna a {allenatore.Nome}</button>
         <div className={style["giocatori-acquistati"]}>
           <ol className={style["lista-squadra"]}>
-            {giocatoriAssegnati.map((giocatore, index) => (
+            {giocatoriAssegnati.map((giocatore, index) =>  (
+              
               <li key={index}>
                 {giocatore.Nome} -&nbsp;
                 {giocatore.R} -&nbsp;
@@ -167,8 +176,8 @@ const Section = () => {
                   placeholder={giocatore["Qt.A"]}
                   value={giocatore.prezzo}
                   onChange={(e) => modificaQuotazione(e, giocatore)}
-                  onKeyPress={(e) => gestioneInvio(e, giocatore)}
-                  onBlur={(e) => gestioneInvio(e, giocatore)}
+                  onKeyPress={(e) => gestioneInvio(e, giocatore, allenatore)}
+                  onBlur={(e) => gestioneInvio(e, giocatore, allenatore)}
                 />
               </li>
             ))}
@@ -190,7 +199,7 @@ const Section = () => {
               value={nuovoGiocatore.ruolo}
               onChange={gestisciInput}
               placeholder="Ruolo" />
-            <button className={style["btn-aggiungi-manualmente"]} onClick={aggiungiManualmente(nomeSquadra)}>Aggiungi</button>
+            <button className={style["btn-aggiungi-manualmente"]} onClick={aggiungiManualmente(idSquadra)}>Aggiungi</button>
           </div>
         }
       </div>
@@ -235,7 +244,7 @@ const Section = () => {
   }
 
   // Funzione per assegnare l'ultimo estratto ad una squadra
-  function assegnaGiocatore(squadra) {
+  function assegnaGiocatore(allenatoreId) {
     return function (event) {
 
       if (ultimoEstratto) {
@@ -244,17 +253,18 @@ const Section = () => {
           // const prezzoGiocatore = parseInt(event.target.value, 10);
 
           setSquadre((prevSquadre) => prevSquadre.map((s) =>
-            s.nome === squadra ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
+            s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
           ));
 
+          
           setGAssegnati(prevAssegnati => {
-            const nuovaSquadra = Array.isArray(prevAssegnati[squadra]) ? prevAssegnati[squadra] : [];
-            return { ...prevAssegnati, [squadra]: [...nuovaSquadra, ultimoEstratto] };
+            const nuovaSquadra = Array.isArray(prevAssegnati[allenatoreId]) ? prevAssegnati[allenatoreId] : [];
+            return { ...prevAssegnati, [allenatoreId]: [...nuovaSquadra, ultimoEstratto] };
           });
 
           setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
 
-          console.log(`Giocatore assegnato a ${squadra}: `, ultimoEstratto);
+          console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
         } else {
           alert(`😡 Ehi Ehi Non Barare Infame! 😡\nQuesto Giocatore è già stato assegnato a ${Object.keys(gAssegnati).find(s => gAssegnati[s].some(g => g.Nome === ultimoEstratto.Nome))}`);
         }
@@ -286,7 +296,7 @@ const Section = () => {
   }
 
   // Gestione della pressione di Enter
-  function gestioneInvio(e, giocatore) {
+  function gestioneInvio(e, giocatore, allenatore) {
     if ((e.type === "keypress" && e.key === "Enter") || e.type === "blur") {
       if (!e.target.value) {
         e.target.value = e.target.placeholder;
@@ -296,6 +306,24 @@ const Section = () => {
       const spanE = document.createElement("span");
       spanE.textContent = giocatore.prezzo;
       e.target.parentNode.replaceChild(spanE, e.target);
+
+      fetch("http://localhost:8000/api/acquista", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id_giocatore: giocatore.Id,
+          id_allenatore: allenatore.Id,
+          prezzo : 12
+        })
+      })
+        .then(response => response.json())
+        .then(data => {
+          setGAssegnati(prevAssegnati => ({
+            ...prevAssegnati,
+            [data.AllenatoreId]: [...prevAssegnati[data.AllenatoreId] || [], data.giocatore]
+          }));
+        })
+        .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error)) 
     }
   }
 
