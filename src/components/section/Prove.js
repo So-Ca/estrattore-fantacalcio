@@ -77,7 +77,12 @@ const Section = () => {
 
         const allenatoriResponse = await fetch("http://localhost:8000/api/allenatori");
         const allenatori = await allenatoriResponse.json();
-        console.log(allenatori);
+
+        let assegnati = {};
+        allenatori.forEach(allenatore => {
+          assegnati[allenatore.Squadra] = estrattiData.filter(giocatore => giocatore.AllenatoreId === allenatore.Id);
+        });
+        setGAssegnati(assegnati);
       } catch (error) {
         console.error("Errore nel fetch dei giocatori: ", error);
       }
@@ -234,9 +239,7 @@ const Section = () => {
     return function (event) {
 
       if (ultimoEstratto) {
-        console.log(gAssegnati);
         const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Nome === ultimoEstratto.Nome));
-
         if (!giaAssegnato) {
           // const prezzoGiocatore = parseInt(event.target.value, 10);
 
