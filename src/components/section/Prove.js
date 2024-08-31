@@ -185,22 +185,20 @@ const Section = () => {
           id_giocatore: giocatoreEstratto.Id
         })
       })
-        /* fetch("http://localhost:8000/api/giocatori/estratti", { // Salvare estratto nel db
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify(giocatoreEstratto)
-        }) */
         .then(response => response.json())
         .then(data => {
-          console.log(data);
-          /* setEstratti( [...estratti, giocatoreEstratto] );
           setUltimoEstratto(giocatoreEstratto);
-          setNonEstratti(nonEstratti);  */
-          //console.log("Lista giocatori estratti fino ad ora: ", [...estratti, giocatoreEstratto]);
           fetch("http://localhost:8000/api/giocatori/estratti")
             .then(response => response.json())
             .then(data => {
+              setEstratti(data);
               console.log("Lista giocatori estratti fino ad ora: ", data);
+            });
+          fetch("http://localhost:8000/api/giocatori/non-estratti")
+            .then(response => response.json())
+            .then(data => {
+              setNonEstratti(data);
+
             })
         })
         .catch(error => console.error("Ci sono problemi con l'estrazione: ", error));
@@ -245,7 +243,7 @@ const Section = () => {
     const nuovoPrezzo = parseInt(e.target.value) || 0;
     const giocatoreAggiornato = { ...giocatore, prezzo: nuovoPrezzo };
 
-    fetch(`http://localhost:8000/api/giocatori/${giocatore.id}`, {
+    /* fetch(`http://localhost:8000/api/giocatori/${giocatore.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(giocatoreAggiornato)
@@ -258,7 +256,7 @@ const Section = () => {
         }, []);
         setGAssegnati(aggiornaGiocatoriAssegnati);
       })
-      .catch(error => console.error("Ci sono problemi con l'aggiornamento del prezzo: ", error))
+      .catch(error => console.error("Ci sono problemi con l'aggiornamento del prezzo: ", error)) */
   }
 
   // Gestione della pressione di Enter
