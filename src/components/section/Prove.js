@@ -159,6 +159,7 @@ const Section = () => {
     
     return (
       <Allenatore
+        key={allenatore.Id}
         allenatore={allenatore}
         style={style}
         idSquadra={idSquadra}
