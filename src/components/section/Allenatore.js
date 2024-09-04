@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 export default function Allenatore(props) {
 
     const [puntata, setPuntata] = useState(props.ultimoEstratto['Qt.A']);
+    console.log(puntata)
 
     return (<div className={props.style["squadra-container"]} key={props.allenatore.Id}>
         <h3 className={props.style["nome-squadra"]}>{props.allenatore.Squadra}</h3>

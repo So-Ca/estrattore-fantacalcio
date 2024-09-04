@@ -1,3789 +1,3733 @@
 [
-    {
-      "Id": 572,
-      "R": "Por",
-      "Nome": "Meret",
-      "Squadra": "Napoli",
-      "Qt.A": 17
-    },
-    {
-      "Id": 4312,
-      "R": "Por",
-      "Nome": "Maignan",
-      "Squadra": "Milan",
-      "Qt.A": 17
-    },
-    {
-      "Id": 453,
-      "R": "Por",
-      "Nome": "Szczesny",
-      "Squadra": "Juventus",
-      "Qt.A": 16
-    },
-    {
-      "Id": 2428,
-      "R": "Por",
-      "Nome": "Sommer",
-      "Squadra": "Inter",
-      "Qt.A": 15
-    },
-    {
-      "Id": 2814,
-      "R": "Por",
-      "Nome": "Provedel",
-      "Squadra": "Lazio",
-      "Qt.A": 15
-    },
-    {
-      "Id": 4270,
-      "R": "Por",
-      "Nome": "Rui Patricio",
-      "Squadra": "Roma",
-      "Qt.A": 14
-    },
-    {
-      "Id": 5876,
-      "R": "Por",
-      "Nome": "Di Gregorio",
-      "Squadra": "Monza",
-      "Qt.A": 12
-    },
-    {
-      "Id": 2170,
-      "R": "Por",
-      "Nome": "Milinkovic-Savic V.",
-      "Squadra": "Torino",
-      "Qt.A": 11
-    },
-    {
-      "Id": 4431,
-      "R": "Por",
-      "Nome": "Carnesecchi",
-      "Squadra": "Atalanta",
-      "Qt.A": 11
-    },
-    {
-      "Id": 133,
-      "R": "Por",
-      "Nome": "Skorupski",
-      "Squadra": "Bologna",
-      "Qt.A": 10
-    },
-    {
-      "Id": 2815,
-      "R": "Por",
-      "Nome": "Terracciano",
-      "Squadra": "Fiorentina",
-      "Qt.A": 10
-    },
-    {
-      "Id": 3,
-      "R": "Por",
-      "Nome": "Radunovic",
-      "Squadra": "Cagliari",
-      "Qt.A": 9
-    },
-    {
-      "Id": 2134,
-      "R": "Por",
-      "Nome": "Falcone",
-      "Squadra": "Lecce",
-      "Qt.A": 9
-    },
-    {
-      "Id": 6120,
-      "R": "Por",
-      "Nome": "Ochoa",
-      "Squadra": "Salernitana",
-      "Qt.A": 9
-    },
-    {
-      "Id": 2211,
-      "R": "Por",
-      "Nome": "Silvestri",
-      "Squadra": "Udinese",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4957,
-      "R": "Por",
-      "Nome": "Montipo'",
-      "Squadra": "Verona",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4360,
-      "R": "Por",
-      "Nome": "Caprile",
-      "Squadra": "Empoli",
-      "Qt.A": 7
-    },
-    {
-      "Id": 5116,
-      "R": "Por",
-      "Nome": "Martinez Jo.",
-      "Squadra": "Genoa",
-      "Qt.A": 7
-    },
-    {
-      "Id": 509,
-      "R": "Por",
-      "Nome": "Consigli",
-      "Squadra": "Sassuolo",
-      "Qt.A": 5
-    },
-    {
-      "Id": 2178,
-      "R": "Por",
-      "Nome": "Cragno",
-      "Squadra": "Sassuolo",
-      "Qt.A": 4
-    },
-    {
-      "Id": 2792,
-      "R": "Por",
-      "Nome": "Musso",
-      "Squadra": "Atalanta",
-      "Qt.A": 4
-    },
-    {
-      "Id": 4867,
-      "R": "Por",
-      "Nome": "Turati",
-      "Squadra": "Frosinone",
-      "Qt.A": 4
-    },
-    {
-      "Id": 6403,
-      "R": "Por",
-      "Nome": "Christensen O.",
-      "Squadra": "Fiorentina",
-      "Qt.A": 3
-    },
-    {
-      "Id": 673,
-      "R": "Por",
-      "Nome": "Perisan",
-      "Squadra": "Empoli",
-      "Qt.A": 2
-    },
-    {
-      "Id": 4,
-      "R": "Por",
-      "Nome": "Sportiello",
-      "Squadra": "Milan",
-      "Qt.A": 1
-    },
-    {
-      "Id": 41,
-      "R": "Por",
-      "Nome": "Mirante",
-      "Squadra": "Milan",
-      "Qt.A": 1
-    },
-    {
-      "Id": 159,
-      "R": "Por",
-      "Nome": "Sepe",
-      "Squadra": "Lazio",
-      "Qt.A": 1
-    },
-    {
-      "Id": 188,
-      "R": "Por",
-      "Nome": "Leali",
-      "Squadra": "Genoa",
-      "Qt.A": 1
-    },
-    {
-      "Id": 217,
-      "R": "Por",
-      "Nome": "Lamanna",
-      "Squadra": "Monza",
-      "Qt.A": 1
-    },
-    {
-      "Id": 218,
-      "R": "Por",
-      "Nome": "Perin",
-      "Squadra": "Juventus",
-      "Qt.A": 1
-    },
-    {
-      "Id": 219,
-      "R": "Por",
-      "Nome": "Sommariva",
-      "Squadra": "Genoa",
-      "Qt.A": 1
-    },
-    {
-      "Id": 510,
-      "R": "Por",
-      "Nome": "Pegolo",
-      "Squadra": "Sassuolo",
-      "Qt.A": 1
-    },
-    {
-      "Id": 511,
-      "R": "Por",
-      "Nome": "Perilli",
-      "Squadra": "Verona",
-      "Qt.A": 1
-    },
-    {
-      "Id": 543,
-      "R": "Por",
-      "Nome": "Padelli",
-      "Squadra": "Udinese",
-      "Qt.A": 1
-    },
-    {
-      "Id": 574,
-      "R": "Por",
-      "Nome": "Scuffet",
-      "Squadra": "Cagliari",
-      "Qt.A": 1
-    },
-    {
-      "Id": 610,
-      "R": "Por",
-      "Nome": "Gollini",
-      "Squadra": "Napoli",
-      "Qt.A": 1
-    },
-    {
-      "Id": 761,
-      "R": "Por",
-      "Nome": "Audero",
-      "Squadra": "Inter",
-      "Qt.A": 1
-    },
-    {
-      "Id": 1926,
-      "R": "Por",
-      "Nome": "Di Gennaro",
-      "Squadra": "Inter",
-      "Qt.A": 1
-    },
-    {
-      "Id": 1930,
-      "R": "Por",
-      "Nome": "Pinsoglio",
-      "Squadra": "Juventus",
-      "Qt.A": 1
-    },
-    {
-      "Id": 1946,
-      "R": "Por",
-      "Nome": "Aresti",
-      "Squadra": "Cagliari",
-      "Qt.A": 1
-    },
-    {
-      "Id": 1947,
-      "R": "Por",
-      "Nome": "Fiorillo",
-      "Squadra": "Salernitana",
-      "Qt.A": 1
-    },
-    {
-      "Id": 2294,
-      "R": "Por",
-      "Nome": "Cerofolini",
-      "Squadra": "Frosinone",
-      "Qt.A": 1
-    },
-    {
-      "Id": 2297,
-      "R": "Por",
-      "Nome": "Rossi F.",
-      "Squadra": "Atalanta",
-      "Qt.A": 1
-    },
-    {
-      "Id": 2338,
-      "R": "Por",
-      "Nome": "Costil",
-      "Squadra": "Salernitana",
-      "Qt.A": 1
-    },
-    {
-      "Id": 2722,
-      "R": "Por",
-      "Nome": "Ravaglia F.",
-      "Squadra": "Bologna",
-      "Qt.A": 1
-    },
-    {
-      "Id": 2845,
-      "R": "Por",
-      "Nome": "Contini",
-      "Squadra": "Napoli",
-      "Qt.A": 1
-    },
-    {
-      "Id": 4351,
-      "R": "Por",
-      "Nome": "Brancolini",
-      "Squadra": "Lecce",
-      "Qt.A": 1
-    },
-    {
-      "Id": 4491,
-      "R": "Por",
-      "Nome": "Berardi A.",
-      "Squadra": "Verona",
-      "Qt.A": 1
-    },
-    {
-      "Id": 4525,
-      "R": "Por",
-      "Nome": "Gemello",
-      "Squadra": "Torino",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5304,
-      "R": "Por",
-      "Nome": "Boer",
-      "Squadra": "Roma",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5502,
-      "R": "Por",
-      "Nome": "Adamonis",
-      "Squadra": "Lazio",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5707,
-      "R": "Por",
-      "Nome": "Piana",
-      "Squadra": "Udinese",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5822,
-      "R": "Por",
-      "Nome": "Bagnolini",
-      "Squadra": "Bologna",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5841,
-      "R": "Por",
-      "Nome": "Svilar",
-      "Squadra": "Roma",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5853,
-      "R": "Por",
-      "Nome": "Sorrentino A.",
-      "Squadra": "Monza",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6184,
-      "R": "Por",
-      "Nome": "Martinelli T.",
-      "Squadra": "Fiorentina",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6210,
-      "R": "Por",
-      "Nome": "Popa",
-      "Squadra": "Torino",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6234,
-      "R": "Por",
-      "Nome": "Stubljar",
-      "Squadra": "Empoli",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6255,
-      "R": "Por",
-      "Nome": "Gori",
-      "Squadra": "Monza",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6406,
-      "R": "Por",
-      "Nome": "Borbei",
-      "Squadra": "Lecce",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6415,
-      "R": "Por",
-      "Nome": "Palmisani",
-      "Squadra": "Frosinone",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6462,
-      "R": "Por",
-      "Nome": "Okoye",
-      "Squadra": "Udinese",
-      "Qt.A": 1
-    },
-    {
-      "Id": 254,
-      "R": "E",
-      "Nome": "Dimarco",
-      "Squadra": "Inter",
-      "Qt.A": 19
-    },
-    {
-      "Id": 2816,
-      "R": "Dd;E",
-      "Nome": "Di Lorenzo",
-      "Squadra": "Napoli",
-      "Qt.A": 19
-    },
-    {
-      "Id": 4292,
-      "R": "Ds;E",
-      "Nome": "Hernandez T.",
-      "Squadra": "Milan",
-      "Qt.A": 17
-    },
-    {
-      "Id": 5877,
-      "R": "E",
-      "Nome": "Carlos Augusto",
-      "Squadra": "Inter",
-      "Qt.A": 17
-    },
-    {
-      "Id": 6066,
-      "R": "Dd;Dc",
-      "Nome": "Posch",
-      "Squadra": "Bologna",
-      "Qt.A": 16
-    },
-    {
-      "Id": 554,
-      "R": "E",
-      "Nome": "Zappacosta",
-      "Squadra": "Atalanta",
-      "Qt.A": 15
-    },
-    {
-      "Id": 4237,
-      "R": "Dd;Ds;Dc",
-      "Nome": "Danilo",
-      "Squadra": "Juventus",
-      "Qt.A": 15
-    },
-    {
-      "Id": 4245,
-      "R": "Dc",
-      "Nome": "Smalling",
-      "Squadra": "Roma",
-      "Qt.A": 15
-    },
-    {
-      "Id": 4409,
-      "R": "Dc",
-      "Nome": "Rrahmani",
-      "Squadra": "Napoli",
-      "Qt.A": 14
-    },
-    {
-      "Id": 6041,
-      "R": "Dc",
-      "Nome": "Schuurs",
-      "Squadra": "Torino",
-      "Qt.A": 14
-    },
-    {
-      "Id": 460,
-      "R": "Dc",
-      "Nome": "Romagnoli",
-      "Squadra": "Lazio",
-      "Qt.A": 13
-    },
-    {
-      "Id": 2120,
-      "R": "Dc",
-      "Nome": "Bastoni",
-      "Squadra": "Inter",
-      "Qt.A": 13
-    },
-    {
-      "Id": 2788,
-      "R": "Dc",
-      "Nome": "Bremer",
-      "Squadra": "Juventus",
-      "Qt.A": 13
-    },
-    {
-      "Id": 4751,
-      "R": "Dc",
-      "Nome": "Tomori",
-      "Squadra": "Milan",
-      "Qt.A": 13
-    },
-    {
-      "Id": 5513,
-      "R": "E",
-      "Nome": "Dumfries",
-      "Squadra": "Inter",
-      "Qt.A": 13
-    },
-    {
-      "Id": 5067,
-      "R": "E",
-      "Nome": "Bakker",
-      "Squadra": "Atalanta",
-      "Qt.A": 12
-    },
-    {
-      "Id": 5481,
-      "R": "Dd;Ds;E",
-      "Nome": "Mazzocchi",
-      "Squadra": "Salernitana",
-      "Qt.A": 12
-    },
-    {
-      "Id": 252,
-      "R": "Ds;E",
-      "Nome": "Biraghi",
-      "Squadra": "Fiorentina",
-      "Qt.A": 11
-    },
-    {
-      "Id": 513,
-      "R": "Dc",
-      "Nome": "Acerbi",
-      "Squadra": "Inter",
-      "Qt.A": 11
-    },
-    {
-      "Id": 2296,
-      "R": "Dc",
-      "Nome": "Mancini",
-      "Squadra": "Roma",
-      "Qt.A": 11
-    },
-    {
-      "Id": 2525,
-      "R": "Dd;Dc",
-      "Nome": "Darmian",
-      "Squadra": "Inter",
-      "Qt.A": 11
-    },
-    {
-      "Id": 2724,
-      "R": "Dc",
-      "Nome": "Buongiorno",
-      "Squadra": "Torino",
-      "Qt.A": 11
-    },
-    {
-      "Id": 5480,
-      "R": "Dd;E",
-      "Nome": "Ebuehi",
-      "Squadra": "Empoli",
-      "Qt.A": 11
-    },
-    {
-      "Id": 5851,
-      "R": "Ds;E",
-      "Nome": "Doig",
-      "Squadra": "Verona",
-      "Qt.A": 11
-    },
-    {
-      "Id": 142,
-      "R": "Ds;E",
-      "Nome": "Mario Rui",
-      "Squadra": "Napoli",
-      "Qt.A": 10
-    },
-    {
-      "Id": 1852,
-      "R": "E",
-      "Nome": "Spinazzola",
-      "Squadra": "Roma",
-      "Qt.A": 10
-    },
-    {
-      "Id": 2164,
-      "R": "Dc",
-      "Nome": "Milenkovic",
-      "Squadra": "Fiorentina",
-      "Qt.A": 10
-    },
-    {
-      "Id": 5498,
-      "R": "Dc",
-      "Nome": "Casale",
-      "Squadra": "Lazio",
-      "Qt.A": 10
-    },
-    {
-      "Id": 5835,
-      "R": "Dd;Dc",
-      "Nome": "Baschirotto",
-      "Squadra": "Lecce",
-      "Qt.A": 10
-    },
-    {
-      "Id": 6055,
-      "R": "Dc",
-      "Nome": "Thiaw",
-      "Squadra": "Milan",
-      "Qt.A": 10
-    },
-    {
-      "Id": 357,
-      "R": "Dd;E",
-      "Nome": "Calabria",
-      "Squadra": "Milan",
-      "Qt.A": 9
-    },
-    {
-      "Id": 581,
-      "R": "Dd;E",
-      "Nome": "Faraoni",
-      "Squadra": "Verona",
-      "Qt.A": 9
-    },
-    {
-      "Id": 695,
-      "R": "Dc",
-      "Nome": "Toloi",
-      "Squadra": "Atalanta",
-      "Qt.A": 9
-    },
-    {
-      "Id": 697,
-      "R": "E",
-      "Nome": "Cuadrado",
-      "Squadra": "Inter",
-      "Qt.A": 9
-    },
-    {
-      "Id": 2640,
-      "R": "Ds;Dc",
-      "Nome": "Kolasinac",
-      "Squadra": "Atalanta",
-      "Qt.A": 9
-    },
-    {
-      "Id": 4317,
-      "R": "Dc",
-      "Nome": "N'dicka",
-      "Squadra": "Roma",
-      "Qt.A": 9
-    },
-    {
-      "Id": 4530,
-      "R": "Ds;E",
-      "Nome": "Kyriakopoulos",
-      "Squadra": "Monza",
-      "Qt.A": 9
-    },
-    {
-      "Id": 4904,
-      "R": "Dc",
-      "Nome": "Mari'",
-      "Squadra": "Monza",
-      "Qt.A": 9
-    },
-    {
-      "Id": 5526,
-      "R": "Dc",
-      "Nome": "Scalvini",
-      "Squadra": "Atalanta",
-      "Qt.A": 9
-    },
-    {
-      "Id": 5677,
-      "R": "Dc",
-      "Nome": "Perez N.",
-      "Squadra": "Udinese",
-      "Qt.A": 9
-    },
-    {
-      "Id": 5847,
-      "R": "Dc",
-      "Nome": "Bijol",
-      "Squadra": "Udinese",
-      "Qt.A": 9
-    },
-    {
-      "Id": 6220,
-      "R": "Dd;E",
-      "Nome": "Kristensen",
-      "Squadra": "Roma",
-      "Qt.A": 9
-    },
-    {
-      "Id": 6396,
-      "R": "Dc",
-      "Nome": "Natan",
-      "Squadra": "Napoli",
-      "Qt.A": 9
-    },
-    {
-      "Id": 226,
-      "R": "Dc",
-      "Nome": "Izzo",
-      "Squadra": "Monza",
-      "Qt.A": 8
-    },
-    {
-      "Id": 393,
-      "R": "Dc",
-      "Nome": "Luperto",
-      "Squadra": "Empoli",
-      "Qt.A": 8
-    },
-    {
-      "Id": 2169,
-      "R": "Ds;Dc",
-      "Nome": "Rodriguez R.",
-      "Squadra": "Torino",
-      "Qt.A": 8
-    },
-    {
-      "Id": 2593,
-      "R": "Ds;E",
-      "Nome": "Martin",
-      "Squadra": "Genoa",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4210,
-      "R": "Dc",
-      "Nome": "Mina",
-      "Squadra": "Fiorentina",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4887,
-      "R": "Dd;E",
-      "Nome": "Bellanova",
-      "Squadra": "Torino",
-      "Qt.A": 8
-    },
-    {
-      "Id": 5449,
-      "R": "Ds;E",
-      "Nome": "Parisi",
-      "Squadra": "Fiorentina",
-      "Qt.A": 8
-    },
-    {
-      "Id": 5532,
-      "R": "Ds;E",
-      "Nome": "Bradaric",
-      "Squadra": "Salernitana",
-      "Qt.A": 8
-    },
-    {
-      "Id": 5885,
-      "R": "Dd;E",
-      "Nome": "Dodo'",
-      "Squadra": "Fiorentina",
-      "Qt.A": 8
-    },
-    {
-      "Id": 6046,
-      "R": "Dc",
-      "Nome": "Hien",
-      "Squadra": "Verona",
-      "Qt.A": 8
-    },
-    {
-      "Id": 140,
-      "R": "Dd;Ds;E",
-      "Nome": "Hysaj",
-      "Squadra": "Lazio",
-      "Qt.A": 7
-    },
-    {
-      "Id": 253,
-      "R": "Dd;Ds;Dc",
-      "Nome": "D'ambrosio",
-      "Squadra": "Monza",
-      "Qt.A": 7
-    },
-    {
-      "Id": 322,
-      "R": "Dc",
-      "Nome": "De Vrij",
-      "Squadra": "Inter",
-      "Qt.A": 7
-    },
-    {
-      "Id": 787,
-      "R": "Dc",
-      "Nome": "Djimsiti",
-      "Squadra": "Atalanta",
-      "Qt.A": 7
-    },
-    {
-      "Id": 2130,
-      "R": "E",
-      "Nome": "Hateboer",
-      "Squadra": "Atalanta",
-      "Qt.A": 7
-    },
-    {
-      "Id": 2181,
-      "R": "Dc",
-      "Nome": "Palomino",
-      "Squadra": "Atalanta",
-      "Qt.A": 7
-    },
-    {
-      "Id": 2188,
-      "R": "Dd;Ds;E",
-      "Nome": "Marusic",
-      "Squadra": "Lazio",
-      "Qt.A": 7
-    },
-    {
-      "Id": 4958,
-      "R": "Ds;Dc",
-      "Nome": "Caldirola",
-      "Squadra": "Monza",
-      "Qt.A": 7
-    },
-    {
-      "Id": 4976,
-      "R": "Dd;Dc",
-      "Nome": "Kalulu",
-      "Squadra": "Milan",
-      "Qt.A": 7
-    },
-    {
-      "Id": 5239,
-      "R": "Dc",
-      "Nome": "Llorente D.",
-      "Squadra": "Roma",
-      "Qt.A": 7
-    },
-    {
-      "Id": 5718,
-      "R": "Dc",
-      "Nome": "Viti",
-      "Squadra": "Sassuolo",
-      "Qt.A": 7
-    },
-    {
-      "Id": 5840,
-      "R": "Ds;E",
-      "Nome": "Olivera",
-      "Squadra": "Napoli",
-      "Qt.A": 7
-    },
-    {
-      "Id": 6042,
-      "R": "Dc",
-      "Nome": "Lucumi'",
-      "Squadra": "Bologna",
-      "Qt.A": 7
-    },
-    {
-      "Id": 6426,
-      "R": "Dd;E",
-      "Nome": "Pedersen",
-      "Squadra": "Sassuolo",
-      "Qt.A": 7
-    },
-    {
-      "Id": 49,
-      "R": "Ds;Dc",
-      "Nome": "Masina",
-      "Squadra": "Udinese",
-      "Qt.A": 6
-    },
-    {
-      "Id": 662,
-      "R": "Ds;Dc",
-      "Nome": "Alex Sandro",
-      "Squadra": "Juventus",
-      "Qt.A": 6
-    },
-    {
-      "Id": 2263,
-      "R": "Dd;E",
-      "Nome": "Lazzari",
-      "Squadra": "Lazio",
-      "Qt.A": 6
-    },
-    {
-      "Id": 2869,
-      "R": "Dc",
-      "Nome": "Djidji",
-      "Squadra": "Torino",
-      "Qt.A": 6
-    },
-    {
-      "Id": 4426,
-      "R": "Dd;E",
-      "Nome": "Toljan",
-      "Squadra": "Sassuolo",
-      "Qt.A": 6
-    },
-    {
-      "Id": 4461,
-      "R": "Dd;E",
-      "Nome": "Zappa",
-      "Squadra": "Cagliari",
-      "Qt.A": 6
-    },
-    {
-      "Id": 4502,
-      "R": "Ds;E",
-      "Nome": "Gallo",
-      "Squadra": "Lecce",
-      "Qt.A": 6
-    },
-    {
-      "Id": 4982,
-      "R": "Dc",
-      "Nome": "Erlic",
-      "Squadra": "Sassuolo",
-      "Qt.A": 6
-    },
-    {
-      "Id": 4994,
-      "R": "E",
-      "Nome": "Vojvoda",
-      "Squadra": "Torino",
-      "Qt.A": 6
-    },
-    {
-      "Id": 5323,
-      "R": "Dc",
-      "Nome": "Martinez Quarta",
-      "Squadra": "Fiorentina",
-      "Qt.A": 6
-    },
-    {
-      "Id": 5365,
-      "R": "Dd;Dc",
-      "Nome": "Dragusin",
-      "Squadra": "Genoa",
-      "Qt.A": 6
-    },
-    {
-      "Id": 5520,
-      "R": "Dd;Ds;E",
-      "Nome": "Cambiaso",
-      "Squadra": "Juventus",
-      "Qt.A": 6
-    },
-    {
-      "Id": 5555,
-      "R": "Ds;E",
-      "Nome": "Kamara H.",
-      "Squadra": "Udinese",
-      "Qt.A": 6
-    },
-    {
-      "Id": 5831,
-      "R": "Dc",
-      "Nome": "Gatti",
-      "Squadra": "Juventus",
-      "Qt.A": 6
-    },
-    {
-      "Id": 5867,
-      "R": "Dd;E",
-      "Nome": "Gendrey",
-      "Squadra": "Lecce",
-      "Qt.A": 6
-    },
-    {
-      "Id": 6202,
-      "R": "Dc",
-      "Nome": "Beukema",
-      "Squadra": "Bologna",
-      "Qt.A": 6
-    },
-    {
-      "Id": 6230,
-      "R": "Dc",
-      "Nome": "Dossena",
-      "Squadra": "Cagliari",
-      "Qt.A": 6
-    },
-    {
-      "Id": 76,
-      "R": "Dc",
-      "Nome": "Romagnoli S.",
-      "Squadra": "Frosinone",
-      "Qt.A": 5
-    },
-    {
-      "Id": 256,
-      "R": "Ds;Dc",
-      "Nome": "Juan Jesus",
-      "Squadra": "Napoli",
-      "Qt.A": 5
-    },
-    {
-      "Id": 327,
-      "R": "Dd;Dc",
-      "Nome": "Patric",
-      "Squadra": "Lazio",
-      "Qt.A": 5
-    },
-    {
-      "Id": 660,
-      "R": "Dc",
-      "Nome": "Gyomber",
-      "Squadra": "Salernitana",
-      "Qt.A": 5
-    },
-    {
-      "Id": 770,
-      "R": "Ds;E",
-      "Nome": "Pezzella Giu.",
-      "Squadra": "Empoli",
-      "Qt.A": 5
-    },
-    {
-      "Id": 2083,
-      "R": "Dd;Dc",
-      "Nome": "Biraschi",
-      "Squadra": "Genoa",
-      "Qt.A": 5
-    },
-    {
-      "Id": 2252,
-      "R": "Ds;Dc",
-      "Nome": "Marchizza",
-      "Squadra": "Frosinone",
-      "Qt.A": 5
-    },
-    {
-      "Id": 2653,
-      "R": "Ds;E",
-      "Nome": "Lykogiannis",
-      "Squadra": "Bologna",
-      "Qt.A": 5
-    },
-    {
-      "Id": 4263,
-      "R": "Dc",
-      "Nome": "Kabasele",
-      "Squadra": "Udinese",
-      "Qt.A": 5
-    },
-    {
-      "Id": 4378,
-      "R": "Ds;Dc",
-      "Nome": "Ranieri L.",
-      "Squadra": "Fiorentina",
-      "Qt.A": 5
-    },
-    {
-      "Id": 4421,
-      "R": "Ds;E",
-      "Nome": "Augello",
-      "Squadra": "Cagliari",
-      "Qt.A": 5
-    },
-    {
-      "Id": 4433,
-      "R": "Dd;Ds;E",
-      "Nome": "Zortea",
-      "Squadra": "Atalanta",
-      "Qt.A": 5
-    },
-    {
-      "Id": 4897,
-      "R": "Dc",
-      "Nome": "Pirola",
-      "Squadra": "Salernitana",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5010,
-      "R": "Dc",
-      "Nome": "Ismajli",
-      "Squadra": "Empoli",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5603,
-      "R": "Dc",
-      "Nome": "Pongracic",
-      "Squadra": "Lecce",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5701,
-      "R": "Dc",
-      "Nome": "Obert",
-      "Squadra": "Cagliari",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5747,
-      "R": "Dc",
-      "Nome": "Tressoldi",
-      "Squadra": "Sassuolo",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5838,
-      "R": "Dd;Ds;E",
-      "Nome": "Birindelli",
-      "Squadra": "Monza",
-      "Qt.A": 5
-    },
-    {
-      "Id": 6047,
-      "R": "Dd;E",
-      "Nome": "Ehizibue",
-      "Squadra": "Udinese",
-      "Qt.A": 5
-    },
-    {
-      "Id": 6211,
-      "R": "Ds;E",
-      "Nome": "Zemura",
-      "Squadra": "Udinese",
-      "Qt.A": 5
-    },
-    {
-      "Id": 6231,
-      "R": "Ds;E",
-      "Nome": "Azzi",
-      "Squadra": "Cagliari",
-      "Qt.A": 5
-    },
-    {
-      "Id": 6245,
-      "R": "Dd;Dc",
-      "Nome": "Vogliacco",
-      "Squadra": "Genoa",
-      "Qt.A": 5
-    },
-    {
-      "Id": 286,
-      "R": "Dc",
-      "Nome": "Bonucci",
-      "Squadra": "Juventus",
-      "Qt.A": 4
-    },
-    {
-      "Id": 791,
-      "R": "Dd;Ds;E",
-      "Nome": "Sabelli",
-      "Squadra": "Genoa",
-      "Qt.A": 4
-    },
-    {
-      "Id": 1895,
-      "R": "Dc",
-      "Nome": "Ferrari G.",
-      "Squadra": "Sassuolo",
-      "Qt.A": 4
-    },
-    {
-      "Id": 2174,
-      "R": "Dd;Ds;E",
-      "Nome": "Venuti",
-      "Squadra": "Lecce",
-      "Qt.A": 4
-    },
-    {
-      "Id": 2633,
-      "R": "Dc",
-      "Nome": "Kjaer",
-      "Squadra": "Milan",
-      "Qt.A": 4
-    },
-    {
-      "Id": 2728,
-      "R": "Ds;E",
-      "Nome": "Pellegrini Lu.",
-      "Squadra": "Lazio",
-      "Qt.A": 4
-    },
-    {
-      "Id": 2758,
-      "R": "Dc",
-      "Nome": "Gunter",
-      "Squadra": "Verona",
-      "Qt.A": 4
-    },
-    {
-      "Id": 4385,
-      "R": "E",
-      "Nome": "Lazaro",
-      "Squadra": "Torino",
-      "Qt.A": 4
-    },
-    {
-      "Id": 4493,
-      "R": "Dc",
-      "Nome": "Dawidowicz",
-      "Squadra": "Verona",
-      "Qt.A": 4
-    },
-    {
-      "Id": 4891,
-      "R": "Dc",
-      "Nome": "Soumaoro",
-      "Squadra": "Bologna",
-      "Qt.A": 4
-    },
-    {
-      "Id": 4934,
-      "R": "Dc",
-      "Nome": "Lovato",
-      "Squadra": "Salernitana",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5354,
-      "R": "Ds;E",
-      "Nome": "Ruggeri",
-      "Squadra": "Atalanta",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5509,
-      "R": "Ds;E",
-      "Nome": "Vina",
-      "Squadra": "Sassuolo",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5514,
-      "R": "Ds;Dc",
-      "Nome": "Vasquez",
-      "Squadra": "Genoa",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5527,
-      "R": "Dd;E",
-      "Nome": "Zanoli",
-      "Squadra": "Napoli",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5691,
-      "R": "Dc",
-      "Nome": "Zima",
-      "Squadra": "Torino",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5750,
-      "R": "Dc",
-      "Nome": "Ostigard",
-      "Squadra": "Napoli",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5812,
-      "R": "Dd;E",
-      "Nome": "Terracciano F.",
-      "Squadra": "Verona",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5848,
-      "R": "Dd;E",
-      "Nome": "Ebosele",
-      "Squadra": "Udinese",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5856,
-      "R": "Dd;E",
-      "Nome": "Sambia",
-      "Squadra": "Salernitana",
-      "Qt.A": 4
-    },
-    {
-      "Id": 6217,
-      "R": "Dc",
-      "Nome": "Bisseck",
-      "Squadra": "Inter",
-      "Qt.A": 4
-    },
-    {
-      "Id": 294,
-      "R": "Dc",
-      "Nome": "Rugani",
-      "Squadra": "Juventus",
-      "Qt.A": 3
-    },
-    {
-      "Id": 358,
-      "R": "Dd;Ds;E",
-      "Nome": "De Sciglio",
-      "Squadra": "Juventus",
-      "Qt.A": 3
-    },
-    {
-      "Id": 418,
-      "R": "Dc",
-      "Nome": "Goldaniga",
-      "Squadra": "Cagliari",
-      "Qt.A": 3
-    },
-    {
-      "Id": 464,
-      "R": "Dd;Ds;E",
-      "Nome": "Florenzi",
-      "Squadra": "Milan",
-      "Qt.A": 3
-    },
-    {
-      "Id": 2016,
-      "R": "Dc",
-      "Nome": "Fazio",
-      "Squadra": "Salernitana",
-      "Qt.A": 3
-    },
-    {
-      "Id": 2104,
-      "R": "Dd;E",
-      "Nome": "Bereszynski",
-      "Squadra": "Empoli",
-      "Qt.A": 3
-    },
-    {
-      "Id": 2180,
-      "R": "Dd;E",
-      "Nome": "Karsdorp",
-      "Squadra": "Roma",
-      "Qt.A": 3
-    },
-    {
-      "Id": 2192,
-      "R": "Dc",
-      "Nome": "Bonifazi",
-      "Squadra": "Bologna",
-      "Qt.A": 3
-    },
-    {
-      "Id": 2285,
-      "R": "Dc",
-      "Nome": "Bani",
-      "Squadra": "Genoa",
-      "Qt.A": 3
-    },
-    {
-      "Id": 2769,
-      "R": "Dc",
-      "Nome": "Magnani",
-      "Squadra": "Verona",
-      "Qt.A": 3
-    },
-    {
-      "Id": 4374,
-      "R": "Dc",
-      "Nome": "Walukiewicz",
-      "Squadra": "Empoli",
-      "Qt.A": 3
-    },
-    {
-      "Id": 4495,
-      "R": "Dc",
-      "Nome": "Kumbulla",
-      "Squadra": "Roma",
-      "Qt.A": 3
-    },
-    {
-      "Id": 4657,
-      "R": "Dd;E",
-      "Nome": "Celik",
-      "Squadra": "Roma",
-      "Qt.A": 3
-    },
-    {
-      "Id": 4925,
-      "R": "Ds;Dc",
-      "Nome": "Carboni A.",
-      "Squadra": "Monza",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5316,
-      "R": "Ds;Dc",
-      "Nome": "Amione",
-      "Squadra": "Verona",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5406,
-      "R": "Dd;E",
-      "Nome": "Di Pardo",
-      "Squadra": "Cagliari",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5554,
-      "R": "Dd;Dc",
-      "Nome": "Daniliuc",
-      "Squadra": "Salernitana",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5739,
-      "R": "Dd;Dc",
-      "Nome": "De Winter",
-      "Squadra": "Genoa",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5748,
-      "R": "Dd;E",
-      "Nome": "Hefti",
-      "Squadra": "Genoa",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5757,
-      "R": "Dc",
-      "Nome": "Cittadini",
-      "Squadra": "Monza",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5764,
-      "R": "Dc",
-      "Nome": "Coppola D.",
-      "Squadra": "Verona",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5804,
-      "R": "Ds;E",
-      "Nome": "Cacace",
-      "Squadra": "Empoli",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5994,
-      "R": "Ds;Dc",
-      "Nome": "Ebosse",
-      "Squadra": "Udinese",
-      "Qt.A": 3
-    },
-    {
-      "Id": 6039,
-      "R": "Ds;Dc",
-      "Nome": "Cabal",
-      "Squadra": "Verona",
-      "Qt.A": 3
-    },
-    {
-      "Id": 6465,
-      "R": "Ds;Dc",
-      "Nome": "Touba",
-      "Squadra": "Lecce",
-      "Qt.A": 3
-    },
-    {
-      "Id": 487,
-      "R": "Dd;E",
-      "Nome": "De Silvestri",
-      "Squadra": "Bologna",
-      "Qt.A": 2
-    },
-    {
-      "Id": 4432,
-      "R": "Dc",
-      "Nome": "Okoli",
-      "Squadra": "Atalanta",
-      "Qt.A": 2
-    },
-    {
-      "Id": 4952,
-      "R": "Dc",
-      "Nome": "Monterisi",
-      "Squadra": "Frosinone",
-      "Qt.A": 2
-    },
-    {
-      "Id": 5017,
-      "R": "Ds;E",
-      "Nome": "Ballo-Toure'",
-      "Squadra": "Milan",
-      "Qt.A": 2
-    },
-    {
-      "Id": 5686,
-      "R": "E",
-      "Nome": "Soppy",
-      "Squadra": "Atalanta",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6028,
-      "R": "Dd;Dc",
-      "Nome": "Bronn",
-      "Squadra": "Salernitana",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6043,
-      "R": "Dc",
-      "Nome": "Sosa",
-      "Squadra": "Bologna",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6189,
-      "R": "Dd;E",
-      "Nome": "Missori",
-      "Squadra": "Sassuolo",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6235,
-      "R": "Dd;Ds;E",
-      "Nome": "Kayode",
-      "Squadra": "Fiorentina",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6256,
-      "R": "Dd;E",
-      "Nome": "Ferreira J.",
-      "Squadra": "Udinese",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6257,
-      "R": "Ds;E",
-      "Nome": "Dorgu",
-      "Squadra": "Lecce",
-      "Qt.A": 2
-    },
-    {
-      "Id": 139,
-      "R": "Dc",
-      "Nome": "Dermaku",
-      "Squadra": "Lecce",
-      "Qt.A": 1
-    },
-    {
-      "Id": 144,
-      "R": "Dc",
-      "Nome": "Tonelli",
-      "Squadra": "Empoli",
-      "Qt.A": 1
-    },
-    {
-      "Id": 454,
-      "R": "Dc",
-      "Nome": "Capradossi",
-      "Squadra": "Cagliari",
-      "Qt.A": 1
-    },
-    {
-      "Id": 1876,
-      "R": "Ds;E",
-      "Nome": "Pajac",
-      "Squadra": "Genoa",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5399,
-      "R": "Dc",
-      "Nome": "Antov",
-      "Squadra": "Monza",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5424,
-      "R": "Dd;Dc",
-      "Nome": "Amey",
-      "Squadra": "Bologna",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5833,
-      "R": "Dc",
-      "Nome": "Gila",
-      "Squadra": "Lazio",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6021,
-      "R": "Dd;Dc",
-      "Nome": "Abankwah",
-      "Squadra": "Udinese",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6023,
-      "R": "Dc",
-      "Nome": "Guessand A.",
-      "Squadra": "Udinese",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6056,
-      "R": "Dc",
-      "Nome": "Guarino",
-      "Squadra": "Empoli",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6149,
-      "R": "Ds;E",
-      "Nome": "Carboni F.",
-      "Squadra": "Monza",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6223,
-      "R": "Dc",
-      "Nome": "Smajlovic",
-      "Squadra": "Lecce",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6237,
-      "R": "Dc",
-      "Nome": "Szyminski",
-      "Squadra": "Frosinone",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6238,
-      "R": "Dd;Ds;Dc",
-      "Nome": "Oyono",
-      "Squadra": "Frosinone",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6239,
-      "R": "Ds;E",
-      "Nome": "Klitten",
-      "Squadra": "Frosinone",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6244,
-      "R": "Dc",
-      "Nome": "Matturro",
-      "Squadra": "Genoa",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6253,
-      "R": "Dc",
-      "Nome": "N'guessan",
-      "Squadra": "Torino",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6407,
-      "R": "Dd;Ds;E",
-      "Nome": "Corazza",
-      "Squadra": "Bologna",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6411,
-      "R": "Dc",
-      "Nome": "Mateus Lusuardi",
-      "Squadra": "Frosinone",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6430,
-      "R": "Dc",
-      "Nome": "Kalaj",
-      "Squadra": "Frosinone",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6432,
-      "R": "Dd;Ds;E",
-      "Nome": "Pierozzi",
-      "Squadra": "Fiorentina",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6433,
-      "R": "Dc",
-      "Nome": "Huijsen",
-      "Squadra": "Juventus",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6460,
-      "R": "Dc",
-      "Nome": "Pellegrino",
-      "Squadra": "Milan",
-      "Qt.A": 1
-    },
-    {
-      "Id": 632,
-      "R": "W;A",
-      "Nome": "Zaccagni",
-      "Squadra": "Lazio",
-      "Qt.A": 28
-    },
-    {
-      "Id": 5685,
-      "R": "C;T",
-      "Nome": "Koopmeiners",
-      "Squadra": "Atalanta",
-      "Qt.A": 24
-    },
-    {
-      "Id": 2379,
-      "R": "C",
-      "Nome": "Rabiot",
-      "Squadra": "Juventus",
-      "Qt.A": 23
-    },
-    {
-      "Id": 335,
-      "R": "W;A",
-      "Nome": "Felipe Anderson",
-      "Squadra": "Lazio",
-      "Qt.A": 22
-    },
-    {
-      "Id": 2085,
-      "R": "C;T",
-      "Nome": "Luis Alberto",
-      "Squadra": "Lazio",
-      "Qt.A": 21
-    },
-    {
-      "Id": 152,
-      "R": "C;T",
-      "Nome": "Zielinski",
-      "Squadra": "Napoli",
-      "Qt.A": 20
-    },
-    {
-      "Id": 1870,
-      "R": "C",
-      "Nome": "Barella",
-      "Squadra": "Inter",
-      "Qt.A": 20
-    },
-    {
-      "Id": 2167,
-      "R": "W",
-      "Nome": "Orsolini",
-      "Squadra": "Bologna",
-      "Qt.A": 20
-    },
-    {
-      "Id": 2423,
-      "R": "T;A",
-      "Nome": "Pulisic",
-      "Squadra": "Milan",
-      "Qt.A": 19
-    },
-    {
-      "Id": 4856,
-      "R": "W;A",
-      "Nome": "Chukwueze",
-      "Squadra": "Milan",
-      "Qt.A": 19
-    },
-    {
-      "Id": 4486,
-      "R": "W",
-      "Nome": "Strefezza",
-      "Squadra": "Lecce",
-      "Qt.A": 18
-    },
-    {
-      "Id": 5687,
-      "R": "W;T",
-      "Nome": "Vlasic",
-      "Squadra": "Torino",
-      "Qt.A": 18
-    },
-    {
-      "Id": 332,
-      "R": "W",
-      "Nome": "Candreva",
-      "Squadra": "Salernitana",
-      "Qt.A": 17
-    },
-    {
-      "Id": 2848,
-      "R": "C",
-      "Nome": "Frattesi",
-      "Squadra": "Inter",
-      "Qt.A": 17
-    },
-    {
-      "Id": 4427,
-      "R": "T",
-      "Nome": "Malinovskyi",
-      "Squadra": "Genoa",
-      "Qt.A": 17
-    },
-    {
-      "Id": 5858,
-      "R": "C;T",
-      "Nome": "Ferguson",
-      "Squadra": "Bologna",
-      "Qt.A": 17
-    },
-    {
-      "Id": 530,
-      "R": "C;T",
-      "Nome": "Pellegrini Lo.",
-      "Squadra": "Roma",
-      "Qt.A": 16
-    },
-    {
-      "Id": 795,
-      "R": "W;A",
-      "Nome": "El Shaarawy",
-      "Squadra": "Roma",
-      "Qt.A": 16
-    },
-    {
-      "Id": 2194,
-      "R": "M;C",
-      "Nome": "Calhanoglu",
-      "Squadra": "Inter",
-      "Qt.A": 16
-    },
-    {
-      "Id": 5119,
-      "R": "C;T",
-      "Nome": "Samardzic",
-      "Squadra": "Udinese",
-      "Qt.A": 16
-    },
-    {
-      "Id": 236,
-      "R": "E;W",
-      "Nome": "Lazovic",
-      "Squadra": "Verona",
-      "Qt.A": 15
-    },
-    {
-      "Id": 367,
-      "R": "C;T",
-      "Nome": "Bonaventura",
-      "Squadra": "Fiorentina",
-      "Qt.A": 15
-    },
-    {
-      "Id": 536,
-      "R": "W",
-      "Nome": "Politano",
-      "Squadra": "Napoli",
-      "Qt.A": 15
-    },
-    {
-      "Id": 4142,
-      "R": "C;T",
-      "Nome": "Aouar",
-      "Squadra": "Roma",
-      "Qt.A": 15
-    },
-    {
-      "Id": 4479,
-      "R": "C;W;T",
-      "Nome": "Elmas",
-      "Squadra": "Napoli",
-      "Qt.A": 15
-    },
-    {
-      "Id": 4711,
-      "R": "E;W",
-      "Nome": "Kostic",
-      "Squadra": "Juventus",
-      "Qt.A": 15
-    },
-    {
-      "Id": 5823,
-      "R": "T;A",
-      "Nome": "Baldanzi",
-      "Squadra": "Empoli",
-      "Qt.A": 15
-    },
-    {
-      "Id": 5850,
-      "R": "C;T",
-      "Nome": "Lovric",
-      "Squadra": "Udinese",
-      "Qt.A": 15
-    },
-    {
-      "Id": 5948,
-      "R": "C;T",
-      "Nome": "Kamada",
-      "Squadra": "Lazio",
-      "Qt.A": 15
-    },
-    {
-      "Id": 2077,
-      "R": "T",
-      "Nome": "Pasalic",
-      "Squadra": "Atalanta",
-      "Qt.A": 14
-    },
-    {
-      "Id": 2741,
-      "R": "C;T",
-      "Nome": "Pessina",
-      "Squadra": "Monza",
-      "Qt.A": 14
-    },
-    {
-      "Id": 4220,
-      "R": "M;C",
-      "Nome": "Zambo Anguissa",
-      "Squadra": "Napoli",
-      "Qt.A": 14
-    },
-    {
-      "Id": 5800,
-      "R": "T;A",
-      "Nome": "Gudmundsson A.",
-      "Squadra": "Genoa",
-      "Qt.A": 14
-    },
-    {
-      "Id": 5880,
-      "R": "E;W",
-      "Nome": "Ciurria",
-      "Squadra": "Monza",
-      "Qt.A": 14
-    },
-    {
-      "Id": 2529,
-      "R": "C;T",
-      "Nome": "Mkhitaryan",
-      "Squadra": "Inter",
-      "Qt.A": 13
-    },
-    {
-      "Id": 2543,
-      "R": "C",
-      "Nome": "Renato Sanches",
-      "Squadra": "Roma",
-      "Qt.A": 13
-    },
-    {
-      "Id": 4199,
-      "R": "C",
-      "Nome": "Loftus-Cheek",
-      "Squadra": "Milan",
-      "Qt.A": 13
-    },
-    {
-      "Id": 4287,
-      "R": "M;C",
-      "Nome": "Lobotka",
-      "Squadra": "Napoli",
-      "Qt.A": 13
-    },
-    {
-      "Id": 4465,
-      "R": "C;T",
-      "Nome": "Fagioli",
-      "Squadra": "Juventus",
-      "Qt.A": 13
-    },
-    {
-      "Id": 4658,
-      "R": "W",
-      "Nome": "Ikone'",
-      "Squadra": "Fiorentina",
-      "Qt.A": 13
-    },
-    {
-      "Id": 5451,
-      "R": "T",
-      "Nome": "Bajrami",
-      "Squadra": "Sassuolo",
-      "Qt.A": 13
-    },
-    {
-      "Id": 5453,
-      "R": "M;C",
-      "Nome": "Ricci S.",
-      "Squadra": "Torino",
-      "Qt.A": 13
-    },
-    {
-      "Id": 303,
-      "R": "C;T",
-      "Nome": "Pogba",
-      "Squadra": "Juventus",
-      "Qt.A": 12
-    },
-    {
-      "Id": 827,
-      "R": "M;C",
-      "Nome": "Locatelli",
-      "Squadra": "Juventus",
-      "Qt.A": 12
-    },
-    {
-      "Id": 2172,
-      "R": "T",
-      "Nome": "Barak",
-      "Squadra": "Fiorentina",
-      "Qt.A": 12
-    },
-    {
-      "Id": 4869,
-      "R": "M;C",
-      "Nome": "Dominguez",
-      "Squadra": "Bologna",
-      "Qt.A": 12
-    },
-    {
-      "Id": 5007,
-      "R": "C",
-      "Nome": "Ilic",
-      "Squadra": "Torino",
-      "Qt.A": 12
-    },
-    {
-      "Id": 5564,
-      "R": "W;A",
-      "Nome": "Ndoye",
-      "Squadra": "Bologna",
-      "Qt.A": 12
-    },
-    {
-      "Id": 6224,
-      "R": "M;C",
-      "Nome": "Reijnders",
-      "Squadra": "Milan",
-      "Qt.A": 12
-    },
-    {
-      "Id": 22,
-      "R": "M;C",
-      "Nome": "De Roon",
-      "Squadra": "Atalanta",
-      "Qt.A": 11
-    },
-    {
-      "Id": 150,
-      "R": "W;T",
-      "Nome": "Saponara",
-      "Squadra": "Verona",
-      "Qt.A": 11
-    },
-    {
-      "Id": 5063,
-      "R": "W",
-      "Nome": "Radonjic",
-      "Squadra": "Torino",
-      "Qt.A": 11
-    },
-    {
-      "Id": 1933,
-      "R": "M;C",
-      "Nome": "Mandragora",
-      "Squadra": "Fiorentina",
-      "Qt.A": 10
-    },
-    {
-      "Id": 2818,
-      "R": "M;C",
-      "Nome": "Bennacer",
-      "Squadra": "Milan",
-      "Qt.A": 10
-    },
-    {
-      "Id": 4377,
-      "R": "C;T",
-      "Nome": "Castrovilli",
-      "Squadra": "Fiorentina",
-      "Qt.A": 10
-    },
-    {
-      "Id": 4662,
-      "R": "E;W",
-      "Nome": "Weah",
-      "Squadra": "Juventus",
-      "Qt.A": 10
-    },
-    {
-      "Id": 5001,
-      "R": "T;A",
-      "Nome": "Miranchuk",
-      "Squadra": "Atalanta",
-      "Qt.A": 10
-    },
-    {
-      "Id": 5792,
-      "R": "C;T",
-      "Nome": "Ederson D.s.",
-      "Squadra": "Atalanta",
-      "Qt.A": 10
-    },
-    {
-      "Id": 6216,
-      "R": "W",
-      "Nome": "Mboula",
-      "Squadra": "Verona",
-      "Qt.A": 10
-    },
-    {
-      "Id": 779,
-      "R": "M;C",
-      "Nome": "Cristante",
-      "Squadra": "Roma",
-      "Qt.A": 9
-    },
-    {
-      "Id": 4404,
-      "R": "M;C",
-      "Nome": "Thorsby",
-      "Squadra": "Genoa",
-      "Qt.A": 9
-    },
-    {
-      "Id": 4970,
-      "R": "W",
-      "Nome": "Messias",
-      "Squadra": "Genoa",
-      "Qt.A": 9
-    },
-    {
-      "Id": 5295,
-      "R": "C",
-      "Nome": "Musah",
-      "Squadra": "Milan",
-      "Qt.A": 9
-    },
-    {
-      "Id": 5511,
-      "R": "C",
-      "Nome": "Matheus Henrique",
-      "Squadra": "Sassuolo",
-      "Qt.A": 9
-    },
-    {
-      "Id": 5788,
-      "R": "T;A",
-      "Nome": "Sabiri",
-      "Squadra": "Fiorentina",
-      "Qt.A": 9
-    },
-    {
-      "Id": 5878,
-      "R": "C;T",
-      "Nome": "Colpani",
-      "Squadra": "Monza",
-      "Qt.A": 9
-    },
-    {
-      "Id": 5995,
-      "R": "T",
-      "Nome": "De Ketelaere",
-      "Squadra": "Atalanta",
-      "Qt.A": 9
-    },
-    {
-      "Id": 468,
-      "R": "M;C",
-      "Nome": "Paredes",
-      "Squadra": "Roma",
-      "Qt.A": 8
-    },
-    {
-      "Id": 2839,
-      "R": "W",
-      "Nome": "Sottil",
-      "Squadra": "Fiorentina",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4285,
-      "R": "M;C",
-      "Nome": "Arthur Melo",
-      "Squadra": "Fiorentina",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4514,
-      "R": "E;C",
-      "Nome": "Nandez",
-      "Squadra": "Cagliari",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4681,
-      "R": "M;C",
-      "Nome": "Lopez M.",
-      "Squadra": "Sassuolo",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4890,
-      "R": "M;C",
-      "Nome": "Tameze",
-      "Squadra": "Torino",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4965,
-      "R": "M;C",
-      "Nome": "Marin",
-      "Squadra": "Empoli",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4973,
-      "R": "C",
-      "Nome": "Mckennie",
-      "Squadra": "Juventus",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4992,
-      "R": "W;A",
-      "Nome": "Gyasi",
-      "Squadra": "Empoli",
-      "Qt.A": 8
-    },
-    {
-      "Id": 5422,
-      "R": "E",
-      "Nome": "Zalewski",
-      "Squadra": "Roma",
-      "Qt.A": 8
-    },
-    {
-      "Id": 5504,
-      "R": "M;C",
-      "Nome": "Coulibaly L.",
-      "Squadra": "Salernitana",
-      "Qt.A": 8
-    },
-    {
-      "Id": 65,
-      "R": "T",
-      "Nome": "Mancosu",
-      "Squadra": "Cagliari",
-      "Qt.A": 7
-    },
-    {
-      "Id": 333,
-      "R": "M;C",
-      "Nome": "Cataldi",
-      "Squadra": "Lazio",
-      "Qt.A": 7
-    },
-    {
-      "Id": 1978,
-      "R": "C;T",
-      "Nome": "Sensi",
-      "Squadra": "Inter",
-      "Qt.A": 7
-    },
-    {
-      "Id": 1987,
-      "R": "E;C",
-      "Nome": "Jankto",
-      "Squadra": "Cagliari",
-      "Qt.A": 7
-    },
-    {
-      "Id": 2117,
-      "R": "C;T",
-      "Nome": "Kastanos",
-      "Squadra": "Salernitana",
-      "Qt.A": 7
-    },
-    {
-      "Id": 2392,
-      "R": "M;C",
-      "Nome": "Walace",
-      "Squadra": "Udinese",
-      "Qt.A": 7
-    },
-    {
-      "Id": 4342,
-      "R": "C;T",
-      "Nome": "Duda",
-      "Squadra": "Verona",
-      "Qt.A": 7
-    },
-    {
-      "Id": 4522,
-      "R": "M;C",
-      "Nome": "Amrabat",
-      "Squadra": "Fiorentina",
-      "Qt.A": 7
-    },
-    {
-      "Id": 5999,
-      "R": "C",
-      "Nome": "Gonzalez J.",
-      "Squadra": "Lecce",
-      "Qt.A": 7
-    },
-    {
-      "Id": 6394,
-      "R": "M;C",
-      "Nome": "Ramadani",
-      "Squadra": "Lecce",
-      "Qt.A": 7
-    },
-    {
-      "Id": 6402,
-      "R": "M;C",
-      "Nome": "Cajuste",
-      "Squadra": "Napoli",
-      "Qt.A": 7
-    },
-    {
-      "Id": 148,
-      "R": "M;C",
-      "Nome": "Krunic",
-      "Squadra": "Milan",
-      "Qt.A": 6
-    },
-    {
-      "Id": 181,
-      "R": "M;C",
-      "Nome": "Vecino",
-      "Squadra": "Lazio",
-      "Qt.A": 6
-    },
-    {
-      "Id": 470,
-      "R": "M;C",
-      "Nome": "Strootman",
-      "Squadra": "Genoa",
-      "Qt.A": 6
-    },
-    {
-      "Id": 801,
-      "R": "M;C",
-      "Nome": "Gagliardini",
-      "Squadra": "Monza",
-      "Qt.A": 6
-    },
-    {
-      "Id": 5688,
-      "R": "M;C",
-      "Nome": "Harroui",
-      "Squadra": "Frosinone",
-      "Qt.A": 6
-    },
-    {
-      "Id": 5791,
-      "R": "E;M",
-      "Nome": "Frendrup",
-      "Squadra": "Genoa",
-      "Qt.A": 6
-    },
-    {
-      "Id": 5844,
-      "R": "C;T",
-      "Nome": "Thorstvedt",
-      "Squadra": "Sassuolo",
-      "Qt.A": 6
-    },
-    {
-      "Id": 5869,
-      "R": "M;C",
-      "Nome": "Blin",
-      "Squadra": "Lecce",
-      "Qt.A": 6
-    },
-    {
-      "Id": 6010,
-      "R": "C;T",
-      "Nome": "Fazzini",
-      "Squadra": "Empoli",
-      "Qt.A": 6
-    },
-    {
-      "Id": 6054,
-      "R": "M;C",
-      "Nome": "Moro N.",
-      "Squadra": "Bologna",
-      "Qt.A": 6
-    },
-    {
-      "Id": 6061,
-      "R": "W;T",
-      "Nome": "Oudin",
-      "Squadra": "Lecce",
-      "Qt.A": 6
-    },
-    {
-      "Id": 6219,
-      "R": "M;C",
-      "Nome": "Boloca",
-      "Squadra": "Sassuolo",
-      "Qt.A": 6
-    },
-    {
-      "Id": 27,
-      "R": "M",
-      "Nome": "Grassi",
-      "Squadra": "Empoli",
-      "Qt.A": 5
-    },
-    {
-      "Id": 170,
-      "R": "M;C",
-      "Nome": "Badelj",
-      "Squadra": "Genoa",
-      "Qt.A": 5
-    },
-    {
-      "Id": 526,
-      "R": "C",
-      "Nome": "Duncan",
-      "Squadra": "Fiorentina",
-      "Qt.A": 5
-    },
-    {
-      "Id": 666,
-      "R": "C",
-      "Nome": "Machin",
-      "Squadra": "Monza",
-      "Qt.A": 5
-    },
-    {
-      "Id": 2008,
-      "R": "M;C",
-      "Nome": "Linetty",
-      "Squadra": "Torino",
-      "Qt.A": 5
-    },
-    {
-      "Id": 4459,
-      "R": "M;C",
-      "Nome": "Rovella",
-      "Squadra": "Lazio",
-      "Qt.A": 5
-    },
-    {
-      "Id": 4892,
-      "R": "W",
-      "Nome": "Saelemaekers",
-      "Squadra": "Milan",
-      "Qt.A": 5
-    },
-    {
-      "Id": 4896,
-      "R": "T;A",
-      "Nome": "Maldini",
-      "Squadra": "Empoli",
-      "Qt.A": 5
-    },
-    {
-      "Id": 4947,
-      "R": "M;C",
-      "Nome": "Brescianini",
-      "Squadra": "Frosinone",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5298,
-      "R": "C",
-      "Nome": "Pobega",
-      "Squadra": "Milan",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5423,
-      "R": "C",
-      "Nome": "Bove",
-      "Squadra": "Roma",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5457,
-      "R": "C",
-      "Nome": "Maleh",
-      "Squadra": "Lecce",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5784,
-      "R": "C;W;T",
-      "Nome": "Aebischer",
-      "Squadra": "Bologna",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5813,
-      "R": "C;T",
-      "Nome": "Miretti",
-      "Squadra": "Juventus",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5834,
-      "R": "M;C",
-      "Nome": "Marcos Antonio",
-      "Squadra": "Lazio",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5884,
-      "R": "C",
-      "Nome": "Ranocchia F.",
-      "Squadra": "Empoli",
-      "Qt.A": 5
-    },
-    {
-      "Id": 6206,
-      "R": "C",
-      "Nome": "Fabbian",
-      "Squadra": "Bologna",
-      "Qt.A": 5
-    },
-    {
-      "Id": 6232,
-      "R": "M;C",
-      "Nome": "Makoumbou",
-      "Squadra": "Cagliari",
-      "Qt.A": 5
-    },
-    {
-      "Id": 6393,
-      "R": "W;T",
-      "Nome": "Infantino",
-      "Squadra": "Fiorentina",
-      "Qt.A": 5
-    },
-    {
-      "Id": 6410,
-      "R": "M;C",
-      "Nome": "Kaba",
-      "Squadra": "Lecce",
-      "Qt.A": 5
-    },
-    {
-      "Id": 6458,
-      "R": "C;T",
-      "Nome": "Serdar",
-      "Squadra": "Verona",
-      "Qt.A": 5
-    },
-    {
-      "Id": 694,
-      "R": "W",
-      "Nome": "Baez",
-      "Squadra": "Frosinone",
-      "Qt.A": 4
-    },
-    {
-      "Id": 1871,
-      "R": "M;C",
-      "Nome": "Deiola",
-      "Squadra": "Cagliari",
-      "Qt.A": 4
-    },
-    {
-      "Id": 1976,
-      "R": "M;C",
-      "Nome": "Mazzitelli",
-      "Squadra": "Frosinone",
-      "Qt.A": 4
-    },
-    {
-      "Id": 1980,
-      "R": "W;T",
-      "Nome": "Aramu",
-      "Squadra": "Genoa",
-      "Qt.A": 4
-    },
-    {
-      "Id": 2161,
-      "R": "M;C",
-      "Nome": "Haas",
-      "Squadra": "Empoli",
-      "Qt.A": 4
-    },
-    {
-      "Id": 4787,
-      "R": "C;W;T",
-      "Nome": "Quina",
-      "Squadra": "Udinese",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5267,
-      "R": "M;C",
-      "Nome": "Racic",
-      "Squadra": "Sassuolo",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5397,
-      "R": "C;T",
-      "Nome": "Kovalenko",
-      "Squadra": "Empoli",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5499,
-      "R": "M;C",
-      "Nome": "Hongla",
-      "Squadra": "Verona",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5510,
-      "R": "W",
-      "Nome": "Romero L.",
-      "Squadra": "Milan",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5674,
-      "R": "C",
-      "Nome": "Basic",
-      "Squadra": "Lazio",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5719,
-      "R": "M;C",
-      "Nome": "Asllani",
-      "Squadra": "Inter",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5798,
-      "R": "M;C",
-      "Nome": "Bohinen",
-      "Squadra": "Salernitana",
-      "Qt.A": 4
-    },
-    {
-      "Id": 6024,
-      "R": "M;C",
-      "Nome": "Sulemana I.",
-      "Squadra": "Cagliari",
-      "Qt.A": 4
-    },
-    {
-      "Id": 6112,
-      "R": "W",
-      "Nome": "Iling Junior",
-      "Squadra": "Juventus",
-      "Qt.A": 4
-    },
-    {
-      "Id": 6218,
-      "R": "W;T;A",
-      "Nome": "Oristanio",
-      "Squadra": "Cagliari",
-      "Qt.A": 4
-    },
-    {
-      "Id": 6222,
-      "R": "C;T",
-      "Nome": "Rafia",
-      "Squadra": "Lecce",
-      "Qt.A": 4
-    },
-    {
-      "Id": 6448,
-      "R": "T",
-      "Nome": "Martegani",
-      "Squadra": "Salernitana",
-      "Qt.A": 4
-    },
-    {
-      "Id": 2183,
-      "R": "W;T",
-      "Nome": "Garritano",
-      "Squadra": "Frosinone",
-      "Qt.A": 3
-    },
-    {
-      "Id": 4364,
-      "R": "C;T",
-      "Nome": "Gaetano",
-      "Squadra": "Napoli",
-      "Qt.A": 3
-    },
-    {
-      "Id": 4384,
-      "R": "C",
-      "Nome": "Jagiello",
-      "Squadra": "Genoa",
-      "Qt.A": 3
-    },
-    {
-      "Id": 4501,
-      "R": "M;C",
-      "Nome": "Obiang",
-      "Squadra": "Sassuolo",
-      "Qt.A": 3
-    },
-    {
-      "Id": 4870,
-      "R": "M;C",
-      "Nome": "Adopo",
-      "Squadra": "Atalanta",
-      "Qt.A": 3
-    },
-    {
-      "Id": 4988,
-      "R": "C",
-      "Nome": "Maggiore",
-      "Squadra": "Salernitana",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5286,
-      "R": "M;C",
-      "Nome": "Akpa Akpro",
-      "Squadra": "Monza",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5735,
-      "R": "T",
-      "Nome": "Volpato",
-      "Squadra": "Sassuolo",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5782,
-      "R": "C",
-      "Nome": "Kourfalidis",
-      "Squadra": "Cagliari",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5947,
-      "R": "C",
-      "Nome": "Hrustic",
-      "Squadra": "Verona",
-      "Qt.A": 3
-    },
-    {
-      "Id": 6212,
-      "R": "C",
-      "Nome": "Zarraga",
-      "Squadra": "Udinese",
-      "Qt.A": 3
-    },
-    {
-      "Id": 6221,
-      "R": "M;C",
-      "Nome": "Camara E.",
-      "Squadra": "Udinese",
-      "Qt.A": 3
-    },
-    {
-      "Id": 440,
-      "R": "C",
-      "Nome": "Viola",
-      "Squadra": "Cagliari",
-      "Qt.A": 2
-    },
-    {
-      "Id": 500,
-      "R": "C",
-      "Nome": "Lulic K.",
-      "Squadra": "Frosinone",
-      "Qt.A": 2
-    },
-    {
-      "Id": 2144,
-      "R": "C",
-      "Nome": "Coulibaly M.",
-      "Squadra": "Salernitana",
-      "Qt.A": 2
-    },
-    {
-      "Id": 2154,
-      "R": "W;T",
-      "Nome": "Vignato",
-      "Squadra": "Bologna",
-      "Qt.A": 2
-    },
-    {
-      "Id": 4349,
-      "R": "M;C",
-      "Nome": "Nicolussi Caviglia",
-      "Squadra": "Juventus",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6106,
-      "R": "T;A",
-      "Nome": "Carboni V.",
-      "Squadra": "Monza",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6175,
-      "R": "M;C",
-      "Nome": "Barrenechea",
-      "Squadra": "Frosinone",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6203,
-      "R": "M;C",
-      "Nome": "Belardinelli",
-      "Squadra": "Empoli",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6225,
-      "R": "M;C",
-      "Nome": "El Azzouzi",
-      "Squadra": "Bologna",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6252,
-      "R": "C;T",
-      "Nome": "Folorunsho",
-      "Squadra": "Verona",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6424,
-      "R": "M;C",
-      "Nome": "Prati",
-      "Squadra": "Cagliari",
-      "Qt.A": 2
-    },
-    {
-      "Id": 557,
-      "R": "C",
-      "Nome": "Benassi",
-      "Squadra": "Fiorentina",
-      "Qt.A": 1
-    },
-    {
-      "Id": 2076,
-      "R": "M;C",
-      "Nome": "Rog",
-      "Squadra": "Cagliari",
-      "Qt.A": 1
-    },
-    {
-      "Id": 2121,
-      "R": "C",
-      "Nome": "Melegoni",
-      "Squadra": "Genoa",
-      "Qt.A": 1
-    },
-    {
-      "Id": 2286,
-      "R": "C;T",
-      "Nome": "Crociata",
-      "Squadra": "Empoli",
-      "Qt.A": 1
-    },
-    {
-      "Id": 4725,
-      "R": "M",
-      "Nome": "Demme",
-      "Squadra": "Napoli",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5425,
-      "R": "C;T",
-      "Nome": "Urbanski",
-      "Squadra": "Bologna",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5824,
-      "R": "T;A",
-      "Nome": "Pafundi",
-      "Squadra": "Udinese",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5872,
-      "R": "C;T",
-      "Nome": "Helgason",
-      "Squadra": "Lecce",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5875,
-      "R": "T",
-      "Nome": "Adli",
-      "Squadra": "Milan",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5879,
-      "R": "T;A",
-      "Nome": "Vignato S.",
-      "Squadra": "Monza",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5998,
-      "R": "W",
-      "Nome": "Zerbin",
-      "Squadra": "Napoli",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6005,
-      "R": "C;T",
-      "Nome": "Ilkhan",
-      "Squadra": "Torino",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6168,
-      "R": "M;C",
-      "Nome": "Faticanti",
-      "Squadra": "Lecce",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6170,
-      "R": "C",
-      "Nome": "Gineitis",
-      "Squadra": "Torino",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6236,
-      "R": "M;C",
-      "Nome": "Amatucci",
-      "Squadra": "Fiorentina",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6240,
-      "R": "C;T",
-      "Nome": "Haoudi",
-      "Squadra": "Frosinone",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6241,
-      "R": "C;W;T",
-      "Nome": "Gelli",
-      "Squadra": "Frosinone",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6246,
-      "R": "M;C",
-      "Nome": "Lipani",
-      "Squadra": "Sassuolo",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6251,
-      "R": "M;C",
-      "Nome": "Saco",
-      "Squadra": "Napoli",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6254,
-      "R": "M;C",
-      "Nome": "Joselito",
-      "Squadra": "Verona",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6420,
-      "R": "C;T",
-      "Nome": "Pagano",
-      "Squadra": "Roma",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6423,
-      "R": "M;C",
-      "Nome": "Legowski",
-      "Squadra": "Salernitana",
-      "Qt.A": 1
-    },
-    {
-      "Id": 4661,
-      "R": "Pc",
-      "Nome": "Osimhen",
-      "Squadra": "Napoli",
-      "Qt.A": 44
-    },
-    {
-      "Id": 2764,
-      "R": "Pc",
-      "Nome": "Martinez L.",
-      "Squadra": "Inter",
-      "Qt.A": 38
-    },
-    {
-      "Id": 785,
-      "R": "Pc",
-      "Nome": "Immobile",
-      "Squadra": "Lazio",
-      "Qt.A": 33
-    },
-    {
-      "Id": 4510,
-      "R": "A",
-      "Nome": "Rafael Leao",
-      "Squadra": "Milan",
-      "Qt.A": 31
-    },
-    {
-      "Id": 5839,
-      "R": "A",
-      "Nome": "Kvaratskhelia",
-      "Squadra": "Napoli",
-      "Qt.A": 30
-    },
-    {
-      "Id": 309,
-      "R": "A",
-      "Nome": "Dybala",
-      "Squadra": "Roma",
-      "Qt.A": 29
-    },
-    {
-      "Id": 531,
-      "R": "A",
-      "Nome": "Berardi",
-      "Squadra": "Sassuolo",
-      "Qt.A": 29
-    },
-    {
-      "Id": 2841,
-      "R": "Pc",
-      "Nome": "Vlahovic",
-      "Squadra": "Juventus",
-      "Qt.A": 29
-    },
-    {
-      "Id": 4730,
-      "R": "A",
-      "Nome": "Lookman",
-      "Squadra": "Atalanta",
-      "Qt.A": 26
-    },
-    {
-      "Id": 5672,
-      "R": "Pc",
-      "Nome": "Dia",
-      "Squadra": "Salernitana",
-      "Qt.A": 26
-    },
-    {
-      "Id": 2137,
-      "R": "Pc",
-      "Nome": "Scamacca",
-      "Squadra": "Atalanta",
-      "Qt.A": 25
-    },
-    {
-      "Id": 4200,
-      "R": "Pc",
-      "Nome": "Giroud",
-      "Squadra": "Milan",
-      "Qt.A": 25
-    },
-    {
-      "Id": 479,
-      "R": "Pc",
-      "Nome": "Sanabria",
-      "Squadra": "Torino",
-      "Qt.A": 24
-    },
-    {
-      "Id": 4268,
-      "R": "Pc",
-      "Nome": "Arnautovic",
-      "Squadra": "Inter",
-      "Qt.A": 23
-    },
-    {
-      "Id": 4871,
-      "R": "Pc",
-      "Nome": "Thuram",
-      "Squadra": "Inter",
-      "Qt.A": 23
-    },
-    {
-      "Id": 5336,
-      "R": "Pc",
-      "Nome": "Nzola",
-      "Squadra": "Fiorentina",
-      "Qt.A": 23
-    },
-    {
-      "Id": 6228,
-      "R": "Pc",
-      "Nome": "Retegui",
-      "Squadra": "Genoa",
-      "Qt.A": 22
-    },
-    {
-      "Id": 6060,
-      "R": "A",
-      "Nome": "Lauriente'",
-      "Squadra": "Sassuolo",
-      "Qt.A": 21
-    },
-    {
-      "Id": 5694,
-      "R": "Pc",
-      "Nome": "Beto",
-      "Squadra": "Udinese",
-      "Qt.A": 20
-    },
-    {
-      "Id": 608,
-      "R": "Pc",
-      "Nome": "Zapata D.",
-      "Squadra": "Atalanta",
-      "Qt.A": 19
-    },
-    {
-      "Id": 2002,
-      "R": "A",
-      "Nome": "Chiesa",
-      "Squadra": "Juventus",
-      "Qt.A": 18
-    },
-    {
-      "Id": 2012,
-      "R": "Pc",
-      "Nome": "Milik",
-      "Squadra": "Juventus",
-      "Qt.A": 18
-    },
-    {
-      "Id": 4179,
-      "R": "A",
-      "Nome": "Gonzalez N.",
-      "Squadra": "Fiorentina",
-      "Qt.A": 16
-    },
-    {
-      "Id": 6227,
-      "R": "Pc",
-      "Nome": "Okafor",
-      "Squadra": "Milan",
-      "Qt.A": 16
-    },
-    {
-      "Id": 6229,
-      "R": "Pc",
-      "Nome": "Toure' E.",
-      "Squadra": "Atalanta",
-      "Qt.A": 16
-    },
-    {
-      "Id": 6409,
-      "R": "Pc",
-      "Nome": "Beltran L.",
-      "Squadra": "Fiorentina",
-      "Qt.A": 16
-    },
-    {
-      "Id": 1939,
-      "R": "Pc",
-      "Nome": "Lapadula",
-      "Squadra": "Cagliari",
-      "Qt.A": 15
-    },
-    {
-      "Id": 2475,
-      "R": "A",
-      "Nome": "Sanchez",
-      "Squadra": "Inter",
-      "Qt.A": 15
-    },
-    {
-      "Id": 2544,
-      "R": "Pc",
-      "Nome": "Abraham",
-      "Squadra": "Roma",
-      "Qt.A": 15
-    },
-    {
-      "Id": 2819,
-      "R": "Pc",
-      "Nome": "Caputo",
-      "Squadra": "Empoli",
-      "Qt.A": 15
-    },
-    {
-      "Id": 507,
-      "R": "Pc",
-      "Nome": "Muriel",
-      "Squadra": "Atalanta",
-      "Qt.A": 14
-    },
-    {
-      "Id": 1958,
-      "R": "A",
-      "Nome": "Caprari",
-      "Squadra": "Monza",
-      "Qt.A": 14
-    },
-    {
-      "Id": 2119,
-      "R": "A",
-      "Nome": "Deulofeu",
-      "Squadra": "Udinese",
-      "Qt.A": 14
-    },
-    {
-      "Id": 2438,
-      "R": "Pc",
-      "Nome": "Jovic",
-      "Squadra": "Fiorentina",
-      "Qt.A": 14
-    },
-    {
-      "Id": 2719,
-      "R": "A",
-      "Nome": "Barrow",
-      "Squadra": "Bologna",
-      "Qt.A": 14
-    },
-    {
-      "Id": 383,
-      "R": "Pc",
-      "Nome": "Petagna",
-      "Squadra": "Monza",
-      "Qt.A": 13
-    },
-    {
-      "Id": 2038,
-      "R": "Pc",
-      "Nome": "Pinamonti",
-      "Squadra": "Sassuolo",
-      "Qt.A": 13
-    },
-    {
-      "Id": 2061,
-      "R": "Pc",
-      "Nome": "Simeone",
-      "Squadra": "Napoli",
-      "Qt.A": 13
-    },
-    {
-      "Id": 5311,
-      "R": "Pc",
-      "Nome": "Shomurodov",
-      "Squadra": "Cagliari",
-      "Qt.A": 13
-    },
-    {
-      "Id": 5795,
-      "R": "Pc",
-      "Nome": "Azmoun",
-      "Squadra": "Roma",
-      "Qt.A": 13
-    },
-    {
-      "Id": 6226,
-      "R": "Pc",
-      "Nome": "Castellanos",
-      "Squadra": "Lazio",
-      "Qt.A": 13
-    },
-    {
-      "Id": 2489,
-      "R": "A",
-      "Nome": "Pedro",
-      "Squadra": "Lazio",
-      "Qt.A": 12
-    },
-    {
-      "Id": 4184,
-      "R": "W;A",
-      "Nome": "Brekalo",
-      "Squadra": "Fiorentina",
-      "Qt.A": 12
-    },
-    {
-      "Id": 4436,
-      "R": "A",
-      "Nome": "Cambiaghi",
-      "Squadra": "Empoli",
-      "Qt.A": 12
-    },
-    {
-      "Id": 4517,
-      "R": "A",
-      "Nome": "Lozano",
-      "Squadra": "Napoli",
-      "Qt.A": 12
-    },
-    {
-      "Id": 5529,
-      "R": "Pc",
-      "Nome": "Henry",
-      "Squadra": "Verona",
-      "Qt.A": 12
-    },
-    {
-      "Id": 6145,
-      "R": "A",
-      "Nome": "Ngonge",
-      "Squadra": "Verona",
-      "Qt.A": 12
-    },
-    {
-      "Id": 441,
-      "R": "Pc",
-      "Nome": "Belotti",
-      "Squadra": "Roma",
-      "Qt.A": 11
-    },
-    {
-      "Id": 2097,
-      "R": "Pc",
-      "Nome": "Kean",
-      "Squadra": "Juventus",
-      "Qt.A": 11
-    },
-    {
-      "Id": 2369,
-      "R": "A",
-      "Nome": "Thauvin",
-      "Squadra": "Udinese",
-      "Qt.A": 11
-    },
-    {
-      "Id": 5086,
-      "R": "Pc",
-      "Nome": "Zirkzee",
-      "Squadra": "Bologna",
-      "Qt.A": 11
-    },
-    {
-      "Id": 5882,
-      "R": "A",
-      "Nome": "Mota",
-      "Squadra": "Monza",
-      "Qt.A": 11
-    },
-    {
-      "Id": 6205,
-      "R": "Pc",
-      "Nome": "Mulattieri",
-      "Squadra": "Sassuolo",
-      "Qt.A": 11
-    },
-    {
-      "Id": 6207,
-      "R": "A",
-      "Nome": "Almqvist",
-      "Squadra": "Lecce",
-      "Qt.A": 11
-    },
-    {
-      "Id": 6213,
-      "R": "Pc",
-      "Nome": "Brenner",
-      "Squadra": "Udinese",
-      "Qt.A": 11
-    },
-    {
-      "Id": 6398,
-      "R": "A",
-      "Nome": "Isaksen",
-      "Squadra": "Lazio",
-      "Qt.A": 11
-    },
-    {
-      "Id": 6435,
-      "R": "Pc",
-      "Nome": "Krstovic",
-      "Squadra": "Lecce",
-      "Qt.A": 11
-    },
-    {
-      "Id": 6439,
-      "R": "Pc",
-      "Nome": "Cheddira",
-      "Squadra": "Frosinone",
-      "Qt.A": 11
-    },
-    {
-      "Id": 6459,
-      "R": "A",
-      "Nome": "Karlsson",
-      "Squadra": "Bologna",
-      "Qt.A": 11
-    },
-    {
-      "Id": 2325,
-      "R": "A",
-      "Nome": "Karamoh",
-      "Squadra": "Torino",
-      "Qt.A": 10
-    },
-    {
-      "Id": 4371,
-      "R": "A",
-      "Nome": "Raspadori",
-      "Squadra": "Napoli",
-      "Qt.A": 10
-    },
-    {
-      "Id": 4923,
-      "R": "Pc",
-      "Nome": "Colombo",
-      "Squadra": "Milan",
-      "Qt.A": 10
-    },
-    {
-      "Id": 505,
-      "R": "A",
-      "Nome": "Bonazzoli",
-      "Squadra": "Verona",
-      "Qt.A": 9
-    },
-    {
-      "Id": 643,
-      "R": "A",
-      "Nome": "Defrel",
-      "Squadra": "Sassuolo",
-      "Qt.A": 9
-    },
-    {
-      "Id": 1857,
-      "R": "A",
-      "Nome": "Di Francesco F.",
-      "Squadra": "Lecce",
-      "Qt.A": 9
-    },
-    {
-      "Id": 2762,
-      "R": "A",
-      "Nome": "Kouame'",
-      "Squadra": "Fiorentina",
-      "Qt.A": 9
-    },
-    {
-      "Id": 5471,
-      "R": "Pc",
-      "Nome": "Djuric",
-      "Squadra": "Verona",
-      "Qt.A": 9
-    },
-    {
-      "Id": 2103,
-      "R": "Pc",
-      "Nome": "Pellegri",
-      "Squadra": "Torino",
-      "Qt.A": 8
-    },
-    {
-      "Id": 5297,
-      "R": "A",
-      "Nome": "Luvumbo",
-      "Squadra": "Cagliari",
-      "Qt.A": 8
-    },
-    {
-      "Id": 5842,
-      "R": "Pc",
-      "Nome": "Botheim",
-      "Squadra": "Salernitana",
-      "Qt.A": 8
-    },
-    {
-      "Id": 6001,
-      "R": "A",
-      "Nome": "Banda",
-      "Squadra": "Lecce",
-      "Qt.A": 8
-    },
-    {
-      "Id": 6119,
-      "R": "A",
-      "Nome": "Solbakken",
-      "Squadra": "Roma",
-      "Qt.A": 8
-    },
-    {
-      "Id": 4359,
-      "R": "Pc",
-      "Nome": "Piccoli",
-      "Squadra": "Empoli",
-      "Qt.A": 7
-    },
-    {
-      "Id": 5364,
-      "R": "A",
-      "Nome": "Caso",
-      "Squadra": "Frosinone",
-      "Qt.A": 7
-    },
-    {
-      "Id": 5676,
-      "R": "A",
-      "Nome": "Success",
-      "Squadra": "Udinese",
-      "Qt.A": 7
-    },
-    {
-      "Id": 6215,
-      "R": "Pc",
-      "Nome": "Lucca",
-      "Squadra": "Udinese",
-      "Qt.A": 6
-    },
-    {
-      "Id": 5500,
-      "R": "A",
-      "Nome": "Cancellieri",
-      "Squadra": "Empoli",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5807,
-      "R": "A",
-      "Nome": "Jovane",
-      "Squadra": "Salernitana",
-      "Qt.A": 5
-    },
-    {
-      "Id": 5845,
-      "R": "Pc",
-      "Nome": "Alvarez A.",
-      "Squadra": "Sassuolo",
-      "Qt.A": 5
-    },
-    {
-      "Id": 247,
-      "R": "Pc",
-      "Nome": "Pavoletti",
-      "Squadra": "Cagliari",
-      "Qt.A": 4
-    },
-    {
-      "Id": 5734,
-      "R": "W;A",
-      "Nome": "Soule'",
-      "Squadra": "Juventus",
-      "Qt.A": 4
-    },
-    {
-      "Id": 6214,
-      "R": "Pc",
-      "Nome": "Cuni",
-      "Squadra": "Frosinone",
-      "Qt.A": 4
-    },
-    {
-      "Id": 2466,
-      "R": "Pc",
-      "Nome": "Origi",
-      "Squadra": "Milan",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5446,
-      "R": "Pc",
-      "Nome": "Van Hooijdonk",
-      "Squadra": "Bologna",
-      "Qt.A": 3
-    },
-    {
-      "Id": 5806,
-      "R": "A",
-      "Nome": "Seck",
-      "Squadra": "Torino",
-      "Qt.A": 3
-    },
-    {
-      "Id": 6204,
-      "R": "A",
-      "Nome": "Kvernadze",
-      "Squadra": "Frosinone",
-      "Qt.A": 3
-    },
-    {
-      "Id": 281,
-      "R": "Pc",
-      "Nome": "Puscas",
-      "Squadra": "Genoa",
-      "Qt.A": 2
-    },
-    {
-      "Id": 5439,
-      "R": "A",
-      "Nome": "Kallon",
-      "Squadra": "Verona",
-      "Qt.A": 2
-    },
-    {
-      "Id": 5506,
-      "R": "A",
-      "Nome": "Ekuban",
-      "Squadra": "Genoa",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6243,
-      "R": "Pc",
-      "Nome": "Borrelli",
-      "Squadra": "Frosinone",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6250,
-      "R": "Pc",
-      "Nome": "Maric",
-      "Squadra": "Monza",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6395,
-      "R": "Pc",
-      "Nome": "Shpendi S.",
-      "Squadra": "Empoli",
-      "Qt.A": 2
-    },
-    {
-      "Id": 6418,
-      "R": "Pc",
-      "Nome": "Burnete",
-      "Squadra": "Lecce",
-      "Qt.A": 2
-    },
-    {
-      "Id": 5060,
-      "R": "A",
-      "Nome": "Ake' M.",
-      "Squadra": "Udinese",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5391,
-      "R": "Pc",
-      "Nome": "Kokorin",
-      "Squadra": "Fiorentina",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5395,
-      "R": "A",
-      "Nome": "Braaf",
-      "Squadra": "Verona",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5505,
-      "R": "Pc",
-      "Nome": "Kaio Jorge",
-      "Squadra": "Juventus",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5776,
-      "R": "A",
-      "Nome": "Ceide",
-      "Squadra": "Sassuolo",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5837,
-      "R": "Pc",
-      "Nome": "Voelkerling Persson",
-      "Squadra": "Lecce",
-      "Qt.A": 1
-    },
-    {
-      "Id": 5843,
-      "R": "A",
-      "Nome": "Valencia D.",
-      "Squadra": "Salernitana",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6011,
-      "R": "A",
-      "Nome": "Ekong",
-      "Squadra": "Empoli",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6160,
-      "R": "Pc",
-      "Nome": "Vivaldo",
-      "Squadra": "Udinese",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6242,
-      "R": "A",
-      "Nome": "Bidaoui",
-      "Squadra": "Frosinone",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6247,
-      "R": "Pc",
-      "Nome": "Yalcin",
-      "Squadra": "Genoa",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6419,
-      "R": "A",
-      "Nome": "Corfitzen",
-      "Squadra": "Lecce",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6425,
-      "R": "Pc",
-      "Nome": "Ikwuemesi",
-      "Squadra": "Salernitana",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6427,
-      "R": "Pc",
-      "Nome": "Stewart",
-      "Squadra": "Salernitana",
-      "Qt.A": 1
-    },
-    {
-      "Id": 6434,
-      "R": "A",
-      "Nome": "Yildiz",
-      "Squadra": "Juventus",
-      "Qt.A": 1
-    }
-  ]
+  {
+    "Id": 2428,
+    "R": "P",
+    "Nome": "Sommer",
+    "Squadra": "Inter",
+    "Qt.A": 19
+  },
+  {
+    "Id": 5876,
+    "R": "P",
+    "Nome": "Di Gregorio",
+    "Squadra": "Juventus",
+    "Qt.A": 18
+  },
+  {
+    "Id": 572,
+    "R": "P",
+    "Nome": "Meret",
+    "Squadra": "Napoli",
+    "Qt.A": 15
+  },
+  {
+    "Id": 4312,
+    "R": "P",
+    "Nome": "Maignan",
+    "Squadra": "Milan",
+    "Qt.A": 14
+  },
+  {
+    "Id": 5841,
+    "R": "P",
+    "Nome": "Svilar",
+    "Squadra": "Roma",
+    "Qt.A": 14
+  },
+  {
+    "Id": 133,
+    "R": "P",
+    "Nome": "Skorupski",
+    "Squadra": "Bologna",
+    "Qt.A": 12
+  },
+  {
+    "Id": 2170,
+    "R": "P",
+    "Nome": "Milinkovic-Savic V.",
+    "Squadra": "Torino",
+    "Qt.A": 12
+  },
+  {
+    "Id": 4431,
+    "R": "P",
+    "Nome": "Carnesecchi",
+    "Squadra": "Atalanta",
+    "Qt.A": 12
+  },
+  {
+    "Id": 2814,
+    "R": "P",
+    "Nome": "Provedel",
+    "Squadra": "Lazio",
+    "Qt.A": 11
+  },
+  {
+    "Id": 2815,
+    "R": "P",
+    "Nome": "Terracciano",
+    "Squadra": "Fiorentina",
+    "Qt.A": 11
+  },
+  {
+    "Id": 610,
+    "R": "P",
+    "Nome": "Gollini",
+    "Squadra": "Genoa",
+    "Qt.A": 10
+  },
+  {
+    "Id": 2521,
+    "R": "P",
+    "Nome": "De Gea",
+    "Squadra": "Fiorentina",
+    "Qt.A": 10
+  },
+  {
+    "Id": 2134,
+    "R": "P",
+    "Nome": "Falcone",
+    "Squadra": "Lecce",
+    "Qt.A": 9
+  },
+  {
+    "Id": 574,
+    "R": "P",
+    "Nome": "Scuffet",
+    "Squadra": "Cagliari",
+    "Qt.A": 8
+  },
+  {
+    "Id": 761,
+    "R": "P",
+    "Nome": "Audero",
+    "Squadra": "Como",
+    "Qt.A": 8
+  },
+  {
+    "Id": 4867,
+    "R": "P",
+    "Nome": "Turati",
+    "Squadra": "Monza",
+    "Qt.A": 8
+  },
+  {
+    "Id": 4957,
+    "R": "P",
+    "Nome": "Montipo'",
+    "Squadra": "Verona",
+    "Qt.A": 8
+  },
+  {
+    "Id": 6462,
+    "R": "P",
+    "Nome": "Okoye",
+    "Squadra": "Udinese",
+    "Qt.A": 8
+  },
+  {
+    "Id": 4425,
+    "R": "P",
+    "Nome": "Joronen",
+    "Squadra": "Venezia",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6125,
+    "R": "P",
+    "Nome": "Vasquez D.",
+    "Squadra": "Empoli",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6641,
+    "R": "P",
+    "Nome": "Suzuki",
+    "Squadra": "Parma",
+    "Qt.A": 7
+  },
+  {
+    "Id": 387,
+    "R": "P",
+    "Nome": "Reina",
+    "Squadra": "Como",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6682,
+    "R": "P",
+    "Nome": "Pizzignacco",
+    "Squadra": "Monza",
+    "Qt.A": 3
+  },
+  {
+    "Id": 4,
+    "R": "P",
+    "Nome": "Sportiello",
+    "Squadra": "Milan",
+    "Qt.A": 1
+  },
+  {
+    "Id": 188,
+    "R": "P",
+    "Nome": "Leali",
+    "Squadra": "Genoa",
+    "Qt.A": 1
+  },
+  {
+    "Id": 216,
+    "R": "P",
+    "Nome": "Donnarumma An.",
+    "Squadra": "Torino",
+    "Qt.A": 1
+  },
+  {
+    "Id": 218,
+    "R": "P",
+    "Nome": "Perin",
+    "Squadra": "Juventus",
+    "Qt.A": 1
+  },
+  {
+    "Id": 219,
+    "R": "P",
+    "Nome": "Sommariva",
+    "Squadra": "Genoa",
+    "Qt.A": 1
+  },
+  {
+    "Id": 511,
+    "R": "P",
+    "Nome": "Perilli",
+    "Squadra": "Verona",
+    "Qt.A": 1
+  },
+  {
+    "Id": 543,
+    "R": "P",
+    "Nome": "Padelli",
+    "Squadra": "Udinese",
+    "Qt.A": 1
+  },
+  {
+    "Id": 673,
+    "R": "P",
+    "Nome": "Perisan",
+    "Squadra": "Empoli",
+    "Qt.A": 1
+  },
+  {
+    "Id": 1926,
+    "R": "P",
+    "Nome": "Di Gennaro",
+    "Squadra": "Inter",
+    "Qt.A": 1
+  },
+  {
+    "Id": 1930,
+    "R": "P",
+    "Nome": "Pinsoglio",
+    "Squadra": "Juventus",
+    "Qt.A": 1
+  },
+  {
+    "Id": 2178,
+    "R": "P",
+    "Nome": "Cragno",
+    "Squadra": "Monza",
+    "Qt.A": 1
+  },
+  {
+    "Id": 2297,
+    "R": "P",
+    "Nome": "Rossi F.",
+    "Squadra": "Atalanta",
+    "Qt.A": 1
+  },
+  {
+    "Id": 2401,
+    "R": "P",
+    "Nome": "Fruchtl",
+    "Squadra": "Lecce",
+    "Qt.A": 1
+  },
+  {
+    "Id": 2722,
+    "R": "P",
+    "Nome": "Ravaglia F.",
+    "Squadra": "Bologna",
+    "Qt.A": 1
+  },
+  {
+    "Id": 2809,
+    "R": "P",
+    "Nome": "Vigorito",
+    "Squadra": "Como",
+    "Qt.A": 1
+  },
+  {
+    "Id": 2845,
+    "R": "P",
+    "Nome": "Contini",
+    "Squadra": "Napoli",
+    "Qt.A": 1
+  },
+  {
+    "Id": 4270,
+    "R": "P",
+    "Nome": "Rui Patricio",
+    "Squadra": "Atalanta",
+    "Qt.A": 1
+  },
+  {
+    "Id": 4351,
+    "R": "P",
+    "Nome": "Brancolini",
+    "Squadra": "Empoli",
+    "Qt.A": 1
+  },
+  {
+    "Id": 4360,
+    "R": "P",
+    "Nome": "Caprile",
+    "Squadra": "Napoli",
+    "Qt.A": 1
+  },
+  {
+    "Id": 4491,
+    "R": "P",
+    "Nome": "Berardi A.",
+    "Squadra": "Verona",
+    "Qt.A": 1
+  },
+  {
+    "Id": 4929,
+    "R": "P",
+    "Nome": "Ciocci",
+    "Squadra": "Cagliari",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5116,
+    "R": "P",
+    "Nome": "Martinez Jo.",
+    "Squadra": "Inter",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5320,
+    "R": "P",
+    "Nome": "Paleari",
+    "Squadra": "Torino",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5384,
+    "R": "P",
+    "Nome": "Ryan",
+    "Squadra": "Roma",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5521,
+    "R": "P",
+    "Nome": "Bertinato",
+    "Squadra": "Venezia",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5822,
+    "R": "P",
+    "Nome": "Bagnolini",
+    "Squadra": "Bologna",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6184,
+    "R": "P",
+    "Nome": "Martinelli T.",
+    "Squadra": "Fiorentina",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6248,
+    "R": "P",
+    "Nome": "Stankovic F.",
+    "Squadra": "Venezia",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6403,
+    "R": "P",
+    "Nome": "Christensen O.",
+    "Squadra": "Fiorentina",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6417,
+    "R": "P",
+    "Nome": "Furlanetto",
+    "Squadra": "Lazio",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6482,
+    "R": "P",
+    "Nome": "Mandas",
+    "Squadra": "Lazio",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6505,
+    "R": "P",
+    "Nome": "Nava",
+    "Squadra": "Milan",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6523,
+    "R": "P",
+    "Nome": "Samooja",
+    "Squadra": "Lecce",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6650,
+    "R": "P",
+    "Nome": "Sherri",
+    "Squadra": "Cagliari",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6661,
+    "R": "P",
+    "Nome": "Chichizola",
+    "Squadra": "Parma",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6662,
+    "R": "P",
+    "Nome": "Corvi",
+    "Squadra": "Parma",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6671,
+    "R": "P",
+    "Nome": "Grandi",
+    "Squadra": "Venezia",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6813,
+    "R": "P",
+    "Nome": "Torriani",
+    "Squadra": "Milan",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6824,
+    "R": "P",
+    "Nome": "Marin Re.",
+    "Squadra": "Roma",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6842,
+    "R": "P",
+    "Nome": "Sava",
+    "Squadra": "Udinese",
+    "Qt.A": 1
+  },
+  {
+    "Id": 254,
+    "R": "D",
+    "Nome": "Dimarco",
+    "Squadra": "Inter",
+    "Qt.A": 24
+  },
+  {
+    "Id": 4292,
+    "R": "D",
+    "Nome": "Hernandez T.",
+    "Squadra": "Milan",
+    "Qt.A": 20
+  },
+  {
+    "Id": 2816,
+    "R": "D",
+    "Nome": "Di Lorenzo",
+    "Squadra": "Napoli",
+    "Qt.A": 18
+  },
+  {
+    "Id": 2120,
+    "R": "D",
+    "Nome": "Bastoni",
+    "Squadra": "Inter",
+    "Qt.A": 16
+  },
+  {
+    "Id": 2724,
+    "R": "D",
+    "Nome": "Buongiorno",
+    "Squadra": "Napoli",
+    "Qt.A": 16
+  },
+  {
+    "Id": 2788,
+    "R": "D",
+    "Nome": "Bremer",
+    "Squadra": "Juventus",
+    "Qt.A": 16
+  },
+  {
+    "Id": 5513,
+    "R": "D",
+    "Nome": "Dumfries",
+    "Squadra": "Inter",
+    "Qt.A": 16
+  },
+  {
+    "Id": 2160,
+    "R": "D",
+    "Nome": "Gosens",
+    "Squadra": "Fiorentina",
+    "Qt.A": 14
+  },
+  {
+    "Id": 4177,
+    "R": "D",
+    "Nome": "Pavard",
+    "Squadra": "Inter",
+    "Qt.A": 14
+  },
+  {
+    "Id": 1852,
+    "R": "D",
+    "Nome": "Spinazzola",
+    "Squadra": "Napoli",
+    "Qt.A": 13
+  },
+  {
+    "Id": 4237,
+    "R": "D",
+    "Nome": "Danilo",
+    "Squadra": "Juventus",
+    "Qt.A": 13
+  },
+  {
+    "Id": 4751,
+    "R": "D",
+    "Nome": "Tomori",
+    "Squadra": "Milan",
+    "Qt.A": 13
+  },
+  {
+    "Id": 4887,
+    "R": "D",
+    "Nome": "Bellanova",
+    "Squadra": "Atalanta",
+    "Qt.A": 13
+  },
+  {
+    "Id": 5354,
+    "R": "D",
+    "Nome": "Ruggeri",
+    "Squadra": "Atalanta",
+    "Qt.A": 12
+  },
+  {
+    "Id": 2296,
+    "R": "D",
+    "Nome": "Mancini",
+    "Squadra": "Roma",
+    "Qt.A": 11
+  },
+  {
+    "Id": 4409,
+    "R": "D",
+    "Nome": "Rrahmani",
+    "Squadra": "Napoli",
+    "Qt.A": 11
+  },
+  {
+    "Id": 4816,
+    "R": "D",
+    "Nome": "Emerson Royal",
+    "Squadra": "Milan",
+    "Qt.A": 11
+  },
+  {
+    "Id": 5022,
+    "R": "D",
+    "Nome": "Pavlovic",
+    "Squadra": "Milan",
+    "Qt.A": 11
+  },
+  {
+    "Id": 5520,
+    "R": "D",
+    "Nome": "Cambiaso",
+    "Squadra": "Juventus",
+    "Qt.A": 11
+  },
+  {
+    "Id": 513,
+    "R": "D",
+    "Nome": "Acerbi",
+    "Squadra": "Inter",
+    "Qt.A": 10
+  },
+  {
+    "Id": 554,
+    "R": "D",
+    "Nome": "Zappacosta",
+    "Squadra": "Atalanta",
+    "Qt.A": 10
+  },
+  {
+    "Id": 2525,
+    "R": "D",
+    "Nome": "Darmian",
+    "Squadra": "Inter",
+    "Qt.A": 10
+  },
+  {
+    "Id": 4772,
+    "R": "D",
+    "Nome": "Angelino",
+    "Squadra": "Roma",
+    "Qt.A": 10
+  },
+  {
+    "Id": 4807,
+    "R": "D",
+    "Nome": "Hermoso",
+    "Squadra": "Roma",
+    "Qt.A": 10
+  },
+  {
+    "Id": 5323,
+    "R": "D",
+    "Nome": "Martinez Quarta",
+    "Squadra": "Fiorentina",
+    "Qt.A": 10
+  },
+  {
+    "Id": 5578,
+    "R": "D",
+    "Nome": "Kossounou",
+    "Squadra": "Atalanta",
+    "Qt.A": 10
+  },
+  {
+    "Id": 6642,
+    "R": "D",
+    "Nome": "Coco",
+    "Squadra": "Torino",
+    "Qt.A": 10
+  },
+  {
+    "Id": 393,
+    "R": "D",
+    "Nome": "Luperto",
+    "Squadra": "Cagliari",
+    "Qt.A": 9
+  },
+  {
+    "Id": 460,
+    "R": "D",
+    "Nome": "Romagnoli",
+    "Squadra": "Lazio",
+    "Qt.A": 9
+  },
+  {
+    "Id": 4284,
+    "R": "D",
+    "Nome": "Sergi Roberto",
+    "Squadra": "Como",
+    "Qt.A": 9
+  },
+  {
+    "Id": 4317,
+    "R": "D",
+    "Nome": "N'Dicka",
+    "Squadra": "Roma",
+    "Qt.A": 9
+  },
+  {
+    "Id": 5514,
+    "R": "D",
+    "Nome": "Vasquez",
+    "Squadra": "Genoa",
+    "Qt.A": 9
+  },
+  {
+    "Id": 5835,
+    "R": "D",
+    "Nome": "Baschirotto",
+    "Squadra": "Lecce",
+    "Qt.A": 9
+  },
+  {
+    "Id": 5847,
+    "R": "D",
+    "Nome": "Bijol",
+    "Squadra": "Udinese",
+    "Qt.A": 9
+  },
+  {
+    "Id": 5877,
+    "R": "D",
+    "Nome": "Carlos Augusto",
+    "Squadra": "Inter",
+    "Qt.A": 9
+  },
+  {
+    "Id": 5885,
+    "R": "D",
+    "Nome": "Dodo'",
+    "Squadra": "Fiorentina",
+    "Qt.A": 9
+  },
+  {
+    "Id": 252,
+    "R": "D",
+    "Nome": "Biraghi",
+    "Squadra": "Fiorentina",
+    "Qt.A": 8
+  },
+  {
+    "Id": 2602,
+    "R": "D",
+    "Nome": "Varane",
+    "Squadra": "Como",
+    "Qt.A": 8
+  },
+  {
+    "Id": 2640,
+    "R": "D",
+    "Nome": "Kolasinac",
+    "Squadra": "Atalanta",
+    "Qt.A": 8
+  },
+  {
+    "Id": 4210,
+    "R": "D",
+    "Nome": "Mina",
+    "Squadra": "Cagliari",
+    "Qt.A": 8
+  },
+  {
+    "Id": 4734,
+    "R": "D",
+    "Nome": "Miranda J.",
+    "Squadra": "Bologna",
+    "Qt.A": 8
+  },
+  {
+    "Id": 5010,
+    "R": "D",
+    "Nome": "Ismajli",
+    "Squadra": "Empoli",
+    "Qt.A": 8
+  },
+  {
+    "Id": 5449,
+    "R": "D",
+    "Nome": "Parisi",
+    "Squadra": "Fiorentina",
+    "Qt.A": 8
+  },
+  {
+    "Id": 5498,
+    "R": "D",
+    "Nome": "Casale",
+    "Squadra": "Bologna",
+    "Qt.A": 8
+  },
+  {
+    "Id": 5603,
+    "R": "D",
+    "Nome": "Pongracic",
+    "Squadra": "Fiorentina",
+    "Qt.A": 8
+  },
+  {
+    "Id": 5678,
+    "R": "D",
+    "Nome": "Holm",
+    "Squadra": "Bologna",
+    "Qt.A": 8
+  },
+  {
+    "Id": 5831,
+    "R": "D",
+    "Nome": "Gatti",
+    "Squadra": "Juventus",
+    "Qt.A": 8
+  },
+  {
+    "Id": 5899,
+    "R": "D",
+    "Nome": "Gigot",
+    "Squadra": "Lazio",
+    "Qt.A": 8
+  },
+  {
+    "Id": 6046,
+    "R": "D",
+    "Nome": "Hien",
+    "Squadra": "Atalanta",
+    "Qt.A": 8
+  },
+  {
+    "Id": 6202,
+    "R": "D",
+    "Nome": "Beukema",
+    "Squadra": "Bologna",
+    "Qt.A": 8
+  },
+  {
+    "Id": 6230,
+    "R": "D",
+    "Nome": "Dossena",
+    "Squadra": "Como",
+    "Qt.A": 8
+  },
+  {
+    "Id": 6480,
+    "R": "D",
+    "Nome": "Tchatchoua",
+    "Squadra": "Verona",
+    "Qt.A": 8
+  },
+  {
+    "Id": 49,
+    "R": "D",
+    "Nome": "Masina",
+    "Squadra": "Torino",
+    "Qt.A": 7
+  },
+  {
+    "Id": 322,
+    "R": "D",
+    "Nome": "De Vrij",
+    "Squadra": "Inter",
+    "Qt.A": 7
+  },
+  {
+    "Id": 770,
+    "R": "D",
+    "Nome": "Pezzella Giu.",
+    "Squadra": "Empoli",
+    "Qt.A": 7
+  },
+  {
+    "Id": 787,
+    "R": "D",
+    "Nome": "Djimsiti",
+    "Squadra": "Atalanta",
+    "Qt.A": 7
+  },
+  {
+    "Id": 791,
+    "R": "D",
+    "Nome": "Sabelli",
+    "Squadra": "Genoa",
+    "Qt.A": 7
+  },
+  {
+    "Id": 2285,
+    "R": "D",
+    "Nome": "Bani",
+    "Squadra": "Genoa",
+    "Qt.A": 7
+  },
+  {
+    "Id": 4378,
+    "R": "D",
+    "Nome": "Ranieri L.",
+    "Squadra": "Fiorentina",
+    "Qt.A": 7
+  },
+  {
+    "Id": 4530,
+    "R": "D",
+    "Nome": "Kyriakopoulos",
+    "Squadra": "Monza",
+    "Qt.A": 7
+  },
+  {
+    "Id": 4665,
+    "R": "D",
+    "Nome": "Maripan",
+    "Squadra": "Torino",
+    "Qt.A": 7
+  },
+  {
+    "Id": 4904,
+    "R": "D",
+    "Nome": "Mari'",
+    "Squadra": "Monza",
+    "Qt.A": 7
+  },
+  {
+    "Id": 4982,
+    "R": "D",
+    "Nome": "Erlic",
+    "Squadra": "Bologna",
+    "Qt.A": 7
+  },
+  {
+    "Id": 4994,
+    "R": "D",
+    "Nome": "Vojvoda",
+    "Squadra": "Torino",
+    "Qt.A": 7
+  },
+  {
+    "Id": 5324,
+    "R": "D",
+    "Nome": "Godfrey",
+    "Squadra": "Atalanta",
+    "Qt.A": 7
+  },
+  {
+    "Id": 5435,
+    "R": "D",
+    "Nome": "Moreno Alb.",
+    "Squadra": "Como",
+    "Qt.A": 7
+  },
+  {
+    "Id": 5526,
+    "R": "D",
+    "Nome": "Scalvini",
+    "Squadra": "Atalanta",
+    "Qt.A": 7
+  },
+  {
+    "Id": 5620,
+    "R": "D",
+    "Nome": "Tavares N.",
+    "Squadra": "Lazio",
+    "Qt.A": 7
+  },
+  {
+    "Id": 5840,
+    "R": "D",
+    "Nome": "Olivera",
+    "Squadra": "Napoli",
+    "Qt.A": 7
+  },
+  {
+    "Id": 5862,
+    "R": "D",
+    "Nome": "Valeri",
+    "Squadra": "Parma",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6039,
+    "R": "D",
+    "Nome": "Cabal",
+    "Squadra": "Juventus",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6042,
+    "R": "D",
+    "Nome": "Lucumi'",
+    "Squadra": "Bologna",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6047,
+    "R": "D",
+    "Nome": "Ehizibue",
+    "Squadra": "Udinese",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6066,
+    "R": "D",
+    "Nome": "Posch",
+    "Squadra": "Bologna",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6257,
+    "R": "D",
+    "Nome": "Dorgu",
+    "Squadra": "Lecce",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6638,
+    "R": "D",
+    "Nome": "Marin R.",
+    "Squadra": "Napoli",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6820,
+    "R": "D",
+    "Nome": "Sosa B.",
+    "Squadra": "Torino",
+    "Qt.A": 7
+  },
+  {
+    "Id": 226,
+    "R": "D",
+    "Nome": "Izzo",
+    "Squadra": "Monza",
+    "Qt.A": 6
+  },
+  {
+    "Id": 357,
+    "R": "D",
+    "Nome": "Calabria",
+    "Squadra": "Milan",
+    "Qt.A": 6
+  },
+  {
+    "Id": 729,
+    "R": "D",
+    "Nome": "Pereira P.",
+    "Squadra": "Monza",
+    "Qt.A": 6
+  },
+  {
+    "Id": 2181,
+    "R": "D",
+    "Nome": "Palomino",
+    "Squadra": "Cagliari",
+    "Qt.A": 6
+  },
+  {
+    "Id": 2188,
+    "R": "D",
+    "Nome": "Marusic",
+    "Squadra": "Lazio",
+    "Qt.A": 6
+  },
+  {
+    "Id": 2263,
+    "R": "D",
+    "Nome": "Lazzari",
+    "Squadra": "Lazio",
+    "Qt.A": 6
+  },
+  {
+    "Id": 4433,
+    "R": "D",
+    "Nome": "Zortea",
+    "Squadra": "Cagliari",
+    "Qt.A": 6
+  },
+  {
+    "Id": 4458,
+    "R": "D",
+    "Nome": "Candela",
+    "Squadra": "Venezia",
+    "Qt.A": 6
+  },
+  {
+    "Id": 4461,
+    "R": "D",
+    "Nome": "Zappa",
+    "Squadra": "Cagliari",
+    "Qt.A": 6
+  },
+  {
+    "Id": 5527,
+    "R": "D",
+    "Nome": "Zanoli",
+    "Squadra": "Genoa",
+    "Qt.A": 6
+  },
+  {
+    "Id": 5626,
+    "R": "D",
+    "Nome": "Guilbert",
+    "Squadra": "Lecce",
+    "Qt.A": 6
+  },
+  {
+    "Id": 5718,
+    "R": "D",
+    "Nome": "Viti",
+    "Squadra": "Empoli",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6041,
+    "R": "D",
+    "Nome": "Schuurs",
+    "Squadra": "Torino",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6426,
+    "R": "D",
+    "Nome": "Pedersen",
+    "Squadra": "Torino",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6533,
+    "R": "D",
+    "Nome": "Giannetti L.",
+    "Squadra": "Udinese",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6639,
+    "R": "D",
+    "Nome": "Frese",
+    "Squadra": "Verona",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6663,
+    "R": "D",
+    "Nome": "Circati",
+    "Squadra": "Parma",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6896,
+    "R": "D",
+    "Nome": "Van Der Brempt",
+    "Squadra": "Como",
+    "Qt.A": 6
+  },
+  {
+    "Id": 1952,
+    "R": "D",
+    "Nome": "Zampano",
+    "Squadra": "Venezia",
+    "Qt.A": 5
+  },
+  {
+    "Id": 2593,
+    "R": "D",
+    "Nome": "Martin",
+    "Squadra": "Genoa",
+    "Qt.A": 5
+  },
+  {
+    "Id": 4385,
+    "R": "D",
+    "Nome": "Lazaro",
+    "Squadra": "Torino",
+    "Qt.A": 5
+  },
+  {
+    "Id": 4421,
+    "R": "D",
+    "Nome": "Augello",
+    "Squadra": "Cagliari",
+    "Qt.A": 5
+  },
+  {
+    "Id": 4493,
+    "R": "D",
+    "Nome": "Dawidowicz",
+    "Squadra": "Verona",
+    "Qt.A": 5
+  },
+  {
+    "Id": 4502,
+    "R": "D",
+    "Nome": "Gallo",
+    "Squadra": "Lecce",
+    "Qt.A": 5
+  },
+  {
+    "Id": 4925,
+    "R": "D",
+    "Nome": "Carboni A.",
+    "Squadra": "Monza",
+    "Qt.A": 5
+  },
+  {
+    "Id": 4958,
+    "R": "D",
+    "Nome": "Caldirola",
+    "Squadra": "Monza",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5532,
+    "R": "D",
+    "Nome": "Bradaric",
+    "Squadra": "Verona",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5554,
+    "R": "D",
+    "Nome": "Daniliuc",
+    "Squadra": "Verona",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5555,
+    "R": "D",
+    "Nome": "Kamara H.",
+    "Squadra": "Udinese",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5739,
+    "R": "D",
+    "Nome": "De Winter",
+    "Squadra": "Genoa",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5764,
+    "R": "D",
+    "Nome": "Coppola D.",
+    "Squadra": "Verona",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5838,
+    "R": "D",
+    "Nome": "Birindelli",
+    "Squadra": "Monza",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6235,
+    "R": "D",
+    "Nome": "Kayode",
+    "Squadra": "Fiorentina",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6245,
+    "R": "D",
+    "Nome": "Vogliacco",
+    "Squadra": "Genoa",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6664,
+    "R": "D",
+    "Nome": "Delprato",
+    "Squadra": "Parma",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6672,
+    "R": "D",
+    "Nome": "Idzes",
+    "Squadra": "Venezia",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6673,
+    "R": "D",
+    "Nome": "Sverko",
+    "Squadra": "Venezia",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6885,
+    "R": "D",
+    "Nome": "Abdulhamid",
+    "Squadra": "Roma",
+    "Qt.A": 5
+  },
+  {
+    "Id": 256,
+    "R": "D",
+    "Nome": "Juan Jesus",
+    "Squadra": "Napoli",
+    "Qt.A": 4
+  },
+  {
+    "Id": 327,
+    "R": "D",
+    "Nome": "Patric",
+    "Squadra": "Lazio",
+    "Qt.A": 4
+  },
+  {
+    "Id": 695,
+    "R": "D",
+    "Nome": "Toloi",
+    "Squadra": "Atalanta",
+    "Qt.A": 4
+  },
+  {
+    "Id": 697,
+    "R": "D",
+    "Nome": "Cuadrado",
+    "Squadra": "Atalanta",
+    "Qt.A": 4
+  },
+  {
+    "Id": 2653,
+    "R": "D",
+    "Nome": "Lykogiannis",
+    "Squadra": "Bologna",
+    "Qt.A": 4
+  },
+  {
+    "Id": 4263,
+    "R": "D",
+    "Nome": "Kabasele",
+    "Squadra": "Udinese",
+    "Qt.A": 4
+  },
+  {
+    "Id": 4374,
+    "R": "D",
+    "Nome": "Walukiewicz",
+    "Squadra": "Torino",
+    "Qt.A": 4
+  },
+  {
+    "Id": 4657,
+    "R": "D",
+    "Nome": "Celik",
+    "Squadra": "Roma",
+    "Qt.A": 4
+  },
+  {
+    "Id": 5327,
+    "R": "D",
+    "Nome": "Osorio",
+    "Squadra": "Parma",
+    "Qt.A": 4
+  },
+  {
+    "Id": 5481,
+    "R": "D",
+    "Nome": "Mazzocchi",
+    "Squadra": "Napoli",
+    "Qt.A": 4
+  },
+  {
+    "Id": 5484,
+    "R": "D",
+    "Nome": "Svoboda",
+    "Squadra": "Venezia",
+    "Qt.A": 4
+  },
+  {
+    "Id": 5833,
+    "R": "D",
+    "Nome": "Gila",
+    "Squadra": "Lazio",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6217,
+    "R": "D",
+    "Nome": "Bisseck",
+    "Squadra": "Inter",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6231,
+    "R": "D",
+    "Nome": "Azzi",
+    "Squadra": "Cagliari",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6485,
+    "R": "D",
+    "Nome": "Kristensen T.",
+    "Squadra": "Udinese",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6632,
+    "R": "D",
+    "Nome": "Gaspar K.",
+    "Squadra": "Lecce",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6665,
+    "R": "D",
+    "Nome": "Coulibaly W.",
+    "Squadra": "Parma",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6802,
+    "R": "D",
+    "Nome": "Savona",
+    "Squadra": "Juventus",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6890,
+    "R": "D",
+    "Nome": "Moreno M.",
+    "Squadra": "Fiorentina",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6893,
+    "R": "D",
+    "Nome": "Kempf",
+    "Squadra": "Como",
+    "Qt.A": 4
+  },
+  {
+    "Id": 140,
+    "R": "D",
+    "Nome": "Hysaj",
+    "Squadra": "Lazio",
+    "Qt.A": 3
+  },
+  {
+    "Id": 253,
+    "R": "D",
+    "Nome": "D'Ambrosio",
+    "Squadra": "Monza",
+    "Qt.A": 3
+  },
+  {
+    "Id": 2769,
+    "R": "D",
+    "Nome": "Magnani",
+    "Squadra": "Verona",
+    "Qt.A": 3
+  },
+  {
+    "Id": 4401,
+    "R": "D",
+    "Nome": "Gabbia",
+    "Squadra": "Milan",
+    "Qt.A": 3
+  },
+  {
+    "Id": 4976,
+    "R": "D",
+    "Nome": "Kalulu",
+    "Squadra": "Juventus",
+    "Qt.A": 3
+  },
+  {
+    "Id": 5353,
+    "R": "D",
+    "Nome": "Balogh",
+    "Squadra": "Parma",
+    "Qt.A": 3
+  },
+  {
+    "Id": 5447,
+    "R": "D",
+    "Nome": "Altare",
+    "Squadra": "Venezia",
+    "Qt.A": 3
+  },
+  {
+    "Id": 5480,
+    "R": "D",
+    "Nome": "Ebuehi",
+    "Squadra": "Empoli",
+    "Qt.A": 3
+  },
+  {
+    "Id": 5804,
+    "R": "D",
+    "Nome": "Cacace",
+    "Squadra": "Empoli",
+    "Qt.A": 3
+  },
+  {
+    "Id": 5900,
+    "R": "D",
+    "Nome": "Toure' I.s.",
+    "Squadra": "Udinese",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6055,
+    "R": "D",
+    "Nome": "Thiaw",
+    "Squadra": "Milan",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6211,
+    "R": "D",
+    "Nome": "Zemura",
+    "Squadra": "Udinese",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6464,
+    "R": "D",
+    "Nome": "Wieteska",
+    "Squadra": "Cagliari",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6654,
+    "R": "D",
+    "Nome": "Iovine",
+    "Squadra": "Como",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6814,
+    "R": "D",
+    "Nome": "Norton-Cuffy",
+    "Squadra": "Genoa",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6874,
+    "R": "D",
+    "Nome": "Palacios T.",
+    "Squadra": "Inter",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6883,
+    "R": "D",
+    "Nome": "Jean",
+    "Squadra": "Lecce",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6892,
+    "R": "D",
+    "Nome": "Schingtienne",
+    "Squadra": "Venezia",
+    "Qt.A": 3
+  },
+  {
+    "Id": 134,
+    "R": "D",
+    "Nome": "Barba",
+    "Squadra": "Como",
+    "Qt.A": 2
+  },
+  {
+    "Id": 142,
+    "R": "D",
+    "Nome": "Mario Rui",
+    "Squadra": "Napoli",
+    "Qt.A": 2
+  },
+  {
+    "Id": 418,
+    "R": "D",
+    "Nome": "Goldaniga",
+    "Squadra": "Como",
+    "Qt.A": 2
+  },
+  {
+    "Id": 487,
+    "R": "D",
+    "Nome": "De Silvestri",
+    "Squadra": "Bologna",
+    "Qt.A": 2
+  },
+  {
+    "Id": 581,
+    "R": "D",
+    "Nome": "Faraoni",
+    "Squadra": "Verona",
+    "Qt.A": 2
+  },
+  {
+    "Id": 2192,
+    "R": "D",
+    "Nome": "Bonifazi",
+    "Squadra": "Lecce",
+    "Qt.A": 2
+  },
+  {
+    "Id": 2728,
+    "R": "D",
+    "Nome": "Pellegrini Lu.",
+    "Squadra": "Lazio",
+    "Qt.A": 2
+  },
+  {
+    "Id": 4386,
+    "R": "D",
+    "Nome": "Sala M.",
+    "Squadra": "Como",
+    "Qt.A": 2
+  },
+  {
+    "Id": 5307,
+    "R": "D",
+    "Nome": "Valenti",
+    "Squadra": "Parma",
+    "Qt.A": 2
+  },
+  {
+    "Id": 5856,
+    "R": "D",
+    "Nome": "Sambia",
+    "Squadra": "Empoli",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6149,
+    "R": "D",
+    "Nome": "Carboni F.",
+    "Squadra": "Venezia",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6495,
+    "R": "D",
+    "Nome": "Comuzzo",
+    "Squadra": "Fiorentina",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6537,
+    "R": "D",
+    "Nome": "Goglichidze",
+    "Squadra": "Empoli",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6647,
+    "R": "D",
+    "Nome": "Dahl",
+    "Squadra": "Roma",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6681,
+    "R": "D",
+    "Nome": "Sagrado",
+    "Squadra": "Venezia",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6806,
+    "R": "D",
+    "Nome": "Pelmard",
+    "Squadra": "Lecce",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6826,
+    "R": "D",
+    "Nome": "Dembele' A.",
+    "Squadra": "Torino",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6887,
+    "R": "D",
+    "Nome": "Leoni",
+    "Squadra": "Parma",
+    "Qt.A": 2
+  },
+  {
+    "Id": 358,
+    "R": "D",
+    "Nome": "De Sciglio",
+    "Squadra": "Empoli",
+    "Qt.A": 1
+  },
+  {
+    "Id": 2203,
+    "R": "D",
+    "Nome": "Di Chiara",
+    "Squadra": "Parma",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5695,
+    "R": "D",
+    "Nome": "Haps",
+    "Squadra": "Venezia",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5701,
+    "R": "D",
+    "Nome": "Obert",
+    "Squadra": "Cagliari",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5812,
+    "R": "D",
+    "Nome": "Terracciano F.",
+    "Squadra": "Milan",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5994,
+    "R": "D",
+    "Nome": "Ebosse",
+    "Squadra": "Udinese",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6021,
+    "R": "D",
+    "Nome": "Abankwah",
+    "Squadra": "Udinese",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6244,
+    "R": "D",
+    "Nome": "Matturro",
+    "Squadra": "Genoa",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6284,
+    "R": "D",
+    "Nome": "Okou",
+    "Squadra": "Verona",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6407,
+    "R": "D",
+    "Nome": "Corazza",
+    "Squadra": "Bologna",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6474,
+    "R": "D",
+    "Nome": "Sazonov",
+    "Squadra": "Empoli",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6551,
+    "R": "D",
+    "Nome": "Ilic M.",
+    "Squadra": "Bologna",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6631,
+    "R": "D",
+    "Nome": "Ghilardi",
+    "Squadra": "Verona",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6637,
+    "R": "D",
+    "Nome": "Kovacik",
+    "Squadra": "Como",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6649,
+    "R": "D",
+    "Nome": "Sangare' B.",
+    "Squadra": "Roma",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6660,
+    "R": "D",
+    "Nome": "Marcandalli",
+    "Squadra": "Genoa",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6803,
+    "R": "D",
+    "Nome": "Rouhi",
+    "Squadra": "Juventus",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6809,
+    "R": "D",
+    "Nome": "Marianucci",
+    "Squadra": "Empoli",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6832,
+    "R": "D",
+    "Nome": "Palestra",
+    "Squadra": "Atalanta",
+    "Qt.A": 1
+  },
+  {
+    "Id": 2423,
+    "R": "C",
+    "Nome": "Pulisic",
+    "Squadra": "Milan",
+    "Qt.A": 30
+  },
+  {
+    "Id": 2194,
+    "R": "C",
+    "Nome": "Calhanoglu",
+    "Squadra": "Inter",
+    "Qt.A": 28
+  },
+  {
+    "Id": 5685,
+    "R": "C",
+    "Nome": "Koopmeiners",
+    "Squadra": "Juventus",
+    "Qt.A": 27
+  },
+  {
+    "Id": 632,
+    "R": "C",
+    "Nome": "Zaccagni",
+    "Squadra": "Lazio",
+    "Qt.A": 26
+  },
+  {
+    "Id": 536,
+    "R": "C",
+    "Nome": "Politano",
+    "Squadra": "Napoli",
+    "Qt.A": 22
+  },
+  {
+    "Id": 1870,
+    "R": "C",
+    "Nome": "Barella",
+    "Squadra": "Inter",
+    "Qt.A": 22
+  },
+  {
+    "Id": 5878,
+    "R": "C",
+    "Nome": "Colpani",
+    "Squadra": "Fiorentina",
+    "Qt.A": 22
+  },
+  {
+    "Id": 530,
+    "R": "C",
+    "Nome": "Pellegrini Lo.",
+    "Squadra": "Roma",
+    "Qt.A": 21
+  },
+  {
+    "Id": 2167,
+    "R": "C",
+    "Nome": "Orsolini",
+    "Squadra": "Bologna",
+    "Qt.A": 21
+  },
+  {
+    "Id": 5393,
+    "R": "C",
+    "Nome": "Man",
+    "Squadra": "Parma",
+    "Qt.A": 21
+  },
+  {
+    "Id": 6831,
+    "R": "C",
+    "Nome": "Neres",
+    "Squadra": "Napoli",
+    "Qt.A": 21
+  },
+  {
+    "Id": 4911,
+    "R": "C",
+    "Nome": "Douglas Luiz",
+    "Squadra": "Juventus",
+    "Qt.A": 20
+  },
+  {
+    "Id": 2848,
+    "R": "C",
+    "Nome": "Frattesi",
+    "Squadra": "Inter",
+    "Qt.A": 18
+  },
+  {
+    "Id": 4199,
+    "R": "C",
+    "Nome": "Loftus-Cheek",
+    "Squadra": "Milan",
+    "Qt.A": 18
+  },
+  {
+    "Id": 5858,
+    "R": "C",
+    "Nome": "Ferguson",
+    "Squadra": "Bologna",
+    "Qt.A": 17
+  },
+  {
+    "Id": 4777,
+    "R": "C",
+    "Nome": "McTominay",
+    "Squadra": "Napoli",
+    "Qt.A": 16
+  },
+  {
+    "Id": 5119,
+    "R": "C",
+    "Nome": "Samardzic",
+    "Squadra": "Atalanta",
+    "Qt.A": 16
+  },
+  {
+    "Id": 2529,
+    "R": "C",
+    "Nome": "Mkhitaryan",
+    "Squadra": "Inter",
+    "Qt.A": 15
+  },
+  {
+    "Id": 5792,
+    "R": "C",
+    "Nome": "Ederson D.s.",
+    "Squadra": "Atalanta",
+    "Qt.A": 15
+  },
+  {
+    "Id": 2077,
+    "R": "C",
+    "Nome": "Pasalic",
+    "Squadra": "Atalanta",
+    "Qt.A": 14
+  },
+  {
+    "Id": 5687,
+    "R": "C",
+    "Nome": "Vlasic",
+    "Squadra": "Torino",
+    "Qt.A": 14
+  },
+  {
+    "Id": 6206,
+    "R": "C",
+    "Nome": "Fabbian",
+    "Squadra": "Bologna",
+    "Qt.A": 14
+  },
+  {
+    "Id": 6666,
+    "R": "C",
+    "Nome": "Bernabe'",
+    "Squadra": "Parma",
+    "Qt.A": 14
+  },
+  {
+    "Id": 5688,
+    "R": "C",
+    "Nome": "Harroui",
+    "Squadra": "Verona",
+    "Qt.A": 13
+  },
+  {
+    "Id": 6486,
+    "R": "C",
+    "Nome": "Suslov",
+    "Squadra": "Verona",
+    "Qt.A": 13
+  },
+  {
+    "Id": 2766,
+    "R": "C",
+    "Nome": "Zaniolo",
+    "Squadra": "Atalanta",
+    "Qt.A": 12
+  },
+  {
+    "Id": 4486,
+    "R": "C",
+    "Nome": "Strefezza",
+    "Squadra": "Como",
+    "Qt.A": 12
+  },
+  {
+    "Id": 5559,
+    "R": "C",
+    "Nome": "Da Cunha",
+    "Squadra": "Como",
+    "Qt.A": 12
+  },
+  {
+    "Id": 6224,
+    "R": "C",
+    "Nome": "Reijnders",
+    "Squadra": "Milan",
+    "Qt.A": 12
+  },
+  {
+    "Id": 236,
+    "R": "C",
+    "Nome": "Lazovic",
+    "Squadra": "Verona",
+    "Qt.A": 11
+  },
+  {
+    "Id": 2741,
+    "R": "C",
+    "Nome": "Pessina",
+    "Squadra": "Monza",
+    "Qt.A": 11
+  },
+  {
+    "Id": 4220,
+    "R": "C",
+    "Nome": "Zambo Anguissa",
+    "Squadra": "Napoli",
+    "Qt.A": 11
+  },
+  {
+    "Id": 4427,
+    "R": "C",
+    "Nome": "Malinovskyi",
+    "Squadra": "Genoa",
+    "Qt.A": 11
+  },
+  {
+    "Id": 5791,
+    "R": "C",
+    "Nome": "Frendrup",
+    "Squadra": "Genoa",
+    "Qt.A": 11
+  },
+  {
+    "Id": 6884,
+    "R": "C",
+    "Nome": "Conceicao",
+    "Squadra": "Juventus",
+    "Qt.A": 11
+  },
+  {
+    "Id": 152,
+    "R": "C",
+    "Nome": "Zielinski",
+    "Squadra": "Inter",
+    "Qt.A": 10
+  },
+  {
+    "Id": 779,
+    "R": "C",
+    "Nome": "Cristante",
+    "Squadra": "Roma",
+    "Qt.A": 10
+  },
+  {
+    "Id": 788,
+    "R": "C",
+    "Nome": "Freuler",
+    "Squadra": "Bologna",
+    "Qt.A": 10
+  },
+  {
+    "Id": 4465,
+    "R": "C",
+    "Nome": "Fagioli",
+    "Squadra": "Juventus",
+    "Qt.A": 10
+  },
+  {
+    "Id": 4856,
+    "R": "C",
+    "Nome": "Chukwueze",
+    "Squadra": "Milan",
+    "Qt.A": 10
+  },
+  {
+    "Id": 4896,
+    "R": "C",
+    "Nome": "Maldini",
+    "Squadra": "Monza",
+    "Qt.A": 10
+  },
+  {
+    "Id": 4970,
+    "R": "C",
+    "Nome": "Messias",
+    "Squadra": "Genoa",
+    "Qt.A": 10
+  },
+  {
+    "Id": 5562,
+    "R": "C",
+    "Nome": "Thuram K.",
+    "Squadra": "Juventus",
+    "Qt.A": 10
+  },
+  {
+    "Id": 5564,
+    "R": "C",
+    "Nome": "Ndoye",
+    "Squadra": "Bologna",
+    "Qt.A": 10
+  },
+  {
+    "Id": 5784,
+    "R": "C",
+    "Nome": "Aebischer",
+    "Squadra": "Bologna",
+    "Qt.A": 10
+  },
+  {
+    "Id": 5850,
+    "R": "C",
+    "Nome": "Lovric",
+    "Squadra": "Udinese",
+    "Qt.A": 10
+  },
+  {
+    "Id": 6299,
+    "R": "C",
+    "Nome": "Le Fee",
+    "Squadra": "Roma",
+    "Qt.A": 10
+  },
+  {
+    "Id": 827,
+    "R": "C",
+    "Nome": "Locatelli",
+    "Squadra": "Juventus",
+    "Qt.A": 9
+  },
+  {
+    "Id": 4186,
+    "R": "C",
+    "Nome": "Guendouzi",
+    "Squadra": "Lazio",
+    "Qt.A": 9
+  },
+  {
+    "Id": 4287,
+    "R": "C",
+    "Nome": "Lobotka",
+    "Squadra": "Napoli",
+    "Qt.A": 9
+  },
+  {
+    "Id": 4376,
+    "R": "C",
+    "Nome": "Zurkowski",
+    "Squadra": "Empoli",
+    "Qt.A": 9
+  },
+  {
+    "Id": 4377,
+    "R": "C",
+    "Nome": "Castrovilli",
+    "Squadra": "Lazio",
+    "Qt.A": 9
+  },
+  {
+    "Id": 4992,
+    "R": "C",
+    "Nome": "Gyasi",
+    "Squadra": "Empoli",
+    "Qt.A": 9
+  },
+  {
+    "Id": 5007,
+    "R": "C",
+    "Nome": "Ilic",
+    "Squadra": "Torino",
+    "Qt.A": 9
+  },
+  {
+    "Id": 5453,
+    "R": "C",
+    "Nome": "Ricci S.",
+    "Squadra": "Torino",
+    "Qt.A": 9
+  },
+  {
+    "Id": 5823,
+    "R": "C",
+    "Nome": "Baldanzi",
+    "Squadra": "Roma",
+    "Qt.A": 9
+  },
+  {
+    "Id": 6218,
+    "R": "C",
+    "Nome": "Oristanio",
+    "Squadra": "Venezia",
+    "Qt.A": 9
+  },
+  {
+    "Id": 6634,
+    "R": "C",
+    "Nome": "Tete Morente",
+    "Squadra": "Lecce",
+    "Qt.A": 9
+  },
+  {
+    "Id": 376,
+    "R": "C",
+    "Nome": "Verdi",
+    "Squadra": "Como",
+    "Qt.A": 8
+  },
+  {
+    "Id": 526,
+    "R": "C",
+    "Nome": "Duncan",
+    "Squadra": "Venezia",
+    "Qt.A": 8
+  },
+  {
+    "Id": 2839,
+    "R": "C",
+    "Nome": "Sottil",
+    "Squadra": "Fiorentina",
+    "Qt.A": 8
+  },
+  {
+    "Id": 4364,
+    "R": "C",
+    "Nome": "Gaetano",
+    "Squadra": "Cagliari",
+    "Qt.A": 8
+  },
+  {
+    "Id": 5589,
+    "R": "C",
+    "Nome": "Kone' M.",
+    "Squadra": "Roma",
+    "Qt.A": 8
+  },
+  {
+    "Id": 5919,
+    "R": "C",
+    "Nome": "Tchaouna",
+    "Squadra": "Lazio",
+    "Qt.A": 8
+  },
+  {
+    "Id": 6804,
+    "R": "C",
+    "Nome": "Richardson",
+    "Squadra": "Fiorentina",
+    "Qt.A": 8
+  },
+  {
+    "Id": 22,
+    "R": "C",
+    "Nome": "De Roon",
+    "Squadra": "Atalanta",
+    "Qt.A": 7
+  },
+  {
+    "Id": 170,
+    "R": "C",
+    "Nome": "Badelj",
+    "Squadra": "Genoa",
+    "Qt.A": 7
+  },
+  {
+    "Id": 181,
+    "R": "C",
+    "Nome": "Vecino",
+    "Squadra": "Lazio",
+    "Qt.A": 7
+  },
+  {
+    "Id": 795,
+    "R": "C",
+    "Nome": "El Shaarawy",
+    "Squadra": "Roma",
+    "Qt.A": 7
+  },
+  {
+    "Id": 1933,
+    "R": "C",
+    "Nome": "Mandragora",
+    "Squadra": "Fiorentina",
+    "Qt.A": 7
+  },
+  {
+    "Id": 1976,
+    "R": "C",
+    "Nome": "Mazzitelli",
+    "Squadra": "Como",
+    "Qt.A": 7
+  },
+  {
+    "Id": 2818,
+    "R": "C",
+    "Nome": "Bennacer",
+    "Squadra": "Milan",
+    "Qt.A": 7
+  },
+  {
+    "Id": 4342,
+    "R": "C",
+    "Nome": "Duda",
+    "Squadra": "Verona",
+    "Qt.A": 7
+  },
+  {
+    "Id": 4459,
+    "R": "C",
+    "Nome": "Rovella",
+    "Squadra": "Lazio",
+    "Qt.A": 7
+  },
+  {
+    "Id": 4686,
+    "R": "C",
+    "Nome": "Fofana Y.",
+    "Squadra": "Milan",
+    "Qt.A": 7
+  },
+  {
+    "Id": 4947,
+    "R": "C",
+    "Nome": "Brescianini",
+    "Squadra": "Atalanta",
+    "Qt.A": 7
+  },
+  {
+    "Id": 4973,
+    "R": "C",
+    "Nome": "McKennie",
+    "Squadra": "Juventus",
+    "Qt.A": 7
+  },
+  {
+    "Id": 5131,
+    "R": "C",
+    "Nome": "Gilmour",
+    "Squadra": "Napoli",
+    "Qt.A": 7
+  },
+  {
+    "Id": 5319,
+    "R": "C",
+    "Nome": "Sohm",
+    "Squadra": "Parma",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6061,
+    "R": "C",
+    "Nome": "Oudin",
+    "Squadra": "Lecce",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6481,
+    "R": "C",
+    "Nome": "Payero",
+    "Squadra": "Udinese",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6645,
+    "R": "C",
+    "Nome": "Marchwinski",
+    "Squadra": "Lecce",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6684,
+    "R": "C",
+    "Nome": "Ekkelenkamp",
+    "Squadra": "Udinese",
+    "Qt.A": 7
+  },
+  {
+    "Id": 6875,
+    "R": "C",
+    "Nome": "Paz N.",
+    "Squadra": "Como",
+    "Qt.A": 7
+  },
+  {
+    "Id": 468,
+    "R": "C",
+    "Nome": "Paredes",
+    "Squadra": "Roma",
+    "Qt.A": 6
+  },
+  {
+    "Id": 1978,
+    "R": "C",
+    "Nome": "Sensi",
+    "Squadra": "Monza",
+    "Qt.A": 6
+  },
+  {
+    "Id": 4658,
+    "R": "C",
+    "Nome": "Ikone'",
+    "Squadra": "Fiorentina",
+    "Qt.A": 6
+  },
+  {
+    "Id": 4662,
+    "R": "C",
+    "Nome": "Weah",
+    "Squadra": "Juventus",
+    "Qt.A": 6
+  },
+  {
+    "Id": 4890,
+    "R": "C",
+    "Nome": "Tameze",
+    "Squadra": "Torino",
+    "Qt.A": 6
+  },
+  {
+    "Id": 4965,
+    "R": "C",
+    "Nome": "Marin",
+    "Squadra": "Cagliari",
+    "Qt.A": 6
+  },
+  {
+    "Id": 5507,
+    "R": "C",
+    "Nome": "Busio",
+    "Squadra": "Venezia",
+    "Qt.A": 6
+  },
+  {
+    "Id": 5875,
+    "R": "C",
+    "Nome": "Adli",
+    "Squadra": "Fiorentina",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6010,
+    "R": "C",
+    "Nome": "Fazzini",
+    "Squadra": "Empoli",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6112,
+    "R": "C",
+    "Nome": "Iling Junior",
+    "Squadra": "Bologna",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6252,
+    "R": "C",
+    "Nome": "Folorunsho",
+    "Squadra": "Napoli",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6394,
+    "R": "C",
+    "Nome": "Ramadani",
+    "Squadra": "Lecce",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6459,
+    "R": "C",
+    "Nome": "Karlsson",
+    "Squadra": "Bologna",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6629,
+    "R": "C",
+    "Nome": "Dele-Bashiru",
+    "Squadra": "Lazio",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6680,
+    "R": "C",
+    "Nome": "Karlstrom",
+    "Squadra": "Udinese",
+    "Qt.A": 6
+  },
+  {
+    "Id": 6898,
+    "R": "C",
+    "Nome": "Keita M.",
+    "Squadra": "Parma",
+    "Qt.A": 6
+  },
+  {
+    "Id": 440,
+    "R": "C",
+    "Nome": "Viola",
+    "Squadra": "Cagliari",
+    "Qt.A": 5
+  },
+  {
+    "Id": 801,
+    "R": "C",
+    "Nome": "Gagliardini",
+    "Squadra": "Monza",
+    "Qt.A": 5
+  },
+  {
+    "Id": 2117,
+    "R": "C",
+    "Nome": "Kastanos",
+    "Squadra": "Verona",
+    "Qt.A": 5
+  },
+  {
+    "Id": 2172,
+    "R": "C",
+    "Nome": "Barak",
+    "Squadra": "Fiorentina",
+    "Qt.A": 5
+  },
+  {
+    "Id": 2274,
+    "R": "C",
+    "Nome": "Valoti",
+    "Squadra": "Monza",
+    "Qt.A": 5
+  },
+  {
+    "Id": 4404,
+    "R": "C",
+    "Nome": "Thorsby",
+    "Squadra": "Genoa",
+    "Qt.A": 5
+  },
+  {
+    "Id": 4423,
+    "R": "C",
+    "Nome": "Hernani",
+    "Squadra": "Parma",
+    "Qt.A": 5
+  },
+  {
+    "Id": 4498,
+    "R": "C",
+    "Nome": "Henderson L.",
+    "Squadra": "Empoli",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5295,
+    "R": "C",
+    "Nome": "Musah",
+    "Squadra": "Milan",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5423,
+    "R": "C",
+    "Nome": "Bove",
+    "Squadra": "Fiorentina",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5504,
+    "R": "C",
+    "Nome": "Coulibaly L.",
+    "Squadra": "Lecce",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5719,
+    "R": "C",
+    "Nome": "Asllani",
+    "Squadra": "Inter",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5992,
+    "R": "C",
+    "Nome": "Bondo",
+    "Squadra": "Monza",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6151,
+    "R": "C",
+    "Nome": "Perrone",
+    "Squadra": "Como",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6592,
+    "R": "C",
+    "Nome": "Forson O.",
+    "Squadra": "Monza",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6640,
+    "R": "C",
+    "Nome": "Felici",
+    "Squadra": "Cagliari",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6815,
+    "R": "C",
+    "Nome": "Fadera",
+    "Squadra": "Como",
+    "Qt.A": 5
+  },
+  {
+    "Id": 1871,
+    "R": "C",
+    "Nome": "Deiola",
+    "Squadra": "Cagliari",
+    "Qt.A": 4
+  },
+  {
+    "Id": 2008,
+    "R": "C",
+    "Nome": "Linetty",
+    "Squadra": "Torino",
+    "Qt.A": 4
+  },
+  {
+    "Id": 4892,
+    "R": "C",
+    "Nome": "Saelemaekers",
+    "Squadra": "Roma",
+    "Qt.A": 4
+  },
+  {
+    "Id": 5290,
+    "R": "C",
+    "Nome": "Estevez",
+    "Squadra": "Parma",
+    "Qt.A": 4
+  },
+  {
+    "Id": 5422,
+    "R": "C",
+    "Nome": "Zalewski",
+    "Squadra": "Roma",
+    "Qt.A": 4
+  },
+  {
+    "Id": 5425,
+    "R": "C",
+    "Nome": "Urbanski",
+    "Squadra": "Bologna",
+    "Qt.A": 4
+  },
+  {
+    "Id": 5457,
+    "R": "C",
+    "Nome": "Maleh",
+    "Squadra": "Empoli",
+    "Qt.A": 4
+  },
+  {
+    "Id": 5880,
+    "R": "C",
+    "Nome": "Ciurria",
+    "Squadra": "Monza",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6020,
+    "R": "C",
+    "Nome": "Ellertsson",
+    "Squadra": "Venezia",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6222,
+    "R": "C",
+    "Nome": "Rafia",
+    "Squadra": "Lecce",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6424,
+    "R": "C",
+    "Nome": "Prati",
+    "Squadra": "Cagliari",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6458,
+    "R": "C",
+    "Nome": "Serdar",
+    "Squadra": "Verona",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6633,
+    "R": "C",
+    "Nome": "Pierret",
+    "Squadra": "Lecce",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6674,
+    "R": "C",
+    "Nome": "Andersen M.k.",
+    "Squadra": "Venezia",
+    "Qt.A": 4
+  },
+  {
+    "Id": 27,
+    "R": "C",
+    "Nome": "Grassi",
+    "Squadra": "Empoli",
+    "Qt.A": 3
+  },
+  {
+    "Id": 333,
+    "R": "C",
+    "Nome": "Cataldi",
+    "Squadra": "Fiorentina",
+    "Qt.A": 3
+  },
+  {
+    "Id": 556,
+    "R": "C",
+    "Nome": "Baselli",
+    "Squadra": "Como",
+    "Qt.A": 3
+  },
+  {
+    "Id": 2161,
+    "R": "C",
+    "Nome": "Haas",
+    "Squadra": "Empoli",
+    "Qt.A": 3
+  },
+  {
+    "Id": 4349,
+    "R": "C",
+    "Nome": "Nicolussi Caviglia",
+    "Squadra": "Venezia",
+    "Qt.A": 3
+  },
+  {
+    "Id": 4711,
+    "R": "C",
+    "Nome": "Kostic",
+    "Squadra": "Juventus",
+    "Qt.A": 3
+  },
+  {
+    "Id": 4870,
+    "R": "C",
+    "Nome": "Adopo",
+    "Squadra": "Cagliari",
+    "Qt.A": 3
+  },
+  {
+    "Id": 5485,
+    "R": "C",
+    "Nome": "Bjarkason",
+    "Squadra": "Venezia",
+    "Qt.A": 3
+  },
+  {
+    "Id": 5813,
+    "R": "C",
+    "Nome": "Miretti",
+    "Squadra": "Genoa",
+    "Qt.A": 3
+  },
+  {
+    "Id": 5879,
+    "R": "C",
+    "Nome": "Vignato S.",
+    "Squadra": "Monza",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6048,
+    "R": "C",
+    "Nome": "Alidou",
+    "Squadra": "Verona",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6054,
+    "R": "C",
+    "Nome": "Moro N.",
+    "Squadra": "Bologna",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6170,
+    "R": "C",
+    "Nome": "Gineitis",
+    "Squadra": "Torino",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6212,
+    "R": "C",
+    "Nome": "Zarraga",
+    "Squadra": "Udinese",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6225,
+    "R": "C",
+    "Nome": "El Azzouzi",
+    "Squadra": "Bologna",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6232,
+    "R": "C",
+    "Nome": "Makoumbou",
+    "Squadra": "Cagliari",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6656,
+    "R": "C",
+    "Nome": "Braunoder",
+    "Squadra": "Como",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6676,
+    "R": "C",
+    "Nome": "Engelhardt",
+    "Squadra": "Como",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6900,
+    "R": "C",
+    "Nome": "Rui Modesto",
+    "Squadra": "Udinese",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6904,
+    "R": "C",
+    "Nome": "Yeboah J.",
+    "Squadra": "Venezia",
+    "Qt.A": 3
+  },
+  {
+    "Id": 1987,
+    "R": "C",
+    "Nome": "Jankto",
+    "Squadra": "Cagliari",
+    "Qt.A": 2
+  },
+  {
+    "Id": 2357,
+    "R": "C",
+    "Nome": "Cyprien",
+    "Squadra": "Parma",
+    "Qt.A": 2
+  },
+  {
+    "Id": 5516,
+    "R": "C",
+    "Nome": "Bianco",
+    "Squadra": "Monza",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6190,
+    "R": "C",
+    "Nome": "Pisilli",
+    "Squadra": "Roma",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6191,
+    "R": "C",
+    "Nome": "Belahyane",
+    "Squadra": "Verona",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6562,
+    "R": "C",
+    "Nome": "Dani Silva",
+    "Squadra": "Verona",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6579,
+    "R": "C",
+    "Nome": "Mitrovic S.",
+    "Squadra": "Verona",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6683,
+    "R": "C",
+    "Nome": "Doumbia I.",
+    "Squadra": "Venezia",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6889,
+    "R": "C",
+    "Nome": "Anjorin",
+    "Squadra": "Empoli",
+    "Qt.A": 2
+  },
+  {
+    "Id": 5286,
+    "R": "C",
+    "Nome": "Akpa Akpro",
+    "Squadra": "Lazio",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5298,
+    "R": "C",
+    "Nome": "Pobega",
+    "Squadra": "Bologna",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5421,
+    "R": "C",
+    "Nome": "Camara D.",
+    "Squadra": "Parma",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5486,
+    "R": "C",
+    "Nome": "Crnigoj",
+    "Squadra": "Venezia",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5725,
+    "R": "C",
+    "Nome": "Kone B.",
+    "Squadra": "Como",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5798,
+    "R": "C",
+    "Nome": "Bohinen",
+    "Squadra": "Genoa",
+    "Qt.A": 1
+  },
+  {
+    "Id": 5998,
+    "R": "C",
+    "Nome": "Zerbin",
+    "Squadra": "Napoli",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6015,
+    "R": "C",
+    "Nome": "BERISHA M.",
+    "Squadra": "Lecce",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6024,
+    "R": "C",
+    "Nome": "Sulemana I.",
+    "Squadra": "Atalanta",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6203,
+    "R": "C",
+    "Nome": "Belardinelli",
+    "Squadra": "Empoli",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6410,
+    "R": "C",
+    "Nome": "Kaba",
+    "Squadra": "Lecce",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6524,
+    "R": "C",
+    "Nome": "Zeroli",
+    "Squadra": "Milan",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6532,
+    "R": "C",
+    "Nome": "Buchanan T.",
+    "Squadra": "Inter",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6677,
+    "R": "C",
+    "Nome": "Adzic",
+    "Squadra": "Juventus",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6678,
+    "R": "C",
+    "Nome": "Liberali",
+    "Squadra": "Milan",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6834,
+    "R": "C",
+    "Nome": "Cassa",
+    "Squadra": "Atalanta",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6839,
+    "R": "C",
+    "Nome": "Byar",
+    "Squadra": "Bologna",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6872,
+    "R": "C",
+    "Nome": "Manzoni",
+    "Squadra": "Atalanta",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6891,
+    "R": "C",
+    "Nome": "Vos",
+    "Squadra": "Milan",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6903,
+    "R": "C",
+    "Nome": "Hasa",
+    "Squadra": "Lecce",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6908,
+    "R": "C",
+    "Nome": "Atta",
+    "Squadra": "Udinese",
+    "Qt.A": 1
+  },
+  {
+    "Id": 2764,
+    "R": "A",
+    "Nome": "Martinez L.",
+    "Squadra": "Inter",
+    "Qt.A": 38
+  },
+  {
+    "Id": 2841,
+    "R": "A",
+    "Nome": "Vlahovic",
+    "Squadra": "Juventus",
+    "Qt.A": 37
+  },
+  {
+    "Id": 2531,
+    "R": "A",
+    "Nome": "Lukaku",
+    "Squadra": "Napoli",
+    "Qt.A": 34
+  },
+  {
+    "Id": 4871,
+    "R": "A",
+    "Nome": "Thuram",
+    "Squadra": "Inter",
+    "Qt.A": 34
+  },
+  {
+    "Id": 4661,
+    "R": "A",
+    "Nome": "Osimhen",
+    "Squadra": "Napoli",
+    "Qt.A": 33
+  },
+  {
+    "Id": 309,
+    "R": "A",
+    "Nome": "Dybala",
+    "Squadra": "Roma",
+    "Qt.A": 32
+  },
+  {
+    "Id": 6675,
+    "R": "A",
+    "Nome": "Dovbyk",
+    "Squadra": "Roma",
+    "Qt.A": 30
+  },
+  {
+    "Id": 5839,
+    "R": "A",
+    "Nome": "Kvaratskhelia",
+    "Squadra": "Napoli",
+    "Qt.A": 29
+  },
+  {
+    "Id": 2137,
+    "R": "A",
+    "Nome": "Scamacca",
+    "Squadra": "Atalanta",
+    "Qt.A": 26
+  },
+  {
+    "Id": 4730,
+    "R": "A",
+    "Nome": "Lookman",
+    "Squadra": "Atalanta",
+    "Qt.A": 26
+  },
+  {
+    "Id": 313,
+    "R": "A",
+    "Nome": "Morata",
+    "Squadra": "Milan",
+    "Qt.A": 25
+  },
+  {
+    "Id": 608,
+    "R": "A",
+    "Nome": "Zapata D.",
+    "Squadra": "Torino",
+    "Qt.A": 25
+  },
+  {
+    "Id": 4510,
+    "R": "A",
+    "Nome": "Leao",
+    "Squadra": "Milan",
+    "Qt.A": 25
+  },
+  {
+    "Id": 5800,
+    "R": "A",
+    "Nome": "Gudmundsson A.",
+    "Squadra": "Fiorentina",
+    "Qt.A": 25
+  },
+  {
+    "Id": 4179,
+    "R": "A",
+    "Nome": "Gonzalez N.",
+    "Squadra": "Juventus",
+    "Qt.A": 23
+  },
+  {
+    "Id": 6226,
+    "R": "A",
+    "Nome": "Castellanos",
+    "Squadra": "Lazio",
+    "Qt.A": 23
+  },
+  {
+    "Id": 6228,
+    "R": "A",
+    "Nome": "Retegui",
+    "Squadra": "Atalanta",
+    "Qt.A": 22
+  },
+  {
+    "Id": 2097,
+    "R": "A",
+    "Nome": "Kean",
+    "Squadra": "Fiorentina",
+    "Qt.A": 21
+  },
+  {
+    "Id": 5995,
+    "R": "A",
+    "Nome": "De Ketelaere",
+    "Squadra": "Atalanta",
+    "Qt.A": 20
+  },
+  {
+    "Id": 6643,
+    "R": "A",
+    "Nome": "Dallinga",
+    "Squadra": "Bologna",
+    "Qt.A": 20
+  },
+  {
+    "Id": 5734,
+    "R": "A",
+    "Nome": "Soule'",
+    "Squadra": "Roma",
+    "Qt.A": 19
+  },
+  {
+    "Id": 2038,
+    "R": "A",
+    "Nome": "Pinamonti",
+    "Squadra": "Genoa",
+    "Qt.A": 18
+  },
+  {
+    "Id": 6435,
+    "R": "A",
+    "Nome": "Krstovic",
+    "Squadra": "Lecce",
+    "Qt.A": 17
+  },
+  {
+    "Id": 441,
+    "R": "A",
+    "Nome": "Belotti",
+    "Squadra": "Como",
+    "Qt.A": 16
+  },
+  {
+    "Id": 5672,
+    "R": "A",
+    "Nome": "Dia",
+    "Squadra": "Lazio",
+    "Qt.A": 16
+  },
+  {
+    "Id": 6434,
+    "R": "A",
+    "Nome": "Yildiz",
+    "Squadra": "Juventus",
+    "Qt.A": 16
+  },
+  {
+    "Id": 2475,
+    "R": "A",
+    "Nome": "Sanchez",
+    "Squadra": "Udinese",
+    "Qt.A": 15
+  },
+  {
+    "Id": 5079,
+    "R": "A",
+    "Nome": "Pohjanpalo",
+    "Squadra": "Venezia",
+    "Qt.A": 15
+  },
+  {
+    "Id": 6556,
+    "R": "A",
+    "Nome": "Noslin",
+    "Squadra": "Lazio",
+    "Qt.A": 15
+  },
+  {
+    "Id": 6628,
+    "R": "A",
+    "Nome": "Taremi",
+    "Squadra": "Inter",
+    "Qt.A": 15
+  },
+  {
+    "Id": 6646,
+    "R": "A",
+    "Nome": "Adams C.",
+    "Squadra": "Torino",
+    "Qt.A": 15
+  },
+  {
+    "Id": 4359,
+    "R": "A",
+    "Nome": "Piccoli",
+    "Squadra": "Cagliari",
+    "Qt.A": 14
+  },
+  {
+    "Id": 6215,
+    "R": "A",
+    "Nome": "Lucca",
+    "Squadra": "Udinese",
+    "Qt.A": 14
+  },
+  {
+    "Id": 2544,
+    "R": "A",
+    "Nome": "Abraham",
+    "Squadra": "Milan",
+    "Qt.A": 13
+  },
+  {
+    "Id": 4923,
+    "R": "A",
+    "Nome": "Colombo",
+    "Squadra": "Empoli",
+    "Qt.A": 13
+  },
+  {
+    "Id": 6801,
+    "R": "A",
+    "Nome": "Tengstedt",
+    "Squadra": "Verona",
+    "Qt.A": 13
+  },
+  {
+    "Id": 5297,
+    "R": "A",
+    "Nome": "Luvumbo",
+    "Squadra": "Cagliari",
+    "Qt.A": 12
+  },
+  {
+    "Id": 5471,
+    "R": "A",
+    "Nome": "Djuric",
+    "Squadra": "Monza",
+    "Qt.A": 12
+  },
+  {
+    "Id": 6164,
+    "R": "A",
+    "Nome": "Vitinha O.",
+    "Squadra": "Genoa",
+    "Qt.A": 12
+  },
+  {
+    "Id": 6227,
+    "R": "A",
+    "Nome": "Okafor",
+    "Squadra": "Milan",
+    "Qt.A": 12
+  },
+  {
+    "Id": 6398,
+    "R": "A",
+    "Nome": "Isaksen",
+    "Squadra": "Lazio",
+    "Qt.A": 12
+  },
+  {
+    "Id": 2012,
+    "R": "A",
+    "Nome": "Milik",
+    "Squadra": "Juventus",
+    "Qt.A": 11
+  },
+  {
+    "Id": 2061,
+    "R": "A",
+    "Nome": "Simeone",
+    "Squadra": "Napoli",
+    "Qt.A": 11
+  },
+  {
+    "Id": 2369,
+    "R": "A",
+    "Nome": "Thauvin",
+    "Squadra": "Udinese",
+    "Qt.A": 11
+  },
+  {
+    "Id": 4436,
+    "R": "A",
+    "Nome": "Cambiaghi",
+    "Squadra": "Bologna",
+    "Qt.A": 11
+  },
+  {
+    "Id": 479,
+    "R": "A",
+    "Nome": "Sanabria",
+    "Squadra": "Torino",
+    "Qt.A": 10
+  },
+  {
+    "Id": 2765,
+    "R": "A",
+    "Nome": "Odgaard",
+    "Squadra": "Bologna",
+    "Qt.A": 10
+  },
+  {
+    "Id": 4371,
+    "R": "A",
+    "Nome": "Raspadori",
+    "Squadra": "Napoli",
+    "Qt.A": 10
+  },
+  {
+    "Id": 6207,
+    "R": "A",
+    "Nome": "Almqvist",
+    "Squadra": "Parma",
+    "Qt.A": 10
+  },
+  {
+    "Id": 6409,
+    "R": "A",
+    "Nome": "Beltran L.",
+    "Squadra": "Fiorentina",
+    "Qt.A": 10
+  },
+  {
+    "Id": 6630,
+    "R": "A",
+    "Nome": "Mosquera",
+    "Squadra": "Verona",
+    "Qt.A": 10
+  },
+  {
+    "Id": 6669,
+    "R": "A",
+    "Nome": "Bonny",
+    "Squadra": "Parma",
+    "Qt.A": 10
+  },
+  {
+    "Id": 1958,
+    "R": "A",
+    "Nome": "Caprari",
+    "Squadra": "Monza",
+    "Qt.A": 9
+  },
+  {
+    "Id": 2155,
+    "R": "A",
+    "Nome": "Cutrone",
+    "Squadra": "Como",
+    "Qt.A": 9
+  },
+  {
+    "Id": 2438,
+    "R": "A",
+    "Nome": "Jovic",
+    "Squadra": "Milan",
+    "Qt.A": 9
+  },
+  {
+    "Id": 5506,
+    "R": "A",
+    "Nome": "Ekuban",
+    "Squadra": "Genoa",
+    "Qt.A": 9
+  },
+  {
+    "Id": 5882,
+    "R": "A",
+    "Nome": "Mota",
+    "Squadra": "Monza",
+    "Qt.A": 9
+  },
+  {
+    "Id": 6001,
+    "R": "A",
+    "Nome": "Banda",
+    "Squadra": "Lecce",
+    "Qt.A": 9
+  },
+  {
+    "Id": 6145,
+    "R": "A",
+    "Nome": "Ngonge",
+    "Squadra": "Napoli",
+    "Qt.A": 9
+  },
+  {
+    "Id": 6213,
+    "R": "A",
+    "Nome": "Brenner",
+    "Squadra": "Udinese",
+    "Qt.A": 9
+  },
+  {
+    "Id": 6667,
+    "R": "A",
+    "Nome": "Benedyczak",
+    "Squadra": "Parma",
+    "Qt.A": 9
+  },
+  {
+    "Id": 1939,
+    "R": "A",
+    "Nome": "Lapadula",
+    "Squadra": "Cagliari",
+    "Qt.A": 8
+  },
+  {
+    "Id": 4268,
+    "R": "A",
+    "Nome": "Arnautovic",
+    "Squadra": "Inter",
+    "Qt.A": 8
+  },
+  {
+    "Id": 5322,
+    "R": "A",
+    "Nome": "Mihaila",
+    "Squadra": "Parma",
+    "Qt.A": 8
+  },
+  {
+    "Id": 6572,
+    "R": "A",
+    "Nome": "Castro S.",
+    "Squadra": "Bologna",
+    "Qt.A": 8
+  },
+  {
+    "Id": 5500,
+    "R": "A",
+    "Nome": "Cancellieri",
+    "Squadra": "Parma",
+    "Qt.A": 6
+  },
+  {
+    "Id": 5637,
+    "R": "A",
+    "Nome": "Davis K.",
+    "Squadra": "Udinese",
+    "Qt.A": 6
+  },
+  {
+    "Id": 4463,
+    "R": "A",
+    "Nome": "Esposito Se.",
+    "Squadra": "Empoli",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5311,
+    "R": "A",
+    "Nome": "Shomurodov",
+    "Squadra": "Roma",
+    "Qt.A": 5
+  },
+  {
+    "Id": 5881,
+    "R": "A",
+    "Nome": "Gytkjaer",
+    "Squadra": "Venezia",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6644,
+    "R": "A",
+    "Nome": "Rocha Livramento",
+    "Squadra": "Verona",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6833,
+    "R": "A",
+    "Nome": "Mbangula",
+    "Squadra": "Juventus",
+    "Qt.A": 5
+  },
+  {
+    "Id": 6895,
+    "R": "A",
+    "Nome": "Dominguez B.",
+    "Squadra": "Bologna",
+    "Qt.A": 5
+  },
+  {
+    "Id": 186,
+    "R": "A",
+    "Nome": "Rebic",
+    "Squadra": "Lecce",
+    "Qt.A": 4
+  },
+  {
+    "Id": 383,
+    "R": "A",
+    "Nome": "Petagna",
+    "Squadra": "Monza",
+    "Qt.A": 4
+  },
+  {
+    "Id": 2762,
+    "R": "A",
+    "Nome": "Kouame'",
+    "Squadra": "Fiorentina",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6159,
+    "R": "A",
+    "Nome": "Sarr A.",
+    "Squadra": "Verona",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6549,
+    "R": "A",
+    "Nome": "Pierotti",
+    "Squadra": "Lecce",
+    "Qt.A": 4
+  },
+  {
+    "Id": 6653,
+    "R": "A",
+    "Nome": "Bravo",
+    "Squadra": "Udinese",
+    "Qt.A": 4
+  },
+  {
+    "Id": 247,
+    "R": "A",
+    "Nome": "Pavoletti",
+    "Squadra": "Cagliari",
+    "Qt.A": 3
+  },
+  {
+    "Id": 2103,
+    "R": "A",
+    "Nome": "Pellegri",
+    "Squadra": "Empoli",
+    "Qt.A": 3
+  },
+  {
+    "Id": 6119,
+    "R": "A",
+    "Nome": "Solbakken",
+    "Squadra": "Empoli",
+    "Qt.A": 3
+  },
+  {
+    "Id": 306,
+    "R": "A",
+    "Nome": "Cerri",
+    "Squadra": "Como",
+    "Qt.A": 2
+  },
+  {
+    "Id": 495,
+    "R": "A",
+    "Nome": "Correa",
+    "Squadra": "Inter",
+    "Qt.A": 2
+  },
+  {
+    "Id": 2489,
+    "R": "A",
+    "Nome": "Pedro",
+    "Squadra": "Lazio",
+    "Qt.A": 2
+  },
+  {
+    "Id": 5436,
+    "R": "A",
+    "Nome": "Raimondo",
+    "Squadra": "Venezia",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6635,
+    "R": "A",
+    "Nome": "Pizarro",
+    "Squadra": "Udinese",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6657,
+    "R": "A",
+    "Nome": "Gabrielloni",
+    "Squadra": "Como",
+    "Qt.A": 2
+  },
+  {
+    "Id": 6670,
+    "R": "A",
+    "Nome": "Charpentier",
+    "Squadra": "Parma",
+    "Qt.A": 2
+  },
+  {
+    "Id": 2325,
+    "R": "A",
+    "Nome": "Karamoh",
+    "Squadra": "Torino",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6011,
+    "R": "A",
+    "Nome": "Ekong",
+    "Squadra": "Empoli",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6418,
+    "R": "A",
+    "Nome": "Burnete",
+    "Squadra": "Lecce",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6490,
+    "R": "A",
+    "Nome": "Cruz",
+    "Squadra": "Verona",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6519,
+    "R": "A",
+    "Nome": "Camarda",
+    "Squadra": "Milan",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6565,
+    "R": "A",
+    "Nome": "Ankeye",
+    "Squadra": "Genoa",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6598,
+    "R": "A",
+    "Nome": "Mutandwa",
+    "Squadra": "Cagliari",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6648,
+    "R": "A",
+    "Nome": "Jasim",
+    "Squadra": "Como",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6822,
+    "R": "A",
+    "Nome": "Ekhator",
+    "Squadra": "Genoa",
+    "Qt.A": 1
+  },
+  {
+    "Id": 6910,
+    "R": "A",
+    "Nome": "Kowalski",
+    "Squadra": "Parma",
+    "Qt.A": 1
+  }
+]

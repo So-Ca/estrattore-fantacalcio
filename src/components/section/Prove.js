@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import listaGiocatori from "../../json/giocatori.json";
 import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
 import Allenatore from "./Allenatore";
@@ -185,7 +184,7 @@ const Section = () => {
       const giocatoreEstratto = nonEstratti.splice(indiceCasuale, 1)[0];
 
       console.log("Giocatore Estratto: ", giocatoreEstratto);
-
+      
       fetch("http://localhost:8000/api/estrai", { // Salvare estratto nel db
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -196,6 +195,8 @@ const Section = () => {
         .then(response => response.json())
         .then(data => {
           setUltimoEstratto(giocatoreEstratto);
+          console.log('ch')
+          console.log(ultimoEstratto)
           fetch("http://localhost:8000/api/giocatori/estratti")
             .then(response => response.json())
             .then(data => {
