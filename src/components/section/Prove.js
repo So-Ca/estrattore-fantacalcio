@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import listaGiocatori from "../../json/giocatori.json";
 import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
+import Allenatore from "./Allenatore";
 
 const Section = () => {
 
@@ -157,52 +158,20 @@ const Section = () => {
     const sforato = totaleSpeso > 500;
     
     return (
-      <div className={style["squadra-container"]} key={allenatore.Id}>
-        <h3 className={style["nome-squadra"]}>{allenatore.Squadra}</h3>
-        {sforato && <span className={style["sforato"]}>Hai Sforato Testa di Cazzo!</span>}
-        <p className={`${style["crediti"]} ${pochiCreditiRimasti}`}>Crediti Spesi: {totaleSpeso}</p>
-        <h3 className={style["nome-allenatore"]}>Allenatore: <b>{allenatore.Nome}</b></h3>
-        <button className={style["btn-assegna-giocatore"]} onClick={assegnaGiocatore(allenatore.Id)}>Assegna a {allenatore.Nome}</button>
-        <div className={style["giocatori-acquistati"]}>
-          <ol className={style["lista-squadra"]}>
-            {giocatoriAssegnati.map((giocatore, index) =>  (
-              
-              <li key={index}>
-                {giocatore.Nome} -&nbsp;
-                {giocatore.R} -&nbsp;
-                <input
-                  className={style["input-prezzo"]}
-                  type="number"
-                  placeholder={giocatore["Qt.A"]}
-                  value={giocatore.prezzo}
-                  onChange={(e) => modificaQuotazione(e, giocatore)}
-                  onKeyPress={(e) => gestioneInvio(e, giocatore, allenatore)}
-                  onBlur={(e) => gestioneInvio(e, giocatore, allenatore)}
-                />
-              </li>
-            ))}
-          </ol>
-        </div>
-        {listaFinita &&
-          <div className={style["box-aggiungi-manualmente"]}>
-            <input
-              className={style["input-aggiungi-manualmente"]}
-              type="text"
-              name="nome"
-              value={nuovoGiocatore.nome}
-              onChange={gestisciInput}
-              placeholder="Nome" />
-            <input
-              className={style["input-aggiungi-manualmente"]}
-              type="text"
-              name="ruolo"
-              value={nuovoGiocatore.ruolo}
-              onChange={gestisciInput}
-              placeholder="Ruolo" />
-            <button className={style["btn-aggiungi-manualmente"]} onClick={aggiungiManualmente(idSquadra)}>Aggiungi</button>
-          </div>
-        }
-      </div>
+      <Allenatore
+        allenatore={allenatore}
+        style={style}
+        idSquadra={idSquadra}
+        sforato={sforato}
+        giocatoriAssegnati={giocatoriAssegnati}
+        pochiCreditiRimasti={pochiCreditiRimasti}
+        listaFinita={listaFinita}
+        totaleSpeso={totaleSpeso}
+        assegnaGiocatore={assegnaGiocatore}
+        nuovoGiocatore={nuovoGiocatore}
+        gestisciInput={gestisciInput}
+        aggiungiManualmente={aggiungiManualmente}
+        />
     )
   });
 
