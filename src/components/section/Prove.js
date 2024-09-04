@@ -9,6 +9,7 @@ const Section = () => {
   const [nonEstratti, setNonEstratti] = useState([]);
   const [estratti, setEstratti] = useState([]);
   const [ultimoEstratto, setUltimoEstratto] = useState(null);
+
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
   const [squadre, setSquadre] = useState([
     { nome: "1", giocatori: [] },
@@ -80,18 +81,18 @@ const Section = () => {
         const allenatori = await allenatoriResponse.json();
 
         let assegnati = {};
-        console.log(estrattiData);
+
         allenatori.forEach(allenatore => {
-          console.log(allenatore.Id);
+
 
           assegnati[allenatore.Id] = estrattiData.filter(giocatore => {
-            console.log(giocatore.AllenatoreId === allenatore.Id);
+
             return giocatore.AllenatoreId === allenatore.Id
           });
         });
-        console.log(assegnati)
+
         setGAssegnati(assegnati);
-        console.log(gAssegnati)
+
       } catch (error) {
         console.error("Errore nel fetch dei giocatori: ", error);
       }
@@ -172,6 +173,7 @@ const Section = () => {
         nuovoGiocatore={nuovoGiocatore}
         gestisciInput={gestisciInput}
         aggiungiManualmente={aggiungiManualmente}
+        ultimoEstratto={ultimoEstratto}
         />
     )
   });
@@ -304,45 +306,49 @@ const Section = () => {
   }
 
 
-
-  return (
-    <div className={style["section"]}>
-      <div className={style["btn-section"]}>
-        <button onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
-        <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
-      </div>
-      <div className={style["ultimo-estratto"]}>
-        <h3 className={style["h3-estratto"]}>Giocatore Estratto:</h3> {ultimoEstratto && (
-          <p className={style["p-estratto"]}>
-            <b>Nome:</b> {ultimoEstratto.Nome},&nbsp;
-            <b>Squadra:</b> {ultimoEstratto.Squadra},&nbsp;
-            <b>Prezzo:</b> {ultimoEstratto["Qt.A"]},&nbsp;
-            <b>Ruolo:</b> {ultimoEstratto.R}
-          </p>
+  if(ultimoEstratto) {
+    return (
+      <div className={style["section"]}>
+        <div className={style["btn-section"]}>
+          <button onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
+          <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
+        </div>
+        <div className={style["ultimo-estratto"]}>
+          <h3 className={style["h3-estratto"]}>Giocatore Estratto:</h3> {ultimoEstratto && (
+            <p className={style["p-estratto"]}>
+              <b>Nome:</b> {ultimoEstratto.Nome},&nbsp;
+              <b>Squadra:</b> {ultimoEstratto.Squadra},&nbsp;
+              <b>Prezzo:</b> {ultimoEstratto["Qt.A"]},&nbsp;
+              <b>Ruolo:</b> {ultimoEstratto.R}
+            </p>
+          )}
+        </div>
+        {listaFinita && <div><h1 className={style["lista-finita"]}>LISTA FINITA</h1><br /><p className={style["commento"]}>😵...era ora...Dio Porco!😩</p></div>}
+        <div className={style["allenatori-container"]}>
+          {allenatori}
+        </div>
+        {estrattiVisibile && (
+          <div className={style["lista-intera"]}>
+            <h3 className={style["h3-lista-intera"]}>Giocatori Estratti:</h3>
+            {estratti.map((giocatore, index) => (
+              <div className={`${style["singolo-estratto"]} ${giocatore.assegnato ? style["gia-assegnato"] : ""}`} key={index}>
+                <p className={style["p-lista-intera"]}>
+                  <b>Nome:</b> {giocatore.Nome},&nbsp;
+                  <b>Squadra:</b> {giocatore.Squadra},&nbsp;
+                  <b>Ruolo:</b> {giocatore.R},&nbsp;
+                  <b>Prezzo Base:</b> {giocatore["Qt.A"]}
+                  {giocatore.assegnato && (<span className={style["span-gia-assegnato"]}>---&nbsp;&nbsp;&nbsp;Assegnato&nbsp;&nbsp;&nbsp;---</span>)}
+                </p>
+              </div>
+            ))}
+          </div>
         )}
       </div>
-      {listaFinita && <div><h1 className={style["lista-finita"]}>LISTA FINITA</h1><br /><p className={style["commento"]}>😵...era ora...Dio Porco!😩</p></div>}
-      <div className={style["allenatori-container"]}>
-        {allenatori}
-      </div>
-      {estrattiVisibile && (
-        <div className={style["lista-intera"]}>
-          <h3 className={style["h3-lista-intera"]}>Giocatori Estratti:</h3>
-          {estratti.map((giocatore, index) => (
-            <div className={`${style["singolo-estratto"]} ${giocatore.assegnato ? style["gia-assegnato"] : ""}`} key={index}>
-              <p className={style["p-lista-intera"]}>
-                <b>Nome:</b> {giocatore.Nome},&nbsp;
-                <b>Squadra:</b> {giocatore.Squadra},&nbsp;
-                <b>Ruolo:</b> {giocatore.R},&nbsp;
-                <b>Prezzo Base:</b> {giocatore["Qt.A"]}
-                {giocatore.assegnato && (<span className={style["span-gia-assegnato"]}>---&nbsp;&nbsp;&nbsp;Assegnato&nbsp;&nbsp;&nbsp;---</span>)}
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  )
+    )
+  } else {
+    return <>Wait ...</>
+  }
+  
 }
 
 export default Section
