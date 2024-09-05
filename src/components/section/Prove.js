@@ -182,8 +182,10 @@ const Section = () => {
       const indiceCasuale = Math.floor(Math.random() * nonEstratti.length);
       const giocatoreEstratto = nonEstratti.splice(indiceCasuale, 1)[0];
 
-      console.log("Giocatore Estratto: ", giocatoreEstratto);
-      
+      //console.log("Giocatore Estratto: ", giocatoreEstratto);
+      console.log('estrai')
+      console.log(this);
+      let $this = this;
       fetch("http://localhost:8000/api/estrai", { // Salvare estratto nel db
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -193,9 +195,11 @@ const Section = () => {
       })
         .then(response => response.json())
         .then(data => {
+          console.log('fetch');
+          console.log(this)
           setUltimoEstratto(giocatoreEstratto);
-          console.log('ch')
-          console.log(ultimoEstratto)
+          /* console.log('ch')
+          console.log(ultimoEstratto) */
           fetch("http://localhost:8000/api/giocatori/estratti")
             .then(response => response.json())
             .then(data => {
@@ -285,13 +289,16 @@ const Section = () => {
   }
 
 
-  if(ultimoEstratto) {
+  //if(ultimoEstratto) {
+    console.log('component')
+    console.log(this);
     return (
       <div className={style["section"]}>
         <div className={style["btn-section"]}>
           <button onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
           <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
         </div>
+        
         <div className={style["ultimo-estratto"]}>
           <h3 className={style["h3-estratto"]}>Giocatore Estratto:</h3> {ultimoEstratto && (
             <p className={style["p-estratto"]}>
@@ -304,7 +311,7 @@ const Section = () => {
         </div>
         {listaFinita && <div><h1 className={style["lista-finita"]}>LISTA FINITA</h1><br /><p className={style["commento"]}>😵...era ora...Dio Porco!😩</p></div>}
         <div className={style["allenatori-container"]}>
-          {allenatori}
+          {ultimoEstratto && allenatori}
         </div>
         {estrattiVisibile && (
           <div className={style["lista-intera"]}>
@@ -324,9 +331,9 @@ const Section = () => {
         )}
       </div>
     )
-  } else {
+  /* } else {
     return <>Wait ...</>
-  }
+  } */
   
 }
 
