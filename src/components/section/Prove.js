@@ -9,6 +9,7 @@ const Section = () => {
   const [estratti, setEstratti] = useState([]);
   const [ultimoEstratto, setUltimoEstratto] = useState(null);
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
+
   const [squadre, setSquadre] = useState([
     { nome: "1", giocatori: [] },
     { nome: "2", giocatori: [] },
@@ -50,15 +51,15 @@ const Section = () => {
       try {
         const estrattiResponse = await fetch("http://localhost:8000/api/giocatori/estratti");
         let estrattiData = await estrattiResponse.json();
-        
-        if(!estrattiData.length) {
+
+        if (!estrattiData.length) {
           setUltimoEstratto(null);
         } else {
           // dal più vecchio al più recente
-          estrattiData = estrattiData.sort(function(a, b) {
-            if(a.Order > b.Order) {
+          estrattiData = estrattiData.sort(function (a, b) {
+            if (a.Order > b.Order) {
               return 1;
-            } else if(a.Order < b.Order) {
+            } else if (a.Order < b.Order) {
               return -1;
             } else {
               return 0;
@@ -68,7 +69,7 @@ const Section = () => {
         }
 
         setEstratti(estrattiData);
-        
+
 
         const nonEstrattiResponse = await fetch("http://localhost:8000/api/giocatori/non-estratti");
         const nonEstrattiData = await nonEstrattiResponse.json();
@@ -155,7 +156,7 @@ const Section = () => {
     const totaleSpeso = calcolaTotaleSpeso(idSquadra);
     const pochiCreditiRimasti = totaleSpeso > 500 ? style["crediti-esauriti"] : totaleSpeso === 500 ? style["cinquecento"] : totaleSpeso >= 450 ? style["crediti-bassi"] : style["crediti"];
     const sforato = totaleSpeso > 500;
-    
+
     return (
       <Allenatore
         key={allenatore.Id}
@@ -172,48 +173,46 @@ const Section = () => {
         gestisciInput={gestisciInput}
         aggiungiManualmente={aggiungiManualmente}
         ultimoEstratto={ultimoEstratto}
-        />
+      />
     )
   });
 
   // Funzione per l'estrazione
   function estrai() {
+
     if (nonEstratti.length > 0) {
       const indiceCasuale = Math.floor(Math.random() * nonEstratti.length);
       const giocatoreEstratto = nonEstratti.splice(indiceCasuale, 1)[0];
+      setUltimoEstratto(giocatoreEstratto);
 
-      //console.log("Giocatore Estratto: ", giocatoreEstratto);
-      console.log('estrai')
-      console.log(this);
       let $this = this;
-      fetch("http://localhost:8000/api/estrai", { // Salvare estratto nel db
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          id_giocatore: giocatoreEstratto.Id
+      if (ultimoEstratto) {
+        alert('fetch')
+        fetch("http://localhost:8000/api/estrai", { // Salvare estratto nel db
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id_giocatore: ultimoEstratto.Id
+          })
         })
-      })
-        .then(response => response.json())
-        .then(data => {
-          console.log('fetch');
-          console.log(this)
-          setUltimoEstratto(giocatoreEstratto);
-          /* console.log('ch')
-          console.log(ultimoEstratto) */
-          fetch("http://localhost:8000/api/giocatori/estratti")
-            .then(response => response.json())
-            .then(data => {
-              setEstratti(data);
-              console.log("Lista giocatori estratti fino ad ora: ", data);
-            });
-          fetch("http://localhost:8000/api/giocatori/non-estratti")
-            .then(response => response.json())
-            .then(data => {
-              setNonEstratti(data);
-
-            })
-        })
-        .catch(error => console.error("Ci sono problemi con l'estrazione: ", error));
+          .then(response => response.json())
+          .then(data => {
+  
+            fetch("http://localhost:8000/api/giocatori/estratti")
+              .then(response => response.json())
+              .then(data => {
+                setEstratti(data);
+                console.log("Lista giocatori estratti fino ad ora: ", data);
+              });
+            fetch("http://localhost:8000/api/giocatori/non-estratti")
+              .then(response => response.json())
+              .then(data => {
+                setNonEstratti(data);
+  
+              })
+          })
+          .catch(error => console.error("Ci sono problemi con l'estrazione: ", error));
+      }
     } else {
       console.log("Lista finita");
     }
@@ -227,11 +226,11 @@ const Section = () => {
         if (!giaAssegnato) {
           // const prezzoGiocatore = parseInt(event.target.value, 10);
 
-         /*  setSquadre((prevSquadre) => prevSquadre.map((s) =>
-            s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
-          )); */
+          /*  setSquadre((prevSquadre) => prevSquadre.map((s) =>
+             s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
+           )); */
 
-          
+
           /* setGAssegnati(prevAssegnati => {
             const nuovaSquadra = Array.isArray(prevAssegnati[allenatoreId]) ? prevAssegnati[allenatoreId] : [];
             return { ...prevAssegnati, [allenatoreId]: [...nuovaSquadra, ultimoEstratto] };
@@ -245,7 +244,7 @@ const Section = () => {
             body: JSON.stringify({
               id_giocatore: giocatoreId,
               id_allenatore: allenatoreId,
-              prezzo : puntata
+              prezzo: puntata
             })
           })
             .then(response => response.json())
@@ -259,7 +258,7 @@ const Section = () => {
               }));
               setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
             })
-            .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error)) 
+            .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
 
           console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
         } else {
@@ -270,7 +269,7 @@ const Section = () => {
       }
     };
   }
-  
+
 
 
 
@@ -298,7 +297,7 @@ const Section = () => {
         body: JSON.stringify({
           id_giocatore: giocatore.Id,
           id_allenatore: allenatore.Id,
-          prezzo : 12
+          prezzo: 12
         })
       })
         .then(response => response.json())
@@ -308,7 +307,7 @@ const Section = () => {
             [data.AllenatoreId]: [...prevAssegnati[data.AllenatoreId] || [], data.giocatore]
           }));
         })
-        .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error)) 
+        .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
     }
   }
 
@@ -318,53 +317,51 @@ const Section = () => {
     console.log("Inutile:", squadre);
   }
 
+  console.log(allenatori);
 
-  //if(ultimoEstratto) {
-    console.log('component')
-    console.log(this);
-    return (
-      <div className={style["section"]}>
-        <div className={style["btn-section"]}>
-          <button onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
-          <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
-        </div>
-        
-        <div className={style["ultimo-estratto"]}>
-          <h3 className={style["h3-estratto"]}>Giocatore Estratto:</h3> {ultimoEstratto && (
-            <p className={style["p-estratto"]}>
-              <b>Nome:</b> {ultimoEstratto.Nome},&nbsp;
-              <b>Squadra:</b> {ultimoEstratto.Squadra},&nbsp;
-              <b>Prezzo:</b> {ultimoEstratto["Qt.A"]},&nbsp;
-              <b>Ruolo:</b> {ultimoEstratto.R}
-            </p>
-          )}
-        </div>
-        {listaFinita && <div><h1 className={style["lista-finita"]}>LISTA FINITA</h1><br /><p className={style["commento"]}>😵...era ora...Dio Porco!😩</p></div>}
-        <div className={style["allenatori-container"]}>
-          {ultimoEstratto && allenatori}
-        </div>
-        {estrattiVisibile && (
-          <div className={style["lista-intera"]}>
-            <h3 className={style["h3-lista-intera"]}>Giocatori Estratti:</h3>
-            {estratti.map((giocatore, index) => (
-              <div className={`${style["singolo-estratto"]} ${giocatore.assegnato ? style["gia-assegnato"] : ""}`} key={index}>
-                <p className={style["p-lista-intera"]}>
-                  <b>Nome:</b> {giocatore.Nome},&nbsp;
-                  <b>Squadra:</b> {giocatore.Squadra},&nbsp;
-                  <b>Ruolo:</b> {giocatore.R},&nbsp;
-                  <b>Prezzo Base:</b> {giocatore["Qt.A"]}
-                  {giocatore.assegnato && (<span className={style["span-gia-assegnato"]}>---&nbsp;&nbsp;&nbsp;Assegnato&nbsp;&nbsp;&nbsp;---</span>)}
-                </p>
-              </div>
-            ))}
-          </div>
+  return (
+    <div className={style["section"]}>
+      <div className={style["btn-section"]}>
+        <button onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
+        <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
+      </div>
+
+      <div className={style["ultimo-estratto"]}>
+        <h3 className={style["h3-estratto"]}>Giocatore Estratto:</h3> {ultimoEstratto && (
+          <p className={style["p-estratto"]}>
+            <b>Nome:</b> {ultimoEstratto.Nome},&nbsp;
+            <b>Squadra:</b> {ultimoEstratto.Squadra},&nbsp;
+            <b>Prezzo:</b> {ultimoEstratto["Qt.A"]},&nbsp;
+            <b>Ruolo:</b> {ultimoEstratto.R}
+          </p>
         )}
       </div>
-    )
+      {listaFinita && <div><h1 className={style["lista-finita"]}>LISTA FINITA</h1><br /><p className={style["commento"]}>😵...era ora...Dio Porco!😩</p></div>}
+      <div className={style["allenatori-container"]}>
+        {ultimoEstratto && allenatori}
+      </div>
+      {estrattiVisibile && (
+        <div className={style["lista-intera"]}>
+          <h3 className={style["h3-lista-intera"]}>Giocatori Estratti:</h3>
+          {estratti.map((giocatore, index) => (
+            <div className={`${style["singolo-estratto"]} ${giocatore.assegnato ? style["gia-assegnato"] : ""}`} key={index}>
+              <p className={style["p-lista-intera"]}>
+                <b>Nome:</b> {giocatore.Nome},&nbsp;
+                <b>Squadra:</b> {giocatore.Squadra},&nbsp;
+                <b>Ruolo:</b> {giocatore.R},&nbsp;
+                <b>Prezzo Base:</b> {giocatore["Qt.A"]}
+                {giocatore.assegnato && (<span className={style["span-gia-assegnato"]}>---&nbsp;&nbsp;&nbsp;Assegnato&nbsp;&nbsp;&nbsp;---</span>)}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
   /* } else {
     return <>Wait ...</>
   } */
-  
+
 }
 
 export default Section

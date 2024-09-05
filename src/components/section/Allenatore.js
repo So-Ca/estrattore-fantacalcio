@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 export default function Allenatore(props) {
 
+
     const [puntata, setPuntata] = useState(props.ultimoEstratto['Qt.A']);
-    console.log(props.giocatoriAssegnati)
+    useEffect(() => {
+        setPuntata(props.ultimoEstratto['Qt.A'])
+    });
 
     return (<div className={props.style["squadra-container"]} key={props.allenatore.Id}>
         <h3 className={props.style["nome-squadra"]}>{props.allenatore.Squadra}</h3>
@@ -11,7 +14,7 @@ export default function Allenatore(props) {
         <h3 className={props.style["nome-allenatore"]}>Allenatore: <b>{props.allenatore.Nome}</b></h3>
         
         {/* Inizio "form" del singolo allenatore */}
-        <input type="number" value={puntata} min={props.ultimoEstratto['Qt.A']} onChange={(e) => setPuntata(e.value)}/>
+        <input type="number" value={puntata} min={puntata} onChange={(e) => setPuntata(e.value)}/>
         <button className={props.style["btn-assegna-giocatore"]} onClick={props.assegnaGiocatore(props.allenatore.Id, props.ultimoEstratto.Id, puntata)}>Assegna a {props.allenatore.Nome}</button>
         {/* Fine "form" del singolo allenatore */}
         
