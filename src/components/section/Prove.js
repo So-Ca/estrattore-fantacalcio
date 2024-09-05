@@ -8,7 +8,6 @@ const Section = () => {
   const [nonEstratti, setNonEstratti] = useState([]);
   const [estratti, setEstratti] = useState([]);
   const [ultimoEstratto, setUltimoEstratto] = useState(null);
-
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
   const [squadre, setSquadre] = useState([
     { nome: "1", giocatori: [] },
@@ -245,27 +244,6 @@ const Section = () => {
         alert("Ma sei Coglione? 🙄\nDevi estrarre un giocatore prima di poterlo assegnare ad una squadra.");
       }
     }
-  }
-
-  // funzione per modificare il prezzo
-  function modificaQuotazione(e, giocatore) {
-    const nuovoPrezzo = parseInt(e.target.value) || 0;
-    const giocatoreAggiornato = { ...giocatore, prezzo: nuovoPrezzo };
-
-    /* fetch(`http://localhost:8000/api/giocatori/${giocatore.id}`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(giocatoreAggiornato)
-    })
-      .then(response => response.json())
-      .then(data => {
-        const aggiornaGiocatoriAssegnati = Object.keys(gAssegnati).reduce((acc, squadra) => {
-          const giocatori = gAssegnati[squadra].map(g => (g === giocatore ? { ...g, prezzo: nuovoPrezzo } : g));
-          return { ...acc, [squadra]: giocatori };
-        }, []);
-        setGAssegnati(aggiornaGiocatoriAssegnati);
-      })
-      .catch(error => console.error("Ci sono problemi con l'aggiornamento del prezzo: ", error)) */
   }
 
   // Gestione della pressione di Enter

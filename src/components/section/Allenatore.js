@@ -20,7 +20,8 @@ export default function Allenatore(props) {
                 {props.giocatoriAssegnati.map((giocatore, index) => (
                     <li key={index}>
                         {giocatore.Nome} -&nbsp;
-                        {giocatore.R}
+                        {giocatore.R} -&nbsp;
+                        {giocatore.prezzo ? giocatore.prezzo : "Prezzo non Stabilito"}
                     </li>
                 ))}
             </ol>
