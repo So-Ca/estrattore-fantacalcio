@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
 import Allenatore from "./Allenatore";
+import { all } from "axios";
 
 const Section = () => {
 
@@ -222,6 +223,7 @@ const Section = () => {
 
   // Funzione per assegnare l'ultimo estratto ad una squadra
   function assegnaGiocatore(allenatoreId, giocatoreId, puntata) {
+    console.log(allenatoreId, giocatoreId, puntata);
     return function (event) {
       if (ultimoEstratto) {
         const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Nome === ultimoEstratto.Nome));
