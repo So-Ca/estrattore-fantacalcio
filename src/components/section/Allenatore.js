@@ -8,7 +8,6 @@ export default function Allenatore(props) {
     useEffect(() => {
         setPuntata(props.ultimoEstratto['Qt.A'])
         setGiocatoriAssegnati(props.giocatoriAssegnati)
-        console.log('effect')
     }, [props.ultimoEstratto['Id'], props.giocatoriAssegnati.length]);
 
 

@@ -278,6 +278,33 @@ const Section = () => {
     };
   }
 
+  function svincolaGiocatore(allenatoreId, giocatoreId) {
+
+    fetch("http://localhost:8000/api/svincola", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id_giocatore: giocatoreId,
+        id_allenatore: allenatoreId
+      })
+    }).then(response => response.json())
+    .then(data => {
+
+      /* setSquadre((prevSquadre) => prevSquadre.map((s) =>
+        s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
+      )); */
+      setGAssegnati(prevAssegnati => {
+        return ({
+          ...prevAssegnati,
+          [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
+        });
+      });
+      setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
+    })
+    .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
+
+  }
+
   // BACKUP DA ELIMINARE
   // Gestione della pressione di Enter
   /* function gestioneInvio(e, giocatore, allenatore) {
