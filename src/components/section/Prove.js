@@ -220,30 +220,48 @@ const Section = () => {
   }
 
   // Funzione per assegnare l'ultimo estratto ad una squadra
-  function assegnaGiocatore(allenatoreId) {
+  function assegnaGiocatore(allenatoreId, giocatoreId, puntata) {
     return function (event) {
       if (ultimoEstratto) {
         const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Nome === ultimoEstratto.Nome));
         if (!giaAssegnato) {
-          const prezzo = parseInt(prompt("Inserisci il prezzo pagato per il giocatore"), 10); // Qui puoi chiedere il prezzo
-          const giocatoreConPrezzo = { ...ultimoEstratto, prezzo }; // Assegna il prezzo
-  
-          setSquadre((prevSquadre) =>
-            prevSquadre.map((s) =>
-              s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, giocatoreConPrezzo] } : s
-            )
-          );
-  
-          setGAssegnati((prevAssegnati) => {
+          // const prezzoGiocatore = parseInt(event.target.value, 10);
+
+         /*  setSquadre((prevSquadre) => prevSquadre.map((s) =>
+            s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
+          )); */
+
+          
+          /* setGAssegnati(prevAssegnati => {
             const nuovaSquadra = Array.isArray(prevAssegnati[allenatoreId]) ? prevAssegnati[allenatoreId] : [];
-            return { ...prevAssegnati, [allenatoreId]: [...nuovaSquadra, giocatoreConPrezzo] };
-          });
-  
-          setEstratti((prevEstratti) =>
-            prevEstratti.map((giocatore) =>
-              giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore
-            )
-          );
+            return { ...prevAssegnati, [allenatoreId]: [...nuovaSquadra, ultimoEstratto] };
+          }); */
+
+          //setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
+
+          fetch("http://localhost:8000/api/acquista", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              id_giocatore: giocatoreId,
+              id_allenatore: allenatoreId,
+              prezzo : puntata
+            })
+          })
+            .then(response => response.json())
+            .then(data => {
+              setSquadre((prevSquadre) => prevSquadre.map((s) =>
+                s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
+              ));
+              setGAssegnati(prevAssegnati => ({
+                ...prevAssegnati,
+                [data.AllenatoreId]: [...prevAssegnati[data.AllenatoreId] || [], data.giocatore]
+              }));
+              setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
+            })
+            .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error)) 
+
+          console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
         } else {
           alert(`Giocatore già assegnato!`);
         }
