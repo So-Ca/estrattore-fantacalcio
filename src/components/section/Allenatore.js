@@ -4,19 +4,25 @@ export default function Allenatore(props) {
 
     const [puntata, setPuntata] = useState(props.ultimoEstratto['Qt.A']);
     const [giocatoriAssegnati, setGiocatoriAssegnati] = useState(props.giocatoriAssegnati);
-    console.log(giocatoriAssegnati)
 
     useEffect(() => {
         setPuntata(props.ultimoEstratto['Qt.A'])
         setGiocatoriAssegnati(props.giocatoriAssegnati)
-    }, [props.ultimoEstratto['Id'], props.giocatoriAssegnati]);
+        console.log('effect')
+    }, [props.ultimoEstratto['Id'], props.giocatoriAssegnati.length]);
+
+
+    let totaleSpeso = 0;
+    props.giocatoriAssegnati.forEach(function(giocatore) {
+        totaleSpeso += giocatore.Prezzo;
+    });
 
     return (<div className={props.style["squadra-container"]} key={props.allenatore.Id}>
         <h3 className={props.style["nome-squadra"]}>{props.allenatore.Squadra}</h3>
         {props.sforato && <span className={props.style["sforato"]}>Hai Sforato Testa di Cazzo!</span>}
-        <p className={`${props.style["crediti"]} ${props.pochiCreditiRimasti}`}>Crediti Spesi: {props.totaleSpeso}</p>
+        <p className={`${props.style["crediti"]} ${props.pochiCreditiRimasti}`}>Crediti Spesi: {totaleSpeso}</p>
         <h3 className={props.style["nome-allenatore"]}>Allenatore: <b>{props.allenatore.Nome}</b></h3>
-        {props.ultimoEstratto.Id}
+
         {/* Inizio "form" del singolo allenatore */}
         <input type="number" value={puntata} min={puntata} onChange={(e) => setPuntata(e.target.value)}/>
         <button className={props.style["btn-assegna-giocatore"]} onClick={props.assegnaGiocatore(props.allenatore.Id, props.ultimoEstratto.Id, puntata)}>Assegna a {props.allenatore.Nome}</button>
