@@ -24,7 +24,7 @@ export default function Allenatore(props) {
         <h3 className={props.style["nome-allenatore"]}>Allenatore: <b>{props.allenatore.Nome}</b></h3>
 
         {/* Inizio "form" del singolo allenatore */}
-        <input type="number" value={puntata} min={puntata} onChange={(e) => setPuntata(e.target.value)}/>
+        <input type="number" value={puntata} min={props.ultimoEstratto['Qt.A']} onChange={(e) => setPuntata(e.target.value)}/>
         <button className={props.style["btn-assegna-giocatore"]} onClick={props.assegnaGiocatore(props.allenatore.Id, props.ultimoEstratto.Id, puntata)}>Assegna a {props.allenatore.Nome}</button>
         {/* Fine "form" del singolo allenatore */}
         

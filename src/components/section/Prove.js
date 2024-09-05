@@ -259,20 +259,10 @@ const Section = () => {
                 s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
               ));
               setGAssegnati(prevAssegnati => {
-                /* console.log('gassegnati');
-                console.log({
-                  ...prevAssegnati,
-                  [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
-                }); */
-                /* return ({
-                ...prevAssegnati,
-                [data.AllenatoreId]: [...prevAssegnati[data.AllenatoreId] || [], data.giocatore]
-              }) */
                 return ({
                   ...prevAssegnati,
                   [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
                 });
-
               });
               setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
             })
