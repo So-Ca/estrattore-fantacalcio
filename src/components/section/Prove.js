@@ -186,13 +186,15 @@ const Section = () => {
       setUltimoEstratto(giocatoreEstratto);
 
       let $this = this;
-      if (ultimoEstratto) {
-        alert('fetch')
+      //if (ultimoEstratto) {
+        /* console.log(giocatoreEstratto)
+        console.log(ultimoEstratto) */
+
         fetch("http://localhost:8000/api/estrai", { // Salvare estratto nel db
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            id_giocatore: ultimoEstratto.Id
+            id_giocatore: giocatoreEstratto.Id
           })
         })
           .then(response => response.json())
@@ -212,7 +214,7 @@ const Section = () => {
               })
           })
           .catch(error => console.error("Ci sono problemi con l'estrazione: ", error));
-      }
+      //}
     } else {
       console.log("Lista finita");
     }
@@ -317,7 +319,7 @@ const Section = () => {
     console.log("Inutile:", squadre);
   }
 
-  console.log(allenatori);
+
 
   return (
     <div className={style["section"]}>
