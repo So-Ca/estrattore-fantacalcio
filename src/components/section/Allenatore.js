@@ -18,10 +18,11 @@ export default function Allenatore(props) {
         <div className={props.style["giocatori-acquistati"]}>
             <ol className={props.style["lista-squadra"]}>
                 {props.giocatoriAssegnati.map((giocatore, index) => (
-                    <li key={index}>
+                    <li key={giocatore}>
                         {giocatore.Nome} -&nbsp;
                         {giocatore.R} -&nbsp;
                         {giocatore.Prezzo ? giocatore.Prezzo : "Prezzo non Stabilito"}
+                        <span style={{color:"red", fontSize: "2rem", cursor : "pointer"}} onClick={() => alert('svincola giocatore '+giocatore.Id + ' attualmente dell\'allenatore '+props.allenatore.Id)}>&times;</span>
                     </li>
                 ))}
             </ol>
