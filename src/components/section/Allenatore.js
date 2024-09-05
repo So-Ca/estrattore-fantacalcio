@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 export default function Allenatore(props) {
 
     const [puntata, setPuntata] = useState(props.ultimoEstratto['Qt.A']);
-    console.log(puntata)
+    console.log(props.giocatoriAssegnati)
 
     return (<div className={props.style["squadra-container"]} key={props.allenatore.Id}>
         <h3 className={props.style["nome-squadra"]}>{props.allenatore.Squadra}</h3>
@@ -21,7 +21,7 @@ export default function Allenatore(props) {
                     <li key={index}>
                         {giocatore.Nome} -&nbsp;
                         {giocatore.R} -&nbsp;
-                        {giocatore.prezzo ? giocatore.prezzo : "Prezzo non Stabilito"}
+                        {giocatore.Prezzo ? giocatore.Prezzo : "Prezzo non Stabilito"}
                     </li>
                 ))}
             </ol>
