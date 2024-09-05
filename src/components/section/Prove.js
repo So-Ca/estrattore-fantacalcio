@@ -182,8 +182,10 @@ const Section = () => {
       const indiceCasuale = Math.floor(Math.random() * nonEstratti.length);
       const giocatoreEstratto = nonEstratti.splice(indiceCasuale, 1)[0];
 
-      console.log("Giocatore Estratto: ", giocatoreEstratto);
-      
+      //console.log("Giocatore Estratto: ", giocatoreEstratto);
+      console.log('estrai')
+      console.log(this);
+      let $this = this;
       fetch("http://localhost:8000/api/estrai", { // Salvare estratto nel db
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -193,9 +195,11 @@ const Section = () => {
       })
         .then(response => response.json())
         .then(data => {
+          console.log('fetch');
+          console.log(this)
           setUltimoEstratto(giocatoreEstratto);
-          console.log('ch')
-          console.log(ultimoEstratto)
+          /* console.log('ch')
+          console.log(ultimoEstratto) */
           fetch("http://localhost:8000/api/giocatori/estratti")
             .then(response => response.json())
             .then(data => {
@@ -218,33 +222,45 @@ const Section = () => {
   // Funzione per assegnare l'ultimo estratto ad una squadra
   function assegnaGiocatore(allenatoreId) {
     return function (event) {
-
       if (ultimoEstratto) {
         const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Nome === ultimoEstratto.Nome));
         if (!giaAssegnato) {
-          // const prezzoGiocatore = parseInt(event.target.value, 10);
-
-          setSquadre((prevSquadre) => prevSquadre.map((s) =>
-            s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
-          ));
-
-          
-          setGAssegnati(prevAssegnati => {
+          const prezzo = parseInt(prompt("Inserisci il prezzo pagato per il giocatore"), 10); // Qui puoi chiedere il prezzo
+          const giocatoreConPrezzo = { ...ultimoEstratto, prezzo }; // Assegna il prezzo
+  
+          setSquadre((prevSquadre) =>
+            prevSquadre.map((s) =>
+              s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, giocatoreConPrezzo] } : s
+            )
+          );
+  
+          setGAssegnati((prevAssegnati) => {
             const nuovaSquadra = Array.isArray(prevAssegnati[allenatoreId]) ? prevAssegnati[allenatoreId] : [];
-            return { ...prevAssegnati, [allenatoreId]: [...nuovaSquadra, ultimoEstratto] };
+            return { ...prevAssegnati, [allenatoreId]: [...nuovaSquadra, giocatoreConPrezzo] };
           });
-
-          setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
-
-          console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
+  
+          setEstratti((prevEstratti) =>
+            prevEstratti.map((giocatore) =>
+              giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore
+            )
+          );
         } else {
-          alert(`😡 Ehi Ehi Non Barare Infame! 😡\nQuesto Giocatore è già stato assegnato a ${Object.keys(gAssegnati).find(s => gAssegnati[s].some(g => g.Nome === ultimoEstratto.Nome))}`);
+          alert(`Giocatore già assegnato!`);
         }
       } else {
-        alert("Ma sei Coglione? 🙄\nDevi estrarre un giocatore prima di poterlo assegnare ad una squadra.");
+        alert("Estrai un giocatore prima di assegnarlo.");
       }
-    }
+    };
   }
+  
+
+
+
+
+
+
+
+
 
   // Gestione della pressione di Enter
   function gestioneInvio(e, giocatore, allenatore) {
@@ -285,13 +301,16 @@ const Section = () => {
   }
 
 
-  if(ultimoEstratto) {
+  //if(ultimoEstratto) {
+    console.log('component')
+    console.log(this);
     return (
       <div className={style["section"]}>
         <div className={style["btn-section"]}>
           <button onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
           <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
         </div>
+        
         <div className={style["ultimo-estratto"]}>
           <h3 className={style["h3-estratto"]}>Giocatore Estratto:</h3> {ultimoEstratto && (
             <p className={style["p-estratto"]}>
@@ -304,7 +323,7 @@ const Section = () => {
         </div>
         {listaFinita && <div><h1 className={style["lista-finita"]}>LISTA FINITA</h1><br /><p className={style["commento"]}>😵...era ora...Dio Porco!😩</p></div>}
         <div className={style["allenatori-container"]}>
-          {allenatori}
+          {ultimoEstratto && allenatori}
         </div>
         {estrattiVisibile && (
           <div className={style["lista-intera"]}>
@@ -324,9 +343,9 @@ const Section = () => {
         )}
       </div>
     )
-  } else {
+  /* } else {
     return <>Wait ...</>
-  }
+  } */
   
 }
 
