@@ -279,26 +279,32 @@ const Section = () => {
   }
 
   function svincolaGiocatore(allenatoreId, giocatoreId) {
-    fetch("http://localhost:8000/api/svincola", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        id_giocatore: giocatoreId,
-        id_allenatore: allenatoreId
-      })
-    }).then(response => response.json())
-      .then(data => {
 
-        console.log(data)
-        console.log(gAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId))
-        setGAssegnati(prevAssegnati => {
-          return ({
-            ...prevAssegnati,
-            [allenatoreId]: prevAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)
+    let giocatoreCorrente = gAssegnati[allenatoreId].find((giocatore) => giocatore.Id === giocatoreId);
+    let allenatoreCorrente = allenatoriData.find((allenatore) => allenatore.Id === allenatoreId);
+
+    if (typeof giocatoreCorrente !== 'undefined' && typeof allenatoreCorrente !== 'undefined' && window.confirm('Sei sicuro di voler svincolare il giocatore ' + giocatoreCorrente.Nome + ' della squadra ' + allenatoreCorrente.Squadra + '?')) {
+      fetch("http://localhost:8000/api/svincola", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id_giocatore: giocatoreId,
+          id_allenatore: allenatoreId
+        })
+      }).then(response => response.json())
+        .then(data => {
+
+          console.log(data)
+          console.log(gAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId))
+          setGAssegnati(prevAssegnati => {
+            return ({
+              ...prevAssegnati,
+              [allenatoreId]: prevAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)
+            });
           });
-        });
-      })
-      .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
+        })
+        .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
+    }
 
   }
 
