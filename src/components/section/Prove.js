@@ -353,6 +353,10 @@ const Section = () => {
     <div className={style["section"]}>
       <div className={style["btn-section"]}>
         <button onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
+        <div>
+          <div>{'Estratti: ' + estratti.length + ' / ' + (estratti.length+nonEstratti.length)}</div>
+          <dov>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total+num)}</dov>
+        </div>
         <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
       </div>
 

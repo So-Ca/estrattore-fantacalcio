@@ -51,7 +51,7 @@ export default function Allenatore(props) {
                 ))}
             </ol>
         </div>
-        {1 &&
+        {false &&
             <div className={props.style["box-aggiungi-manualmente"]}>
                 <input
                     className={props.style["input-aggiungi-manualmente"]}
