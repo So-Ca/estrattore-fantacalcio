@@ -33,6 +33,7 @@ export default function Allenatore(props) {
                 {giocatoriAssegnati.map((giocatore) => (
                     <Giocatore
                      key={giocatore.Id}
+                     id={giocatore.Id}
                      nome={giocatore.Nome}
                      ruolo={giocatore.R}
                      prezzo={giocatore.Prezzo ? giocatore.Prezzo : "Prezzo non Stabilito"}
