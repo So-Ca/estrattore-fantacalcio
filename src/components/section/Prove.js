@@ -348,14 +348,14 @@ const Section = () => {
   }
 
 
-
+  console.log(estratti)
   return (
     <div className={style["section"]}>
       <div className={style["btn-section"]}>
         <button onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
         <div>
           <div>{'Estratti: ' + estratti.length + ' / ' + (estratti.length + nonEstratti.length)}</div>
-          <dov>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</dov>
+          <div>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</div>
         </div>
         <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
       </div>
@@ -384,7 +384,10 @@ const Section = () => {
                 <b>Squadra:</b> {giocatore.Squadra},&nbsp;
                 <b>Ruolo:</b> {giocatore.R},&nbsp;
                 <b>Prezzo Base:</b> {giocatore["Qt.A"]}
-                {giocatore.assegnato && (<span className={style["span-gia-assegnato"]}>---&nbsp;&nbsp;&nbsp;Assegnato&nbsp;&nbsp;&nbsp;---</span>)}
+                {giocatore.AllenatoreId && (<span className={style["span-gia-assegnato"]}>---&nbsp;&nbsp;&nbsp;Assegnato&nbsp;&nbsp;&nbsp;---</span>)}
+                {!giocatore.AllenatoreId && (<input type="number" min={giocatore["Qt.A"]} value={giocatore["Qt.A"]}/>)}
+                {!giocatore.AllenatoreId && (<select><option>a</option></select>)}
+                {!giocatore.AllenatoreId && (<button>Assegna</button>)}
               </p>
             </div>
           ))}
