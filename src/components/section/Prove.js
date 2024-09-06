@@ -233,7 +233,7 @@ const Section = () => {
         if (totaleSpeso >= 400) {
           alert('Hai finito i crediti');
           return;
-        } else if (totaleSpeso + puntata > 400) {
+        } else if ((Number(totaleSpeso) + Number(puntata)) > 400) {
           alert('Non hai abbastanza crediti per fare questa puntata');
           return;
         }
@@ -354,8 +354,8 @@ const Section = () => {
       <div className={style["btn-section"]}>
         <button onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
         <div>
-          <div>{'Estratti: ' + estratti.length + ' / ' + (estratti.length+nonEstratti.length)}</div>
-          <dov>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total+num)}</dov>
+          <div>{'Estratti: ' + estratti.length + ' / ' + (estratti.length + nonEstratti.length)}</div>
+          <dov>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</dov>
         </div>
         <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
       </div>
