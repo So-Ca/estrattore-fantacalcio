@@ -226,70 +226,59 @@ const Section = () => {
   // Funzione per assegnare l'ultimo estratto ad una squadra
   function assegnaGiocatore(allenatoreId, giocatoreId, puntata, totaleSpeso) {
 
-    if(totaleSpeso >= 400) {
-      alert('Hai finito i crediti');
-      return;
-    }
-    //return function (event) {
 
-      if (ultimoEstratto) {
-        const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Nome === ultimoEstratto.Nome));
-        if (!giaAssegnato) {
-          // const prezzoGiocatore = parseInt(event.target.value, 10);
-
-          /*  setSquadre((prevSquadre) => prevSquadre.map((s) =>
-             s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
-           )); */
-
-
-          /* setGAssegnati(prevAssegnati => {
-            const nuovaSquadra = Array.isArray(prevAssegnati[allenatoreId]) ? prevAssegnati[allenatoreId] : [];
-            return { ...prevAssegnati, [allenatoreId]: [...nuovaSquadra, ultimoEstratto] };
-          }); */
-
-          //setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
-
-          fetch("http://localhost:8000/api/acquista", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              id_giocatore: giocatoreId,
-              id_allenatore: allenatoreId,
-              prezzo: puntata
-            })
-          })
-            .then(response => response.json())
-            .then(data => {
-
-              setSquadre((prevSquadre) => prevSquadre.map((s) =>
-                s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
-              ));
-              setGAssegnati(prevAssegnati => {
-                return ({
-                  ...prevAssegnati,
-                  [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
-                });
-              });
-              setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
-            })
-            .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
-
-          console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
+    if (ultimoEstratto) {
+      const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Nome === ultimoEstratto.Nome));
+      if (!giaAssegnato) {
+        if (totaleSpeso >= 400) {
+          alert('Hai finito i crediti');
           return;
-        } else {
-          alert(`Giocatore già assegnato!`);
+        } else if (totaleSpeso + puntata > 400) {
+          alert('Non hai abbastanza crediti per fare questa puntata');
           return;
         }
+        /*  setSquadre((prevSquadre) => prevSquadre.map((s) =>
+           s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
+         )); */
+
+        fetch("http://localhost:8000/api/acquista", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id_giocatore: giocatoreId,
+            id_allenatore: allenatoreId,
+            prezzo: puntata
+          })
+        })
+          .then(response => response.json())
+          .then(data => {
+
+            setSquadre((prevSquadre) => prevSquadre.map((s) =>
+              s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
+            ));
+            setGAssegnati(prevAssegnati => {
+              return ({
+                ...prevAssegnati,
+                [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
+              });
+            });
+            setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
+          })
+          .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
+
+        console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
+        return;
       } else {
-        alert("Estrai un giocatore prima di assegnarlo.");
+        alert(`Giocatore già assegnato!`);
         return;
       }
-    //};
+    } else {
+      alert("Estrai un giocatore prima di assegnarlo.");
+      return;
+    }
   }
 
   function svincolaGiocatore(allenatoreId, giocatoreId) {
-    /* alert('svincola giocatore ' + allenatoreId + ' attualmente dell\'allenatore ' + giocatoreId)
-    return */
     fetch("http://localhost:8000/api/svincola", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -298,22 +287,18 @@ const Section = () => {
         id_allenatore: allenatoreId
       })
     }).then(response => response.json())
-    .then(data => {
+      .then(data => {
 
-      /* setSquadre((prevSquadre) => prevSquadre.map((s) =>
-        s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
-      )); */
-      console.log(data)
-      console.log(gAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId))
-      setGAssegnati(prevAssegnati => {
-        return ({
-          ...prevAssegnati,
-          [allenatoreId]: prevAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)
+        console.log(data)
+        console.log(gAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId))
+        setGAssegnati(prevAssegnati => {
+          return ({
+            ...prevAssegnati,
+            [allenatoreId]: prevAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)
+          });
         });
-      });
-      //setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
-    })
-    .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
+      })
+      .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
 
   }
 
