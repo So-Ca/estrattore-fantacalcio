@@ -45,7 +45,9 @@ export default function Allenatore(props) {
                      nome={giocatore.Nome}
                      ruolo={giocatore.R}
                      prezzo={giocatore.Prezzo ? giocatore.Prezzo : "Prezzo non Stabilito"}
-                     allenatore={props.allenatore.Id} />
+                     allenatore={props.allenatore.Id}
+                     svincolaGiocatore={props.svincolaGiocatore}
+                     />
                 ))}
             </ol>
         </div>

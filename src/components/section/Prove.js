@@ -176,6 +176,7 @@ const Section = () => {
         pochiCreditiRimasti={pochiCreditiRimasti}
         listaFinita={listaFinita}
         assegnaGiocatore={assegnaGiocatore}
+        svincolaGiocatore={svincolaGiocatore}
         nuovoGiocatore={nuovoGiocatore}
         gestisciInput={gestisciInput}
         aggiungiManualmente={aggiungiManualmente}
@@ -230,7 +231,7 @@ const Section = () => {
       return;
     }
     //return function (event) {
-      console.log('qui3')
+
       if (ultimoEstratto) {
         const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Nome === ultimoEstratto.Nome));
         if (!giaAssegnato) {
@@ -287,7 +288,8 @@ const Section = () => {
   }
 
   function svincolaGiocatore(allenatoreId, giocatoreId) {
-
+    /* alert('svincola giocatore ' + allenatoreId + ' attualmente dell\'allenatore ' + giocatoreId)
+    return */
     fetch("http://localhost:8000/api/svincola", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -301,13 +303,13 @@ const Section = () => {
       /* setSquadre((prevSquadre) => prevSquadre.map((s) =>
         s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
       )); */
-      setGAssegnati(prevAssegnati => {
+      /* setGAssegnati(prevAssegnati => {
         return ({
           ...prevAssegnati,
           [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
         });
-      });
-      setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
+      }); */
+      //setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
     })
     .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
 

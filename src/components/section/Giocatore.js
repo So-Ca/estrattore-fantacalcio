@@ -4,7 +4,7 @@ export default function Giocatore(props) {
             {props.nome} -&nbsp;
             {props.ruolo} -&nbsp;
             {props.prezzo}
-            <span style={{ color: "red", fontSize: "2rem", cursor: "pointer" }} onClick={() => alert('svincola giocatore ' + props.id + ' attualmente dell\'allenatore ' + props.allenatore)}>&times;</span>
+            <span style={{ color: "red", fontSize: "2rem", cursor: "pointer" }} onClick={() => props.svincolaGiocatore(props.allenatore, props.id) }>&times;</span>
         </li>
     )
 }
