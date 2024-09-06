@@ -223,9 +223,14 @@ const Section = () => {
   }
 
   // Funzione per assegnare l'ultimo estratto ad una squadra
-  function assegnaGiocatore(allenatoreId, giocatoreId, puntata) {
+  function assegnaGiocatore(allenatoreId, giocatoreId, puntata, totaleSpeso) {
 
-    return function (event) {
+    if(totaleSpeso >= 400) {
+      alert('Hai finito i crediti');
+      return;
+    }
+    //return function (event) {
+      console.log('qui3')
       if (ultimoEstratto) {
         const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Nome === ultimoEstratto.Nome));
         if (!giaAssegnato) {
@@ -269,13 +274,16 @@ const Section = () => {
             .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
 
           console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
+          return;
         } else {
           alert(`Giocatore già assegnato!`);
+          return;
         }
       } else {
         alert("Estrai un giocatore prima di assegnarlo.");
+        return;
       }
-    };
+    //};
   }
 
   function svincolaGiocatore(allenatoreId, giocatoreId) {
