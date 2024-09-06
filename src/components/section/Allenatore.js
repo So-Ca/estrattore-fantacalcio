@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Giocatore from "./Giocatore";
 export default function Allenatore(props) {
 
 
@@ -29,13 +30,13 @@ export default function Allenatore(props) {
         
         <div className={props.style["giocatori-acquistati"]}>
             <ol className={props.style["lista-squadra"]}>
-                {giocatoriAssegnati.map((giocatore, index) => (
-                    <li key={giocatore.Id}>
-                        {giocatore.Nome} -&nbsp;
-                        {giocatore.R} -&nbsp;
-                        {giocatore.Prezzo ? giocatore.Prezzo : "Prezzo non Stabilito"}
-                        <span style={{color:"red", fontSize: "2rem", cursor : "pointer"}} onClick={() => alert('svincola giocatore '+giocatore.Id + ' attualmente dell\'allenatore '+props.allenatore.Id)}>&times;</span>
-                    </li>
+                {giocatoriAssegnati.map((giocatore) => (
+                    <Giocatore
+                     key={giocatore.Id}
+                     nome={giocatore.Nome}
+                     ruolo={giocatore.R}
+                     prezzo={giocatore.Prezzo ? giocatore.Prezzo : "Prezzo non Stabilito"}
+                     allenatore={props.allenatore.Id} />
                 ))}
             </ol>
         </div>
