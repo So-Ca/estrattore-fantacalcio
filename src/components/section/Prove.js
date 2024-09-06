@@ -303,12 +303,14 @@ const Section = () => {
       /* setSquadre((prevSquadre) => prevSquadre.map((s) =>
         s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
       )); */
-      /* setGAssegnati(prevAssegnati => {
+      console.log(data)
+      console.log(gAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId))
+      setGAssegnati(prevAssegnati => {
         return ({
           ...prevAssegnati,
-          [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
+          [allenatoreId]: prevAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)
         });
-      }); */
+      });
       //setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
     })
     .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
