@@ -13,6 +13,7 @@ const Section = () => {
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
 
   const creditiPerAllenatore = 500;
+  const apiHost = "http://localhost:8000";
   const [gAssegnati, setGAssegnati] = useState(
     {
       "1": [],
@@ -40,7 +41,7 @@ const Section = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const estrattiResponse = await fetch("http://localhost:8000/api/giocatori/estratti");
+        const estrattiResponse = await fetch(apiHost+"/api/giocatori/estratti");
         let estrattiData = await estrattiResponse.json();
 
         if (!estrattiData.length) {
@@ -62,12 +63,12 @@ const Section = () => {
         setEstratti(estrattiData);
 
 
-        const nonEstrattiResponse = await fetch("http://localhost:8000/api/giocatori/non-estratti");
+        const nonEstrattiResponse = await fetch(apiHost+"/api/giocatori/non-estratti");
         const nonEstrattiData = await nonEstrattiResponse.json();
 
         setNonEstratti(nonEstrattiData);
 
-        const allenatoriResponse = await fetch("http://localhost:8000/api/allenatori");
+        const allenatoriResponse = await fetch(apiHost+"/api/allenatori");
         const allenatori = await allenatoriResponse.json();
 
         let assegnati = {};
@@ -138,7 +139,7 @@ const Section = () => {
       const giocatoreEstratto = nonEstratti.splice(indiceCasuale, 1)[0];
       setUltimoEstratto(giocatoreEstratto);
 
-      fetch("http://localhost:8000/api/estrai", { // Salvare estratto nel db
+      fetch(apiHost+"/api/estrai", { // Salvare estratto nel db
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -148,13 +149,13 @@ const Section = () => {
         .then(response => response.json())
         .then(data => {
 
-          fetch("http://localhost:8000/api/giocatori/estratti")
+          fetch(apiHost+"/api/giocatori/estratti")
             .then(response => response.json())
             .then(data => {
               setEstratti(data);
               console.log("Lista giocatori estratti fino ad ora: ", data);
             });
-          fetch("http://localhost:8000/api/giocatori/non-estratti")
+          fetch(apiHost+"/api/giocatori/non-estratti")
             .then(response => response.json())
             .then(data => {
               setNonEstratti(data);
@@ -191,7 +192,7 @@ const Section = () => {
         return;
       }
 
-      fetch("http://localhost:8000/api/acquista", {
+      fetch(apiHost+"/api/acquista", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -227,7 +228,7 @@ const Section = () => {
     let allenatoreCorrente = allenatoriData.find((allenatore) => allenatore.Id === allenatoreId);
 
     if (typeof giocatoreCorrente !== 'undefined' && typeof allenatoreCorrente !== 'undefined' && window.confirm('Sei sicuro di voler svincolare il giocatore ' + giocatoreCorrente.Nome + ' della squadra ' + allenatoreCorrente.Squadra + '?')) {
-      fetch("http://localhost:8000/api/svincola", {
+      fetch(apiHost+"/api/svincola", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
