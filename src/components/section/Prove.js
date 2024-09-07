@@ -230,10 +230,12 @@ const Section = () => {
   // Funzione per assegnare l'ultimo estratto ad una squadra
   function assegnaGiocatore(allenatoreId, giocatoreId, puntata, totaleSpeso) {
 
-    alert(allenatoreId + " " + giocatoreId + " " + puntata + " " + totaleSpeso);
-    // return;
+    allenatoreId = Number(allenatoreId);
+    giocatoreId = Number(giocatoreId);
+    puntata = Number(puntata);
+    
 
-    if (Object.keys(gAssegnati).map((id) => Number(id)).indexOf(allenatoreId) === -1) {
+    if (Object.keys(gAssegnati).map((id) => Number(id)).indexOf(Number(allenatoreId)) === -1) {
       alert("Scegli un allenatore");
       return;
     }
@@ -356,6 +358,7 @@ const Section = () => {
     //console.log("Inutile:", squadre);
   }
   //giocatori.reduce((somma, giocatore) => somma + (parseInt(giocatore.prezzo) || 0), 0);
+  console.log(estratti);
   return (
     <div className={style["section"]}>
       <div className={style["btn-section"]}>
