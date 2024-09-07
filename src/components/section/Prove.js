@@ -45,6 +45,7 @@ const Section = () => {
      ruolo: "",
      prezzo: ""
    }); */
+  const [searchText, setSearchText] = useState("");
 
   const listaFinita = nonEstratti.length === 0;
 
@@ -304,10 +305,16 @@ const Section = () => {
       <div className={style["allenatori-container"]}>
         {ultimoEstratto && allenatori}
       </div>
+
       {estrattiVisibile && (
         <div className={style["lista-intera"]}>
           <h3 className={style["h3-lista-intera"]}>Giocatori Estratti:</h3>
+          <div>
+            <input type="text" name="search" id="search" placeholder="Cerca giocatore" onChange={(e) => setSearchText(e.target.value)} />
+          </div>
           {estratti.map((giocatore, index) => (
+
+            (!searchText.length || searchText.toLowerCase() == giocatore.Nome.slice(0, searchText.length).toLowerCase()) &&
             <GiocatoreEstratto
               style={style}
               giocatore={giocatore}
