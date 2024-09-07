@@ -12,7 +12,7 @@ const Section = () => {
   const [ultimoEstratto, setUltimoEstratto] = useState(null);
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
 
-  const [squadre, setSquadre] = useState([
+  /* const [squadre, setSquadre] = useState([
     { nome: "1", giocatori: [] },
     { nome: "2", giocatori: [] },
     { nome: "3", giocatori: [] },
@@ -23,7 +23,7 @@ const Section = () => {
     { nome: "8", giocatori: [] },
     { nome: "9", giocatori: [] },
     { nome: "10", giocatori: [] }
-  ]);
+  ]); */
   const [gAssegnati, setGAssegnati] = useState(
     {
       "1": [],
@@ -254,9 +254,9 @@ const Section = () => {
           .then(response => response.json())
           .then(data => {
 
-            setSquadre((prevSquadre) => prevSquadre.map((s) =>
+            /* setSquadre((prevSquadre) => prevSquadre.map((s) =>
               s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
-            ));
+            )); */
             setGAssegnati(prevAssegnati => {
               return ({
                 ...prevAssegnati,
@@ -342,7 +342,7 @@ const Section = () => {
   // funzione per mostrare tutti i giocatori estratti
   function toggleEstratti() {
     setEstrattiVisibile(!estrattiVisibile);
-    console.log("Inutile:", squadre);
+    //console.log("Inutile:", squadre);
   }
 
   return (
