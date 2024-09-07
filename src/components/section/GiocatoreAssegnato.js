@@ -1,4 +1,4 @@
-export default function Giocatore(props) {
+export default function GiocatoreAssegnato(props) {
     return (
         <li>
             {props.nome} -&nbsp;

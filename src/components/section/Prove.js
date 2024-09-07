@@ -3,6 +3,7 @@ import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
 import Allenatore from "./Allenatore";
 import { all } from "axios";
+import GiocatoreEstratto from "./GiocatoreEstratto";
 
 const Section = () => {
 
@@ -293,9 +294,6 @@ const Section = () => {
         })
       }).then(response => response.json())
         .then(data => {
-
-          console.log(data)
-          console.log(gAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId))
           setGAssegnati(prevAssegnati => {
             return ({
               ...prevAssegnati,
@@ -347,8 +345,6 @@ const Section = () => {
     console.log("Inutile:", squadre);
   }
 
-
-  console.log(estratti)
   return (
     <div className={style["section"]}>
       <div className={style["btn-section"]}>
@@ -378,18 +374,12 @@ const Section = () => {
         <div className={style["lista-intera"]}>
           <h3 className={style["h3-lista-intera"]}>Giocatori Estratti:</h3>
           {estratti.map((giocatore, index) => (
-            <div className={`${style["singolo-estratto"]} ${giocatore.assegnato ? style["gia-assegnato"] : ""}`} key={index}>
-              <p className={style["p-lista-intera"]}>
-                <b>Nome:</b> {giocatore.Nome},&nbsp;
-                <b>Squadra:</b> {giocatore.Squadra},&nbsp;
-                <b>Ruolo:</b> {giocatore.R},&nbsp;
-                <b>Prezzo Base:</b> {giocatore["Qt.A"]}
-                {giocatore.AllenatoreId && (<span className={style["span-gia-assegnato"]}>---&nbsp;&nbsp;&nbsp;Assegnato&nbsp;&nbsp;&nbsp;---</span>)}
-                {!giocatore.AllenatoreId && (<input type="number" min={giocatore["Qt.A"]} value={giocatore["Qt.A"]}/>)}
-                {!giocatore.AllenatoreId && (<select><option>a</option></select>)}
-                {!giocatore.AllenatoreId && (<button>Assegna</button>)}
-              </p>
-            </div>
+            <GiocatoreEstratto
+            style={style}
+            giocatore={giocatore}
+            key={giocatore.Id}
+            allenatori={allenatoriData}
+            />
           ))}
         </div>
       )}

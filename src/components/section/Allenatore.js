@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Giocatore from "./Giocatore";
+import GiocatoreAssegnato from "./GiocatoreAssegnato";
 export default function Allenatore(props) {
 
 
@@ -39,7 +39,7 @@ export default function Allenatore(props) {
         <div className={props.style["giocatori-acquistati"]}>
             <ol className={props.style["lista-squadra"]}>
                 {giocatoriAssegnati.map((giocatore) => (
-                    <Giocatore
+                    <GiocatoreAssegnato
                      key={giocatore.Id}
                      id={giocatore.Id}
                      nome={giocatore.Nome}
