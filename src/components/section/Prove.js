@@ -153,9 +153,9 @@ const Section = () => {
   } */
 
   // Calcolo dei crediti spesi
-  function calcolaTotaleSpeso(nomeSquadra) {
-    const giocatori = gAssegnati[nomeSquadra] || [];
-    return giocatori.reduce((somma, giocatore) => somma + (parseInt(giocatore.prezzo) || 0), 0);
+  function calcolaTotaleSpeso(idAllenatore) {
+    const giocatori = gAssegnati[idAllenatore] || [];
+    return giocatori.reduce((somma, giocatore) => somma + (parseInt(giocatore.Prezzo) || 0), 0);
   }
 
   // Componente Allenatori
@@ -182,6 +182,7 @@ const Section = () => {
         gestisciInput={gestisciInput}
         //aggiungiManualmente={aggiungiManualmente}
         ultimoEstratto={ultimoEstratto}
+        totaleSpeso={totaleSpeso}
       />
     )
   });
@@ -227,7 +228,13 @@ const Section = () => {
   // Funzione per assegnare l'ultimo estratto ad una squadra
   function assegnaGiocatore(allenatoreId, giocatoreId, puntata, totaleSpeso) {
 
+   /*  alert(allenatoreId + " " + giocatoreId + " " + puntata + " " + totaleSpeso);
+    return; */
 
+    if(Object.keys(gAssegnati).indexOf(allenatoreId) === -1) {
+      alert("Scegli un allenatore");
+      return;
+    }
     if (ultimoEstratto) {
       const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Nome === ultimoEstratto.Nome));
       if (!giaAssegnato) {
@@ -344,7 +351,7 @@ const Section = () => {
     setEstrattiVisibile(!estrattiVisibile);
     //console.log("Inutile:", squadre);
   }
-
+  //giocatori.reduce((somma, giocatore) => somma + (parseInt(giocatore.prezzo) || 0), 0);
   return (
     <div className={style["section"]}>
       <div className={style["btn-section"]}>
@@ -379,6 +386,8 @@ const Section = () => {
             giocatore={giocatore}
             key={giocatore.Id}
             allenatori={allenatoriData}
+            assegnaGiocatore={assegnaGiocatore}
+            calcolaTotaleSpeso={calcolaTotaleSpeso}
             />
           ))}
         </div>
