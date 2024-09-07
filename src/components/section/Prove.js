@@ -109,7 +109,7 @@ const Section = () => {
   }
 
   // funzione per aggiungere un giocatore già estratto ma non assegnato
-  function aggiungiManualmente(nomeSquadra) {
+  /* function aggiungiManualmente(nomeSquadra) {
     return function () {
       const { nome, ruolo } = nuovoGiocatore;
 
@@ -150,7 +150,7 @@ const Section = () => {
         alert("Non ti hanno insegnato a leggere? 😒\nCompleta tutti i cazzo di campi!")
       }
     }
-  }
+  } */
 
   // Calcolo dei crediti spesi
   function calcolaTotaleSpeso(nomeSquadra) {
@@ -180,7 +180,7 @@ const Section = () => {
         svincolaGiocatore={svincolaGiocatore}
         nuovoGiocatore={nuovoGiocatore}
         gestisciInput={gestisciInput}
-        aggiungiManualmente={aggiungiManualmente}
+        //aggiungiManualmente={aggiungiManualmente}
         ultimoEstratto={ultimoEstratto}
       />
     )

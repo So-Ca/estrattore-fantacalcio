@@ -7,7 +7,7 @@ export default function Allenatore(props) {
     const [giocatoriAssegnati, setGiocatoriAssegnati] = useState(props.giocatoriAssegnati);
     const [totaleSpeso, setTotaleSpeso] = useState(() => {
         let totaleSpeso = 0;
-        props.giocatoriAssegnati.forEach(function(giocatore) {
+        props.giocatoriAssegnati.forEach(function (giocatore) {
             totaleSpeso += giocatore.Prezzo;
         });
         return totaleSpeso;
@@ -18,7 +18,7 @@ export default function Allenatore(props) {
         setGiocatoriAssegnati(props.giocatoriAssegnati)
         setTotaleSpeso(() => {
             let totaleSpeso = 0;
-            props.giocatoriAssegnati.forEach(function(giocatore) {
+            props.giocatoriAssegnati.forEach(function (giocatore) {
                 totaleSpeso += giocatore.Prezzo;
             });
             return totaleSpeso;
@@ -32,26 +32,26 @@ export default function Allenatore(props) {
         <h3 className={props.style["nome-allenatore"]}>Allenatore: <b>{props.allenatore.Nome}</b></h3>
 
         {/* Inizio "form" del singolo allenatore */}
-        <input type="number" value={puntata} min={props.ultimoEstratto['Qt.A']} onChange={(e) => setPuntata(e.target.value)}/>
+        <input type="number" value={puntata} min={props.ultimoEstratto['Qt.A']} onChange={(e) => setPuntata(e.target.value)} />
         <button className={props.style["btn-assegna-giocatore"]} onClick={() => props.assegnaGiocatore(props.allenatore.Id, props.ultimoEstratto.Id, puntata, totaleSpeso)}>Assegna a {props.allenatore.Nome}</button>
         {/* Fine "form" del singolo allenatore */}
-        
+
         <div className={props.style["giocatori-acquistati"]}>
             <ol className={props.style["lista-squadra"]}>
                 {giocatoriAssegnati.map((giocatore) => (
                     <GiocatoreAssegnato
-                     key={giocatore.Id}
-                     id={giocatore.Id}
-                     nome={giocatore.Nome}
-                     ruolo={giocatore.R}
-                     prezzo={giocatore.Prezzo ? giocatore.Prezzo : "Prezzo non Stabilito"}
-                     allenatore={props.allenatore.Id}
-                     svincolaGiocatore={props.svincolaGiocatore}
-                     />
+                        key={giocatore.Id}
+                        id={giocatore.Id}
+                        nome={giocatore.Nome}
+                        ruolo={giocatore.R}
+                        prezzo={giocatore.Prezzo ? giocatore.Prezzo : "Prezzo non Stabilito"}
+                        allenatore={props.allenatore.Id}
+                        svincolaGiocatore={props.svincolaGiocatore}
+                    />
                 ))}
             </ol>
         </div>
-        {false &&
+        {/* {false &&
             <div className={props.style["box-aggiungi-manualmente"]}>
                 <input
                     className={props.style["input-aggiungi-manualmente"]}
@@ -69,6 +69,6 @@ export default function Allenatore(props) {
                     placeholder="Ruolo" />
                 <button className={props.style["btn-aggiungi-manualmente"]} onClick={props.aggiungiManualmente(props.idSquadra)}>Aggiungi</button>
             </div>
-        }
+        } */}
     </div>)
 }
