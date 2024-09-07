@@ -37,12 +37,14 @@ const Section = () => {
       "10": []
     }
   );
- /*  const [nuovoGiocatore, setNuovoGiocatore] = useState({
-    numero: "",
-    nome: "",
-    ruolo: "",
-    prezzo: ""
-  }); */
+
+  const [isDoingRequest, setIsDoingRequest] = useState(false);
+  /*  const [nuovoGiocatore, setNuovoGiocatore] = useState({
+     numero: "",
+     nome: "",
+     ruolo: "",
+     prezzo: ""
+   }); */
 
   const listaFinita = nonEstratti.length === 0;
 
@@ -50,7 +52,7 @@ const Section = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const estrattiResponse = await fetch(apiHost+"/api/giocatori/estratti");
+        const estrattiResponse = await fetch(apiHost + "/api/giocatori/estratti");
         let estrattiData = await estrattiResponse.json();
 
         if (!estrattiData.length) {
@@ -72,12 +74,12 @@ const Section = () => {
         setEstratti(estrattiData);
 
 
-        const nonEstrattiResponse = await fetch(apiHost+"/api/giocatori/non-estratti");
+        const nonEstrattiResponse = await fetch(apiHost + "/api/giocatori/non-estratti");
         const nonEstrattiData = await nonEstrattiResponse.json();
 
         setNonEstratti(nonEstrattiData);
 
-        const allenatoriResponse = await fetch(apiHost+"/api/allenatori");
+        const allenatoriResponse = await fetch(apiHost + "/api/allenatori");
         const allenatori = await allenatoriResponse.json();
 
         let assegnati = {};
@@ -103,8 +105,8 @@ const Section = () => {
 
   // funzione per gestire l'input di aggiungi giocatore
   //function gestisciInput(e) {
-   // const { name, value } = e.target;
-    //setNuovoGiocatore(prevValue => ({ ...prevValue, [name]: value }));
+  // const { name, value } = e.target;
+  //setNuovoGiocatore(prevValue => ({ ...prevValue, [name]: value }));
   //}
 
   // Calcolo dei crediti spesi
@@ -136,6 +138,7 @@ const Section = () => {
         //gestisciInput={gestisciInput}
         ultimoEstratto={ultimoEstratto}
         totaleSpeso={totaleSpeso}
+        isDoingRequest={isDoingRequest}
       />
     )
   });
@@ -148,7 +151,8 @@ const Section = () => {
       const giocatoreEstratto = nonEstratti.splice(indiceCasuale, 1)[0];
       setUltimoEstratto(giocatoreEstratto);
 
-      fetch(apiHost+"/api/estrai", { // Salvare estratto nel db
+      setIsDoingRequest(true);
+      fetch(apiHost + "/api/estrai", { // Salvare estratto nel db
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -158,20 +162,23 @@ const Section = () => {
         .then(response => response.json())
         .then(data => {
 
-          fetch(apiHost+"/api/giocatori/estratti")
+          fetch(apiHost + "/api/giocatori/estratti")
             .then(response => response.json())
             .then(data => {
               setEstratti(data);
               console.log("Lista giocatori estratti fino ad ora: ", data);
             });
-          fetch(apiHost+"/api/giocatori/non-estratti")
+          fetch(apiHost + "/api/giocatori/non-estratti")
             .then(response => response.json())
             .then(data => {
               setNonEstratti(data);
-
+              setIsDoingRequest(false);
             })
         })
-        .catch(error => console.error("Ci sono problemi con l'estrazione: ", error));
+        .catch((error) => {
+          console.error("Ci sono problemi con l'estrazione: ", error);
+          setIsDoingRequest(false);
+        });
     } else {
       console.log("Lista finita");
     }
@@ -200,8 +207,8 @@ const Section = () => {
         alert('Non hai abbastanza crediti per fare questa puntata');
         return;
       }
-
-      fetch(apiHost+"/api/acquista", {
+      setIsDoingRequest(true);
+      fetch(apiHost + "/api/acquista", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -219,8 +226,12 @@ const Section = () => {
               [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
             });
           });
+          setIsDoingRequest(false);
         })
-        .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
+        .catch(error => {
+          console.error("Ci no problemi con l'aggiunta del giocatore: ", error)
+          setIsDoingRequest(false);
+        })
 
       console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
       return;
@@ -237,7 +248,8 @@ const Section = () => {
     let allenatoreCorrente = allenatoriData.find((allenatore) => allenatore.Id === allenatoreId);
 
     if (typeof giocatoreCorrente !== 'undefined' && typeof allenatoreCorrente !== 'undefined' && window.confirm('Sei sicuro di voler svincolare il giocatore ' + giocatoreCorrente.Nome + ' della squadra ' + allenatoreCorrente.Squadra + '?')) {
-      fetch(apiHost+"/api/svincola", {
+      setIsDoingRequest(true);
+      fetch(apiHost + "/api/svincola", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -252,8 +264,12 @@ const Section = () => {
               [allenatoreId]: prevAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)
             });
           });
+          setIsDoingRequest(false);
         })
-        .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
+        .catch(error => {
+          console.error("Ci no problemi con l'aggiunta del giocatore: ", error);
+          setIsDoingRequest(false);
+        })
     }
 
   }
@@ -266,7 +282,7 @@ const Section = () => {
   return (
     <div className={style["section"]}>
       <div className={style["btn-section"]}>
-        <button onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
+        <button disabled={isDoingRequest} onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
         <div>
           <div>{'Estratti: ' + estratti.length + ' / ' + (estratti.length + nonEstratti.length)}</div>
           <div>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</div>
@@ -300,6 +316,7 @@ const Section = () => {
               assegnaGiocatore={assegnaGiocatore}
               calcolaTotaleSpeso={calcolaTotaleSpeso}
               gAssegnati={gAssegnati}
+              isDoingRequest={isDoingRequest}
             />
           ))}
         </div>

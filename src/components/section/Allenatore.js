@@ -9,7 +9,7 @@ export default function Allenatore(props) {
     useEffect(() => {
         setPuntata(props.ultimoEstratto['Qt.A'])
         setGiocatoriAssegnati(props.giocatoriAssegnati)
-    }, [props.ultimoEstratto['Id'], props.giocatoriAssegnati.length]);
+    }, [props.ultimoEstratto['Id'], props.giocatoriAssegnati.length] );
 
     return (<div className={props.style["squadra-container"]} key={props.allenatore.Id}>
         <h3 className={props.style["nome-squadra"]}>{props.allenatore.Squadra}</h3>
@@ -19,7 +19,7 @@ export default function Allenatore(props) {
 
         {/* Inizio "form" del singolo allenatore */}
         <input type="number" value={puntata} min={props.ultimoEstratto['Qt.A']} onChange={(e) => setPuntata(e.target.value)} />
-        <button className={props.style["btn-assegna-giocatore"]} onClick={() => props.assegnaGiocatore(props.allenatore.Id, props.ultimoEstratto.Id, puntata, props.totaleSpeso)}>Assegna a {props.allenatore.Nome}</button>
+        <button disabled={props.isDoingRequest} className={props.style["btn-assegna-giocatore"]} onClick={() => props.assegnaGiocatore(props.allenatore.Id, props.ultimoEstratto.Id, puntata, props.totaleSpeso)}>Assegna a {props.allenatore.Nome}</button>
         {/* Fine "form" del singolo allenatore */}
 
         <div className={props.style["giocatori-acquistati"]}>

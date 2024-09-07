@@ -34,7 +34,7 @@ export default function GiocatoreEstratto(props) {
                     <option key={allenatore.Id} value={allenatore.Id}>{allenatore.Nome}</option>
                 ))}
             </select>)}
-            {!assegnato && (<button onClick={() => props.assegnaGiocatore(allenatoreScelto, props.giocatore.Id, puntata, props.calcolaTotaleSpeso(allenatoreScelto))}>Assegna</button>)}
+            {!assegnato && (<button disabled={props.isDoingRequest} onClick={() => props.assegnaGiocatore(allenatoreScelto, props.giocatore.Id, puntata, props.calcolaTotaleSpeso(allenatoreScelto))}>Assegna</button>)}
         </p>
     </div>)
 }
