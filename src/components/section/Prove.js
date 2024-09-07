@@ -12,6 +12,8 @@ const Section = () => {
   const [ultimoEstratto, setUltimoEstratto] = useState(null);
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
 
+  const creditiPerAllenatore = 500;
+
   /* const [squadre, setSquadre] = useState([
     { nome: "1", giocatori: [] },
     { nome: "2", giocatori: [] },
@@ -163,8 +165,8 @@ const Section = () => {
     const idSquadra = allenatore.Id;
     //const giocatoriAssegnati = gAssegnati[idSquadra] || [];
     const totaleSpeso = calcolaTotaleSpeso(idSquadra);
-    const pochiCreditiRimasti = totaleSpeso > 500 ? style["crediti-esauriti"] : totaleSpeso === 500 ? style["cinquecento"] : totaleSpeso >= 450 ? style["crediti-bassi"] : style["crediti"];
-    const sforato = totaleSpeso > 500;
+    const pochiCreditiRimasti = totaleSpeso > creditiPerAllenatore ? style["crediti-esauriti"] : totaleSpeso === creditiPerAllenatore ? style["cinquecento"] : totaleSpeso >= (creditiPerAllenatore*0.9) ? style["crediti-bassi"] : style["crediti"];
+    const sforato = totaleSpeso > creditiPerAllenatore;
 
     return (
       <Allenatore
@@ -231,17 +233,17 @@ const Section = () => {
    /*  alert(allenatoreId + " " + giocatoreId + " " + puntata + " " + totaleSpeso);
     return; */
 
-    if(Object.keys(gAssegnati).indexOf(allenatoreId) === -1) {
+    if(Object.keys(gAssegnati).map((id) => Number(id)).indexOf(allenatoreId) === -1) {
       alert("Scegli un allenatore");
       return;
     }
     if (ultimoEstratto) {
-      const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Nome === ultimoEstratto.Nome));
+      const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Id === ultimoEstratto.Id));
       if (!giaAssegnato) {
-        if (totaleSpeso >= 400) {
+        if (totaleSpeso >= creditiPerAllenatore) {
           alert('Hai finito i crediti');
           return;
-        } else if ((Number(totaleSpeso) + Number(puntata)) > 400) {
+        } else if ((Number(totaleSpeso) + Number(puntata)) > creditiPerAllenatore) {
           alert('Non hai abbastanza crediti per fare questa puntata');
           return;
         }
