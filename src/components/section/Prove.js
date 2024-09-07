@@ -165,7 +165,7 @@ const Section = () => {
     const idSquadra = allenatore.Id;
     //const giocatoriAssegnati = gAssegnati[idSquadra] || [];
     const totaleSpeso = calcolaTotaleSpeso(idSquadra);
-    const pochiCreditiRimasti = totaleSpeso > creditiPerAllenatore ? style["crediti-esauriti"] : totaleSpeso === creditiPerAllenatore ? style["cinquecento"] : totaleSpeso >= (creditiPerAllenatore*0.9) ? style["crediti-bassi"] : style["crediti"];
+    const pochiCreditiRimasti = totaleSpeso > creditiPerAllenatore ? style["crediti-esauriti"] : totaleSpeso === creditiPerAllenatore ? style["cinquecento"] : totaleSpeso >= (creditiPerAllenatore * 0.9) ? style["crediti-bassi"] : style["crediti"];
     const sforato = totaleSpeso > creditiPerAllenatore;
 
     return (
@@ -230,62 +230,64 @@ const Section = () => {
   // Funzione per assegnare l'ultimo estratto ad una squadra
   function assegnaGiocatore(allenatoreId, giocatoreId, puntata, totaleSpeso) {
 
-   /*  alert(allenatoreId + " " + giocatoreId + " " + puntata + " " + totaleSpeso);
-    return; */
+    alert(allenatoreId + " " + giocatoreId + " " + puntata + " " + totaleSpeso);
+    // return;
 
-    if(Object.keys(gAssegnati).map((id) => Number(id)).indexOf(allenatoreId) === -1) {
+    if (Object.keys(gAssegnati).map((id) => Number(id)).indexOf(allenatoreId) === -1) {
       alert("Scegli un allenatore");
       return;
     }
-    if (ultimoEstratto) {
-      const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Id === ultimoEstratto.Id));
-      if (!giaAssegnato) {
-        if (totaleSpeso >= creditiPerAllenatore) {
-          alert('Hai finito i crediti');
-          return;
-        } else if ((Number(totaleSpeso) + Number(puntata)) > creditiPerAllenatore) {
-          alert('Non hai abbastanza crediti per fare questa puntata');
-          return;
-        }
-        /*  setSquadre((prevSquadre) => prevSquadre.map((s) =>
-           s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
-         )); */
+    console.log(gAssegnati);
+    //if (ultimoEstratto) {
+    const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Id === giocatoreId));
 
-        fetch("http://localhost:8000/api/acquista", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            id_giocatore: giocatoreId,
-            id_allenatore: allenatoreId,
-            prezzo: puntata
-          })
-        })
-          .then(response => response.json())
-          .then(data => {
-
-            /* setSquadre((prevSquadre) => prevSquadre.map((s) =>
-              s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
-            )); */
-            setGAssegnati(prevAssegnati => {
-              return ({
-                ...prevAssegnati,
-                [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
-              });
-            });
-            setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
-          })
-          .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
-
-        console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
+    if (!giaAssegnato) {
+      if (totaleSpeso >= creditiPerAllenatore) {
+        alert('Hai finito i crediti');
         return;
-      } else {
-        alert(`Giocatore già assegnato!`);
+      } else if ((Number(totaleSpeso) + Number(puntata)) > creditiPerAllenatore) {
+        alert('Non hai abbastanza crediti per fare questa puntata');
         return;
       }
+      /*  setSquadre((prevSquadre) => prevSquadre.map((s) =>
+         s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
+       )); */
+
+      fetch("http://localhost:8000/api/acquista", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id_giocatore: giocatoreId,
+          id_allenatore: allenatoreId,
+          prezzo: puntata
+        })
+      })
+        .then(response => response.json())
+        .then(data => {
+
+          /* setSquadre((prevSquadre) => prevSquadre.map((s) =>
+            s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
+          )); */
+          setGAssegnati(prevAssegnati => {
+            return ({
+              ...prevAssegnati,
+              [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
+            });
+          });
+          //setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
+        })
+        .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
+
+      console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
+      return;
     } else {
-      alert("Estrai un giocatore prima di assegnarlo.");
+      alert(`Giocatore già assegnato!`);
       return;
     }
+    //} else {
+    //  alert("Estrai un giocatore prima di assegnarlo.");
+    //  return;
+    //}
   }
 
   function svincolaGiocatore(allenatoreId, giocatoreId) {
@@ -384,12 +386,12 @@ const Section = () => {
           <h3 className={style["h3-lista-intera"]}>Giocatori Estratti:</h3>
           {estratti.map((giocatore, index) => (
             <GiocatoreEstratto
-            style={style}
-            giocatore={giocatore}
-            key={giocatore.Id}
-            allenatori={allenatoriData}
-            assegnaGiocatore={assegnaGiocatore}
-            calcolaTotaleSpeso={calcolaTotaleSpeso}
+              style={style}
+              giocatore={giocatore}
+              key={giocatore.Id}
+              allenatori={allenatoriData}
+              assegnaGiocatore={assegnaGiocatore}
+              calcolaTotaleSpeso={calcolaTotaleSpeso}
             />
           ))}
         </div>
