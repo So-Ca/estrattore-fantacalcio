@@ -299,6 +299,7 @@ const Section = () => {
               allenatori={allenatoriData}
               assegnaGiocatore={assegnaGiocatore}
               calcolaTotaleSpeso={calcolaTotaleSpeso}
+              gAssegnati={gAssegnati}
             />
           ))}
         </div>

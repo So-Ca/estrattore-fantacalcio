@@ -6,9 +6,19 @@ export default function GiocatoreEstratto(props) {
     const [allenatoreScelto, setAllenatoreScelto] = useState(0);
     const [assegnato, setAssegnato] = useState(props.giocatore.AllenatoreId);
 
+    
     useEffect(() => {
-        setAssegnato(props.giocatore.AllenatoreId)
-    }, [props.giocatore]);
+        let assegnato = props.giocatore.AllenatoreId;
+        if(!assegnato) {
+            Object.values(props.gAssegnati).forEach((allenatore) => {
+                allenatore.forEach((giocatore) => {
+                    if(giocatore.Id === props.giocatore.Id) {
+                        setAssegnato(true);
+                    }
+                });
+            });
+        }
+    }, [props.gAssegnati]);
 
     return (<div className={`${props.style["singolo-estratto"]} ${assegnato ? props.style["gia-assegnato"] : ""}`}>
         <p className={props.style["p-lista-intera"]}>
