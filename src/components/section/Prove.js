@@ -7,13 +7,22 @@ import GiocatoreEstratto from "./GiocatoreEstratto";
 
 const Section = () => {
 
-  const [nonEstratti, setNonEstratti] = useState([]);
-  const [estratti, setEstratti] = useState([]);
-  const [ultimoEstratto, setUltimoEstratto] = useState(null);
-  const [estrattiVisibile, setEstrattiVisibile] = useState(false);
-
+  // Configurazioni globali
   const creditiPerAllenatore = 500;
   const apiHost = "http://localhost:8000";
+
+  // Liste giocatori
+  const [nonEstratti, setNonEstratti] = useState([]);
+  const [estratti, setEstratti] = useState([]);
+
+  // Ultimo giocatore estratto
+  const [ultimoEstratto, setUltimoEstratto] = useState(null);
+
+  // Flag che governa lo show/hide della lista dei giocatori estratti
+  const [estrattiVisibile, setEstrattiVisibile] = useState(false);
+
+  // Oggetto che contiene un array per ciascun allenatore.
+  // Ogni array contiene i giocatori assegnati all'allenatore corrispondente
   const [gAssegnati, setGAssegnati] = useState(
     {
       "1": [],
