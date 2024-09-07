@@ -39,12 +39,7 @@ const Section = () => {
   );
 
   const [isDoingRequest, setIsDoingRequest] = useState(false);
-  /*  const [nuovoGiocatore, setNuovoGiocatore] = useState({
-     numero: "",
-     nome: "",
-     ruolo: "",
-     prezzo: ""
-   }); */
+
   const [searchText, setSearchText] = useState("");
 
   const listaFinita = nonEstratti.length === 0;
@@ -104,12 +99,6 @@ const Section = () => {
     fetchData();
   }, []);
 
-  // funzione per gestire l'input di aggiungi giocatore
-  //function gestisciInput(e) {
-  // const { name, value } = e.target;
-  //setNuovoGiocatore(prevValue => ({ ...prevValue, [name]: value }));
-  //}
-
   // Calcolo dei crediti spesi
   function calcolaTotaleSpeso(idAllenatore) {
     const giocatori = gAssegnati[idAllenatore] || [];
@@ -135,8 +124,6 @@ const Section = () => {
         listaFinita={listaFinita}
         assegnaGiocatore={assegnaGiocatore}
         svincolaGiocatore={svincolaGiocatore}
-        //nuovoGiocatore={nuovoGiocatore}
-        //gestisciInput={gestisciInput}
         ultimoEstratto={ultimoEstratto}
         totaleSpeso={totaleSpeso}
         isDoingRequest={isDoingRequest}
