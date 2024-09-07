@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
 import Allenatore from "./Allenatore";
-import { all } from "axios";
+
 import GiocatoreEstratto from "./GiocatoreEstratto";
 
 const Section = () => {
@@ -13,19 +13,6 @@ const Section = () => {
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
 
   const creditiPerAllenatore = 500;
-
-  /* const [squadre, setSquadre] = useState([
-    { nome: "1", giocatori: [] },
-    { nome: "2", giocatori: [] },
-    { nome: "3", giocatori: [] },
-    { nome: "4", giocatori: [] },
-    { nome: "5", giocatori: [] },
-    { nome: "6", giocatori: [] },
-    { nome: "7", giocatori: [] },
-    { nome: "8", giocatori: [] },
-    { nome: "9", giocatori: [] },
-    { nome: "10", giocatori: [] }
-  ]); */
   const [gAssegnati, setGAssegnati] = useState(
     {
       "1": [],
@@ -110,50 +97,6 @@ const Section = () => {
     setNuovoGiocatore(prevValue => ({ ...prevValue, [name]: value }));
   }
 
-  // funzione per aggiungere un giocatore già estratto ma non assegnato
-  /* function aggiungiManualmente(nomeSquadra) {
-    return function () {
-      const { nome, ruolo } = nuovoGiocatore;
-
-      if (nome && ruolo) {
-        const giocatore = {
-          Nome: nome,
-          R: ruolo,
-        };
-
-        fetch("http://localhost:8000/api/giocatori", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(giocatore)
-        })
-          .then(response => response.json())
-          .then(data => {
-            setGAssegnati(prevAssegnati => {
-              console.log('gassegnati')
-              console.log({
-                ...prevAssegnati,
-                [nomeSquadra]: [...prevAssegnati[nomeSquadra] || [], data]
-              })
-                ({
-                  ...prevAssegnati,
-                  [nomeSquadra]: [...prevAssegnati[nomeSquadra] || [], data]
-                })
-            });
-          })
-          .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
-
-        setNuovoGiocatore({
-          numero: "",
-          nome: "",
-          ruolo: "",
-          prezzo: ""
-        });
-      } else {
-        alert("Non ti hanno insegnato a leggere? 😒\nCompleta tutti i cazzo di campi!")
-      }
-    }
-  } */
-
   // Calcolo dei crediti spesi
   function calcolaTotaleSpeso(idAllenatore) {
     const giocatori = gAssegnati[idAllenatore] || [];
@@ -163,7 +106,6 @@ const Section = () => {
   // Componente Allenatori
   const allenatori = allenatoriData.map(allenatore => {
     const idSquadra = allenatore.Id;
-    //const giocatoriAssegnati = gAssegnati[idSquadra] || [];
     const totaleSpeso = calcolaTotaleSpeso(idSquadra);
     const pochiCreditiRimasti = totaleSpeso > creditiPerAllenatore ? style["crediti-esauriti"] : totaleSpeso === creditiPerAllenatore ? style["cinquecento"] : totaleSpeso >= (creditiPerAllenatore * 0.9) ? style["crediti-bassi"] : style["crediti"];
     const sforato = totaleSpeso > creditiPerAllenatore;
@@ -182,7 +124,6 @@ const Section = () => {
         svincolaGiocatore={svincolaGiocatore}
         nuovoGiocatore={nuovoGiocatore}
         gestisciInput={gestisciInput}
-        //aggiungiManualmente={aggiungiManualmente}
         ultimoEstratto={ultimoEstratto}
         totaleSpeso={totaleSpeso}
       />
@@ -221,7 +162,6 @@ const Section = () => {
             })
         })
         .catch(error => console.error("Ci sono problemi con l'estrazione: ", error));
-      //}
     } else {
       console.log("Lista finita");
     }
@@ -233,14 +173,13 @@ const Section = () => {
     allenatoreId = Number(allenatoreId);
     giocatoreId = Number(giocatoreId);
     puntata = Number(puntata);
-    
+
 
     if (Object.keys(gAssegnati).map((id) => Number(id)).indexOf(Number(allenatoreId)) === -1) {
       alert("Scegli un allenatore");
       return;
     }
-    console.log(gAssegnati);
-    //if (ultimoEstratto) {
+
     const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Id === giocatoreId));
 
     if (!giaAssegnato) {
@@ -251,9 +190,6 @@ const Section = () => {
         alert('Non hai abbastanza crediti per fare questa puntata');
         return;
       }
-      /*  setSquadre((prevSquadre) => prevSquadre.map((s) =>
-         s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
-       )); */
 
       fetch("http://localhost:8000/api/acquista", {
         method: "POST",
@@ -267,16 +203,12 @@ const Section = () => {
         .then(response => response.json())
         .then(data => {
 
-          /* setSquadre((prevSquadre) => prevSquadre.map((s) =>
-            s.Id === allenatoreId ? { ...s, giocatori: [...s.giocatori, ultimoEstratto] } : s
-          )); */
           setGAssegnati(prevAssegnati => {
             return ({
               ...prevAssegnati,
               [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
             });
           });
-          //setEstratti((prevEstratti) => prevEstratti.map((giocatore) => giocatore.Nome === ultimoEstratto.Nome ? { ...giocatore, assegnato: true } : giocatore));
         })
         .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
 
@@ -286,10 +218,7 @@ const Section = () => {
       alert(`Giocatore già assegnato!`);
       return;
     }
-    //} else {
-    //  alert("Estrai un giocatore prima di assegnarlo.");
-    //  return;
-    //}
+
   }
 
   function svincolaGiocatore(allenatoreId, giocatoreId) {
@@ -319,46 +248,11 @@ const Section = () => {
 
   }
 
-  // BACKUP DA ELIMINARE
-  // Gestione della pressione di Enter
-  /* function gestioneInvio(e, giocatore, allenatore) {
-    if ((e.type === "keypress" && e.key === "Enter") || e.type === "blur") {
-      if (!e.target.value) {
-        e.target.value = e.target.placeholder;
-      }
-      giocatore.prezzo = e.target.value;
-      e.target.disabled = true;
-      const spanE = document.createElement("span");
-      spanE.textContent = giocatore.prezzo;
-      e.target.parentNode.replaceChild(spanE, e.target);
-
-      fetch("http://localhost:8000/api/acquista", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          id_giocatore: giocatore.Id,
-          id_allenatore: allenatore.Id,
-          prezzo: 12
-        })
-      })
-        .then(response => response.json())
-        .then(data => {
-          setGAssegnati(prevAssegnati => ({
-            ...prevAssegnati,
-            [data.AllenatoreId]: [...prevAssegnati[data.AllenatoreId] || [], data.giocatore]
-          }));
-        })
-        .catch(error => console.error("Ci no problemi con l'aggiunta del giocatore: ", error))
-    }
-  } */
-
   // funzione per mostrare tutti i giocatori estratti
   function toggleEstratti() {
     setEstrattiVisibile(!estrattiVisibile);
-    //console.log("Inutile:", squadre);
   }
-  //giocatori.reduce((somma, giocatore) => somma + (parseInt(giocatore.prezzo) || 0), 0);
-  console.log(estratti);
+
   return (
     <div className={style["section"]}>
       <div className={style["btn-section"]}>

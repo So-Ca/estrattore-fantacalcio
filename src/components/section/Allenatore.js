@@ -5,24 +5,10 @@ export default function Allenatore(props) {
 
     const [puntata, setPuntata] = useState(props.ultimoEstratto['Qt.A']);
     const [giocatoriAssegnati, setGiocatoriAssegnati] = useState(props.giocatoriAssegnati);
-    /* const [totaleSpeso, setTotaleSpeso] = useState(() => {
-        let totaleSpeso = 0;
-        props.giocatoriAssegnati.forEach(function (giocatore) {
-            totaleSpeso += giocatore.Prezzo;
-        });
-        return totaleSpeso;
-    }) */
 
     useEffect(() => {
         setPuntata(props.ultimoEstratto['Qt.A'])
         setGiocatoriAssegnati(props.giocatoriAssegnati)
-       /*  setTotaleSpeso(() => {
-            let totaleSpeso = 0;
-            props.giocatoriAssegnati.forEach(function (giocatore) {
-                totaleSpeso += giocatore.Prezzo;
-            });
-            return totaleSpeso;
-        }) */
     }, [props.ultimoEstratto['Id'], props.giocatoriAssegnati.length]);
 
     return (<div className={props.style["squadra-container"]} key={props.allenatore.Id}>
@@ -51,24 +37,5 @@ export default function Allenatore(props) {
                 ))}
             </ol>
         </div>
-        {/* {false &&
-            <div className={props.style["box-aggiungi-manualmente"]}>
-                <input
-                    className={props.style["input-aggiungi-manualmente"]}
-                    type="text"
-                    name="nome"
-                    value={props.nuovoGiocatore.nome}
-                    onChange={props.gestisciInput}
-                    placeholder="Nome" />
-                <input
-                    className={props.style["input-aggiungi-manualmente"]}
-                    type="text"
-                    name="ruolo"
-                    value={props.nuovoGiocatore.ruolo}
-                    onChange={props.gestisciInput}
-                    placeholder="Ruolo" />
-                <button className={props.style["btn-aggiungi-manualmente"]} onClick={props.aggiungiManualmente(props.idSquadra)}>Aggiungi</button>
-            </div>
-        } */}
     </div>)
 }
