@@ -9,7 +9,7 @@ const Section = () => {
 
   // Configurazioni globali
   const creditiPerAllenatore = 500;
-  const apiHost = "http://localhost:8000";
+  const apiHost = "https://cryptic-fjord-66661-3e659dd64751.herokuapp.com";
 
   // Liste giocatori
   const [nonEstratti, setNonEstratti] = useState([]);
