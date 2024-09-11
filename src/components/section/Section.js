@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
-import Allenatore from "./Allenatore";
-
-import GiocatoreEstratto from "./GiocatoreEstratto";
+import Allenatore from "../sideComponents/Allenatore";
+import GiocatoreEstratto from "../sideComponents/GiocatoreEstratto";
 
 const Section = () => {
 
