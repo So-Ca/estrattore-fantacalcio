@@ -1,28 +1,27 @@
 import React, { useState, useEffect } from "react";
 import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
-import Allenatore from "./Allenatore";
-
-import GiocatoreEstratto from "./GiocatoreEstratto";
+import Allenatore from "../sideComponents/Allenatore";
+import GiocatoreEstratto from "../sideComponents/GiocatoreEstratto";
 
 const Section = () => {
 
-  // Configurazioni globali
+// Configurazioni globali
   const creditiPerAllenatore = 500;
   const apiHost = "https://cryptic-fjord-66661-3e659dd64751.herokuapp.com";
 
-  // Liste giocatori
+// Liste giocatori
   const [nonEstratti, setNonEstratti] = useState([]);
   const [estratti, setEstratti] = useState([]);
 
-  // Ultimo giocatore estratto
+// Ultimo giocatore estratto
   const [ultimoEstratto, setUltimoEstratto] = useState(null);
 
-  // Flag che governa lo show/hide della lista dei giocatori estratti
+// Flag che governa lo show/hide della lista dei giocatori estratti
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
 
-  // Oggetto che contiene un array per ciascun allenatore.
-  // Ogni array contiene i giocatori assegnati all'allenatore corrispondente
+// Oggetto che contiene un array per ciascun allenatore.
+// Ogni array contiene i giocatori assegnati all'allenatore corrispondente
   const [gAssegnati, setGAssegnati] = useState(
     {
       "1": [],
@@ -39,12 +38,10 @@ const Section = () => {
   );
 
   const [isDoingRequest, setIsDoingRequest] = useState(false);
-
   const [searchText, setSearchText] = useState("");
-
   const listaFinita = nonEstratti.length === 0;
 
-  // Fetch dei giocatori estratti e nonEstratti al caricamento della pagina
+// Fetch dei giocatori estratti e nonEstratti al caricamento della pagina
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -54,7 +51,6 @@ const Section = () => {
         if (!estrattiData.length) {
           setUltimoEstratto(null);
         } else {
-          // dal più vecchio al più recente
           estrattiData = estrattiData.sort(function (a, b) {
             if (a.Order > b.Order) {
               return 1;
@@ -66,9 +62,7 @@ const Section = () => {
           });
           setUltimoEstratto(estrattiData[estrattiData.length - 1]);
         }
-
         setEstratti(estrattiData);
-
 
         const nonEstrattiResponse = await fetch(apiHost + "/api/giocatori/non-estratti");
         const nonEstrattiData = await nonEstrattiResponse.json();
@@ -77,35 +71,28 @@ const Section = () => {
 
         const allenatoriResponse = await fetch(apiHost + "/api/allenatori");
         const allenatori = await allenatoriResponse.json();
-
         let assegnati = {};
 
         allenatori.forEach(allenatore => {
-
-
           assegnati[allenatore.Id] = estrattiData.filter(giocatore => {
-
             return giocatore.AllenatoreId === allenatore.Id
           });
         });
-
         setGAssegnati(assegnati);
-
       } catch (error) {
         console.error("Errore nel fetch dei giocatori: ", error);
       }
     };
-
     fetchData();
   }, []);
 
-  // Calcolo dei crediti spesi
+// Calcolo dei crediti spesi
   function calcolaTotaleSpeso(idAllenatore) {
     const giocatori = gAssegnati[idAllenatore] || [];
     return giocatori.reduce((somma, giocatore) => somma + (parseInt(giocatore.Prezzo) || 0), 0);
   }
 
-  // Componente Allenatori
+// Componente Allenatori
   const allenatori = allenatoriData.map(allenatore => {
     const idSquadra = allenatore.Id;
     const totaleSpeso = calcolaTotaleSpeso(idSquadra);
@@ -131,15 +118,15 @@ const Section = () => {
     )
   });
 
-  // Funzione per l'estrazione
+// Funzione per l'estrazione
   function estrai() {
 
     if (nonEstratti.length > 0) {
       const indiceCasuale = Math.floor(Math.random() * nonEstratti.length);
       const giocatoreEstratto = nonEstratti.splice(indiceCasuale, 1)[0];
       setUltimoEstratto(giocatoreEstratto);
-
       setIsDoingRequest(true);
+
       fetch(apiHost + "/api/estrai", { // Salvare estratto nel db
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -147,21 +134,20 @@ const Section = () => {
           id_giocatore: giocatoreEstratto.Id
         })
       })
-        .then(response => response.json())
-        .then(data => {
-
+      .then(response => response.json())
+      .then(data => {
           fetch(apiHost + "/api/giocatori/estratti")
-            .then(response => response.json())
-            .then(data => {
-              setEstratti(data);
-              console.log("Lista giocatori estratti fino ad ora: ", data);
-            });
+          .then(response => response.json())
+          .then(data => {
+            setEstratti(data);
+            console.log("Lista giocatori estratti fino ad ora: ", data);
+          });
           fetch(apiHost + "/api/giocatori/non-estratti")
-            .then(response => response.json())
-            .then(data => {
-              setNonEstratti(data);
-              setIsDoingRequest(false);
-            })
+          .then(response => response.json())
+          .then(data => {
+            setNonEstratti(data);
+            setIsDoingRequest(false);
+          })
         })
         .catch((error) => {
           console.error("Ci sono problemi con l'estrazione: ", error);
@@ -172,13 +158,11 @@ const Section = () => {
     }
   }
 
-  // Funzione per assegnare l'ultimo estratto ad una squadra
+// Funzione per assegnare l'ultimo estratto ad una squadra
   function assegnaGiocatore(allenatoreId, giocatoreId, puntata, totaleSpeso) {
-
     allenatoreId = Number(allenatoreId);
     giocatoreId = Number(giocatoreId);
     puntata = Number(puntata);
-
 
     if (Object.keys(gAssegnati).map((id) => Number(id)).indexOf(Number(allenatoreId)) === -1) {
       alert("Se non scegli un allenatore alla quale assegnare il giocatore, dove cazzo credi che lo possa inserire?!!");
@@ -196,6 +180,7 @@ const Section = () => {
         return;
       }
       setIsDoingRequest(true);
+
       fetch(apiHost + "/api/acquista", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -205,21 +190,20 @@ const Section = () => {
           prezzo: puntata
         })
       })
-        .then(response => response.json())
-        .then(data => {
-
-          setGAssegnati(prevAssegnati => {
-            return ({
-              ...prevAssegnati,
-              [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
-            });
+      .then(response => response.json())
+      .then(data => {
+        setGAssegnati(prevAssegnati => {
+          return ({
+            ...prevAssegnati,
+            [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
           });
+        });
           setIsDoingRequest(false);
-        })
-        .catch(error => {
-          console.error("Ci no problemi con l'aggiunta del giocatore: ", error)
-          setIsDoingRequest(false);
-        })
+      })
+      .catch(error => {
+        console.error("Ci no problemi con l'aggiunta del giocatore: ", error)
+        setIsDoingRequest(false);
+      })
 
       console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
       return;
@@ -227,11 +211,10 @@ const Section = () => {
       alert(`😡🤬Ehi Ehi Non barare infame!!😡🤬` + ultimoEstratto.Nome + ` è gia stato assegnato a ${Object.keys(gAssegnati).find(s => gAssegnati[s].some(g => g.Nome === ultimoEstratto.Nome))}`);
       return;
     }
-
   }
 
+// Funzione per svincolare un giocatore già assegnato ad una squadra
   function svincolaGiocatore(allenatoreId, giocatoreId) {
-
     let giocatoreCorrente = gAssegnati[allenatoreId].find((giocatore) => giocatore.Id === giocatoreId);
     let allenatoreCorrente = allenatoriData.find((allenatore) => allenatore.Id === allenatoreId);
 
@@ -244,25 +227,25 @@ const Section = () => {
           id_giocatore: giocatoreId,
           id_allenatore: allenatoreId
         })
-      }).then(response => response.json())
-        .then(data => {
-          setGAssegnati(prevAssegnati => {
-            return ({
-              ...prevAssegnati,
-              [allenatoreId]: prevAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)
-            });
+      })
+      .then(response => response.json())
+      .then(data => {
+        setGAssegnati(prevAssegnati => {
+          return ({
+            ...prevAssegnati,
+            [allenatoreId]: prevAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)
           });
-          setIsDoingRequest(false);
-        })
-        .catch(error => {
-          console.error("Ci no problemi con l'aggiunta del giocatore: ", error);
-          setIsDoingRequest(false);
-        })
+        });
+        setIsDoingRequest(false);
+      })
+      .catch(error => {
+        console.error("Ci no problemi con l'aggiunta del giocatore: ", error);
+        setIsDoingRequest(false);
+      })
     }
-
   }
 
-  // funzione per mostrare tutti i giocatori estratti
+// funzione per mostrare tutti i giocatori estratti
   function toggleEstratti() {
     setEstrattiVisibile(!estrattiVisibile);
   }
