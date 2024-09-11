@@ -18,7 +18,10 @@ export default function Allenatore(props) {
         <h3 className={props.style["nome-allenatore"]}>Allenatore: <b>{props.allenatore.Nome}</b></h3>
 
         {/* Inizio "form" del singolo allenatore */}
-        <input type="number" value={puntata} min={props.ultimoEstratto['Qt.A']} onChange={(e) => setPuntata(e.target.value)} />
+        <div className={props.style["box-input-prezzo"]}>
+            <p className={props.style["testo-prezzo"]}>Crediti da pagare: </p>
+            <input className={props.style["input-prezzo"]} type="number" value={puntata} min={props.ultimoEstratto['Qt.A']} onChange={(e) => setPuntata(e.target.value)}/>
+        </div>
         <button disabled={props.isDoingRequest} className={props.style["btn-assegna-giocatore"]} onClick={() => props.assegnaGiocatore(props.allenatore.Id, props.ultimoEstratto.Id, puntata, props.totaleSpeso)}>Assegna a {props.allenatore.Nome}</button>
         {/* Fine "form" del singolo allenatore */}
 
@@ -33,6 +36,7 @@ export default function Allenatore(props) {
                         prezzo={giocatore.Prezzo ? giocatore.Prezzo : "Prezzo non Stabilito"}
                         allenatore={props.allenatore.Id}
                         svincolaGiocatore={props.svincolaGiocatore}
+                        style={props.style}
                     />
                 ))}
             </ol>

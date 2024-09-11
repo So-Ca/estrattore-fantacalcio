@@ -181,7 +181,7 @@ const Section = () => {
 
 
     if (Object.keys(gAssegnati).map((id) => Number(id)).indexOf(Number(allenatoreId)) === -1) {
-      alert("Scegli un allenatore");
+      alert("Se non scegli un allenatore alla quale assegnare il giocatore, dove cazzo credi che lo possa inserire?!!");
       return;
     }
 
@@ -189,10 +189,10 @@ const Section = () => {
 
     if (!giaAssegnato) {
       if (totaleSpeso >= creditiPerAllenatore) {
-        alert('Hai finito i crediti');
+        alert('😱 I tuoi cash sono finiti. Non puoi più comprare nessuno...Chiama Lapo magari ti può dare qualche idea.');
         return;
       } else if ((Number(totaleSpeso) + Number(puntata)) > creditiPerAllenatore) {
-        alert('Non hai abbastanza crediti per fare questa puntata');
+        alert('Wei poveraccio, ma che vuoi fare? Non hai abbastanza crediti per comprare questo giocatore. 💸 La prossima volta pensaci bene prima di riempirti la rosa di scarponi.');
         return;
       }
       setIsDoingRequest(true);
@@ -224,7 +224,7 @@ const Section = () => {
       console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
       return;
     } else {
-      alert(`Giocatore già assegnato!`);
+      alert(`😡🤬Ehi Ehi Non barare infame!!😡🤬` + ultimoEstratto.Nome + ` è gia stato assegnato a ${Object.keys(gAssegnati).find(s => gAssegnati[s].some(g => g.Nome === ultimoEstratto.Nome))}`);
       return;
     }
 
@@ -235,7 +235,7 @@ const Section = () => {
     let giocatoreCorrente = gAssegnati[allenatoreId].find((giocatore) => giocatore.Id === giocatoreId);
     let allenatoreCorrente = allenatoriData.find((allenatore) => allenatore.Id === allenatoreId);
 
-    if (typeof giocatoreCorrente !== 'undefined' && typeof allenatoreCorrente !== 'undefined' && window.confirm('Sei sicuro di voler svincolare il giocatore ' + giocatoreCorrente.Nome + ' della squadra ' + allenatoreCorrente.Squadra + '?')) {
+    if (typeof giocatoreCorrente !== 'undefined' && typeof allenatoreCorrente !== 'undefined' && window.confirm('Hai fatto la cazzata eh!?!😒' + allenatoreCorrente.Nome + ' vuoi davvero svincolare quellla pippa di ' + giocatoreCorrente.Nome + '?')) {
       setIsDoingRequest(true);
       fetch(apiHost + "/api/svincola", {
         method: "POST",
@@ -271,9 +271,9 @@ const Section = () => {
     <div className={style["section"]}>
       <div className={style["btn-section"]}>
         <button disabled={isDoingRequest} onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
-        <div>
-          <div>{'Estratti: ' + estratti.length + ' / ' + (estratti.length + nonEstratti.length)}</div>
-          <div>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</div>
+        <div className={style["box-contatori"]}>
+          <div className={style["contatore-estratti"]}>{'Estratti: ' + estratti.length + ' / ' + (estratti.length + nonEstratti.length)}</div>
+          <div className={style["contatore-acquistati"]}>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</div>
         </div>
         <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
       </div>
@@ -297,7 +297,7 @@ const Section = () => {
         <div className={style["lista-intera"]}>
           <h3 className={style["h3-lista-intera"]}>Giocatori Estratti:</h3>
           <div>
-            <input type="text" name="search" id="search" placeholder="Cerca giocatore" onChange={(e) => setSearchText(e.target.value)} />
+            <input className={style["input-ricerca"]} type="text" name="search" id="search" placeholder="Cerca il ciabattaro che non hai avuto il coraggio di comprare subito" onChange={(e) => setSearchText(e.target.value)} />
           </div>
           {estratti.map((giocatore, index) => (
 
