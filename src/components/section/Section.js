@@ -43,7 +43,7 @@ const Section = () => {
 
 // Fetch dei giocatori estratti e nonEstratti al caricamento della pagina
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async () => { 
       try {
         const estrattiResponse = await fetch(apiHost + "/api/giocatori/estratti");
         let estrattiData = await estrattiResponse.json();
@@ -267,6 +267,7 @@ const Section = () => {
   function toggleEstratti() {
     setEstrattiVisibile(!estrattiVisibile);
   }
+  let acquistato = Object.values(gAssegnati).filter(allenatore => allenatore.filter(giocatore =>giocatore.Id == ultimoEstratto.Id).length).length > 0;
 
   return (
     <div className={style["section"]}>
@@ -281,12 +282,17 @@ const Section = () => {
 
       <div className={style["ultimo-estratto"]}>
         <h3 className={style["h3-estratto"]}>Giocatore Estratto:</h3> {ultimoEstratto && (
+          <>
           <p className={style["p-estratto"]}>
             <b>Nome:</b> {ultimoEstratto.Nome},&nbsp;
             <b>Squadra:</b> {ultimoEstratto.Squadra},&nbsp;
             <b>Prezzo:</b> {ultimoEstratto["Qt.A"]},&nbsp;
             <b>Ruolo:</b> {ultimoEstratto.R}
           </p>
+          { !acquistato && /* !Object.values(gAssegnati).filter((giocatore) => giocatore.Id == ultimoEstratto.Id).length && */ 
+          <button onClick={() => riponiGiocatore(ultimoEstratto.Id, ultimoEstratto.Nome)}>Rimetti nel listone</button>
+        }
+          </>
         )}
       </div>
       {listaFinita && <div><h1 className={style["lista-finita"]}>LISTA FINITA</h1><br /><p className={style["commento"]}>😵...era ora...Dio Porco!😩</p></div>}
