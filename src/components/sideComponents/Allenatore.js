@@ -7,10 +7,11 @@ export default function Allenatore(props) {
     const [giocatoriAssegnati, setGiocatoriAssegnati] = useState(props.giocatoriAssegnati);
 
     useEffect(() => {
+
         setPuntata(props.ultimoEstratto['Qt.A'])
         setGiocatoriAssegnati(props.giocatoriAssegnati)
-    }, [props.ultimoEstratto['Id'], props.giocatoriAssegnati.length] );
-
+    }, [props.ultimoEstratto['Id'], props.giocatoriAssegnati.length, props.isDoingRequest] );
+ 
     return (<div className={props.style["squadra-container"]} key={props.allenatore.Id}>
         <h3 className={props.style["nome-squadra"]}>{props.allenatore.Squadra}</h3>
         {props.sforato && <span className={props.style["sforato"]}>Hai Sforato Testa di Cazzo!</span>}

@@ -35,6 +35,7 @@ export default function GiocatoreEstratto(props) {
                 ))}
             </select>)}
             {!assegnato && (<button className={props.style["btn-assegna-svincolato"]} disabled={props.isDoingRequest} onClick={() => props.assegnaGiocatore(allenatoreScelto, props.giocatore.Id, puntata, props.calcolaTotaleSpeso(allenatoreScelto))}>Assegna</button>)}
+            {!assegnato && (<button className={props.style["btn-assegna-svincolato"]} disabled={props.isDoingRequest} onClick={() => props.riponiGiocatore(props.giocatore.Id, props.giocatore.Nome)}>Rimetti nel listone</button>)}
         </p>
     </div>)
 }

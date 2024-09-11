@@ -84,7 +84,7 @@ const Section = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [isDoingRequest]);
 
 // Calcolo dei crediti spesi
   function calcolaTotaleSpeso(idAllenatore) {
@@ -213,6 +213,24 @@ const Section = () => {
     }
   }
 
+  function riponiGiocatore(giocatoreId, giocatoreNome) {
+    if(window.confirm('Sei sicuro di voler rimettere nel listone ' + giocatoreNome + '?')) {
+      setIsDoingRequest(true);
+      fetch(apiHost + "/api/riponi", { // Salvare estratto nel db
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id_giocatore: giocatoreId
+        })
+      })
+      .then(response => response.json())
+      .then((data) => {
+          setIsDoingRequest(false);
+      });
+    }
+    
+  }
+
 // Funzione per svincolare un giocatore già assegnato ad una squadra
   function svincolaGiocatore(allenatoreId, giocatoreId) {
     let giocatoreCorrente = gAssegnati[allenatoreId].find((giocatore) => giocatore.Id === giocatoreId);
@@ -294,6 +312,7 @@ const Section = () => {
               calcolaTotaleSpeso={calcolaTotaleSpeso}
               gAssegnati={gAssegnati}
               isDoingRequest={isDoingRequest}
+              riponiGiocatore={riponiGiocatore}
             />
           ))}
         </div>
