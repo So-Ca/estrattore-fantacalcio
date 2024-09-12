@@ -84,7 +84,7 @@ const Section = () => {
       }
     };
     fetchData();
-  }, [isDoingRequest]);
+  }, []);
 
 // Calcolo dei crediti spesi
   function calcolaTotaleSpeso(idAllenatore) {
@@ -124,7 +124,7 @@ const Section = () => {
     if (nonEstratti.length > 0) {
       const indiceCasuale = Math.floor(Math.random() * nonEstratti.length);
       const giocatoreEstratto = nonEstratti.splice(indiceCasuale, 1)[0];
-      //setUltimoEstratto(giocatoreEstratto);
+      setUltimoEstratto(giocatoreEstratto);
       setIsDoingRequest(true);
 
       fetch(apiHost + "/api/estrai", { // Salvare estratto nel db
