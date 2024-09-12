@@ -240,7 +240,6 @@ const Section = () => {
                 }
               });
               setUltimoEstratto(orderedData[orderedData.length-1]);
-              //setUltimoEstratto(data.find(giocatore => giocatore.Id == dataRiponi.giocatore.Id))
               console.log("Lista giocatori estratti fino ad ora: ", data);
             });
           fetch(apiHost + "/api/giocatori/non-estratti")
@@ -252,6 +251,13 @@ const Section = () => {
         });
     }
 
+  }
+
+  function resetAsta() {
+    const messagePrompt = 'Sei davvero sicuro di voler ricominciare? Tutti i dati andranno persi. Scrivi "RICOMINCIA" per procedere';
+    if(prompt(messagePrompt) === 'RICOMINCIA') {
+      alert('confirm')
+    }
   }
 
   // Funzione per svincolare un giocatore già assegnato ad una squadra
@@ -301,6 +307,7 @@ const Section = () => {
           <div className={style["contatore-acquistati"]}>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</div>
         </div>
         <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
+        <button onClick={resetAsta}>Ricomincia da capo</button>
       </div>
 
       <div className={style["ultimo-estratto"]}>
