@@ -42,6 +42,9 @@ Route::middleware([EnsureJsonsExist::class])->group(function () {
     Route::get('/allenatore/{id_allenatore}', [AllenatoreController::class, 'showAllenatore'])
         ->middleware(EnsureAllenatoreIdIsValid::class)
         ->name('allenatore');
+    
+    Route::post('reset', [GiocatoreController::class, 'reset'])
+    ->name('reset');
 });
 
 Route::any('/', function () {

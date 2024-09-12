@@ -137,6 +137,21 @@ class GiocatoreController extends Controller
         ], 400);
     }
 
+    function reset() {
+        $giocatori = Storage::json($this->giocatori_path);
+
+        foreach ($giocatori as $key => $giocatore) {
+            unset($giocatori[$key]['Estratto']);
+            unset($giocatori[$key]['Order']);
+            unset($giocatori[$key]['Prezzo']);
+            unset($giocatori[$key]['AllenatoreId']);
+        }
+
+        Storage::disk('local')->put($this->giocatori_path, json_encode($giocatori));
+
+        return $giocatori;
+    }
+
     /**
      * Assegna il giocatore con l'id passato nella richiesta all'allenatore con l'id passato nella richiesta.
      * Se il giocatore è già stato assegnato ad un allenatore, restituisce un messaggio di errore.
