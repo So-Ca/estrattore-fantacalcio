@@ -3,11 +3,13 @@ import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
 import Allenatore from "../sideComponents/Allenatore";
 import GiocatoreEstratto from "../sideComponents/GiocatoreEstratto";
+import Token from "../sideComponents/Token";
 
 const Section = () => {
 
   // Configurazioni globali
   const creditiPerAllenatore = 500;
+  const token = Token()
   const apiHost = "https://cryptic-fjord-66661-3e659dd64751.herokuapp.com";
 
   // Liste giocatori
@@ -39,13 +41,19 @@ const Section = () => {
 
   const [isDoingRequest, setIsDoingRequest] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const listaFinita = nonEstratti.length === 0;
+  const listaFinita = nonEstratti.length === 0 && estratti.length > 0;
 
   // Fetch dei giocatori estratti e nonEstratti al caricamento della pagina
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const estrattiResponse = await fetch(apiHost + "/api/giocatori/estratti");
+
+        const nonEstrattiResponse = await fetch(apiHost + "/api/giocatori/non-estratti?fanta_token="+token);
+        const nonEstrattiData = await nonEstrattiResponse.json();
+
+        setNonEstratti(nonEstrattiData);
+
+        const estrattiResponse = await fetch(apiHost + "/api/giocatori/estratti?fanta_token="+token);
         let estrattiData = await estrattiResponse.json();
 
         if (!estrattiData.length) {
@@ -64,12 +72,7 @@ const Section = () => {
         }
         setEstratti(estrattiData);
 
-        const nonEstrattiResponse = await fetch(apiHost + "/api/giocatori/non-estratti");
-        const nonEstrattiData = await nonEstrattiResponse.json();
-
-        setNonEstratti(nonEstrattiData);
-
-        const allenatoriResponse = await fetch(apiHost + "/api/allenatori");
+        const allenatoriResponse = await fetch(apiHost + "/api/allenatori?fanta_token="+token);
         const allenatori = await allenatoriResponse.json();
         let assegnati = {};
 
@@ -131,18 +134,19 @@ const Section = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          id_giocatore: giocatoreEstratto.Id
+          id_giocatore: giocatoreEstratto.Id,
+          fanta_token : token
         })
       })
         .then(response => response.json())
         .then(data => {
-          fetch(apiHost + "/api/giocatori/estratti")
+          fetch(apiHost + "/api/giocatori/estratti?fanta_token="+token)
             .then(response => response.json())
             .then(data => {
               setEstratti(data);
               console.log("Lista giocatori estratti fino ad ora: ", data);
             });
-          fetch(apiHost + "/api/giocatori/non-estratti")
+          fetch(apiHost + "/api/giocatori/non-estratti?fanta_token="+token)
             .then(response => response.json())
             .then(data => {
               setNonEstratti(data);
@@ -187,7 +191,8 @@ const Section = () => {
         body: JSON.stringify({
           id_giocatore: giocatoreId,
           id_allenatore: allenatoreId,
-          prezzo: puntata
+          prezzo: puntata,
+          fanta_token : token
         })
       })
         .then(response => response.json())
@@ -220,12 +225,13 @@ const Section = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          id_giocatore: giocatoreId
+          id_giocatore: giocatoreId,
+          fanta_token : token
         })
       })
         .then(response => response.json())
         .then((dataRiponi) => {
-          fetch(apiHost + "/api/giocatori/estratti")
+          fetch(apiHost + "/api/giocatori/estratti?fanta_token="+token)
             .then(response => response.json())
             .then(data => {
               setEstratti(data);
@@ -242,7 +248,7 @@ const Section = () => {
               setUltimoEstratto(orderedData[orderedData.length-1]);
               console.log("Lista giocatori estratti fino ad ora: ", data);
             });
-          fetch(apiHost + "/api/giocatori/non-estratti")
+          fetch(apiHost + "/api/giocatori/non-estratti?fanta_token="+token)
             .then(response => response.json())
             .then(data => {
               setNonEstratti(data);
@@ -259,17 +265,20 @@ const Section = () => {
       setIsDoingRequest(true);
       fetch(apiHost + "/api/reset", { // Salvare estratto nel db
         method: "POST",
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
+        body : {
+          fanta_token : token
+        }
       })
         .then(response => response.json())
         .then((data) => {
           setIsDoingRequest(false);
-          fetch(apiHost + "/api/giocatori/estratti")
+          fetch(apiHost + "/api/giocatori/estratti?fanta_token="+token)
             .then(response => response.json())
             .then(data => {
               setEstratti(data);
             });
-          fetch(apiHost + "/api/giocatori/non-estratti")
+          fetch(apiHost + "/api/giocatori/non-estratti?fanta_token="+token)
             .then(response => response.json())
             .then(data => {
               setNonEstratti(data);
@@ -304,7 +313,8 @@ const Section = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           id_giocatore: giocatoreId,
-          id_allenatore: allenatoreId
+          id_allenatore: allenatoreId,
+          fanta_token : token
         })
       })
         .then(response => response.json())
@@ -329,7 +339,7 @@ const Section = () => {
     setEstrattiVisibile(!estrattiVisibile);
   }
   let acquistato = Object.values(gAssegnati).filter(allenatore => allenatore.filter(giocatore => giocatore.Id == ultimoEstratto.Id).length).length > 0;
-
+  console.log(listaFinita)
   return (
     <div className={style["section"]}>
       <div className={style["btn-section"]}>
