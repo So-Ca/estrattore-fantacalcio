@@ -266,9 +266,9 @@ const Section = () => {
       fetch(apiHost + "/api/reset", { // Salvare estratto nel db
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body : {
+        body : JSON.stringify({
           fanta_token : token
-        }
+        })
       })
         .then(response => response.json())
         .then((data) => {
