@@ -6,22 +6,22 @@ import GiocatoreEstratto from "../sideComponents/GiocatoreEstratto";
 
 const Section = () => {
 
-// Configurazioni globali
+  // Configurazioni globali
   const creditiPerAllenatore = 500;
   const apiHost = "https://cryptic-fjord-66661-3e659dd64751.herokuapp.com";
 
-// Liste giocatori
+  // Liste giocatori
   const [nonEstratti, setNonEstratti] = useState([]);
   const [estratti, setEstratti] = useState([]);
 
-// Ultimo giocatore estratto
+  // Ultimo giocatore estratto
   const [ultimoEstratto, setUltimoEstratto] = useState(null);
 
-// Flag che governa lo show/hide della lista dei giocatori estratti
+  // Flag che governa lo show/hide della lista dei giocatori estratti
   const [estrattiVisibile, setEstrattiVisibile] = useState(false);
 
-// Oggetto che contiene un array per ciascun allenatore.
-// Ogni array contiene i giocatori assegnati all'allenatore corrispondente
+  // Oggetto che contiene un array per ciascun allenatore.
+  // Ogni array contiene i giocatori assegnati all'allenatore corrispondente
   const [gAssegnati, setGAssegnati] = useState(
     {
       "1": [],
@@ -41,9 +41,9 @@ const Section = () => {
   const [searchText, setSearchText] = useState("");
   const listaFinita = nonEstratti.length === 0;
 
-// Fetch dei giocatori estratti e nonEstratti al caricamento della pagina
+  // Fetch dei giocatori estratti e nonEstratti al caricamento della pagina
   useEffect(() => {
-    const fetchData = async () => { 
+    const fetchData = async () => {
       try {
         const estrattiResponse = await fetch(apiHost + "/api/giocatori/estratti");
         let estrattiData = await estrattiResponse.json();
@@ -86,13 +86,13 @@ const Section = () => {
     fetchData();
   }, []);
 
-// Calcolo dei crediti spesi
+  // Calcolo dei crediti spesi
   function calcolaTotaleSpeso(idAllenatore) {
     const giocatori = gAssegnati[idAllenatore] || [];
     return giocatori.reduce((somma, giocatore) => somma + (parseInt(giocatore.Prezzo) || 0), 0);
   }
 
-// Componente Allenatori
+  // Componente Allenatori
   const allenatori = allenatoriData.map(allenatore => {
     const idSquadra = allenatore.Id;
     const totaleSpeso = calcolaTotaleSpeso(idSquadra);
@@ -118,7 +118,7 @@ const Section = () => {
     )
   });
 
-// Funzione per l'estrazione
+  // Funzione per l'estrazione
   function estrai() {
 
     if (nonEstratti.length > 0) {
@@ -134,20 +134,20 @@ const Section = () => {
           id_giocatore: giocatoreEstratto.Id
         })
       })
-      .then(response => response.json())
-      .then(data => {
+        .then(response => response.json())
+        .then(data => {
           fetch(apiHost + "/api/giocatori/estratti")
-          .then(response => response.json())
-          .then(data => {
-            setEstratti(data);
-            console.log("Lista giocatori estratti fino ad ora: ", data);
-          });
+            .then(response => response.json())
+            .then(data => {
+              setEstratti(data);
+              console.log("Lista giocatori estratti fino ad ora: ", data);
+            });
           fetch(apiHost + "/api/giocatori/non-estratti")
-          .then(response => response.json())
-          .then(data => {
-            setNonEstratti(data);
-            setIsDoingRequest(false);
-          })
+            .then(response => response.json())
+            .then(data => {
+              setNonEstratti(data);
+              setIsDoingRequest(false);
+            })
         })
         .catch((error) => {
           console.error("Ci sono problemi con l'estrazione: ", error);
@@ -158,7 +158,7 @@ const Section = () => {
     }
   }
 
-// Funzione per assegnare l'ultimo estratto ad una squadra
+  // Funzione per assegnare l'ultimo estratto ad una squadra
   function assegnaGiocatore(allenatoreId, giocatoreId, puntata, totaleSpeso) {
     allenatoreId = Number(allenatoreId);
     giocatoreId = Number(giocatoreId);
@@ -190,20 +190,20 @@ const Section = () => {
           prezzo: puntata
         })
       })
-      .then(response => response.json())
-      .then(data => {
-        setGAssegnati(prevAssegnati => {
-          return ({
-            ...prevAssegnati,
-            [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
+        .then(response => response.json())
+        .then(data => {
+          setGAssegnati(prevAssegnati => {
+            return ({
+              ...prevAssegnati,
+              [data.giocatore.AllenatoreId]: [...prevAssegnati[data.giocatore.AllenatoreId] || [], data.giocatore]
+            });
           });
-        });
           setIsDoingRequest(false);
-      })
-      .catch(error => {
-        console.error("Ci no problemi con l'aggiunta del giocatore: ", error)
-        setIsDoingRequest(false);
-      })
+        })
+        .catch(error => {
+          console.error("Ci no problemi con l'aggiunta del giocatore: ", error)
+          setIsDoingRequest(false);
+        })
 
       console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
       return;
@@ -214,7 +214,7 @@ const Section = () => {
   }
 
   function riponiGiocatore(giocatoreId, giocatoreNome) {
-    if(window.confirm('Sei sicuro di voler rimettere nel listone ' + giocatoreNome + '?')) {
+    if (window.confirm('Sei sicuro di voler rimettere nel listone ' + giocatoreNome + '?')) {
       setIsDoingRequest(true);
       fetch(apiHost + "/api/riponi", { // Salvare estratto nel db
         method: "POST",
@@ -223,15 +223,38 @@ const Section = () => {
           id_giocatore: giocatoreId
         })
       })
-      .then(response => response.json())
-      .then((data) => {
-          setIsDoingRequest(false);
-      });
+        .then(response => response.json())
+        .then((dataRiponi) => {
+          fetch(apiHost + "/api/giocatori/estratti")
+            .then(response => response.json())
+            .then(data => {
+              setEstratti(data);
+              // L'ultimo elemento ha l'indice più grande
+              let orderedData = data.sort((a, b) => {
+                if(a.Order < b.Order) {
+                  return -1;
+                } else if(a.Order > b.Order) {
+                  return 1;
+                } else {
+                  return 0;
+                }
+              });
+              setUltimoEstratto(orderedData[orderedData.length-1]);
+              //setUltimoEstratto(data.find(giocatore => giocatore.Id == dataRiponi.giocatore.Id))
+              console.log("Lista giocatori estratti fino ad ora: ", data);
+            });
+          fetch(apiHost + "/api/giocatori/non-estratti")
+            .then(response => response.json())
+            .then(data => {
+              setNonEstratti(data);
+              setIsDoingRequest(false);
+            })
+        });
     }
-    
+
   }
 
-// Funzione per svincolare un giocatore già assegnato ad una squadra
+  // Funzione per svincolare un giocatore già assegnato ad una squadra
   function svincolaGiocatore(allenatoreId, giocatoreId) {
     let giocatoreCorrente = gAssegnati[allenatoreId].find((giocatore) => giocatore.Id === giocatoreId);
     let allenatoreCorrente = allenatoriData.find((allenatore) => allenatore.Id === allenatoreId);
@@ -246,28 +269,28 @@ const Section = () => {
           id_allenatore: allenatoreId
         })
       })
-      .then(response => response.json())
-      .then(data => {
-        setGAssegnati(prevAssegnati => {
-          return ({
-            ...prevAssegnati,
-            [allenatoreId]: prevAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)
+        .then(response => response.json())
+        .then(data => {
+          setGAssegnati(prevAssegnati => {
+            return ({
+              ...prevAssegnati,
+              [allenatoreId]: prevAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)
+            });
           });
-        });
-        setIsDoingRequest(false);
-      })
-      .catch(error => {
-        console.error("Ci no problemi con l'aggiunta del giocatore: ", error);
-        setIsDoingRequest(false);
-      })
+          setIsDoingRequest(false);
+        })
+        .catch(error => {
+          console.error("Ci no problemi con l'aggiunta del giocatore: ", error);
+          setIsDoingRequest(false);
+        })
     }
   }
 
-// funzione per mostrare tutti i giocatori estratti
+  // funzione per mostrare tutti i giocatori estratti
   function toggleEstratti() {
     setEstrattiVisibile(!estrattiVisibile);
   }
-  let acquistato = Object.values(gAssegnati).filter(allenatore => allenatore.filter(giocatore =>giocatore.Id == ultimoEstratto.Id).length).length > 0;
+  let acquistato = Object.values(gAssegnati).filter(allenatore => allenatore.filter(giocatore => giocatore.Id == ultimoEstratto.Id).length).length > 0;
 
   return (
     <div className={style["section"]}>
@@ -283,15 +306,15 @@ const Section = () => {
       <div className={style["ultimo-estratto"]}>
         <h3 className={style["h3-estratto"]}>Giocatore Estratto:</h3> {ultimoEstratto && (
           <>
-          <p className={style["p-estratto"]}>
-            <b>Nome:</b> {ultimoEstratto.Nome},&nbsp;
-            <b>Squadra:</b> {ultimoEstratto.Squadra},&nbsp;
-            <b>Prezzo:</b> {ultimoEstratto["Qt.A"]},&nbsp;
-            <b>Ruolo:</b> {ultimoEstratto.R}
-          </p>
-          { !acquistato && /* !Object.values(gAssegnati).filter((giocatore) => giocatore.Id == ultimoEstratto.Id).length && */ 
-          <button onClick={() => riponiGiocatore(ultimoEstratto.Id, ultimoEstratto.Nome)}>Rimetti nel listone</button>
-        }
+            <p className={style["p-estratto"]}>
+              <b>Nome:</b> {ultimoEstratto.Nome},&nbsp;
+              <b>Squadra:</b> {ultimoEstratto.Squadra},&nbsp;
+              <b>Prezzo:</b> {ultimoEstratto["Qt.A"]},&nbsp;
+              <b>Ruolo:</b> {ultimoEstratto.R}
+            </p>
+            {!acquistato && /* !Object.values(gAssegnati).filter((giocatore) => giocatore.Id == ultimoEstratto.Id).length && */
+              <button onClick={() => riponiGiocatore(ultimoEstratto.Id, ultimoEstratto.Nome)}>Rimetti nel listone</button>
+            }
           </>
         )}
       </div>
