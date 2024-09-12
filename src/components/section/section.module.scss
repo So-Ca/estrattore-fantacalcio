@@ -36,7 +36,8 @@ $mainFont: "Roboto Flex";
 
 .btn-estrai,
 .btn-mostra-estratti,
-.btn-mostra-assegnati{
+.btn-mostra-assegnati,
+.btn-biografia{
   margin: 1% auto;
   font-family: $mainFont;
   text-align: center;
@@ -50,14 +51,18 @@ $mainFont: "Roboto Flex";
 }
 .btn-estrai:hover,
 .btn-mostra-estratti:hover,
-.btn-mostra-assegnati:hover{
+.btn-mostra-assegnati:hover,
+.btn-big-reset:hover,
+.btn-riponi:hover,
+.btn-biografia:hover{
   cursor: pointer;
   font-weight: bold;
   box-shadow: 0 0 5px $logoColorBlack;
 }
 .btn-estrai:active,
 .btn-mostra-estratti:active,
-.btn-mostra-assegnati:active{
+.btn-mostra-assegnati:active,
+.btn-biografia:active{
   background: $logoColorBlack;
   color: $logoColorYellow;
   box-shadow: 0 0 3px $logoColorRed;
@@ -74,6 +79,24 @@ $mainFont: "Roboto Flex";
   width: 200px;
   max-width: 200px;
   max-height: 75px;
+}
+
+.btn-big-reset{
+  margin: 1% auto;
+  font-family: $titleFont;
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px;
+  background: $logoColorRed;
+  color: $logoColorBlack;
+  border: 2px solid $logoColorBlack;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+}
+.btn-big-reset:active{
+  background: $logoColorBlack;
+  color: $logoColorRed;
+  box-shadow: 3px 3px 5px $logoColorRed;
 }
 
 .contatore-estratti,
@@ -102,6 +125,25 @@ $mainFont: "Roboto Flex";
   margin: 1% auto;
   font-size: 1.3rem;
   font-family: $mainFont;
+}
+
+.btn-riponi{
+  margin: 1% auto;
+  font-family: $mainFont;
+  text-align: center;
+  font-size: 1rem;
+  padding: 10px;
+  background: rgb(253, 221, 14, 0.5);
+  color: $logoColorBlack;
+  border: 1px solid $logoColorLGreen;
+  border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+}
+.btn-riponi:active{
+  background: rgb(255, 255, 255);
+  color: $logoColorGreen;
+  border: 1px solid $logoColorYellow;
+  box-shadow: 3px 3px 5px $logoColorYellow;
 }
 
 .lista-finita{
@@ -147,6 +189,25 @@ $mainFont: "Roboto Flex";
   text-shadow: $titleShade;
 }
 
+.btn-biografia{
+  margin: 0 auto 2% auto;
+  font-size: 0.7rem;
+  padding: 5px;
+}
+
+.biografia{
+  margin: 1% auto;
+  text-align: center;
+  font-size: 1rem;
+  font-family: $mainFont;
+  color: $logoColorBlack;
+  background: rgb(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px $logoColorLGreen;
+  border-radius: 10px;
+  max-width: 200px;
+  word-wrap: break-word;
+}
+
 .nome-allenatore,
 .crediti{
   margin: 2% auto;
@@ -155,7 +216,7 @@ $mainFont: "Roboto Flex";
   font-weight: normal;
 }
 
-.crediti-bassi{
+.cinquecento{
   margin: 2% auto;
   padding: 2px;
   border: 2px solid $logoColorRed;
@@ -178,16 +239,16 @@ $mainFont: "Roboto Flex";
   font-size: 1.2rem;
 }
 
-.cinquecento{
+.crediti-bassi{
   margin: 2% auto;
   font-family: $mainFont;
   font-size: 1.2rem;
   font-weight: normal;
   padding: 2px;
-  border: 2px solid $logoColorLGreen;
+  border: 2px solid $logoColorYellow;
   border-radius: 10px;
   color: $logoColorBlack;
-  background: rgb(253, 221, 14, 0.3);
+  background:rgb(246, 178, 117, 0.3);
 }
 
 .sforato{
@@ -248,10 +309,10 @@ $mainFont: "Roboto Flex";
 .input-prezzo:focus{
   outline: none;
 }
-.input-prezzo::-webkit-outer-spin-button,
-.input-prezzo::-webkit-inner-spin-button{
-  -webkit-appearance: none;
-}
+// .input-prezzo::-webkit-outer-spin-button,
+// .input-prezzo::-webkit-inner-spin-button{
+//   -webkit-appearance: none;
+// }
 
 .giocatori-acquistati{
   margin: auto;
@@ -336,10 +397,10 @@ $mainFont: "Roboto Flex";
 .input-prezzo-svincolato:focus{
   outline: none;
 }
-.input-prezzo-svincolato::-webkit-outer-spin-button,
-.input-prezzo-svincolato::-webkit-inner-spin-button{
-  -webkit-appearance: none;
-}
+// .input-prezzo-svincolato::-webkit-outer-spin-button,
+// .input-prezzo-svincolato::-webkit-inner-spin-button{
+//   -webkit-appearance: none;
+// }
 
 .select-svincolato{
   margin: auto 1%;

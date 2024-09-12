@@ -2,52 +2,62 @@
     {
         "Id" : 1,
         "Nome" : "Valerio",
-        "Squadra": "Muppet"
+        "Squadra": "Muppet",
+        "Commento": "Compra solo negri con più centimetri di nerchia che anni"
     },
     {
         "Id" : 2,
         "Nome" : "Riccardo",
-        "Squadra": "Don Abbondio"
+        "Squadra": "Don Abbondio",
+        "Commento": "Si finge tifoso del Toro ma in realtà è più gobbo di Quasimodo"
     },
     {
         "Id" : 3,
         "Nome" : "Jimmy",
-        "Squadra": "Venti2"
+        "Squadra": "Venti2",
+        "Commento": "Ventidue sono le retrocessioni accumulate. P.S. Hai rotto il cazzo con sto 22. P.P.S. Sono le 22:22?"
     },
     {
         "Id" : 4,
         "Nome" : "Sonny",
-        "Squadra": "MasterChef United"
+        "Squadra": "MasterChef United",
+        "Commento": "Non è facile giudicarsi, ma se ci provasse direbbe: un nanerottolo grasso e peloso dalla battuta facile. Sarà colpa delle capucchiate con la quale lo svegliava suo padre ogni mattina?"
     },
     {
         "Id" : 5,
         "Nome" : "Fulvio",
-        "Squadra": "Ansia&Disagio (che nome da quindicenne)"
+        "Squadra": "Ansia&Disagio",
+        "Commento": "Ha scelto un nome da quindicenne perchè in realtà sa che il suo vero io è PirettaLeotta"
     },
     {
         "Id" : 6,
         "Nome" : "Alessio",
-        "Squadra": "Scarsenal"
+        "Squadra": "Scarsenal",
+        "Commento": "Nuovo accolito un pò troppo incline a stringere patti con personalità poco raccomandabili"
     },
     {
         "Id" : 7,
         "Nome" : "Eugenio",
-        "Squadra": "Real Madrink"
+        "Squadra": "Real Madrink",
+        "Commento": "Riesce sempre ad inculare qualcuno tramite i suoi scambi di dubbia moralità"
     },
     {
         "Id" : 8,
         "Nome" : "Marco",
-        "Squadra": "The Best-Emmia"
+        "Squadra": "The Best-Emmia",
+        "Commento": "Talmente zelante nell'invocazione di divinità da aver dimenticato il proprio nome"
     },
     {
         "Id" : 9,
         "Nome" : "Daniele",
-        "Squadra": "ancoranonloso"
+        "Squadra": "AncoraNonLoSo",
+        "Commento": "Come Obelix da piccolo è caduto nel calderone con la pozione magica, peccato che si sia reso conto troppo tardi che il bianco e tiepido liquido fosse l'essenza stessa dell'amore di Dio nei suoi confronti. Ma comunque c'ha guadagnato un d20 in fortuna."
     },
     {
         "Id" : 10,
         "Nome" : "Gianluca",
-        "Squadra": "New Devils"
+        "Squadra": "New Devils",
+        "Commento": "Tifoso del Milan ma compra solo giocatori del Toro, un po l'antitesi di Riccardo ma senza la passione per le signore anziane."
     }
 
 ]

@@ -214,7 +214,7 @@ const Section = () => {
   }
 
   function riponiGiocatore(giocatoreId, giocatoreNome) {
-    if (window.confirm('Sei sicuro di voler rimettere nel listone ' + giocatoreNome + '?')) {
+    if (window.confirm("Ok hai pescato l'equivalente calcistico di un calcio nelle palle, ma sei sicuro di voler ributtare a mare " + giocatoreNome + "?........conta che Tu non troverai di meglio, gli altri si invece. ")) {
       setIsDoingRequest(true);
       fetch(apiHost + "/api/riponi", { // Salvare estratto nel db
         method: "POST",
@@ -254,7 +254,7 @@ const Section = () => {
   }
 
   function resetAsta() {
-    const messagePrompt = 'Sei davvero sicuro di voler ricominciare? Tutti i dati andranno persi. Scrivi "RICOMINCIA" per procedere';
+    const messagePrompt = "Questo pulsante invierà un messaggio a Putin con l'ordine di sganciare una bomba H che distruggerà Volvera e quindi TUTTI I DATI della tua asta ANDRANNO PERSI e dovrai ricominciare l'asta da capo nel paradiso ebraico, dove non esistono i pancake. Sei davvero sicuro che è quello che vuoi piccolo Hitler? Non è detto che se la tua vita fa schifo anche gli altri debbano rimetterci. Comunque se vuoi continuare scrivi 'RICOMINCIA' per procedere.";
     if(prompt(messagePrompt) === 'RICOMINCIA') {
       setIsDoingRequest(true);
       fetch(apiHost + "/api/reset", { // Salvare estratto nel db
@@ -333,13 +333,13 @@ const Section = () => {
   return (
     <div className={style["section"]}>
       <div className={style["btn-section"]}>
-        <button disabled={isDoingRequest} onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
         <div className={style["box-contatori"]}>
           <div className={style["contatore-estratti"]}>{'Estratti: ' + estratti.length + ' / ' + (estratti.length + nonEstratti.length)}</div>
           <div className={style["contatore-acquistati"]}>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</div>
         </div>
         <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
-        <button onClick={resetAsta}>Ricomincia da capo</button>
+        <button disabled={isDoingRequest} onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
+        <button onClick={resetAsta} className={style["btn-big-reset"]}>Ricomincia da Capo</button>
       </div>
 
       <div className={style["ultimo-estratto"]}>
@@ -352,7 +352,7 @@ const Section = () => {
               <b>Ruolo:</b> {ultimoEstratto.R}
             </p>
             {!acquistato && /* !Object.values(gAssegnati).filter((giocatore) => giocatore.Id == ultimoEstratto.Id).length && */
-              <button onClick={() => riponiGiocatore(ultimoEstratto.Id, ultimoEstratto.Nome)}>Rimetti nel listone</button>
+              <button onClick={() => riponiGiocatore(ultimoEstratto.Id, ultimoEstratto.Nome)} className={style["btn-riponi"]}>Rimetti nel Listone</button>
             }
           </>
         )}
