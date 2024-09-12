@@ -254,7 +254,7 @@ const Section = () => {
   }
 
   function resetAsta() {
-    const messagePrompt = "Questo pulsante invierà un messaggio a Putin con l'ordine di sganciare una bomba H che distruggerà Volvera e quindi TUTTI I DATI della tua asta ANDRANNO PERSI e dovrai ricominciare l'asta da capo nel paradiso ebraico, dove non esistono i pancake. Sei davvero sicuro che è quello che vuoi piccolo Hitler? Non è detto che se la tua vita fa schifo anche gli altri debbano rimetterci. Comunque se vuoi continuare scrivi 'RICOMINCIA' per procedere.";
+    const messagePrompt = "⚠️Questo pulsante invierà un messaggio a Putin con l'ordine di sganciare una bomba H 💣 che distruggerà Volvera e quindi TUTTI I DATI della tua asta ANDRANNO PERSI e dovrai ricominciare l'asta da capo nel paradiso ebraico, dove non esistono i pancake.⛔ Sei davvero sicuro che è quello che vuoi piccolo Hitler? Non è detto che se la tua vita fa schifo anche gli altri debbano rimetterci.⚰️ Comunque se vuoi continuare scrivi 'RICOMINCIA' per procedere.";
     if(prompt(messagePrompt) === 'RICOMINCIA') {
       setIsDoingRequest(true);
       fetch(apiHost + "/api/reset", { // Salvare estratto nel db
