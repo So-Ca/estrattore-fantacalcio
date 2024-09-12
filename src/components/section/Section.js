@@ -256,7 +256,39 @@ const Section = () => {
   function resetAsta() {
     const messagePrompt = 'Sei davvero sicuro di voler ricominciare? Tutti i dati andranno persi. Scrivi "RICOMINCIA" per procedere';
     if(prompt(messagePrompt) === 'RICOMINCIA') {
-      alert('confirm')
+      setIsDoingRequest(true);
+      fetch(apiHost + "/api/reset", { // Salvare estratto nel db
+        method: "POST",
+        headers: { "Content-Type": "application/json" }
+      })
+        .then(response => response.json())
+        .then((data) => {
+          setIsDoingRequest(false);
+          fetch(apiHost + "/api/giocatori/estratti")
+            .then(response => response.json())
+            .then(data => {
+              setEstratti(data);
+            });
+          fetch(apiHost + "/api/giocatori/non-estratti")
+            .then(response => response.json())
+            .then(data => {
+              setNonEstratti(data);
+              setUltimoEstratto(null);
+              setGAssegnati({
+                "1": [],
+                "2": [],
+                "3": [],
+                "4": [],
+                "5": [],
+                "6": [],
+                "7": [],
+                "8": [],
+                "9": [],
+                "10": []
+              });
+              setIsDoingRequest(false);
+            })
+        });
     }
   }
 
