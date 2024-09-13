@@ -3,19 +3,19 @@
         "Id" : 1,
         "Nome" : "Valerio",
         "Squadra": "Muppet",
-        "Commento": "Compra solo negri con più centimetri di nerchia che anni"
+        "Commento": "Compra solo negri con più centimetri di nerchia che anni. Ha convinto i Rotari ed i Lions a fare una colletta per entrare nella Cupola"
     },
     {
         "Id" : 2,
         "Nome" : "Riccardo",
         "Squadra": "Don Abbondio",
-        "Commento": "Si finge tifoso del Toro ma in realtà è più gobbo di Quasimodo"
+        "Commento": "L'attuale campione in carica. Si finge tifoso del Toro ma in realtà è più gobbo di Quasimodo. Hanno ritrovato un incisione su una giara in terracotta firmata da Teseo che riporta la sua prima vittoria di campionato, al tempo si chiamava FantaPalladiStracci. P.S. Il Minotauro ce l'ha ancora con lui per questo."
     },
     {
         "Id" : 3,
         "Nome" : "Jimmy",
         "Squadra": "Venti2",
-        "Commento": "Ventidue sono le retrocessioni accumulate. P.S. Hai rotto il cazzo con sto 22. P.P.S. Sono le 22:22?"
+        "Commento": "Ventidue sono le retrocessioni accumulate. P.S. Hai rotto il cazzo con sto 22. P.P.S. Sono le 22:22? N.d.T. Fa Finta di avere la 'R' moscia."
     },
     {
         "Id" : 4,
@@ -27,37 +27,37 @@
         "Id" : 5,
         "Nome" : "Fulvio",
         "Squadra": "Ansia&Disagio",
-        "Commento": "Ha scelto un nome da quindicenne perchè in realtà sa che il suo vero io è PirettaLeotta"
+        "Commento": "Ha il potere innato di evocare un contadino dislessico dal piano astrale delle fiere dei Becchi, che lo tira fuori dai fossi ogni volta che guida ubriaco. Ha scelto un nome da quindicenne perchè in realtà sa che il suo vero io è PirettaLeotta. N.d.T. Birsa lo stalkera su Tinder."
     },
     {
         "Id" : 6,
         "Nome" : "Alessio",
         "Squadra": "Scarsenal",
-        "Commento": "Nuovo accolito un pò troppo incline a stringere patti con personalità poco raccomandabili"
+        "Commento": "Nuovo membro ed 'amico di Fulvio' in realtà è un recruiter di Zoom in incognito che attende il momento migliore per rapire un addetto alla ristorazione poco sveglio. N.d.T. Un pò troppo incline a stringere patti con personalità poco raccomandabili."
     },
     {
         "Id" : 7,
         "Nome" : "Eugenio",
         "Squadra": "Real Madrink",
-        "Commento": "Riesce sempre ad inculare qualcuno tramite i suoi scambi di dubbia moralità"
+        "Commento": "Riesce sempre ad inculare qualcuno tramite i suoi scambi di dubbia moralità portati a termine grazie allo Sharingan che gli ha tramandato sua madre. Si dice che quando beve abbastanza Pastis sia in grado di appoggiare lo scroto sulle spalle di chiunque. N.d.T. Personalità poco raccomandabile."
     },
     {
         "Id" : 8,
         "Nome" : "Marco",
         "Squadra": "The Best-Emmia",
-        "Commento": "Talmente zelante nell'invocazione di divinità da aver dimenticato il proprio nome"
+        "Commento": "Talmente zelante nell'invocazione di divinità da aver dimenticato il proprio nome, e questo gli ha concesso di diventare membro onorario dei Templari; che gli hanno subito affidato il ruolo di vice nella XXXIV Crociata guidata da Paolo Brosio per la riconquista di Gerusalemme."
     },
     {
         "Id" : 9,
         "Nome" : "Daniele",
         "Squadra": "AncoraNonLoSo",
-        "Commento": "Come Obelix da piccolo è caduto nel calderone con la pozione magica, peccato che si sia reso conto troppo tardi che il bianco e tiepido liquido fosse l'essenza stessa dell'amore di Dio nei suoi confronti. Questo però gli ha fatto guadagnare punti fortuna infiniti."
+        "Commento": "Come Obelix da piccolo è caduto nel calderone con la pozione magica, peccato che si sia reso conto troppo tardi che il bianco e tiepido liquido fosse l'essenza stessa dell'amore di Dio nei suoi confronti. Questo però gli ha fatto guadagnare punti fortuna infiniti. N.d.T. Attenzione: Potrebbe manifestare atteggiamenti partenopei."
     },
     {
         "Id" : 10,
         "Nome" : "Gianluca",
         "Squadra": "New Devils",
-        "Commento": "Tifoso del Milan ma compra solo giocatori del Toro, un po l'antitesi di Riccardo ma senza la passione per le signore anziane."
+        "Commento": "Tifoso del Milan ma compra solo giocatori del Toro, un po l'antitesi di Riccardo ma senza la passione per le signore anziane. Ha la capacità di lanciare maledizioni potentissime che rendono il malcapitato inabile nel vincere qualunque tipo di competizione o gara a premi per 3 anni. N.d.T. Si dice che l'abbia imparato alla Palestra di Okuto."
     }
 
 ]
