@@ -1,0 +1,63 @@
+[
+    {
+        "Id" : 1,
+        "Nome" : "Valerio",
+        "Squadra": "Muppet",
+        "Commento": "Compra solo negri con più centimetri di nerchia che anni. Ha convinto i Rotari ed i Lions a fare una colletta per entrare nella Cupola"
+    },
+    {
+        "Id" : 2,
+        "Nome" : "Riccardo",
+        "Squadra": "Don Abbondio",
+        "Commento": "Si finge tifoso del Toro ma in realtà è più gobbo di Quasimodo. Hanno ritrovato un incisione su una giara in terracotta firmata da Teseo che riporta la sua prima vittoria di campionato, al tempo si chiamava FantaPalladiStracci. P.S. Il Minotauro ce l'ha ancora con lui per questo."
+    },
+    {
+        "Id" : 3,
+        "Nome" : "Jimmy",
+        "Squadra": "Temptation Halaand",
+        "Commento": "Ventidue sono le retrocessioni accumulate. P.S. Hai rotto il cazzo con sto 22. P.P.S. Sono le 22:22? N.d.T. Fa Finta di avere la 'R' moscia."
+    },
+    {
+        "Id" : 4,
+        "Nome" : "Sonny",
+        "Squadra": "MasterChef United",
+        "Commento": "L'attuale campione in carica e l'unico ad aver vinto meritatamente, ma in sostanza un nanerottolo grasso e peloso dalla battuta facile. Sarà colpa delle capucchiate con la quale lo svegliava suo padre ogni mattina?"
+    },
+    {
+        "Id" : 5,
+        "Nome" : "Fulvio",
+        "Squadra": "SanRemo Freuler",
+        "Commento": "Ha il potere innato di evocare un contadino dislessico dal piano astrale delle fiere dei Becchi, che lo tira fuori dai fossi ogni volta che guida ubriaco. N.d.T. Birsa lo stalkera su Tinder."
+    },
+    {
+        "Id" : 6,
+        "Nome" : "Gigi",
+        "Squadra": "Burgi-Dunitz",
+        "Commento": "Rientra in campo con lo stesso stile di Mourinho l'anno del triplete dell'inter, sostituendo quella patacca di...come si chiamava...boh chi se ne frega! Ha scelto il nome della squadra pensando di apparire erudito, ma in realtà sembra il nome di una marca di auto usate rumene...[..si si l'angolo che descrive la geometria di attacco del nucleofilo sul centro insaturo di una molecola....ma vaffanculo va...scegliti un nome da fantacalcio..]... Comunque grandissimo, ben tornato fra noi Purpett!"
+    },
+    {
+        "Id" : 7,
+        "Nome" : "Eugenio",
+        "Squadra": "Real Madrink",
+        "Commento": "Riesce sempre ad inculare qualcuno tramite i suoi scambi di dubbia moralità portati a termine grazie allo Sharingan che gli ha tramandato sua madre. Si dice che quando beve abbastanza Pastis sia in grado di appoggiare lo scroto sulle spalle di chiunque. N.d.T. Personalità poco raccomandabile."
+    },
+    {
+        "Id" : 8,
+        "Nome" : "Marco",
+        "Squadra": "The Best-Emmia",
+        "Commento": "Talmente zelante nell'invocazione di divinità da aver dimenticato il proprio nome, e questo gli ha concesso di diventare membro onorario dei Templari; che gli hanno subito affidato il ruolo di vice nella XXXIV Crociata guidata da Paolo Brosio per la riconquista di Gerusalemme."
+    },
+    {
+        "Id" : 9,
+        "Nome" : "Daniele",
+        "Squadra": "AncoraNonLoSo",
+        "Commento": "Come Obelix da piccolo è caduto nel calderone con la pozione magica, peccato che si sia reso conto troppo tardi che il bianco e tiepido liquido fosse l'essenza stessa dell'amore di Dio nei suoi confronti. Questo però gli ha fatto guadagnare punti fortuna infiniti. N.d.T. Attenzione: Potrebbe manifestare atteggiamenti partenopei."
+    },
+    {
+        "Id" : 10,
+        "Nome" : "Gianluca",
+        "Squadra": "AC Denti",
+        "Commento": "Tifoso del Milan ma compra solo giocatori del Toro, un po l'antitesi di Riccardo ma senza la passione per le signore anziane. Ha la capacità di lanciare maledizioni potentissime che rendono il malcapitato inabile nel vincere qualunque tipo di competizione o gara a premi per 3 anni. N.d.T. Si dice che l'abbia imparato alla Palestra di Okuto."
+    }
+
+]

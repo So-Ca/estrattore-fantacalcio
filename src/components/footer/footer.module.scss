@@ -1,0 +1,99 @@
+/* Variabili */
+$logoColorLGreen: #3F6D2C;
+$logoColorGreen: #2A8944;
+$logoColorYellow: #FDDD0E;
+$logoColorSalmon: #F6B275;
+$logoColorRed: #D90D0C;
+$logoColorBlack: #030008;
+$bgColor: linear-gradient(90deg, rgba(42, 137, 68, 0.5) 0%, rgba(253, 221, 14, 0.5) 100%);
+$titleShade: -1px 0 #3F6D2C, 0 2px #FDDD0E, 2px 0 #FDDD0E, 0 -1px #3F6D2C;
+$titleFont: "Audiowide";
+$subTitleFont: "Rajdhani";
+$mainFont: "Roboto Flex";
+
+footer{
+  margin: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: 0 0 10px $logoColorBlack;
+  border-bottom: 3px groove $logoColorSalmon;
+  background: $bgColor;
+}
+
+#copyright{
+  margin: 0;
+  font-size: 1.1em;
+  font-family: $titleFont;
+  font-weight: bold;
+  text-shadow: $titleShade;
+}
+
+#portfolio{
+  color: $logoColorRed;
+  text-shadow: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: $subTitleFont;
+}
+#portfolio:hover{
+  color: $logoColorBlack;
+}
+#portfolio:active{
+  color: $logoColorSalmon;
+}
+
+#logo{
+  margin: 0;
+  width: 50px;
+  height: 30px;
+}
+
+
+/* media query */
+@media (max-width: 400px){
+  #copyright{
+    font-size: 0.8rem;
+    font-weight: normal;
+  }
+  #portfolio{
+    font-size: 0.8rem;
+  }
+  #logo{
+    width: 50px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 500px){
+  #copyright{
+    font-size: 0.8rem;
+    font-weight: normal;
+  }
+  #portfolio{
+    font-size: 0.8rem;
+  }
+  #logo{
+    width: 50px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 750px){
+
+}
+
+@media (min-width: 751px) and (max-width: 999px){
+
+}
+
+@media (min-width: 1000px) and (max-width: 1299px){
+
+}
+
+@media (min-width: 1300px) and (max-width: 1700px){
+
+}
