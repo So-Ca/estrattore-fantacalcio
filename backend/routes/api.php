@@ -10,6 +10,7 @@ use App\Http\Middleware\EnsureGiocatoreIdIsValid;
 use App\Http\Middleware\EnsureAllenatoreIdIsValid;
 use App\Http\Middleware\EnsurePrezzoIsValid;
 use App\Http\Middleware\EnsureJsonsExist;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 
 
 Route::middleware([EnsureJsonsExist::class])->group(function () {
@@ -42,9 +43,33 @@ Route::middleware([EnsureJsonsExist::class])->group(function () {
     Route::get('/allenatore/{id_allenatore}', [AllenatoreController::class, 'showAllenatore'])
         ->middleware(EnsureAllenatoreIdIsValid::class)
         ->name('allenatore');
-    
+
     Route::post('reset', [GiocatoreController::class, 'reset'])
-    ->name('reset');
+        ->name('reset');
+});
+
+Route::get('sse', function () {
+    // Set the appropriate headers for SSE
+    return new StreamedResponse(function () {
+        while (true) {
+            $allenatoreController = new AllenatoreController();
+            $allenatori = $allenatoreController->getAllenatori();
+            $viewAllenatori = [];
+            for ($i = 0; $i < count($allenatori); $i++) {
+                $viewAllenatori[$i] = $allenatoreController->showAllenatore($allenatori[$i]['Id']);
+            }
+
+            //return view('report', ['allenatori' => $viewAllenatori]);
+            echo "data: ".json_encode($viewAllenatori)."\n\n";
+            ob_flush();
+            flush();
+            sleep(2);
+        }
+    }, 200, [
+        'Content-Type' => 'text/event-stream',
+        'Cache-Control' => 'no-cache',
+        'Connection' => 'keep-alive',
+    ]);
 });
 
 Route::any('/', function () {

@@ -11,7 +11,7 @@ const Section = () => {
   const creditiPerAllenatore = 500;
   const token = Token()
   //const apiHost = "https://cryptic-fjord-66661-3e659dd64751.herokuapp.com";
-  const apiHost = "http://swl3p7r9mx1sjklo0.run.place";
+  const apiHost = "https://www.swl3p7r9mx1sjklo0.run.place";
 
   // Liste giocatori
   const [nonEstratti, setNonEstratti] = useState([]);
