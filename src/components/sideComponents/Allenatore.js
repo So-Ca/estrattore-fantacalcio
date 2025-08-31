@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import GiocatoreAssegnato from "./GiocatoreAssegnato";
 import noLogo from "../../assets/img/loghi-squadre/no-logo.png";
-import muppet from "../../assets/img/loghi-squadre/no-logo.png";
+import muppet from "../../assets/img/loghi-squadre/muppet.jpeg";
 import donAbbondio from "../../assets/img/loghi-squadre/don-abbondio.jpg";
 import temptationHalaand from "../../assets/img/loghi-squadre/temptation-halaand.png";
 import masterchefUTD from "../../assets/img/loghi-squadre/masterchef-united.png";
-import sanRemoFreuler from "../../assets/img/loghi-squadre/no-logo.png";
+import sanRemoFreuler from "../../assets/img/loghi-squadre/sanRemo-freuleur.jpeg";
 import burgiDunitz from "../../assets/img/loghi-squadre/burgi-dunitz.jpeg";
 import realMadrink from "../../assets/img/loghi-squadre/real-madrink.jpeg";
 import theBestEmmia from "../../assets/img/loghi-squadre/the-best-emmia.jpg";
-import ancoranonloso from "../../assets/img/loghi-squadre/no-logo.png";
+import ancoranonloso from "../../assets/img/loghi-squadre/ancoranonloso.jpeg";
 import acDenti from "../../assets/img/loghi-squadre/ac-denti.jpeg";
 
 export default function Allenatore(props) {
@@ -18,15 +18,15 @@ export default function Allenatore(props) {
     const [showBio, setShowBio] = useState(false);
 
     const loghiSquadre = {
-        "Muppet": noLogo,
+        "Muppet": muppet,
         "Don Abbondio": donAbbondio,
         "Temptation Halaand": temptationHalaand,
         "MasterChef United": masterchefUTD,
-        "SanRemo Freuler": noLogo,
+        "SanRemo Freuler": sanRemoFreuler,
         "Burgi-Dunitz": burgiDunitz,
         "Real Madrink": realMadrink,
         "The Best-Emmia": theBestEmmia,
-        "AncoraNonLoSo": noLogo,
+        "AncoraNonLoSo": ancoranonloso,
         "AC Denti": acDenti
     }
 
