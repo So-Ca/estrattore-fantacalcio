@@ -182,7 +182,7 @@
                                 <td class="squadra">{{ $allenatori[$i]['giocatori'][$j]['Squadra'] }}</td>
                                 <td class="ruolo">
                                     @php
-                                        $ruoloString = $allenatori[$i]['giocatori'][$j]['RM'];
+                                        $ruoloString = $allenatori[$i]['giocatori'][$j]['R'];
                                         $ruoloArray = explode(';', $ruoloString);
                                     @endphp
                                     @foreach ($ruoloArray as $ruolo)
@@ -209,19 +209,19 @@
             <form class="filters-form">
                 <fieldset style="border:none; margin:0; padding:0; grid-column: 1;">
                     <legend style="font-weight:700; margin-bottom:8px;">Ruoli</legend>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <label><input type="checkbox" name="ruolo[]" value="por"> POR</label>
-                        <label><input type="checkbox" name="ruolo[]" value="dc"> DC</label>
-                        <label><input type="checkbox" name="ruolo[]" value="dd"> DD</label>
-                        <label><input type="checkbox" name="ruolo[]" value="ds"> DS</label>
-                        <label><input type="checkbox" name="ruolo[]" value="b"> B</label>
-                        <label><input type="checkbox" name="ruolo[]" value="m"> M</label>
-                        <label><input type="checkbox" name="ruolo[]" value="e"> E</label>
-                        <label><input type="checkbox" name="ruolo[]" value="c"> C</label>
-                        <label><input type="checkbox" name="ruolo[]" value="t"> T</label>
-                        <label><input type="checkbox" name="ruolo[]" value="w"> W</label>
-                        <label><input type="checkbox" name="ruolo[]" value="a"> A</label>
-                        <label><input type="checkbox" name="ruolo[]" value="pc"> PC</label>
+                    <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+                        <label><input type="checkbox" name="ruolo[]" value="por" checked>POR</label>
+                        <label><input type="checkbox" name="ruolo[]" value="dc" checked>DC</label>
+                        <label><input type="checkbox" name="ruolo[]" value="dd" checked>DD</label>
+                        <label><input type="checkbox" name="ruolo[]" value="ds" checked>DS</label>
+                        <label><input type="checkbox" name="ruolo[]" value="b" checked>B</label>
+                        <label><input type="checkbox" name="ruolo[]" value="m" checked>M</label>
+                        <label><input type="checkbox" name="ruolo[]" value="e" checked>E</label>
+                        <label><input type="checkbox" name="ruolo[]" value="c" checked>C</label>
+                        <label><input type="checkbox" name="ruolo[]" value="t" checked>T</label>
+                        <label><input type="checkbox" name="ruolo[]" value="w" checked>W</label>
+                        <label><input type="checkbox" name="ruolo[]" value="a" checked>A</label>
+                        <label><input type="checkbox" name="ruolo[]" value="pc" checked>PC</label>
                     </div>
                 </fieldset>
                 <div style="grid-column: 2; display: flex; flex-direction: column; gap: 8px;">
@@ -232,9 +232,9 @@
                 <fieldset style="border:none; margin:0; padding:0; grid-column: 3;">
                     <legend style="font-weight:700; margin-bottom:8px;">Stato</legend>
                     <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <label><input type="radio" name="assegnati" value="tutti" checked> Tutti</label>
-                        <label><input type="radio" name="assegnati" value="assegnati"> Assegnati</label>
-                        <label><input type="radio" name="assegnati" value="non-assegnati"> Non assegnati</label>
+                        <label><input type="radio" name="estratti" value="tutti" checked> Tutti</label>
+                        <label><input type="radio" name="estratti" value="estratti"> Estratti</label>
+                        <label><input type="radio" name="estratti" value="non-estratti"> Non estratti</label>
                     </div>
                 </fieldset>
             </form>
@@ -251,16 +251,17 @@
                 </thead>
                 <tbody>
                     @for ($j = 0; $j < count($giocatori); $j++)
-                        <tr data-id-giocatore="{{ $giocatori[$j]['Id'] }}">
+                        <tr data-id-giocatore="{{ $giocatori[$j]['Id'] }}"
+                            data-ruolo-giocatore="{{ strtolower($giocatori[$j]['R']) }}">
                             <td class="nome">{{ $giocatori[$j]['Nome'] }}</td>
                             <td class="squadra">{{ $giocatori[$j]['Squadra'] }}</td>
                             <td class="ruolo">
                                 @php
-                                    $ruoloString = $giocatori[$j]['RM'];
+                                    $ruoloString = $giocatori[$j]['R'];
                                     $ruoloArray = explode(';', $ruoloString);
                                 @endphp
                                 @foreach ($ruoloArray as $ruolo)
-                                    <span class="ruolo {{ strtolower($ruolo) }}">{{ $ruolo }}</span>
+                                    <span class="ruolo-{{ strtolower($ruolo) }}">{{ $ruolo }}</span>
                                 @endforeach
                             </td>
                             <td class="prezzo">{{ $giocatori[$j]['Qt.A'] }}</td>
@@ -290,7 +291,7 @@
                             const secondTh = document.createElement('td');
                             secondTh.textContent = giocatore.Squadra;
                             const thirdTh = document.createElement('td');
-                            const ruoliMantra = giocatore.RM.split(';');
+                            const ruoliMantra = giocatore.R.split(';');
                             ruoliMantra.forEach(function(ruolo) {
                                 let span = document.createElement('span');
                                 span.classList.add('ruolo');
@@ -336,7 +337,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const inputRuolo = document.querySelectorAll('[name="ruolo[]"]');
             const inputSearch = document.querySelector('[name="search"]');
-            const inputState = document.querySelectorAll('[name="assegnati"]');
+            const inputState = document.querySelectorAll('[name="estratti"]');
             console.log({
                 inputRuolo,
                 inputSearch,
@@ -354,20 +355,29 @@
             function handleFilters() {
 
                 const selectedRuoliInput = document.querySelectorAll('[name="ruolo[]"]:checked');
-                const selectedAssegnatiInput = document.querySelector('[name="assegnati"]:checked');
+                const selectedestrattiInput = document.querySelector('[name="estratti"]:checked');
                 const searchInputValue = document.querySelector('[name="search"]').value;
-
-                const righeNonAssegnati = document.querySelectorAll('[data-id-allenatore="0"] tbody tr');
-                righeNonAssegnati.forEach(function(row) {
+                const checkedRoles = [];
+                selectedRuoliInput.forEach(function(ruoloInput) {
+                    checkedRoles.push(ruoloInput.value.trim());
+                });
+                const righeNonestratti = document.querySelectorAll('[data-id-allenatore="0"] tbody tr');
+                righeNonestratti.forEach(function(row) {
                     const nomeGiocatore = row.querySelector('td.nome').innerHTML.trim().toLowerCase();
                     const nomeSquadra = row.querySelector('td.squadra').innerHTML.trim().toLowerCase();
-                    if(searchInputValue && (nomeGiocatore.slice(0, searchInputValue.length) !== searchInputValue) && nomeSquadra.slice(0, searchInputValue.length) !== searchInputValue) {
+
+                    const ruoliGiocatore = row.dataset.ruoloGiocatore.toLowerCase().split(';');
+                    if (searchInputValue && (nomeGiocatore.slice(0, searchInputValue.length) !==
+                            searchInputValue) && nomeSquadra.slice(0, searchInputValue.length) !==
+                        searchInputValue ) {
                         row.style.display = 'none';
-                    } else {
+                    } else if(ruoliGiocatore.filter(x => checkedRoles.includes(x))) {
+                        row.style.display = 'none';
+                    }else {
                         row.style.display = 'table-row';
                     }
                 });
-                
+
             }
         });
     </script>

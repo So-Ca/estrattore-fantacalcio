@@ -11,6 +11,7 @@ Route::get('/', function () {
     
     $giocatori = Storage::json('public\giocatori.json');
 
+    
     $allenatori = $allenatoreController->getAllenatori();
     $viewAllenatori = [];
     for ($i = 0; $i < count($allenatori); $i++) {
