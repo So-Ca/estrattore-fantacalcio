@@ -1,0 +1,88 @@
+REGOLE FANTACALCIO
+	Componimento Rose
+- Le squadre partecipanti devono avere un minimo di 23 giocatori ed un massimo di 30.
+- Non ci sono restrizioni riguardanti i ruoli giocatori per quanto riguarda l'acquisto in fase d'asta
+- Ogni squadra avrà a disposizione 500 fantamilioni (crediti) a inizio anno da utilizzare per l'asta di settembre e cumulabili insieme a crediti di giocatori svincolati e/o venduti ad altra squadre
+- Asta random totale con quotazioni base di fantagazzetta
+- Sistema di sostituzioni MASTER: entra sempre il primo voto in panchina che configura un modulo valido
+	Voti, Calcolo Giornate, Punteggi
+- Redazione: ITALIA (mix tra fantacalcio e Alvin 482)
+- Fascie gol:
+	1° goal --> 66 punti squadra
+	2° goal --> 71 punti squadra
+	3° goal --> 76
+	4° goal --> 80
+	5° goal --> 84
+	6° goal --> 88
+	7° goal --> 91
+	8° goal --> 93
+	9° goal --> 95
+	10° goal --> 97
+	11° goal --> 99
+	..° goal --> successivamente, ogni 2 punti si ottiene un goal aggiuntivo
+- Limite pareggi: viene assegnato un goal extra alla squadra con punteggio più alto se la differenza punti è 5.5 e le squadre sono entrambe sotto la fascia del primo goal (66 punti)
+
+	Campionato
+- Le squadre che arrivano in classifica "9°" e "10°" devono cambiare nome per poter partecipare al campionato dell'anno successivo
+	Premi
+- Campionato: 
+	1° 300 euro
+	2° 130 euro
+	3° 60 euro
+- Coppa:
+	1° 100 euro
+	2° 10 euro
+
+	Iscrizione
+- La quota di partecipazione è di 60 euro per squadra iscritta
+- Chi non porta i soldi all'asta di Settembre riceverà una penalità di -20 crediti che verrà applicata subito all'asta di settembre (500-20=480)
+	Penalità
+- Non è concesso gufare per più di una volta al giorno ne di persona ne sui gruppi WhatsApp (Fantafavaro, Amministrazione Fantafavaro, CDA Fantafavaro). Ammenda: espulsione dal gruppo per una settimana
+- Non è concesso parlare di argomenti offtopic nei gruppi Amministrazione e CDA. Ammenda: espulsione momentanea dal gruppo dove è stata commessa l'infrazione (1 settimana). Non sono previsti indulti per la prima infrazione. Nel caso di recidività non sono previste aggravanti.
+- Formazione non schierata: -3 punti sul punteggio partita (NON è previsto un indulto per la prima dimenticanza)
+- Recidività nel non schierare la formazione: -3 punti sul punteggio partita e -1 punto in campionato (dalla seconda volta in poi viene sempre applicata questa penalità)
+
+	Asta e Mercato Riparazione
+- Il prezzo dei giocatori è lo stesso della quotazione al momento dell'acquisto
+- Ogni squadra riceverà 20 crediti aggiuntivi all'apertura del Mercato di Riparazione di Gennaio che si potranno sommare a quelli residui dopo l'asta di Settembre e/o eventuali svincoli fatti
+- Non è più possibile sostituire un giocatore che non gioca più nella seria A scegliendone un altro dalla lista svincolati, ma si applicherà il nuovo regolamento di svincoli ed asta a buste.
+- Il mercato di riparazione inizia alla fine della giornata di serie A che precede l'apertura del mercato di serie A e finisce con l'asta di riparazione; è composto da 4 aspetti: SCAMBI, SVINCOLI, BUSTE.
+- La finestra scambi durerà per tutto il periodo in cui il mercato di serie A è aperto e finisce un ora prima della prima giornata di serie A che viene giocata dopo l'asta di riparazione del fantafavaro. Durante questo periodo si potranno effettuare scambi liberamente tra le squadre partecipanti. (Attenendosi alle regole relative agli scambi).
+- Durante il periodo del mercato di riparazione ogni settimana, dopo la fine della giornata di serie A, si aprirà una finestra per gli svincoli, che dura massimo 24h, in cui ogni allenatore potrà effettuare i propri svincoli, (rispettando i limiti di 23-30 giocatori in rosa).
+- Dopo la chiusura della sessione svincoli, si aprirà la sessione buste che durerà fino al giorno prima dell'inizio della giornata di serie A. In questa finestra temporale sarà possibile acquistare giocatori dalla lista svincolati (rispettando i limiti di 23-30 giocatori in rosa), effettuando una puntata tramite il sistema di buste chiuse. La durata della sessione buste sarà di massimo 24h, dopodiché bisognerà aprire un'altra sessione.
+- Sia per le buste che per gli svincoli si possono chiudere in anticipo le sessioni se tutti i partecipanti al campionato hanno effettuato le loro rispettive mosse e sono d'accordo all'unanimità a procedere con la chiusura della sessione. Questo per velocizzare le sessioni e favorire il l'apertura della prossima sessione.
+- Dopo la chiusura del mercato di gennaio della serie A verrà fatta l'asta di riparazione tra la giornata di serie A che precede la chiusura del mercato e la giornata successiva. Ci sarà una sessione per svincolare liberamente i giocatori (non ci sono limiti in questo caso) ed un'altra in cui fare le puntate tramite il sistema di buste chiuse. Come per il mercato la sessione di svincoli e di buste segue le stesse regole.
+
+
+
+
+
+
+	Coppa
+- Fase mini-capionato: andata e ritorno in 18 giornate
+- Fase a gironi: andata e ritorno in 6 giornate
+		 girone A --> 1°, 3°
+	 	 girone B --> 2°, 4°
+		 sorteggio tra 5°, 6°, 7°, 8° per decidere in che girone vanno a finire
+		 le ultime di ogni girone fanno i playoff (perché altrimenti ci si ritrovare alle eliminatorie in 6 e non si può fare perché sennò una squadra passa diretta in finale), oppure passano solo le prime 2 di ogni girone
+- Fase eliminazione: sorteggiamo gli scontri
+		 quarti di finale --> andata e ritorno
+		 semifinale --> andata e ritorno
+		 finale --> secca
+
+
+PROPOSTE
+- Porta inviolata (Jimmy)
+- Capitano (Jimmy, marco, sonny)
+- Alzare la maggioranza nelle votazioni ordinarie al 70% e nelle votazioni straordinarie all' 80% (sonny)
+- Limitare gli svincoli durante il mercato di gennaio (questo limite riguarda solo il mercato di gennaio e non l'asta) [valerio]
+- Limitare i transiti di un giocatore acquistato (da definire in che modo: massimo 2 volte nella stessa squadra?, massimo 3 squadre in cui transita? transiti infiniti? possibilità di schierare i giocatori acquistati nelle partite da recuperare con un massimo di 2 modifiche per ogni squadra
+) [riccardo, Jimmy, sonny, valerio]
+- Definire le penalità per il non rispetto delle regole (valerio)
+- Quota iscrizione 50 euro (sonny)
+- Regolamento Coppa (sonny, marco, riccardo)
+- Modalità "1vs tutti" (marco)
+- Leggere e approvare nuove regole mercato e asta riparazione
+- Penalità per chi fa altri fantacalci (sonny, riccardo)
+- Player of the match +1 (marco)
+- Modificatore rendimento: 2/3 bonus (valerio)

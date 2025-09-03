@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Helmet} from "react-helmet-async";
 import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
 import Allenatore from "../sideComponents/Allenatore";
@@ -11,7 +12,7 @@ const Section = () => {
   const creditiPerAllenatore = 500;
   const token = Token()
   //const apiHost = "https://cryptic-fjord-66661-3e659dd64751.herokuapp.com";
-  const apiHost = "https://www.swl3p7r9mx1sjklo0.run.place";
+  const apiHost = "https://swl3p7r9mx1sjklo0.run.place";
 
   // Liste giocatori
   const [nonEstratti, setNonEstratti] = useState([]);
@@ -36,7 +37,9 @@ const Section = () => {
       "7": [],
       "8": [],
       "9": [],
-      "10": []
+      "10": [],
+      "11": [],
+      "12": []
     }
   );
 
@@ -75,6 +78,7 @@ const Section = () => {
 
         const allenatoriResponse = await fetch(apiHost + "/api/allenatori?fanta_token="+token);
         const allenatori = await allenatoriResponse.json();
+        console.log("ALLENATORI API:", allenatori);
         let assegnati = {};
 
         allenatori.forEach(allenatore => {
@@ -174,7 +178,7 @@ const Section = () => {
       return;
     }
 
-    const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => giocatore.Id === giocatoreId));
+    const giaAssegnato = Object.values(gAssegnati).some((giocatori) => giocatori.some((giocatore) => Number(giocatore.Id) === giocatoreId));
 
     if (!giaAssegnato) {
       if (totaleSpeso >= creditiPerAllenatore) {
@@ -207,17 +211,18 @@ const Section = () => {
           setIsDoingRequest(false);
         })
         .catch(error => {
-          console.error("Ci no problemi con l'aggiunta del giocatore: ", error)
+          console.error("Ci sono problemi con l'aggiunta del giocatore: ", error)
           setIsDoingRequest(false);
         })
 
       console.log(`Giocatore assegnato a ${allenatoreId}: `, ultimoEstratto);
       return;
     } else {
-      alert(`😡🤬Ehi Ehi Non barare infame!!😡🤬` + ultimoEstratto.Nome + ` è gia stato assegnato a ${Object.keys(gAssegnati).find(s => gAssegnati[s].some(g => g.Nome === ultimoEstratto.Nome))}`);
+      alert(`😡🤬Ehi Ehi Non barare infame!!😡🤬` + ultimoEstratto.Nome + ` è gia stato assegnato a ${allenatori.find(a => a.key === Object.keys(gAssegnati).find(s => gAssegnati[s].some(g => g.Nome === ultimoEstratto.Nome))).props.allenatore.Nome}`);
       return;
     }
   }
+
 
   function riponiGiocatore(giocatoreId, giocatoreNome) {
     if (window.confirm("Ok hai pescato l'equivalente calcistico di un calcio nelle palle, ma sei sicuro di voler ributtare a mare " + giocatoreNome + "?........conta che Tu non troverai di meglio, gli altri si invece. ")) {
@@ -294,7 +299,9 @@ const Section = () => {
                 "7": [],
                 "8": [],
                 "9": [],
-                "10": []
+                "10": [],
+                "11": [],
+                "12": []
               });
               setIsDoingRequest(false);
             })
@@ -343,6 +350,7 @@ const Section = () => {
   console.log(listaFinita)
   return (
     <div className={style["section"]}>
+      <Helmet><title>Fantafavaro | Estrattore</title></Helmet>
       <div className={style["btn-section"]}>
         <div className={style["box-contatori"]}>
           <div className={style["contatore-estratti"]}>{'Estratti: ' + estratti.length + ' / ' + (estratti.length + nonEstratti.length)}</div>

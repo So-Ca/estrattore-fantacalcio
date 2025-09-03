@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import GiocatoreAssegnato from "./GiocatoreAssegnato";
 import noLogo from "../../assets/img/loghi-squadre/no-logo.png";
-import muppet from "../../assets/img/loghi-squadre/muppet.jpeg";
+import gorgoNzola from "../../assets/img/loghi-squadre/no-logo.png";
 import donAbbondio from "../../assets/img/loghi-squadre/don-abbondio.jpg";
 import temptationHalaand from "../../assets/img/loghi-squadre/temptation-halaand.png";
 import masterchefUTD from "../../assets/img/loghi-squadre/masterchef-united.png";
 import sanRemoFreuler from "../../assets/img/loghi-squadre/sanRemo-freuleur.jpeg";
 import burgiDunitz from "../../assets/img/loghi-squadre/burgi-dunitz.jpeg";
 import realMadrink from "../../assets/img/loghi-squadre/real-madrink.jpeg";
-import theBestEmmia from "../../assets/img/loghi-squadre/the-best-emmia.jpg";
+import dioMaialen from "../../assets/img/loghi-squadre/dio-maialen.png";
 import ancoranonloso from "../../assets/img/loghi-squadre/ancoranonloso.jpeg";
 import acDenti from "../../assets/img/loghi-squadre/ac-denti.jpeg";
+import barisSanGerman from "../../assets/img/loghi-squadre/no-logo.png";
+import brigateEbosse from "../../assets/img/loghi-squadre/brigate-ebosse.jpeg";
 
 export default function Allenatore(props) {
     const [puntata, setPuntata] = useState(props.ultimoEstratto['Qt.A']);
@@ -18,16 +20,18 @@ export default function Allenatore(props) {
     const [showBio, setShowBio] = useState(false);
 
     const loghiSquadre = {
-        "Muppet": muppet,
+        "Gorgo Nzola": gorgoNzola,
         "Don Abbondio": donAbbondio,
         "Temptation Halaand": temptationHalaand,
         "MasterChef United": masterchefUTD,
         "SanRemo Freuler": sanRemoFreuler,
         "Burgi-Dunitz": burgiDunitz,
         "Real Madrink": realMadrink,
-        "The Best-Emmia": theBestEmmia,
+        "Dio Maialen": dioMaialen,
         "AncoraNonLoSo": ancoranonloso,
-        "AC Denti": acDenti
+        "AC Denti": acDenti,
+        "Baris San German": barisSanGerman,
+        "Brigate Ebosse": brigateEbosse
     }
 
     const logoSquadra = loghiSquadre[props.allenatore.Squadra];

@@ -24,9 +24,33 @@ $mainFont: "Roboto Flex";
   background: $bgColor;
 }
 
+.link{
+  font-family: $mainFont;
+  font-size: 1.25rem;
+  // text-decoration: none;
+  color: #000000;
+}
+.link:hover{
+  color: #3F6D2C;
+}
+
 .logo-favaro{
   max-width: 90px;
   animation: spin infinite 30s linear;
+}
+
+.link-box{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10%;
+}
+
+.title-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .titolo{
@@ -36,8 +60,10 @@ $mainFont: "Roboto Flex";
 }
 
 .sottotitolo{
-  font-family: $mainFont;
+  font-family: $subTitleFont;
   color: $logoColorBlack;
+  text-shadow: $titleShade;
+  font-size: 1.5rem;
 }
 
 @keyframes spin {

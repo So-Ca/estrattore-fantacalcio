@@ -1,0 +1,18 @@
+/* Variabili */
+$logoColorLGreen: rgb(63, 109, 44);
+$logoColorGreen: rgb(42, 137, 68);
+$logoColorYellow: rgb(253, 221, 14);
+$logoColorSalmon: rgb(246, 178, 117);
+$logoColorRed: rgb(217, 13, 12);
+$logoColorBlack: rgb(3, 0, 8);
+$bgColor: linear-gradient(90deg, rgba(42, 137, 68, 0.5) 0%, rgba(253, 221, 14, 0.5) 100%);
+$titleShade: -1px 0 #3F6D2C, 0 2px #FDDD0E, 2px 0 #FDDD0E, 0 -1px #3F6D2C;
+$warningShade: -1px 0 #FDDD0E, 0 2px #030008, 2px 0 #030008, 0 -1px #FDDD0E;
+$titleFont: "Audiowide";
+$subTitleFont: "Rajdhani";
+$mainFont: "Roboto Flex";
+
+p{
+  margin: 1% 25%;
+  text-align: center;
+}

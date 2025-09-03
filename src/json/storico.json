@@ -1,0 +1,268 @@
+{
+  "document": {
+    "title": "Albo D'Oro",
+    "version": "1.0",
+    "status": "incompleto",
+    "lastUpdate": "10/08/2026"
+  },
+  "competitions": {
+    "league": {
+      "2025/26": {
+        "first_place": {
+          "team_name": "A.C. Denti",
+          "manager_name": "Gianluca"
+        },
+        "second_place": {
+          "team_name": "ancoranonloso",
+          "manager_name": "Daniele (Pelato di merda)"
+        },
+        "third_place": {
+          "team_name": "MasterChef United",
+          "manager_name": "Sonny"
+        }
+      },
+      "2024/25": {
+        "first_place": {
+          "team_name": "MasterChef United",
+          "manager_name": "Sonny"
+        },
+        "second_place": {
+          "team_name": "SanRemo Freuler",
+          "manager_name": "Fulvio"
+        },
+        "third_place": {
+          "team_name": "Scarsenal",
+          "manager_name": "Alessio Bocco -buonanima-"
+        }
+      },
+      "2023/24": {
+        "first_place": {
+          "team_name": "Don Abbondio",
+          "manager_name": "Riccardo"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2022/23": {
+        "first_place": {
+          "team_name": "Cugini di Campagna",
+          "manager_name": "Stefano Bongiovanni (traditore) -buonanima-"
+        },
+        "second_place": {
+          "team_name": "ancoranonloso",
+          "manager_name": "Daniele (pelato di merda)"
+        },
+        "third_place": {
+          "team_name": "SanRemo Freuler",
+          "manager_name": "Fulvio"
+        }
+      },
+      "2021/22": {
+        "first_place": {
+          "team_name": "Obama",
+          "manager_name": "Daniele (pelato di merda)"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2020/21": {
+        "first_place": {
+          "team_name": "Don Abbondio",
+          "manager_name": "Riccardo"
+        },
+        "second_place": {
+          "team_name": "MasterChef United",
+          "manager_name": "Sonny"
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2019/20": {
+        "first_place": {
+          "team_name": "Venti2",
+          "manager_name": "Jimmy"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2018/19": {
+        "first_place": {
+          "team_name": "Muppet",
+          "manager_name": "Valerio (detto Negrierio)"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2017/18": {
+        "first_place": {
+          "team_name": "New Devils",
+          "manager_name": "Gianluca"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2016/17": {
+        "first_place": {
+          "team_name": "Gorgo & Cipolla",
+          "manager_name": "Eugenio"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2015/16": {
+        "first_place": {
+          "team_name": "Brisa",
+          "manager_name": "Fulvio"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2014/15": {
+        "first_place": {
+          "team_name": "Oki",
+          "manager_name": "Samer Ababneh -buonanima-"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2013/14": {
+        "first_place": {
+          "team_name": "Obama",
+          "manager_name": "Daniele (pelato di merda)"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2012/13": {
+        "first_place": {
+          "team_name": "Muppet",
+          "manager_name": "Valerio (detto Negrierio)"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2011/12": {
+        "first_place": {
+          "team_name": "Splugen",
+          "manager_name": "Daniele Bottigliengo -buonanima-"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      },
+      "2010/11": {
+        "first_place": {
+          "team_name": "Palate da Palacio",
+          "manager_name": "Riccardo"
+        },
+        "second_place": {
+          "team_name": "",
+          "manager_name": ""
+        },
+        "third_place": {
+          "team_name": "",
+          "manager_name": ""
+        }
+      }
+    },
+    "cup": {
+      "2025/26": {
+        "winner": {
+          "team_name": "MasterChef United",
+          "manager_name": "Sonny"
+        }
+      },
+      "2024/25": {
+        "winner": {
+          "team_name": "SanRemo Freuler",
+          "manager_name": "Fulvio"
+        }
+      }
+    }
+  },
+  "relegations": {
+    "Riccardo": 2,
+    "Jimmy": 2,
+    "Gianluca": 3,
+    "DanieleF": 2,
+    "Fulvio": 2,
+    "Sonny": 0,
+    "Eugenio": 1,
+    "Gigi": 0,
+    "Marco": 5,
+    "Valerio": 1,
+    "StefanoBongiovanni": 0,
+    "AlessioBocco": 0,
+    "SamerAbabneh": 0,
+    "DanieleBottigliengo": 0,
+    "Angelo": 0,
+    "Pissi&Untre": 0
+  }
+}

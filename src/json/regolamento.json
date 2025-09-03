@@ -1,0 +1,294 @@
+{
+  "documento": {
+    "titolo": "Regolamento Ufficiale Fantafavaro",
+    "versione": "1.0",
+    "stato": "ufficiale",
+    "ultima_modifica": "20/04/2026",
+    "sezioni": [
+      {
+        "id": "rose",
+        "titolo": "Composizione delle Rose",
+        "contenuto": [
+          "Modalità fantacalcio: MANTRA",
+          "Ogni squadra deve avere un minimo di 23 giocatori e un massimo di 30 giocatori.",
+          "Non sono previste restrizioni di ruolo in fase d’asta.",
+          "Ogni squadra dispone di 500 crediti iniziali per l’asta di settembre.",
+          "I crediti residui sono cumulabili con quelli derivanti da svincoli e scambi (valido solo per l'asta di riparazione).",
+          "L’asta iniziale si svolge in modalità random totale con quotazioni base Fantagazzetta.",
+          "Sistema sostituzioni: modalità MASTER (entra il primo voto utile che mantiene un modulo valido)."
+        ]
+      },
+      {
+        "id": "punteggi",
+        "titolo": "Voti e Calcolo dei Punteggi",
+        "contenuto": [
+          "Redazione voti: Italia (mix Fantacalcio + Alvin 482)."
+        ],
+        "tabelle": [
+          {
+            "titolo": "Fasce Gol",
+            "intestazioni": ["Gol", "Punteggio"],
+            "righe": [
+              ["1° gol", "66 punti"],
+              ["2° gol", "71 punti"],
+              ["3° gol", "76 punti"],
+              ["4° gol", "80 punti"],
+              ["5° gol", "84 punti"],
+              ["6° gol", "88 punti"],
+              ["7° gol", "91 punti"],
+              ["8° gol", "93 punti"],
+              ["9° gol", "95 punti"],
+              ["10° gol", "97 punti"],
+              ["11° gol", "99 punti"],
+              ["Dal 12° in poi", "1 gol ogni +2 punti"]
+            ]
+          }
+        ],
+        "note": [
+          "Se entrambe le squadre non raggiungono la prima fascia (66 punti) e la differenza è pari o superiore a 5,5 punti, viene assegnato un gol extra alla squadra con punteggio più alto."
+        ]
+      },
+      {
+        "id": "campionato",
+        "titolo": "Campionato Fantafavaro",
+        "contenuto": [
+          "Le squadre che si classificano nelle prime 3 posizioni a fine campionato otterranno i premi in palio citati nella sezione 'PREMI' ed accederanno allo storico vittorie del Fantafavaro.",
+          "Le squadre che si classificano nelle ultime due posizioni a fine campionato sono obbligate a cambiare nome per poter partecipare alla stagione successiva. Questa procedura viene identificata come RETROCESSIONE"
+        ]
+      },
+      {
+        "id": "coppa",
+        "titolo": "Coppa Fantafavaro",
+        "sottosezioni": [
+          {
+            "id": "coppa_mini_campionato",
+            "titolo": "Fase Mini-Campionato",
+            "contenuto": [
+              "Si disputa con formula andata e ritorno per un totale di 18 giornate.",
+              "Alla fine delle 18 giornate le ultime due squadre in classifica verranno eliminate dalla coppa."
+            ]
+          },
+          {
+            "id": "coppa_gironi",
+            "titolo": "Fase a Gironi",
+            "contenuto": [
+              "Si disputa con formula andata e ritorno per un totale di 6 giornate.",
+              "Girone A: 1ª, 3ª, 6ª, 8ª classificata.",
+              "Girone B: 2ª, 4ª, 5ª, 7ª classificata.",
+              "Accedono alla fase eliminatoria le prime due squadre di ogni girone."
+            ]
+          },
+          {
+            "id": "coppa_eliminazione",
+            "titolo": "Fase a Eliminazione Diretta",
+            "contenuto": [
+              "Quarti di finale: andata e ritorno (Gli accoppiamenti avvengono per sorteggio).",
+              "Semifinali: andata e ritorno.",
+              "Finale: partita secca."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "premi",
+        "titolo": "Premi",
+        "tabelle": [
+          {
+            "titolo": "Campionato",
+            "intestazioni": ["Posizione", "Premio"],
+            "righe": [
+              ["1°", "300 €"],
+              ["2°", "130 €"],
+              ["3°", "60 €"]
+            ]
+          },
+          {
+            "titolo": "Coppa",
+            "intestazioni": ["Posizione", "Premio"],
+            "righe": [
+              ["1°", "100 €"],
+              ["2°", "10 €"]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "iscrizione",
+        "titolo": "Iscrizione",
+        "contenuto": [
+          "La quota di partecipazione è di 60 € per squadra.",
+          "Il mancato pagamento entro l’asta di settembre comporta una penalità di -20 crediti (500 → 480 crediti disponibili)."
+        ]
+      },
+      {
+        "id": "penalita",
+        "titolo": "Penalità",
+        "sottosezioni": [
+          {
+            "id": "penalita_formazione",
+            "titolo": "Mancata Formazione",
+            "contenuto": [
+              "Mancata consegna formazione: -3 punti sul punteggio partita.",
+              "Dalla seconda infrazione in poi: -3 punti sul punteggio partita e -1 punto in classifica.",
+              "Non sono previsti indulti per il primo reato o reiterazioni future."
+            ]
+          },
+          {
+            "id": "penalita_comportamento",
+            "titolo": "Comportamento nei Gruppi",
+            "contenuto": [
+              "È vietato gufare più di una volta al giorno, sia di persona sia nei gruppi ufficiali. SANZIONE: espulsione dal gruppo per una settimana.",
+              "Nei gruppi Amministrazione e CDA è vietato discutere argomenti off-topic. SANZIONE: espulsione dal gruppo interessato per una settimana.",
+              "Non sono previsti indulti per la prima infrazione. Non sono previste aggravanti in caso di recidività."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mercato",
+        "titolo": "Mercato di Riparazione",
+        "contenuto": [
+          "Ogni squadra riceve 20 crediti aggiuntivi all’apertura del mercato di gennaio, cumulabili con i crediti residui.",
+          "Non è possibile sostituire autonomamente un giocatore non più presente in Serie A, ma si seguirà il protocollo 'Mercato di Riparazione' (Rif. sezione 'Svincoli Settimanali' e 'Sistema a Buste')."
+        ],
+        "sottosezioni": [
+          {
+            "id": "mercato_scambi",
+            "titolo": "Scambi",
+            "contenuto": [
+              "Attivi per tutta la durata del mercato ufficiale di Serie A.",
+              "Si chiudono un’ora prima della prima giornata successiva all’asta di riparazione.",
+              "Devono essere rispettati i limiti di rosa (23-30 giocatori)."
+            ]
+          },
+          {
+            "id": "mercato_svincoli",
+            "titolo": "Svincoli Settimanali",
+            "contenuto": [
+              "Ogni settimana, al termine della giornata di Serie A, si apre una finestra svincoli della durata massima di 24 ore.",
+              "Devono essere rispettati i limiti di rosa (23-30 giocatori).",
+              "È possibile chiudere anticipatamente la sessione se tutti i partecipanti hanno effettuato le proprie operazioni e sono d’accordo all’unanimità."
+            ]
+          },
+          {
+            "id": "mercato_buste",
+            "titolo": "Sistema a Buste",
+            "contenuto": [
+              "Si apre dopo la chiusura della sessione svincoli.",
+              "Durata massima: 24 ore.",
+              "Acquisto tramite sistema di buste chiuse.",
+              "Devono essere rispettati i limiti di rosa (23-30 giocatori).",
+              "È possibile chiudere anticipatamente la sessione con accordo unanime."
+            ]
+          },
+          {
+            "id": "mercato_asta_riparazione",
+            "titolo": "Asta di Riparazione",
+            "contenuto": [
+              "Si svolge dopo la chiusura del mercato di gennaio di Serie A.",
+              "È prevista una sessione di svincoli senza limiti numerici.",
+              "Segue una sessione a buste chiuse con le stesse regole generali di mercato."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "proposte",
+        "titolo": "Proposte in Valutazione",
+        "proposte": [
+          {
+            "id": "1",
+            "titolo": "Maggioranza 70% per votazioni ordinarie e 80% per straordinarie.",
+            "proponente": ["Sonny"],
+            "approvata": false,
+            "commenti": ""
+          },
+          {
+            "id": "2",
+            "titolo": "Revisione regolamento Coppa.",
+            "proponente": ["Tutti"],
+            "approvata": false,
+            "commenti": "Approvare la nuova modalità scritta sopra"
+          },
+          {
+            "id": "3",
+            "titolo": "Modificatore di Rendimento.",
+            "proponente": ["Gigi, Riccardo, Sonny, Valerio"],
+            "approvata": false,
+            "commenti": "2/3 del bonus attuale? farlo attivare dal 6,5 in poi?"
+          },
+          {
+            "id": "4",
+            "titolo": "Limitazione svincoli durante il mercato di gennaio.",
+            "proponente": ["Valerio"],
+            "approvata": false,
+            "commenti": ""
+          },
+          {
+            "id": "5",
+            "titolo": "Limitazione transiti di un giocatore tra squadre.",
+            "proponente": ["Riccardo, Valerio"],
+            "approvata": false,
+            "commenti": "da definire in che modo: massimo 2 volte nella stessa squadra?, massimo 3 squadre in cui transita? transiti infiniti? possibilità di schierare i giocatori acquistati nelle partite da recuperare con un massimo di 2 modifiche per ogni squadra?"
+          },
+          {
+            "id": "6",
+            "titolo": "Opzioni modifica del nome",
+            "proponente": ["Valerio"],
+            "approvata": false,
+            "commenti": ""
+          },
+          {
+            "id": "7",
+            "titolo": "Definizione penalità generali per violazione regolamento.",
+            "proponente": ["Valerio"],
+            "approvata": false,
+            "commenti": ""
+          },
+          {
+            "id": "8",
+            "titolo": "Bonus Capitano.",
+            "proponente": ["Jimmy, Marco, Sonny"],
+            "approvata": false,
+            "commenti": ""
+          },
+          {
+            "id": "9",
+            "titolo": "Player of the Match +1.",
+            "proponente": ["Marco"],
+            "approvata": false,
+            "commenti": ""
+          },
+          {
+            "id": "10",
+            "titolo": "Bonus porta inviolata",
+            "proponente": ["Jimmy"],
+            "approvata": false,
+            "commenti": ""
+          },
+          {
+            "id": "11",
+            "titolo": "Penalità per partecipazione ad altri fantacalci.",
+            "proponente": ["Riccardo, Sonny"],
+            "approvata": false,
+            "commenti": "5 fantamiglioni in meno."
+          },
+          {
+            "id": "12",
+            "titolo": "Modalità 1 vs tutti",
+            "proponente": ["Marco"],
+            "approvata": false,
+            "commenti": ""
+          },
+          {
+            "id": "13",
+            "titolo": "Quota iscrizione 50 euro.",
+            "proponente": ["Sonny"],
+            "approvata": false,
+            "commenti": ""
+          }
+        ]
+      }
+    ]
+  }
+}
