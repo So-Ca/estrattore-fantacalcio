@@ -418,6 +418,8 @@ $ordineRuoli = [
                                 // Se hanno lo stesso ruolo, ordino per Qt.A. (decrescente)
                                 return ($b['Qt.A'] ?? 0) - ($a['Qt.A'] ?? 0);
                             });
+                            $giocatoriOrdinati = array_values(array_filter($giocatoriOrdinati, fn($giocatore) => !isset($giocatore['AllenatoreId'])));
+                           //dd($giocatoriOrdinati);
                         @endphp
                         @for ($j = 0; $j < count($giocatoriOrdinati); $j++)
                             <tr data-id-giocatore="{{ $giocatoriOrdinati[$j]['Id'] }}"
@@ -606,9 +608,9 @@ $ordineRuoli = [
                     const nomeSquadra = row.querySelector('td.squadra').innerHTML.trim().toLowerCase();
 
                     const ruoliGiocatore = row.dataset.ruoloGiocatore.toLowerCase().split(';');
-                    if (searchInputValue && (nomeGiocatore.slice(0, searchInputValue.length) !==
-                            searchInputValue) && nomeSquadra.slice(0, searchInputValue.length) !==
-                        searchInputValue) {
+                    if (searchInputValue.toLowerCase() && (nomeGiocatore.slice(0, searchInputValue.length) !==
+                            searchInputValue.toLowerCase()) && nomeSquadra.slice(0, searchInputValue.length) !==
+                        searchInputValue.toLowerCase()) {
                         // Il nome non inizia con la stringa
                         row.style.display = 'none';
                     } else if (!ruoliGiocatore.filter(x => checkedRoles.includes(x)).length) {
