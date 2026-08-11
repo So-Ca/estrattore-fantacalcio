@@ -1,40 +1,29 @@
 import React, { useState, useEffect } from "react";
 import GiocatoreAssegnato from "./GiocatoreAssegnato";
 import noLogo from "../../assets/img/loghi-squadre/no-logo.png";
-import gorgoNzola from "../../assets/img/loghi-squadre/gorgo-nzola.png";
-import donAbbondio from "../../assets/img/loghi-squadre/don-abbondio.jpg";
-import temptationHalaand from "../../assets/img/loghi-squadre/temptation-halaand.png";
-import masterchefUTD from "../../assets/img/loghi-squadre/masterchef-united.png";
-import sanRemoFreuler from "../../assets/img/loghi-squadre/sanRemo-freuleur.jpeg";
-import burgiDunitz from "../../assets/img/loghi-squadre/burgi-dunitz.jpeg";
-import realMadrink from "../../assets/img/loghi-squadre/real-madrink.jpeg";
-import dioMaialen from "../../assets/img/loghi-squadre/dio-maialen.png";
-import ancoranonloso from "../../assets/img/loghi-squadre/ancoranonloso.jpeg";
-import acDenti from "../../assets/img/loghi-squadre/ac-denti.jpeg";
-import bariSanGerman from "../../assets/img/loghi-squadre/bari-san-german.jpeg";
-import brigateEbosse from "../../assets/img/loghi-squadre/brigate-ebosse.jpeg";
 
 export default function Allenatore(props) {
     const [puntata, setPuntata] = useState(props.ultimoEstratto['Qt.A']);
     const [giocatoriAssegnati, setGiocatoriAssegnati] = useState(props.giocatoriAssegnati);
     const [showBio, setShowBio] = useState(false);
 
-    const loghiSquadre = {
-        "Gorgo Nzola": gorgoNzola,
-        "Don Abbondio": donAbbondio,
-        "Temptation Halaand": temptationHalaand,
-        "MasterChef United": masterchefUTD,
-        "SanRemo Freuler": sanRemoFreuler,
-        "Burgi-Dunitz": burgiDunitz,
-        "Real Madrink": realMadrink,
-        "Dio Maialen": dioMaialen,
-        "AncoraNonLoSo": ancoranonloso,
-        "AC Denti": acDenti,
-        "Bari San German": bariSanGerman,
-        "Brigate Ebosse": brigateEbosse
-    }
+    // const loghiSquadre = {
+    //     "Gorgo Nzola": gorgoNzola,
+    //     "Don Abbondio": donAbbondio,
+    //     "Temptation Halaand": temptationHalaand,
+    //     "MasterChef United": masterchefUTD,
+    //     "SanRemo Freuler": sanRemoFreuler,
+    //     "Burgi-Dunitz": burgiDunitz,
+    //     "Real Madrink": realMadrink,
+    //     "Dio Maialen": dioMaialen,
+    //     "AncoraNonLoSo": ancoranonloso,
+    //     "AC Denti": acDenti,
+    //     "Bari San German": bariSanGerman,
+    //     "Brigate Ebosse": brigateEbosse
+    // }
 
-    const logoSquadra = loghiSquadre[props.allenatore.Squadra];
+    // const logoSquadra = loghiSquadre[props.allenatore.Squadra];
+    const nomeLogo = props.allenatore.Squadra.replace(/ /g, "-") + ".png";
 
     useEffect(() => {
 
@@ -48,7 +37,7 @@ export default function Allenatore(props) {
  
     return (
         <div className={props.style["squadra-container"]} key={props.allenatore.Id}>
-            <img src={logoSquadra} className={props.style["logo-squadra"]} alt="Logo Squadra"/>
+            <img src={require(`../../assets/img/loghi-squadre/${nomeLogo}`) } className={props.style["logo-squadra"]} alt="Logo Squadra"/>
             <h3 className={props.style["nome-squadra"]}>{props.allenatore.Squadra}</h3>
             <h3 className={props.style["nome-allenatore"]}>Allenatore: <b>{props.allenatore.Nome}</b></h3>
             <button className={props.style["btn-biografia"]} onClick={toggleBio}>{showBio ? "Nascondi" : "Biografia"}</button>

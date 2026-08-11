@@ -1,1 +1,3 @@
 - Mettere i due nuovi allenatori nel back-end
+- Togliere import allenatori e fare un fetch
+- togliere variabili loghi e mettere un import img direttamente dal componente

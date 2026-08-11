@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {Helmet} from "react-helmet-async";
-import allenatoriData from "../../json/allenatori.json";
 import style from "./section.module.scss";
 import Allenatore from "../sideComponents/Allenatore";
 import GiocatoreEstratto from "../sideComponents/GiocatoreEstratto";
@@ -43,6 +42,7 @@ const Section = () => {
     }
   );
 
+  const [allenatoriData, setAllenatoriData] = useState([]);
   const [isDoingRequest, setIsDoingRequest] = useState(false);
   const [searchText, setSearchText] = useState("");
   const listaFinita = nonEstratti.length === 0 && estratti.length > 0;
@@ -78,6 +78,7 @@ const Section = () => {
 
         const allenatoriResponse = await fetch(apiHost + "/api/allenatori?fanta_token="+token);
         const allenatori = await allenatoriResponse.json();
+        setAllenatoriData(allenatori);
         console.log("ALLENATORI API:", allenatori);
         let assegnati = {};
 
