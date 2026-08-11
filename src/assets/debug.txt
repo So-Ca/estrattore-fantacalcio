@@ -1,1 +1,1 @@
-- Quando si assegna un giocatore già assegnato compare un errore al posto dell'alert
+- Mettere i due nuovi allenatori nel back-end

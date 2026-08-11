@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GiocatoreAssegnato from "./GiocatoreAssegnato";
 import noLogo from "../../assets/img/loghi-squadre/no-logo.png";
-import gorgoNzola from "../../assets/img/loghi-squadre/no-logo.png";
+import gorgoNzola from "../../assets/img/loghi-squadre/gorgo-nzola.png";
 import donAbbondio from "../../assets/img/loghi-squadre/don-abbondio.jpg";
 import temptationHalaand from "../../assets/img/loghi-squadre/temptation-halaand.png";
 import masterchefUTD from "../../assets/img/loghi-squadre/masterchef-united.png";
@@ -11,7 +11,7 @@ import realMadrink from "../../assets/img/loghi-squadre/real-madrink.jpeg";
 import dioMaialen from "../../assets/img/loghi-squadre/dio-maialen.png";
 import ancoranonloso from "../../assets/img/loghi-squadre/ancoranonloso.jpeg";
 import acDenti from "../../assets/img/loghi-squadre/ac-denti.jpeg";
-import barisSanGerman from "../../assets/img/loghi-squadre/no-logo.png";
+import bariSanGerman from "../../assets/img/loghi-squadre/bari-san-german.jpeg";
 import brigateEbosse from "../../assets/img/loghi-squadre/brigate-ebosse.jpeg";
 
 export default function Allenatore(props) {
@@ -30,7 +30,7 @@ export default function Allenatore(props) {
         "Dio Maialen": dioMaialen,
         "AncoraNonLoSo": ancoranonloso,
         "AC Denti": acDenti,
-        "Baris San German": barisSanGerman,
+        "Bari San German": bariSanGerman,
         "Brigate Ebosse": brigateEbosse
     }
 
