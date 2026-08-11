@@ -6,23 +6,6 @@ export default function Allenatore(props) {
     const [puntata, setPuntata] = useState(props.ultimoEstratto['Qt.A']);
     const [giocatoriAssegnati, setGiocatoriAssegnati] = useState(props.giocatoriAssegnati);
     const [showBio, setShowBio] = useState(false);
-
-    // const loghiSquadre = {
-    //     "Gorgo Nzola": gorgoNzola,
-    //     "Don Abbondio": donAbbondio,
-    //     "Temptation Halaand": temptationHalaand,
-    //     "MasterChef United": masterchefUTD,
-    //     "SanRemo Freuler": sanRemoFreuler,
-    //     "Burgi-Dunitz": burgiDunitz,
-    //     "Real Madrink": realMadrink,
-    //     "Dio Maialen": dioMaialen,
-    //     "AncoraNonLoSo": ancoranonloso,
-    //     "AC Denti": acDenti,
-    //     "Bari San German": bariSanGerman,
-    //     "Brigate Ebosse": brigateEbosse
-    // }
-
-    // const logoSquadra = loghiSquadre[props.allenatore.Squadra];
     const nomeLogo = props.allenatore.Squadra.replace(/ /g, "-") + ".png";
 
     useEffect(() => {

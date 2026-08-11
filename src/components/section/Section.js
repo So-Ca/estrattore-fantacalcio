@@ -10,7 +10,6 @@ const Section = () => {
   // Configurazioni globali
   const creditiPerAllenatore = 500;
   const token = Token()
-  //const apiHost = "https://cryptic-fjord-66661-3e659dd64751.herokuapp.com";
   const apiHost = "https://swl3p7r9mx1sjklo0.run.place";
 
   // Liste giocatori
@@ -371,7 +370,7 @@ const Section = () => {
               <b>Prezzo:</b> {ultimoEstratto["Qt.A"]},&nbsp;
               <b>Ruolo:</b> {ultimoEstratto.R}
             </p>
-            {!acquistato && /* !Object.values(gAssegnati).filter((giocatore) => giocatore.Id == ultimoEstratto.Id).length && */
+            {!acquistato &&
               <button onClick={() => riponiGiocatore(ultimoEstratto.Id, ultimoEstratto.Nome)} className={style["btn-riponi"]}>Rimetti nel Listone</button>
             }
           </>
