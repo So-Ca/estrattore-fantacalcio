@@ -11,6 +11,52 @@
             margin: 0;
             padding: 0;
             background: #f8f9fa;
+            padding-top: 60px;
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .sticky-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 12px 0;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            gap: 4px;
+            overflow-x: auto;
+        }
+
+        .menu-item {
+            white-space: nowrap;
+            padding: 6px 12px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .menu-item:hover {
+            color: #136af6;
+        }
+
+        .menu-item.active {
+            color: #136af6;
+            border-bottom-color: #136af6;
         }
 
         .container {
@@ -174,22 +220,171 @@
 </head>
 
 <body>
+    <nav class="sticky-menu">
+        <div class="menu-container">
+            @for ($i = 0; $i < count($allenatori); $i++)
+                <a href="#allenatore-{{ $i }}" class="menu-item">{{ $allenatori[$i]['Squadra'] }}</a>
+            @endfor
+            <a href="#non-assegnati" class="menu-item">Non assegnati</a>
+        </div>
+    </nav>
+
     @for ($i = 0; $i < count($allenatori); $i++)
+<<<<<<< HEAD
         <div class="container">
             <h1>{{ $allenatori[$i]['Squadra'] }} <small style="font-size:1.3rem;">({{ $allenatori[$i]['Nome'] }})</small>
             </h1>
             <div style="overflow-x:auto;">
                 <table class="responsive-table" data-id-allenatore="{{ $allenatori[$i]['Id'] }}">
+=======
+
+        <div class="wrapper" id="allenatore-{{ $i }}" style="position:relative;">
+            <div class="container" style="padding-top:80px;">
+                <h1>{{ $allenatori[$i]['Squadra'] }} <small
+                        style="font-size:1.3rem;">({{ $allenatori[$i]['Nome'] }})</small>
+                </h1>
+                <div style="overflow-x:auto;">
+                    <table class="responsive-table" data-id-allenatore="{{ $allenatori[$i]['Id'] }}">
+                        <thead>
+                            <tr>
+                                <th>Giocatore</th>
+                                <th>Squadra</th>
+                                <th>Ruolo</th>
+                                <th>Prezzo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php
+                                $totale = 0;
+
+                                // Definisco l'ordine dei ruoli
+$ordineRuoli = [
+    'PC' => 1,
+    'A' => 2,
+    'W' => 3,
+    'T' => 4,
+    'C' => 5,
+    'E' => 6,
+    'M' => 7,
+    'DD' => 8,
+    'DS' => 9,
+    'B' => 10,
+    'DC' => 11,
+    'POR' => 12,
+];
+
+// Funzione per ottenere il primo ruolo per l'ordinamento
+                                $getPrimoRuolo = function ($ruoloString) use ($ordineRuoli) {
+                                    $ruoli = explode(';', $ruoloString);
+                                    $minOrdine = 999;
+                                    foreach ($ruoli as $ruolo) {
+                                        $ruolo = strtoupper(trim($ruolo));
+                                        if (isset($ordineRuoli[$ruolo]) && $ordineRuoli[$ruolo] < $minOrdine) {
+                                            $minOrdine = $ordineRuoli[$ruolo];
+                                        }
+                                    }
+                                    return $minOrdine;
+                                };
+
+                                // Ordino i giocatori
+                                $giocatoriOrdinati = $allenatori[$i]['giocatori'];
+                                usort($giocatoriOrdinati, function ($a, $b) use ($getPrimoRuolo) {
+                                    $ruoloA = $getPrimoRuolo($a['R']);
+                                    $ruoloB = $getPrimoRuolo($b['R']);
+
+                                    if ($ruoloA != $ruoloB) {
+                                        return $ruoloA - $ruoloB;
+                                    }
+
+                                    // Se hanno lo stesso ruolo, ordino per Qt.A. (decrescente)
+                                    return ($b['Qt.A.'] ?? 0) - ($a['Qt.A.'] ?? 0);
+                                });
+                            @endphp
+                            @for ($j = 0; $j < count($giocatoriOrdinati); $j++)
+                                @php
+                                    $totale += $giocatoriOrdinati[$j]['Prezzo'];
+                                @endphp
+                                <tr data-id-giocatore="{{ $giocatoriOrdinati[$j]['Id'] }}">
+                                    <td class="nome">{{ $giocatoriOrdinati[$j]['Nome'] }}</td>
+                                    <td class="squadra">{{ $giocatoriOrdinati[$j]['Squadra'] }}</td>
+                                    <td class="ruoli">
+                                        @php
+                                            $ruoloString = $giocatoriOrdinati[$j]['R'];
+                                            $ruoloArray = explode(';', $ruoloString);
+                                        @endphp
+                                        @foreach ($ruoloArray as $ruolo)
+                                            <span class="ruolo {{ strtolower($ruolo) }}"
+                                                data-ruolo="{{ strtolower($ruolo) }}">{{ $ruolo }}</span>
+                                        @endforeach
+                                    </td>
+                                    <td class="prezzo">{{ $giocatoriOrdinati[$j]['Prezzo'] }}</td>
+                                </tr>
+                            @endfor
+                            <tr class="total-row">
+                                <td>Totale speso</td>
+                                <td></td>
+                                <td></td>
+                                <td class="totale-speso">{{ $totale }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    @endfor
+    <div class="wrapper">
+
+
+        <div class="container" id="non-assegnati" style="padding-top:80px;">
+            <h1>Non assegnati</h1>
+            <div class="filters">
+                <form class="filters-form">
+                    <fieldset style="border:none; margin:0; padding:0; grid-column: 1;">
+                        <legend style="font-weight:700; margin-bottom:8px;">Ruoli</legend>
+                        <div style="display: flex; flex-wrap: wrap; gap: 16px;">
+                            <label><input type="checkbox" name="ruolo[]" value="por" checked>POR</label>
+                            <label><input type="checkbox" name="ruolo[]" value="dc" checked>DC</label>
+                            <label><input type="checkbox" name="ruolo[]" value="dd" checked>DD</label>
+                            <label><input type="checkbox" name="ruolo[]" value="ds" checked>DS</label>
+                            <label><input type="checkbox" name="ruolo[]" value="b" checked>B</label>
+                            <label><input type="checkbox" name="ruolo[]" value="m" checked>M</label>
+                            <label><input type="checkbox" name="ruolo[]" value="e" checked>E</label>
+                            <label><input type="checkbox" name="ruolo[]" value="c" checked>C</label>
+                            <label><input type="checkbox" name="ruolo[]" value="t" checked>T</label>
+                            <label><input type="checkbox" name="ruolo[]" value="w" checked>W</label>
+                            <label><input type="checkbox" name="ruolo[]" value="a" checked>A</label>
+                            <label><input type="checkbox" name="ruolo[]" value="pc" checked>PC</label>
+                        </div>
+                    </fieldset>
+                    <div style="grid-column: 2; display: flex; flex-direction: column; gap: 8px;">
+                        <label for="search" style="font-weight:700;">Cerca</label>
+                        <input type="text" id="search" name="search" placeholder="Giocatore o squadra"
+                            style="width:100%; padding:6px;">
+                    </div>
+                    <fieldset style="border:none; margin:0; padding:0; grid-column: 3;">
+                        <legend style="font-weight:700; margin-bottom:8px;">Stato</legend>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <label><input type="radio" name="estratti" value="tutti" checked> Tutti</label>
+                            <label><input type="radio" name="estratti" value="estratti"> Estratti</label>
+                            <label><input type="radio" name="estratti" value="non-estratti"> Non estratti</label>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div style="overflow-x:auto;margin-top:20px;">
+                <table class="responsive-table" data-id-allenatore="0">
+>>>>>>> 3a216c5f7f8303861146d71f7540234e08cefec2
                     <thead>
                         <tr>
                             <th>Giocatore</th>
                             <th>Squadra</th>
                             <th>Ruolo</th>
-                            <th>Prezzo</th>
+                            <th>Prezzo base</th>
                         </tr>
                     </thead>
                     <tbody>
                         @php
+<<<<<<< HEAD
                             $totale = 0;
                             
                             // Definisco l'ordine dei ruoli
@@ -197,6 +392,26 @@
                             
                             // Funzione per ottenere il primo ruolo per l'ordinamento
                             $getPrimoRuolo = function($ruoloString) use ($ordineRuoli) {
+=======
+                            // Definisco l'ordine dei ruoli
+$ordineRuoli = [
+    'PC' => 1,
+    'A' => 2,
+    'W' => 3,
+    'T' => 4,
+    'C' => 5,
+    'E' => 6,
+    'M' => 7,
+    'DD' => 8,
+    'DS' => 9,
+    'B' => 10,
+    'DC' => 11,
+    'POR' => 12,
+];
+
+// Funzione per ottenere il primo ruolo per l'ordinamento
+                            $getPrimoRuolo = function ($ruoloString) use ($ordineRuoli) {
+>>>>>>> 3a216c5f7f8303861146d71f7540234e08cefec2
                                 $ruoli = explode(';', $ruoloString);
                                 $minOrdine = 999;
                                 foreach ($ruoli as $ruolo) {
@@ -207,6 +422,7 @@
                                 }
                                 return $minOrdine;
                             };
+<<<<<<< HEAD
                             
                             // Ordino i giocatori
                             $giocatoriOrdinati = $allenatori[$i]['giocatori'];
@@ -227,6 +443,29 @@
                                 $totale += $giocatoriOrdinati[$j]['Prezzo'];
                             @endphp
                             <tr data-id-giocatore="{{ $giocatoriOrdinati[$j]['Id'] }}">
+=======
+
+                            // Ordino i giocatori non assegnati
+                            $giocatoriOrdinati = $giocatori;
+                            usort($giocatoriOrdinati, function ($a, $b) use ($getPrimoRuolo) {
+                                $ruoloA = $getPrimoRuolo($a['R']);
+                                $ruoloB = $getPrimoRuolo($b['R']);
+
+                                if ($ruoloA != $ruoloB) {
+                                    return $ruoloA - $ruoloB;
+                                }
+
+                                // Se hanno lo stesso ruolo, ordino per Qt.A. (decrescente)
+                                return ($b['Qt.A'] ?? 0) - ($a['Qt.A'] ?? 0);
+                            });
+                            $giocatoriOrdinati = array_values(array_filter($giocatoriOrdinati, fn($giocatore) => !isset($giocatore['AllenatoreId'])));
+                           //dd($giocatoriOrdinati);
+                        @endphp
+                        @for ($j = 0; $j < count($giocatoriOrdinati); $j++)
+                            <tr data-id-giocatore="{{ $giocatoriOrdinati[$j]['Id'] }}"
+                                data-ruolo-giocatore="{{ strtolower($giocatoriOrdinati[$j]['R']) }}"
+                                data-estratto="{{ !empty($giocatoriOrdinati[$j]['Estratto']) ? 'true' : 'false' }}">
+>>>>>>> 3a216c5f7f8303861146d71f7540234e08cefec2
                                 <td class="nome">{{ $giocatoriOrdinati[$j]['Nome'] }}</td>
                                 <td class="squadra">{{ $giocatoriOrdinati[$j]['Squadra'] }}</td>
                                 <td class="ruoli">
@@ -235,22 +474,25 @@
                                         $ruoloArray = explode(';', $ruoloString);
                                     @endphp
                                     @foreach ($ruoloArray as $ruolo)
+<<<<<<< HEAD
                                         <span class="ruolo {{ strtolower($ruolo) }}" data-ruolo="{{ strtolower($ruolo) }}">{{ $ruolo }}</span>
                                     @endforeach
                                 </td>
                                 <td class="prezzo">{{ $giocatoriOrdinati[$j]['Prezzo'] }}</td>
+=======
+                                        <span class="ruolo {{ strtolower($ruolo) }}"
+                                            data-role="{{ strtolower($ruolo) }}">{{ $ruolo }}</span>
+                                    @endforeach
+                                </td>
+                                <td class="prezzo">{{ $giocatoriOrdinati[$j]['Qt.A'] }}</td>
+>>>>>>> 3a216c5f7f8303861146d71f7540234e08cefec2
                             </tr>
                         @endfor
-                        <tr class="total-row">
-                            <td>Totale speso</td>
-                            <td></td>
-                            <td></td>
-                            <td class="totale-speso">{{ $totale }}</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
         </div>
+<<<<<<< HEAD
     @endfor
     <div class="container">
         <h1>Non assegnati</h1>
@@ -351,6 +593,8 @@
                 </tbody>
             </table>
         </div>
+=======
+>>>>>>> 3a216c5f7f8303861146d71f7540234e08cefec2
     </div>
     <div class="notice">notice</div>
     <script>
@@ -374,10 +618,14 @@
                             secondTh.textContent = giocatore.Squadra;
                             const thirdTh = document.createElement('td');
                             const ruoliMantra = giocatore.R.split(';');
-                            ruoliMantra.forEach(function(ruolo) {
+                            let playerMainRole
+                            ruoliMantra.forEach(function(ruolo, index) {
+                                if (!index)
+                                    playerMainRole = ruolo.toLowerCase()
                                 let span = document.createElement('span');
                                 span.classList.add('ruolo');
                                 span.classList.add(ruolo.toLowerCase());
+                                span.dataset.ruolo = ruolo.toLowerCase();
                                 span.innerHTML = ruolo;
                                 thirdTh.appendChild(span);
                             });
@@ -390,6 +638,7 @@
                             newRow.appendChild(thirdTh);
                             newRow.appendChild(fourthTh);
                             const currentRows = tBody.querySelectorAll('tr:not(.total-row)');
+<<<<<<< HEAD
                             console.log(currentRows);
                             currentRows.forEach(function(currentRow) {
                                 const roles = currentRow.querySelectorAll('.ruolo');
@@ -399,6 +648,69 @@
                             });
                             tBody.querySelector('.total-row').insertAdjacentElement('beforebegin',
                                 newRow);
+=======
+                            ruoliOrdinati = [
+                                'por',
+                                'dc',
+                                'b',
+                                'ds',
+                                'dd',
+                                'm',
+                                'e',
+                                'c',
+                                't',
+                                'w',
+                                'a',
+                                'pc',
+                            ];
+                            if (!currentRows.length) {
+                                tBody.querySelector('.total-row').insertAdjacentElement('beforebegin',
+                                    newRow);
+                            } else {
+                                /* console.log('playerMainRole: ' + playerMainRole);
+                                console.log('playerMainRole Position: ' + ruoliOrdinati.indexOf(
+                                    playerMainRole));
+                                let nearestRole
+                                currentRows.forEach(function(currentRow, rowIndex) {
+                                    const role = currentRow.querySelector('.ruolo');
+                                    if (typeof position === 'undefined' || Math.abs(ruoliOrdinati.indexOf(
+                                            playerMainRole) - nearestRole) >
+                                        Math.abs(ruoliOrdinati.indexOf(
+                                            playerMainRole) - ruoliOrdinati.indexOf(role
+                                            .dataset.ruolo))) {
+
+                                        nearestRole = ruoliOrdinati.indexOf(role
+                                            .dataset.ruolo);
+                                    }
+
+                                });
+                                console.log(nearestRole)
+                                console.log(ruoliOrdinati[nearestRole])
+                                tBody.querySelector('.total-row').insertAdjacentElement('beforebegin',
+                                    newRow); */
+                                let nearestRow = null;
+                                let minDistance = Infinity;
+                                currentRows.forEach(function(currentRow) {
+                                    const role = currentRow.querySelector('.ruolo');
+                                    if (!role) return;
+                                    const roleIndex = ruoliOrdinati.indexOf(role.dataset.ruolo);
+                                    const playerRoleIndex = ruoliOrdinati.indexOf(
+                                        playerMainRole);
+                                    const distance = Math.abs(playerRoleIndex - roleIndex);
+                                    if (distance < minDistance) {
+                                        minDistance = distance;
+                                        nearestRow = currentRow;
+                                    }
+                                });
+                                if (nearestRow) {
+                                    nearestRow.insertAdjacentElement('afterend', newRow);
+                                } else {
+                                    tBody.querySelector('.total-row').insertAdjacentElement(
+                                        'beforebegin', newRow);
+                                }
+                            }
+
+>>>>>>> 3a216c5f7f8303861146d71f7540234e08cefec2
 
                             // 2) Rimuove la riga dalla tabella dei già estratti
                             const nonAssegnato = document.querySelector(
@@ -419,7 +731,11 @@
 
                             const notice = document.querySelector('.notice');
                             notice.innerHTML = allenatore.Nome + ' ha preso ' + giocatore.Nome + ' (' +
+<<<<<<< HEAD
                                 giocatore.Squadra + ') a '+giocatore.Prezzo;
+=======
+                                giocatore.Squadra + ') a ' + giocatore.Prezzo;
+>>>>>>> 3a216c5f7f8303861146d71f7540234e08cefec2
                             notice.classList.add('active');
 
                             setTimeout(() => {
@@ -459,9 +775,15 @@
                     const nomeSquadra = row.querySelector('td.squadra').innerHTML.trim().toLowerCase();
 
                     const ruoliGiocatore = row.dataset.ruoloGiocatore.toLowerCase().split(';');
+<<<<<<< HEAD
                     if (searchInputValue && (nomeGiocatore.slice(0, searchInputValue.length) !==
                             searchInputValue) && nomeSquadra.slice(0, searchInputValue.length) !==
                         searchInputValue) {
+=======
+                    if (searchInputValue.toLowerCase() && (nomeGiocatore.slice(0, searchInputValue.length) !==
+                            searchInputValue.toLowerCase()) && nomeSquadra.slice(0, searchInputValue.length) !==
+                        searchInputValue.toLowerCase()) {
+>>>>>>> 3a216c5f7f8303861146d71f7540234e08cefec2
                         // Il nome non inizia con la stringa
                         row.style.display = 'none';
                     } else if (!ruoliGiocatore.filter(x => checkedRoles.includes(x)).length) {

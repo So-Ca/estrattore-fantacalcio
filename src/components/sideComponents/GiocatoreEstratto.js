@@ -19,7 +19,7 @@ export default function GiocatoreEstratto(props) {
             });
         }
     }, [props.gAssegnati]);
-
+console.log(props)
     return (<div className={`${props.style["singolo-estratto"]} ${assegnato ? props.style["gia-assegnato"] : ""}`}>
         <p className={props.style["p-lista-intera"]}>
             <b>Nome:</b> {props.giocatore.Nome},&nbsp;
