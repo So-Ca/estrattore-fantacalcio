@@ -12,7 +12,14 @@ $titleFont: "Audiowide";
 $subTitleFont: "Rajdhani";
 $mainFont: "Roboto Flex";
 
-p{
+p {
   margin: 1% 25%;
   text-align: center;
+}
+
+@media (max-width: 400px) {
+  p {
+    margin: 1% 5%;
+    text-align: center;
+  }
 }

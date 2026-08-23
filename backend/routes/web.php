@@ -4,9 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AllenatoreController;
 use App\Http\Controllers\GiocatoreController;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
 
 
-Route::get('/', function() {
+Route::get('/', function(Request $request) {
+    if($request->input('token') === 'lpo(3k9k0amOAW290cdne') {
+        return file_get_contents(public_path('main.html'));
+    }
     return redirect('regolamento');
 });
 

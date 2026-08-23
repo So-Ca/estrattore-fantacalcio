@@ -79,6 +79,7 @@ $mainFont: "Roboto Flex";
 @media (max-width: 400px){
   .header{
     flex-direction: column;
+    margin-bottom: 40px;
   }
   .logo-favaro{
     max-width: 40px;

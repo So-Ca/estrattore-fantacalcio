@@ -20,9 +20,12 @@ const Header = () => {
         {path === "/storico" && (<span className={style["sottotitolo"]}>Storico</span>)}
         </div>
         <div className={style["link-box"]}>
-          {path !== "/" && (<Link to="/" className={style["link"]} title="Torna alla Homepage" target="_blank" rel="noopener noreferrer">Estrattore</Link>)}
-          {path !== "/regolamento" && (<Link to="/regolamento" className={style["link"]} title="Leggi le regole per poter partecipare, ignorante!" target="_blank" rel="noopener noreferrer">Regolamento</Link>)}
-          {path !== "/storico" && (<Link to="/storico" className={style["link"]} title="Guarda la Hall of Fame del Fantafavaro" target="_blank" rel="noopener noreferrer">Storico</Link>)}
+          {/* <a href="/" className={style["link"]} title="Torna alla Homepage" rel="noopener noreferrer">Estrattore</a> */}
+          <a href="/report" className={style["link"]} title="Report" rel="noopener noreferrer">Report</a>
+          {/* <Link to="/" className={style["link"]} title="Torna alla Homepage" rel="noopener noreferrer">Estrattore</Link>
+          <Link to="/report" className={style["link"]} title="Report" rel="noopener noreferrer">Report</Link> */}
+          <Link to="/regolamento" className={style["link"]} title="Leggi le regole per poter partecipare, ignorante!" el="noopener noreferrer">Regolamento</Link>
+          <Link to="/storico" className={style["link"]} title="Guarda la Hall of Fame del Fantafavaro" rel="noopener noreferrer">Storico</Link>
         </div>
       </div>
     </header>
