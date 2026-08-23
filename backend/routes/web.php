@@ -6,7 +6,11 @@ use App\Http\Controllers\GiocatoreController;
 use Illuminate\Support\Facades\Storage;
 
 
-Route::get('/', function () {
+Route::get('/', function() {
+    return redirect('regolamento');
+});
+
+Route::get('/report', function () {
     $allenatoreController = new AllenatoreController();
     
     $giocatori = Storage::json('public\giocatori.json');
@@ -20,3 +24,8 @@ Route::get('/', function () {
 
     return view('report', ['allenatori' => $viewAllenatori, 'giocatori' => $giocatori]);
 });
+
+
+Route::get('/{any}', function () {
+    return file_get_contents(public_path('main.html'));
+})->where('any', '^(?!api).*$');
