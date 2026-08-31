@@ -404,7 +404,7 @@ const Section = () => {
               <b>Prezzo:</b> {ultimoEstratto["Qt.A"]},&nbsp;
               <b>Ruolo:</b> {ultimoEstratto.R}
             </p>
-            {!acquistato &&
+            {role === 'admin' && !acquistato &&
               <button onClick={() => riponiGiocatore(ultimoEstratto.Id, ultimoEstratto.Nome)} className={style["btn-riponi"]}>Rimetti nel Listone</button>
             }
           </>
