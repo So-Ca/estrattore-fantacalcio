@@ -8,6 +8,9 @@ const Header = () => {
 
   const location = useLocation();
   // const isHome = location.pathname === "/";
+  const currentUrl = new URL(window.location.href);
+  const isLoggedIn = currentUrl.searchParams.has('role') && currentUrl.searchParams.get('role') === 'admin';
+  console.log(isLoggedIn);
   const path = location.pathname;
   return (
     <><header>
@@ -19,7 +22,7 @@ const Header = () => {
           {path === "/regolamento" && (<span className={style["sottotitolo"]}>Regolamento</span>)}
           {path === "/storico" && (<span className={style["sottotitolo"]}>Storico</span>)}
         </div>
-
+        <a href={"/"+(!isLoggedIn ? 'login' : 'logout')+"?current_url="+(currentUrl.origin+currentUrl.pathname)}>{(!isLoggedIn ? 'Accedi' : 'Esci')}</a>
       </div>
     </header>
       <div className={style["link-box"]}>

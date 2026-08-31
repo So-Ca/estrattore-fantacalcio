@@ -20,7 +20,7 @@ const Section = () => {
   const [ultimoEstratto, setUltimoEstratto] = useState(null);
 
   // Flag che governa lo show/hide della lista dei giocatori estratti
-  const [estrattiVisibile, setEstrattiVisibile] = useState(false);
+  const [estrattiVisibile, setEstrattiVisibile] = useState(true);
 
   // Oggetto che contiene un array per ciascun allenatore.
   // Ogni array contiene i giocatori assegnati all'allenatore corrispondente
@@ -47,7 +47,6 @@ const Section = () => {
 
   const [role, setRole] = useState('visitor');
   const listaFinita = nonEstratti.length === 0 && estratti.length > 0;
-  console.log(role);
 
   // Fetch dei giocatori estratti e nonEstratti al caricamento della pagina
   useEffect(() => {
@@ -81,7 +80,6 @@ const Section = () => {
         const allenatoriResponse = await fetch(apiHost + "/api/allenatori?fanta_token=");
         const allenatori = await allenatoriResponse.json();
         setAllenatoriData(allenatori);
-        console.log("ALLENATORI API:", allenatori);
         let assegnati = {};
 
         allenatori.forEach(allenatore => {
@@ -344,11 +342,10 @@ const Section = () => {
   }
 
   // funzione per mostrare tutti i giocatori estratti
-  function toggleEstratti() {
-    setEstrattiVisibile(!estrattiVisibile);
-  }
+  // function toggleEstratti() {
+  //   setEstrattiVisibile(!estrattiVisibile);
+  // }
   let acquistato = Object.values(gAssegnati).filter(allenatore => allenatore.filter(giocatore => giocatore.Id == ultimoEstratto.Id).length).length > 0;
-  console.log(listaFinita)
   return (
     <div className={style["section"]}>
       <Helmet><title>Fantafavaro | Estrattore</title></Helmet>
@@ -357,7 +354,7 @@ const Section = () => {
           <div className={style["contatore-estratti"]}>{'Estratti: ' + estratti.length + ' / ' + (estratti.length + nonEstratti.length)}</div>
           <div className={style["contatore-acquistati"]}>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</div>
         </div>
-        <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
+        {/* <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button> */}
         {role === 'admin' && <button disabled={isDoingRequest} onClick={estrai} className={style["btn-estrai"]}>Estrai</button>}
         {role === 'admin' && <button onClick={resetAsta} className={style["btn-big-reset"]}>Ricomincia da Capo</button>}
       </div>

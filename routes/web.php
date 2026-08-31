@@ -18,24 +18,28 @@ Route::get('/', function (Request $request) {
         return to_route('estrattore', ['role' => $role]);
     }
 
-    //dd(session()->get('privilege'));
     return file_get_contents(public_path('build/index.html'));
-    //}
-    //return redirect('login');
 })->name('estrattore');
 
-Route::get('/login', function () {
+Route::get('/logout', function (Request $request) {
+    $request->session()->forget('privilege');
+    if ($request->input('current_url'))
+        return redirect()->to($request->input('current_url'));
+    else
+        return redirect('/');
+});
+
+Route::get('/login', function (Request $request) {
     return '<form method="POST" action="/login" style="position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    /* width: 100vw; */
-    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    /* row-gap: 1rem; */">
+    flex-direction: column;">' .
+        ($request->input('current_url') ? '<input name="current_url" type="hidden" value="' . urlencode($request->input('current_url')) . '" />' : '')
+        . '
     <div>
 
    <label for="user">Utente</label><br>
@@ -58,7 +62,11 @@ Route::post('/login', function (Request $request) {
     if ($request->input('password') === '26_f4nt4Favar0_27' && $request->input('user') === 'fantafavaro') {
         session()->put('privilege', 'admin');
     }
-    return redirect('/');
+    //dd($request);
+    if ($request->input('current_url'))
+        return redirect()->to(urldecode($request->input('current_url')));
+    else
+        return redirect('/');
 });
 
 Route::get('/report', function () {
@@ -77,6 +85,16 @@ Route::get('/report', function () {
 });
 
 
-Route::get('/{any}', function () {
+Route::get('/{any}', function (Request $request) {
+
+    if (!$request->input('role')) {
+        if (session()->get('privilege') === 'admin') {
+            $role = 'admin';
+        } else {
+            $role = 'visitor';
+        }
+
+        return redirect($request->fullUrlWithQuery(['role' => $role]));
+    }
     return file_get_contents(public_path('build/index.html'));
 })->where('any', '^(?!api).*$');

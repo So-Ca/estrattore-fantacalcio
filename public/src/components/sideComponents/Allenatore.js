@@ -3,7 +3,6 @@ import GiocatoreAssegnato from "./GiocatoreAssegnato";
 // import noLogo from "../../assets/img/loghi-squadre/no-logo.png";
 
 export default function Allenatore(props) {
-    console.log(props)
     const [puntata, setPuntata] = useState(props.ultimoEstratto ? props.ultimoEstratto['Qt.A'] : null);
     const [giocatoriAssegnati, setGiocatoriAssegnati] = useState(props.giocatoriAssegnati);
     const [showBio, setShowBio] = useState(false);
