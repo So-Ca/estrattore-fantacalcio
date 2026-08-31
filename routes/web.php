@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 Route::get('/', function (Request $request) {
     if (session()->get('privilege') === 'admin') {
-        return file_get_contents(public_path('main.html'));
+        return file_get_contents(public_path('build/index.html'));
     }
     return redirect('login');
 });
@@ -68,5 +68,5 @@ Route::get('/report', function () {
 
 
 Route::get('/{any}', function () {
-    return file_get_contents(public_path('main.html'));
+    return file_get_contents(public_path('build/index.html'));
 })->where('any', '^(?!api).*$');

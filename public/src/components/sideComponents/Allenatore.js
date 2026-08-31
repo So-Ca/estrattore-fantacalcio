@@ -20,7 +20,7 @@ export default function Allenatore(props) {
  
     return (
         <div className={props.style["squadra-container"]} key={props.allenatore.Id}>
-            <img src={`loghi-squadre/${nomeLogo}`} className={props.style["logo-squadra"]} alt="Logo Squadra"/>
+            <img src={`/build/loghi-squadre/${nomeLogo}`} className={props.style["logo-squadra"]} alt="Logo Squadra"/>
             <h3 className={props.style["nome-squadra"]}>{props.allenatore.Squadra}</h3>
             <h3 className={props.style["nome-allenatore"]}>Allenatore: <b>{props.allenatore.Nome}</b></h3>
             <button className={props.style["btn-biografia"]} onClick={toggleBio}>{showBio ? "Nascondi" : "Biografia"}</button>

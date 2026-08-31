@@ -27,53 +27,81 @@
             border-top-left-radius: 20px;
             box-shadow: 0 0 10px #030008;
             border-top: 3px groove #F6B275;
-            background: linear-gradient(90deg, rgba(42,137,68,0.5) 0%, rgba(253,221,14,0.5) 100%);
+            background: linear-gradient(90deg, rgba(42, 137, 68, 0.5) 0%, rgba(253, 221, 14, 0.5) 100%);
         }
+
         .ff-logo {
             max-width: 90px;
             animation: spin infinite 30s linear;
         }
+
         .ff-title-box {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
+
         .ff-titolo {
             font-family: 'Audiowide', sans-serif;
             color: #030008;
             text-shadow: -1px 0 #3F6D2C, 0 2px #FDDD0E, 2px 0 #FDDD0E, 0 -1px #3F6D2C;
             margin: 0;
         }
+
         .ff-sottotitolo {
             font-family: 'Rajdhani', sans-serif;
             color: #030008;
             text-shadow: -1px 0 #3F6D2C, 0 2px #FDDD0E, 2px 0 #FDDD0E, 0 -1px #3F6D2C;
             font-size: 1.5rem;
         }
+
         .ff-link-box {
             display: flex;
             justify-content: space-around;
             align-items: center;
             gap: 10%;
         }
+
         .ff-link {
             font-family: 'Roboto Flex', sans-serif;
             font-size: 1.25rem;
             color: #000000;
             text-decoration: none;
         }
-        .ff-link:hover { color: #3F6D2C; }
+
+        .ff-link:hover {
+            color: #3F6D2C;
+        }
+
         @keyframes spin {
-            from { transform: rotate(0deg); }
-            to   { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
+
         @media (max-width: 750px) {
-            .ff-header { flex-direction: column; }
-            .ff-logo   { max-width: 40px; }
-            .ff-titolo { font-size: 1.5rem; }
-            .ff-sottotitolo { font-size: 1.2rem; }
+            .ff-header {
+                flex-direction: column;
+            }
+
+            .ff-logo {
+                max-width: 40px;
+            }
+
+            .ff-titolo {
+                font-size: 1.5rem;
+            }
+
+            .ff-sottotitolo {
+                font-size: 1.2rem;
+            }
         }
+
         /* ── Fine Header ── */
 
         html {
@@ -281,21 +309,21 @@
 </head>
 
 <body>
-<header>
-  <div class="ff-header">
-    <img class="ff-logo" src="/static/media/logo-fantafavaro.83729d6d25c76d913c90.png" alt="Logo Fantafavaro"/>
-    <div class="ff-title-box">
-      <h1 class="ff-titolo">FANTAFAVARO</h1>
-      <span class="ff-sottotitolo">Report</span>
-    </div>
-    <div class="ff-link-box">
-      {{-- <a href="/" class="ff-link" title="Torna alla Homepage">Estrattore</a> --}}
-      <a href="/report" class="ff-link" title="Report">Report</a>
-      <a href="/regolamento" class="ff-link" title="Leggi le regole">Regolamento</a>
-      <a href="/storico" class="ff-link" title="Hall of Fame">Storico</a>
-    </div>
-  </div>
-</header>
+    <header>
+        <div class="ff-header">
+            <img class="ff-logo" src="/static/media/logo-fantafavaro.83729d6d25c76d913c90.png" alt="Logo Fantafavaro" />
+            <div class="ff-title-box">
+                <h1 class="ff-titolo">FANTAFAVARO</h1>
+                <span class="ff-sottotitolo">Report</span>
+            </div>
+            <div class="ff-link-box">
+                <a href="/" class="ff-link" title="Torna alla Homepage">Estrattore</a>
+                <a href="/report" class="ff-link" title="Report">Report</a>
+                <a href="/regolamento" class="ff-link" title="Leggi le regole">Regolamento</a>
+                <a href="/storico" class="ff-link" title="Hall of Fame">Storico</a>
+            </div>
+        </div>
+    </header>
     <nav class="sticky-menu">
         <div class="menu-container">
             @for ($i = 0; $i < count($allenatori); $i++)
@@ -494,8 +522,10 @@ $ordineRuoli = [
                                 // Se hanno lo stesso ruolo, ordino per Qt.A. (decrescente)
                                 return ($b['Qt.A'] ?? 0) - ($a['Qt.A'] ?? 0);
                             });
-                            $giocatoriOrdinati = array_values(array_filter($giocatoriOrdinati, fn($giocatore) => !isset($giocatore['AllenatoreId'])));
-                           //dd($giocatoriOrdinati);
+                            $giocatoriOrdinati = array_values(
+                                array_filter($giocatoriOrdinati, fn($giocatore) => !isset($giocatore['AllenatoreId'])),
+                            );
+                            //dd($giocatoriOrdinati);
                         @endphp
                         @for ($j = 0; $j < count($giocatoriOrdinati); $j++)
                             <tr data-id-giocatore="{{ $giocatoriOrdinati[$j]['Id'] }}"
@@ -684,8 +714,10 @@ $ordineRuoli = [
                     const nomeSquadra = row.querySelector('td.squadra').innerHTML.trim().toLowerCase();
 
                     const ruoliGiocatore = row.dataset.ruoloGiocatore.toLowerCase().split(';');
-                    if (searchInputValue.toLowerCase() && (nomeGiocatore.slice(0, searchInputValue.length) !==
-                            searchInputValue.toLowerCase()) && nomeSquadra.slice(0, searchInputValue.length) !==
+                    if (searchInputValue.toLowerCase() && (nomeGiocatore.slice(0, searchInputValue
+                            .length) !==
+                            searchInputValue.toLowerCase()) && nomeSquadra.slice(0, searchInputValue
+                        .length) !==
                         searchInputValue.toLowerCase()) {
                         // Il nome non inizia con la stringa
                         row.style.display = 'none';
