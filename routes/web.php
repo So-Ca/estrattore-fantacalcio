@@ -8,11 +8,21 @@ use Illuminate\Http\Request;
 
 
 Route::get('/', function (Request $request) {
-    if (session()->get('privilege') === 'admin') {
-        return file_get_contents(public_path('build/index.html'));
+    if (!$request->input('role')) {
+        if (session()->get('privilege') === 'admin') {
+            $role = 'admin';
+        } else {
+            $role = 'visitor';
+        }
+
+        return to_route('estrattore', ['role' => $role]);
     }
-    return redirect('login');
-});
+
+    //dd(session()->get('privilege'));
+    return file_get_contents(public_path('build/index.html'));
+    //}
+    //return redirect('login');
+})->name('estrattore');
 
 Route::get('/login', function () {
     return '<form method="POST" action="/login" style="position: absolute;
@@ -38,14 +48,14 @@ Route::get('/login', function () {
    <div>
    <input id="submit" type="submit" />
 
-   <input type="hidden" name="_token" value="'.csrf_token().'" />
+   <input type="hidden" name="_token" value="' . csrf_token() . '" />
    </div>
 
    </form>';
 })->name('login');
 
 Route::post('/login', function (Request $request) {
-    if($request->input('password') === '26_f4nt4Favar0_27' && $request->input('user') === 'fantafavaro') {
+    if ($request->input('password') === '26_f4nt4Favar0_27' && $request->input('user') === 'fantafavaro') {
         session()->put('privilege', 'admin');
     }
     return redirect('/');

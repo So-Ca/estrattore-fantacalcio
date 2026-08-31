@@ -11,7 +11,7 @@ $titleFont: "Audiowide";
 $subTitleFont: "Rajdhani";
 $mainFont: "Roboto Flex";
 
-.header{
+.header {
   margin: 1%;
   display: flex;
   justify-content: space-around;
@@ -24,42 +24,47 @@ $mainFont: "Roboto Flex";
   background: $bgColor;
 }
 
-.link{
+.link {
   font-family: $mainFont;
   font-size: 1.25rem;
   // text-decoration: none;
   color: #000000;
 }
-.link:hover{
+
+.link:hover {
   color: #3F6D2C;
 }
 
-.logo-favaro{
+.logo-favaro {
   max-width: 90px;
   animation: spin infinite 30s linear;
 }
 
-.link-box{
-  display: flex;
-  justify-content: space-around;
+.link-box {
   align-items: center;
+  display: flex;
+  overflow-y: auto;
   gap: 10%;
+  max-width: 100%;
+  justify-content: space-evenly;
+  padding: 6px 20px;
+
 }
 
-.title-box{
+.title-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.titolo{
+.titolo {
   font-family: $titleFont;
   color: $logoColorBlack;
   text-shadow: $titleShade;
 }
 
-.sottotitolo{
+.sottotitolo {
   font-family: $subTitleFont;
   color: $logoColorBlack;
   text-shadow: $titleShade;
@@ -67,70 +72,75 @@ $mainFont: "Roboto Flex";
 }
 
 @keyframes spin {
-  from{ 
-  transform: rotate(0deg);
-  } to {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
     transform: rotate(360deg);
   }
 }
 
 
 /* media query */
-@media (max-width: 400px){
-  .header{
+@media (max-width: 400px) {
+  .header {
     flex-direction: column;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
   }
-  .logo-favaro{
+
+  .logo-favaro {
     max-width: 40px;
   }
-  .titolo{
+
+  .titolo {
     font-size: 1.5rem;
   }
-  .sottotitolo{
+
+  .sottotitolo {
     font-size: 1.2rem;
   }
 }
 
-@media (min-width: 401px) and (max-width: 500px){
-  .header{
+@media (min-width: 401px) and (max-width: 500px) {
+  .header {
     flex-direction: column;
   }
-  .logo-favaro{
+
+  .logo-favaro {
     max-width: 40px;
   }
-  .titolo{
+
+  .titolo {
     font-size: 1.5rem;
   }
-  .sottotitolo{
+
+  .sottotitolo {
     font-size: 1.2rem;
   }
 
 }
 
-@media (min-width: 501px) and (max-width: 750px){
-  .header{
+@media (min-width: 501px) and (max-width: 750px) {
+  .header {
     flex-direction: column;
   }
-  .logo-favaro{
+
+  .logo-favaro {
     max-width: 40px;
   }
-  .titolo{
+
+  .titolo {
     font-size: 1.5rem;
   }
-  .sottotitolo{
+
+  .sottotitolo {
     font-size: 1.2rem;
   }
 }
 
-@media (min-width: 751px) and (max-width: 999px){
+@media (min-width: 751px) and (max-width: 999px) {}
 
-}
+@media (min-width: 1000px) and (max-width: 1299px) {}
 
-@media (min-width: 1000px) and (max-width: 1299px){
-
-}
-
-@media (min-width: 1300px) and (max-width: 1700px){
-
-}
+@media (min-width: 1300px) and (max-width: 1700px) {}

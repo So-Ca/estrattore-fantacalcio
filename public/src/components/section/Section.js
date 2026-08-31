@@ -44,7 +44,10 @@ const Section = () => {
   const [allenatoriData, setAllenatoriData] = useState([]);
   const [isDoingRequest, setIsDoingRequest] = useState(false);
   const [searchText, setSearchText] = useState("");
+
+  const [role, setRole] = useState('visitor');
   const listaFinita = nonEstratti.length === 0 && estratti.length > 0;
+  console.log(role);
 
   // Fetch dei giocatori estratti e nonEstratti al caricamento della pagina
   useEffect(() => {
@@ -87,6 +90,8 @@ const Section = () => {
           });
         });
         setGAssegnati(assegnati);
+        const url = new URL(window.location.href);
+        setRole(url.searchParams.get('role') ?? 'visitor');
       } catch (error) {
         console.error("Errore nel fetch dei giocatori: ", error);
       }
@@ -120,6 +125,7 @@ const Section = () => {
         assegnaGiocatore={assegnaGiocatore}
         svincolaGiocatore={svincolaGiocatore}
         ultimoEstratto={ultimoEstratto}
+        role={role}
         totaleSpeso={totaleSpeso}
         isDoingRequest={isDoingRequest}
       />
@@ -352,8 +358,8 @@ const Section = () => {
           <div className={style["contatore-acquistati"]}>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</div>
         </div>
         <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button>
-        <button disabled={isDoingRequest} onClick={estrai} className={style["btn-estrai"]}>Estrai</button>
-        <button onClick={resetAsta} className={style["btn-big-reset"]}>Ricomincia da Capo</button>
+        {role === 'admin' && <button disabled={isDoingRequest} onClick={estrai} className={style["btn-estrai"]}>Estrai</button>}
+        {role === 'admin' && <button onClick={resetAsta} className={style["btn-big-reset"]}>Ricomincia da Capo</button>}
       </div>
 
       <div className={style["ultimo-estratto"]}>
@@ -373,7 +379,7 @@ const Section = () => {
       </div>
       {listaFinita && <div><h1 className={style["lista-finita"]}>LISTA FINITA</h1><br /><p className={style["commento"]}>😵...era ora...Dio Porco!😩</p></div>}
       <div className={style["allenatori-container"]}>
-        {ultimoEstratto && allenatori}
+        {allenatori}
       </div>
 
       {estrattiVisibile && (

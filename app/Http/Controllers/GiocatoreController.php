@@ -66,10 +66,16 @@ class GiocatoreController extends Controller
     function extractGiocatore(Request $request)
     {
 
+        if (session()->get('privilege') !== 'admin') {
+            return response()->json([
+                'code' => 'forbidden',
+                // 'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' è già stato estratto'
+            ], 403);
+        }
         $giocatori = Storage::json($this->giocatori_path);
 
         $giocatori_estratti = array_filter($giocatori, fn($item) => isset($item['Estratto']));
-        if(empty($giocatori_estratti)) {
+        if (empty($giocatori_estratti)) {
             $order = 1;
         } else {
             $order = max(array_column($giocatori_estratti, 'Order')) + 1;
@@ -113,6 +119,12 @@ class GiocatoreController extends Controller
     function riponiGiocatore(Request $request)
     {
 
+        if (session()->get('privilege') !== 'admin') {
+            return response()->json([
+                'code' => 'forbidden',
+                // 'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' è già stato estratto'
+            ], 403);
+        }
         $giocatori = Storage::json($this->giocatori_path);
 
         foreach ($giocatori as $key => $giocatore) {
@@ -137,7 +149,14 @@ class GiocatoreController extends Controller
         ], 400);
     }
 
-    function reset() {
+    function reset()
+    {
+        if (session()->get('privilege') !== 'admin') {
+            return response()->json([
+                'code' => 'forbidden',
+                // 'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' è già stato estratto'
+            ], 403);
+        }
         $giocatori = Storage::json($this->giocatori_path);
 
         foreach ($giocatori as $key => $giocatore) {
@@ -164,6 +183,12 @@ class GiocatoreController extends Controller
     function buyGiocatore(Request $request)
     {
 
+        if (session()->get('privilege') !== 'admin') {
+            return response()->json([
+                'code' => 'forbidden',
+                // 'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' è già stato estratto'
+            ], 403);
+        }
         $giocatori = Storage::json($this->giocatori_path);
 
         foreach ($giocatori as $key => $giocatore) {
@@ -201,6 +226,12 @@ class GiocatoreController extends Controller
     function svincolaGiocatore(Request $request)
     {
 
+        if (session()->get('privilege') !== 'admin') {
+            return response()->json([
+                'code' => 'forbidden',
+                // 'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' è già stato estratto'
+            ], 403);
+        }
         $giocatori = Storage::json($this->giocatori_path);
 
         foreach ($giocatori as $key => $giocatore) {

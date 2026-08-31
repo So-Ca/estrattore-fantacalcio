@@ -311,7 +311,7 @@
 <body>
     <header>
         <div class="ff-header">
-            <img class="ff-logo" src="/static/media/logo-fantafavaro.83729d6d25c76d913c90.png" alt="Logo Fantafavaro" />
+            <img class="ff-logo" src="/build/static/media/logo-fantafavaro.83729d6d25c76d913c90.png" alt="Logo Fantafavaro" />
             <div class="ff-title-box">
                 <h1 class="ff-titolo">FANTAFAVARO</h1>
                 <span class="ff-sottotitolo">Report</span>
