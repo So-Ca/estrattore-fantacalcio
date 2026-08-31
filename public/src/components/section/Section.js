@@ -418,13 +418,14 @@ const Section = () => {
       {estrattiVisibile && (
         <div className={style["lista-intera"]}>
           <h3 className={style["h3-lista-intera"]}>Giocatori Estratti:</h3>
-          <div>
+          <div style={{display: 'flex', justifyContent : 'center'}}>
             <input className={style["input-ricerca"]} type="text" name="search" id="search" placeholder="Cerca il ciabattaro che non hai avuto il coraggio di comprare subito" onChange={(e) => setSearchText(e.target.value)} />
           </div>
           {estratti.map((giocatore, index) => (
 
             (!searchText.length || searchText.toLowerCase() == giocatore.Nome.slice(0, searchText.length).toLowerCase()) &&
             <GiocatoreEstratto
+              role={role}
               style={style}
               giocatore={giocatore}
               key={giocatore.Id}
