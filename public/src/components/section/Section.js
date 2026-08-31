@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {Helmet} from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import style from "./section.module.scss";
 import Allenatore from "../sideComponents/Allenatore";
 import GiocatoreEstratto from "../sideComponents/GiocatoreEstratto";
@@ -9,7 +9,7 @@ const Section = () => {
 
   // Configurazioni globali
   const creditiPerAllenatore = 500;
- // const token = Token()
+  // const token = Token()
   const apiHost = "https://swl3p7r9mx1sjklo0.run.place";
 
   // Liste giocatori
@@ -44,14 +44,51 @@ const Section = () => {
   const [allenatoriData, setAllenatoriData] = useState([]);
   const [isDoingRequest, setIsDoingRequest] = useState(false);
   const [searchText, setSearchText] = useState("");
-
-  const [role, setRole] = useState('visitor');
+  const url = new URL(window.location.href);
+  const [role, setRole] = useState(url.searchParams.get('role') ?? 'visitor');
   const listaFinita = nonEstratti.length === 0 && estratti.length > 0;
 
   // Fetch dei giocatori estratti e nonEstratti al caricamento della pagina
   useEffect(() => {
     const fetchData = async () => {
       try {
+
+
+        // setRole();
+        // console.log('role===' + role);
+        if (role !== 'admin') {
+
+
+          const evtSource = new EventSource("https://swl3p7r9mx1sjklo0.run.place/api/sse");
+          evtSource.onmessage = (event) => {
+            let assegnati = {};
+            const sseData = JSON.parse(event.data);
+            sseData.allenatori.forEach(allenatore => {
+              assegnati[allenatore.Id] = allenatore.giocatori;
+            });
+            setNonEstratti(sseData.non_estratti);
+            let estrattiData = sseData.estratti;
+
+            if (!estrattiData.length) {
+              setUltimoEstratto(null);
+            } else {
+              estrattiData = estrattiData.sort(function (a, b) {
+                if (a.Order > b.Order) {
+                  return 1;
+                } else if (a.Order < b.Order) {
+                  return -1;
+                } else {
+                  return 0;
+                }
+              });
+              setUltimoEstratto(estrattiData[estrattiData.length - 1]);
+            }
+            setEstratti(estrattiData);
+            setGAssegnati(assegnati);
+
+
+          }
+        }
 
         const nonEstrattiResponse = await fetch(apiHost + "/api/giocatori/non-estratti?fanta_token=");
         const nonEstrattiData = await nonEstrattiResponse.json();
@@ -88,8 +125,7 @@ const Section = () => {
           });
         });
         setGAssegnati(assegnati);
-        const url = new URL(window.location.href);
-        setRole(url.searchParams.get('role') ?? 'visitor');
+
       } catch (error) {
         console.error("Errore nel fetch dei giocatori: ", error);
       }
@@ -244,15 +280,15 @@ const Section = () => {
               setEstratti(data);
               // L'ultimo elemento ha l'indice più grande
               let orderedData = data.sort((a, b) => {
-                if(a.Order < b.Order) {
+                if (a.Order < b.Order) {
                   return -1;
-                } else if(a.Order > b.Order) {
+                } else if (a.Order > b.Order) {
                   return 1;
                 } else {
                   return 0;
                 }
               });
-              setUltimoEstratto(orderedData[orderedData.length-1]);
+              setUltimoEstratto(orderedData[orderedData.length - 1]);
               console.log("Lista giocatori estratti fino ad ora: ", data);
             });
           fetch(apiHost + "/api/giocatori/non-estratti?fanta_token=")
@@ -268,12 +304,12 @@ const Section = () => {
 
   function resetAsta() {
     const messagePrompt = "⚠️Questo pulsante invierà un messaggio a Putin con l'ordine di sganciare una bomba H 💣 che distruggerà Volvera e quindi TUTTI I DATI della tua asta ANDRANNO PERSI e dovrai ricominciare l'asta da capo nel paradiso ebraico, dove non esistono i pancake.⛔ Sei davvero sicuro che è quello che vuoi piccolo Hitler? Non è detto che se la tua vita fa schifo anche gli altri debbano rimetterci.⚰️ Comunque se vuoi continuare scrivi 'RICOMINCIA' per procedere.";
-    if(prompt(messagePrompt) === 'RICOMINCIA') {
+    if (prompt(messagePrompt) === 'RICOMINCIA') {
       setIsDoingRequest(true);
       fetch(apiHost + "/api/reset", { // Salvare estratto nel db
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body : JSON.stringify({
+        body: JSON.stringify({
         })
       })
         .then(response => response.json())

@@ -59,8 +59,20 @@ Route::get('sse', function () {
                 $viewAllenatori[$i] = $allenatoreController->showAllenatore($allenatori[$i]['Id']);
             }
 
+            $giocatoreController = new GiocatoreController();
+
             //return view('report', ['allenatori' => $viewAllenatori]);
-            echo "data: ".json_encode($viewAllenatori)."\n\n";
+            $request = new \Illuminate\Http\Request();
+
+            $request->replace(['tipo' => 'estratti']);
+            $estratti = $giocatoreController->getGiocatori($request);
+            $request->replace(['tipo' => 'non-estratti']);
+            $non_estratti = $giocatoreController->getGiocatori($request);
+            echo "data: " . json_encode([
+                'allenatori' => $viewAllenatori,
+                'estratti' => $estratti,
+                'non_estratti' => $non_estratti
+            ]) . "\n\n";
             ob_flush();
             flush();
             sleep(2);

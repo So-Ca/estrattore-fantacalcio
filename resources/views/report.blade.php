@@ -557,7 +557,7 @@ $ordineRuoli = [
         evtSource.onmessage = (event) => {
 
             if (typeof event.data !== 'undefined') {
-                const allenatori = JSON.parse(event.data)
+                const allenatori = JSON.parse(event.data).allenatori;
                 allenatori.forEach(function(allenatore) {
                     allenatore.giocatori.forEach(function(giocatore) {
                         const rigaGiocatore = document.querySelector('[data-id-allenatore="' +
@@ -611,27 +611,7 @@ $ordineRuoli = [
                                 tBody.querySelector('.total-row').insertAdjacentElement('beforebegin',
                                     newRow);
                             } else {
-                                /* console.log('playerMainRole: ' + playerMainRole);
-                                console.log('playerMainRole Position: ' + ruoliOrdinati.indexOf(
-                                    playerMainRole));
-                                let nearestRole
-                                currentRows.forEach(function(currentRow, rowIndex) {
-                                    const role = currentRow.querySelector('.ruolo');
-                                    if (typeof position === 'undefined' || Math.abs(ruoliOrdinati.indexOf(
-                                            playerMainRole) - nearestRole) >
-                                        Math.abs(ruoliOrdinati.indexOf(
-                                            playerMainRole) - ruoliOrdinati.indexOf(role
-                                            .dataset.ruolo))) {
-
-                                        nearestRole = ruoliOrdinati.indexOf(role
-                                            .dataset.ruolo);
-                                    }
-
-                                });
-                                console.log(nearestRole)
-                                console.log(ruoliOrdinati[nearestRole])
-                                tBody.querySelector('.total-row').insertAdjacentElement('beforebegin',
-                                    newRow); */
+                                
                                 let nearestRow = null;
                                 let minDistance = Infinity;
                                 currentRows.forEach(function(currentRow) {
