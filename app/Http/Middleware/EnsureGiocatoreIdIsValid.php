@@ -15,7 +15,7 @@ class EnsureGiocatoreIdIsValid
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next): Response
+    public function handle(Request $request, Closure $next, string $mode = 'main'): Response
     {
         if(!isset($request->id_giocatore)) {
             return response()->json([
@@ -28,7 +28,8 @@ class EnsureGiocatoreIdIsValid
                 'message' => 'Il parametro \'id_giocatore\' deve essere un numero intero'
             ], 400);
         } else {
-            $giocatori = Storage::json('public/giocatori.json');
+            $path = $mode === 'sandbox' ? 'public/giocatori_sandbox.json' : 'public/giocatori.json';
+            $giocatori = Storage::json($path);
             if (!in_array($request->id_giocatore, array_column($giocatori, 'Id'))) {
                 return response()->json([
                     'code' => 'not_found',

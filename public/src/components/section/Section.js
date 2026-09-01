@@ -10,7 +10,9 @@ const Section = () => {
   // Configurazioni globali
   const creditiPerAllenatore = 500;
   // const token = Token()
-  const apiHost = "https://swl3p7r9mx1sjklo0.run.place";
+  const isLocal = window.location.hostname === 'localhost';
+  const apiHost = 'https://swl3p7r9mx1sjklo0.run.place';
+  const apiPrefix = isLocal ? '/api/sandbox' : '/api';
 
   // Liste giocatori
   const [nonEstratti, setNonEstratti] = useState([]);
@@ -45,7 +47,7 @@ const Section = () => {
   const [isDoingRequest, setIsDoingRequest] = useState(false);
   const [searchText, setSearchText] = useState("");
   const url = new URL(window.location.href);
-  const [role, setRole] = useState(url.searchParams.get('role') ?? 'visitor');
+  const [role, setRole] = useState(isLocal ? 'admin' : (url.searchParams.get('role') ?? 'visitor'));
   const listaFinita = nonEstratti.length === 0 && estratti.length > 0;
 
   // Fetch dei giocatori estratti e nonEstratti al caricamento della pagina
@@ -90,12 +92,12 @@ const Section = () => {
           }
         }
 
-        const nonEstrattiResponse = await fetch(apiHost + "/api/giocatori/non-estratti?fanta_token=");
+        const nonEstrattiResponse = await fetch(apiHost + apiPrefix + "/giocatori/non-estratti?fanta_token=");
         const nonEstrattiData = await nonEstrattiResponse.json();
 
         setNonEstratti(nonEstrattiData);
 
-        const estrattiResponse = await fetch(apiHost + "/api/giocatori/estratti?fanta_token=");
+        const estrattiResponse = await fetch(apiHost + apiPrefix + "/giocatori/estratti?fanta_token=");
         let estrattiData = await estrattiResponse.json();
 
         if (!estrattiData.length) {
@@ -114,7 +116,7 @@ const Section = () => {
         }
         setEstratti(estrattiData);
 
-        const allenatoriResponse = await fetch(apiHost + "/api/allenatori?fanta_token=");
+        const allenatoriResponse = await fetch(apiHost + apiPrefix + "/allenatori?fanta_token=");
         const allenatori = await allenatoriResponse.json();
         setAllenatoriData(allenatori);
         let assegnati = {};
@@ -175,7 +177,7 @@ const Section = () => {
       setUltimoEstratto(giocatoreEstratto);
       setIsDoingRequest(true);
 
-      fetch(apiHost + "/api/estrai", { // Salvare estratto nel db
+      fetch(apiHost + apiPrefix + "/estrai", { // Salvare estratto nel db
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -184,13 +186,13 @@ const Section = () => {
       })
         .then(response => response.json())
         .then(data => {
-          fetch(apiHost + "/api/giocatori/estratti?fanta_token=")
+            fetch(apiHost + apiPrefix + "/giocatori/estratti?fanta_token=")
             .then(response => response.json())
             .then(data => {
               setEstratti(data);
               console.log("Lista giocatori estratti fino ad ora: ", data);
             });
-          fetch(apiHost + "/api/giocatori/non-estratti?fanta_token=")
+          fetch(apiHost + apiPrefix + "/giocatori/non-estratti?fanta_token=")
             .then(response => response.json())
             .then(data => {
               setNonEstratti(data);
@@ -229,7 +231,7 @@ const Section = () => {
       }
       setIsDoingRequest(true);
 
-      fetch(apiHost + "/api/acquista", {
+      fetch(apiHost + apiPrefix + "/acquista", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -265,7 +267,7 @@ const Section = () => {
   function riponiGiocatore(giocatoreId, giocatoreNome) {
     if (window.confirm("Ok hai pescato l'equivalente calcistico di un calcio nelle palle, ma sei sicuro di voler ributtare a mare " + giocatoreNome + "?........conta che Tu non troverai di meglio, gli altri si invece. ")) {
       setIsDoingRequest(true);
-      fetch(apiHost + "/api/riponi", { // Salvare estratto nel db
+      fetch(apiHost + apiPrefix + "/riponi", { // Salvare estratto nel db
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -274,7 +276,7 @@ const Section = () => {
       })
         .then(response => response.json())
         .then((dataRiponi) => {
-          fetch(apiHost + "/api/giocatori/estratti?fanta_token=")
+          fetch(apiHost + apiPrefix + "/giocatori/estratti?fanta_token=")
             .then(response => response.json())
             .then(data => {
               setEstratti(data);
@@ -291,7 +293,7 @@ const Section = () => {
               setUltimoEstratto(orderedData[orderedData.length - 1]);
               console.log("Lista giocatori estratti fino ad ora: ", data);
             });
-          fetch(apiHost + "/api/giocatori/non-estratti?fanta_token=")
+          fetch(apiHost + apiPrefix + "/giocatori/non-estratti?fanta_token=")
             .then(response => response.json())
             .then(data => {
               setNonEstratti(data);
@@ -306,7 +308,7 @@ const Section = () => {
     const messagePrompt = "⚠️Questo pulsante invierà un messaggio a Putin con l'ordine di sganciare una bomba H 💣 che distruggerà Volvera e quindi TUTTI I DATI della tua asta ANDRANNO PERSI e dovrai ricominciare l'asta da capo nel paradiso ebraico, dove non esistono i pancake.⛔ Sei davvero sicuro che è quello che vuoi piccolo Hitler? Non è detto che se la tua vita fa schifo anche gli altri debbano rimetterci.⚰️ Comunque se vuoi continuare scrivi 'RICOMINCIA' per procedere.";
     if (prompt(messagePrompt) === 'RICOMINCIA') {
       setIsDoingRequest(true);
-      fetch(apiHost + "/api/reset", { // Salvare estratto nel db
+      fetch(apiHost + apiPrefix + "/reset", { // Salvare estratto nel db
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -315,12 +317,12 @@ const Section = () => {
         .then(response => response.json())
         .then((data) => {
           setIsDoingRequest(false);
-          fetch(apiHost + "/api/giocatori/estratti?fanta_token=")
+          fetch(apiHost + apiPrefix + "/giocatori/estratti?fanta_token=")
             .then(response => response.json())
             .then(data => {
               setEstratti(data);
             });
-          fetch(apiHost + "/api/giocatori/non-estratti?fanta_token=")
+          fetch(apiHost + apiPrefix + "/giocatori/non-estratti?fanta_token=")
             .then(response => response.json())
             .then(data => {
               setNonEstratti(data);
@@ -352,7 +354,7 @@ const Section = () => {
 
     if (typeof giocatoreCorrente !== 'undefined' && typeof allenatoreCorrente !== 'undefined' && window.confirm('Hai fatto la cazzata eh!?!😒' + allenatoreCorrente.Nome + ' vuoi davvero svincolare quellla pippa di ' + giocatoreCorrente.Nome + '?')) {
       setIsDoingRequest(true);
-      fetch(apiHost + "/api/svincola", {
+      fetch(apiHost + apiPrefix + "/svincola", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

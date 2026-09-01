@@ -10,8 +10,13 @@ use Illuminate\Support\Facades\Storage;
 class GiocatoreController extends Controller
 {
 
-    private $allenatori_path = 'public\allenatori.json';
-    private $giocatori_path = 'public\giocatori.json';
+    protected $allenatori_path = 'public\allenatori.json';
+    protected $giocatori_path = 'public\giocatori.json';
+
+    protected function isAdmin(): bool
+    {
+        return session()->get('privilege') === 'admin';
+    }
 
     /**
      * Restituisce un sottoinsieme dei giocatori.
@@ -66,7 +71,7 @@ class GiocatoreController extends Controller
     function extractGiocatore(Request $request)
     {
 
-        if (session()->get('privilege') !== 'admin') {
+        if (!$this->isAdmin()) {
             return response()->json([
                 'code' => 'forbidden',
                 // 'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' è già stato estratto'
@@ -119,7 +124,7 @@ class GiocatoreController extends Controller
     function riponiGiocatore(Request $request)
     {
 
-        if (session()->get('privilege') !== 'admin') {
+        if (!$this->isAdmin()) {
             return response()->json([
                 'code' => 'forbidden',
                 // 'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' è già stato estratto'
@@ -151,7 +156,7 @@ class GiocatoreController extends Controller
 
     function reset()
     {
-        if (session()->get('privilege') !== 'admin') {
+        if (!$this->isAdmin()) {
             return response()->json([
                 'code' => 'forbidden',
                 // 'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' è già stato estratto'
@@ -183,7 +188,7 @@ class GiocatoreController extends Controller
     function buyGiocatore(Request $request)
     {
 
-        if (session()->get('privilege') !== 'admin') {
+        if (!$this->isAdmin()) {
             return response()->json([
                 'code' => 'forbidden',
                 // 'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' è già stato estratto'
@@ -226,7 +231,7 @@ class GiocatoreController extends Controller
     function svincolaGiocatore(Request $request)
     {
 
-        if (session()->get('privilege') !== 'admin') {
+        if (!$this->isAdmin()) {
             return response()->json([
                 'code' => 'forbidden',
                 // 'message' => 'Il giocatore con id ' . $request->input('id_giocatore') . ' è già stato estratto'

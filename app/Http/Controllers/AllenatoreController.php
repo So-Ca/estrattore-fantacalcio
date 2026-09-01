@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Storage;
 class AllenatoreController extends Controller
 {
 
-    private $allenatori_path = 'public\allenatori.json';
-    private $giocatori_path = 'public\giocatori.json';
+    protected $allenatori_path = 'public\allenatori.json';
+    protected $giocatori_path = 'public\giocatori.json';
 
     public function getAllenatori()
     {
