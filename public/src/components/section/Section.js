@@ -242,6 +242,9 @@ const Section = () => {
       })
         .then(response => response.json())
         .then(data => {
+          setEstratti(prevEstratti => prevEstratti.map(giocatore => (
+            Number(giocatore.Id) === giocatoreId ? data.giocatore : giocatore
+          )));
           setGAssegnati(prevAssegnati => {
             return ({
               ...prevAssegnati,
@@ -364,6 +367,16 @@ const Section = () => {
       })
         .then(response => response.json())
         .then(data => {
+          setEstratti(prevEstratti => prevEstratti.map(giocatore => {
+            if (Number(giocatore.Id) !== Number(giocatoreId)) {
+              return giocatore;
+            }
+
+            const giocatoreSvincolato = { ...data.giocatore };
+            delete giocatoreSvincolato.Prezzo;
+            return giocatoreSvincolato;
+          }));
+
           // console.log('gAssegnati2', 
           //     {...gAssegnati,
           //     [allenatoreId]: gAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)}
