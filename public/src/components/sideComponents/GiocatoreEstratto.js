@@ -5,7 +5,7 @@ export default function GiocatoreEstratto(props) {
     const [puntata, setPuntata] = useState(props.giocatore['Qt.A']);
     const [allenatoreScelto, setAllenatoreScelto] = useState(0);
     //const [assegnato, setAssegnato] = useState(props.giocatore.AllenatoreId);
-    console.log(props.giocatore.Nome)
+    
 
 
     //useEffect(() => {
@@ -21,7 +21,8 @@ export default function GiocatoreEstratto(props) {
             });
         });
     }
-    console.log(assegnato)
+    if(assegnato)
+        console.log(props)
     //}, [props.gAssegnati]);
 
 
@@ -30,7 +31,8 @@ export default function GiocatoreEstratto(props) {
             <b>Nome:</b> {props.giocatore.Nome},&nbsp;
             <b>Squadra:</b> {props.giocatore.Squadra},&nbsp;
             <b>Ruolo:</b> {props.giocatore.R},&nbsp;
-            <b>Prezzo Base:</b> {props.giocatore["Qt.A"]}
+            <b>Prezzo Base:</b> {props.giocatore["Qt.A"]},&nbsp;
+            {assegnato && (<><b>Prezzo Acquisto:</b> {props.giocatore["Prezzo"]}</>)}
             {assegnato && (<span className={props.style["span-gia-assegnato"]}>---&nbsp;&nbsp;&nbsp;Assegnato&nbsp;&nbsp;&nbsp;---</span>)}
             {!assegnato && props.role === 'admin' && (<input className={props.style["input-prezzo-svincolato"]} type="number" min={props.giocatore["Qt.A"]} value={puntata} onChange={(e) => setPuntata(e.target.value)} />)}
             {!assegnato && props.role === 'admin' && (<select className={props.style["select-svincolato"]} onChange={(e) => setAllenatoreScelto(Number(e.target.value))}>
