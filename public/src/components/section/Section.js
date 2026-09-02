@@ -364,12 +364,17 @@ const Section = () => {
       })
         .then(response => response.json())
         .then(data => {
+          // console.log('gAssegnati2', 
+          //     {...gAssegnati,
+          //     [allenatoreId]: gAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)}
+          // )
           setGAssegnati(prevAssegnati => {
             return ({
               ...prevAssegnati,
               [allenatoreId]: prevAssegnati[allenatoreId].filter((giocatore) => giocatore.Id != giocatoreId)
             });
           });
+          
           setIsDoingRequest(false);
         })
         .catch(error => {
