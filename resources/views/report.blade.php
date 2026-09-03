@@ -13,16 +13,14 @@
             margin: 0;
             padding: 0;
             background: #f8f9fa;
-            padding-top: 60px;
         }
 
-        /* ── Header FantaFavaro ── */
-        .ff-header {
+        .header {
             display: flex;
             justify-content: space-around;
             align-items: center;
-            height: 100px;
             margin: 1%;
+            padding: 4px;
             border-top-right-radius: 20px;
             border-top-left-radius: 20px;
             box-shadow: 0 0 10px #030008;
@@ -30,47 +28,48 @@
             background: linear-gradient(90deg, rgba(42, 137, 68, 0.5) 0%, rgba(253, 221, 14, 0.5) 100%);
         }
 
-        .ff-logo {
+        .logo-favaro {
             max-width: 90px;
             animation: spin infinite 30s linear;
         }
 
-        .ff-title-box {
+        .title-box {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
-        .ff-titolo {
+        .titolo {
             font-family: 'Audiowide', sans-serif;
             color: #030008;
             text-shadow: -1px 0 #3F6D2C, 0 2px #FDDD0E, 2px 0 #FDDD0E, 0 -1px #3F6D2C;
-            margin: 0;
         }
 
-        .ff-sottotitolo {
+        .sottotitolo {
             font-family: 'Rajdhani', sans-serif;
             color: #030008;
             text-shadow: -1px 0 #3F6D2C, 0 2px #FDDD0E, 2px 0 #FDDD0E, 0 -1px #3F6D2C;
             font-size: 1.5rem;
         }
 
-        .ff-link-box {
-            display: flex;
-            justify-content: space-around;
+        .link-box {
             align-items: center;
+            display: flex;
+            overflow-y: auto;
             gap: 10%;
+            max-width: 100%;
+            justify-content: space-evenly;
+            padding: 6px 20px;
         }
 
-        .ff-link {
+        .link {
             font-family: 'Roboto Flex', sans-serif;
             font-size: 1.25rem;
             color: #000000;
-            text-decoration: none;
         }
 
-        .ff-link:hover {
+        .link:hover {
             color: #3F6D2C;
         }
 
@@ -85,34 +84,30 @@
         }
 
         @media (max-width: 750px) {
-            .ff-header {
+            .header {
                 flex-direction: column;
             }
 
-            .ff-logo {
+            .logo-favaro {
                 max-width: 40px;
             }
 
-            .ff-titolo {
+            .titolo {
                 font-size: 1.5rem;
             }
 
-            .ff-sottotitolo {
+            .sottotitolo {
                 font-size: 1.2rem;
             }
         }
-
-        /* ── Fine Header ── */
 
         html {
             scroll-behavior: smooth;
         }
 
         .sticky-menu {
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
             background: #fff;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -310,20 +305,20 @@
 
 <body>
     <header>
-        <div class="ff-header">
-            <img class="ff-logo" src="/build/static/media/logo-fantafavaro.83729d6d25c76d913c90.png" alt="Logo Fantafavaro" />
-            <div class="ff-title-box">
-                <h1 class="ff-titolo">FANTAFAVARO</h1>
-                <span class="ff-sottotitolo">Report</span>
-            </div>
-            <div class="ff-link-box">
-                <a href="/" class="ff-link" title="Torna alla Homepage">Estrattore</a>
-                <a href="/report" class="ff-link" title="Report">Report</a>
-                <a href="/regolamento" class="ff-link" title="Leggi le regole">Regolamento</a>
-                <a href="/storico" class="ff-link" title="Hall of Fame">Storico</a>
+        <div class="header">
+            <img class="logo-favaro" src="/build/static/media/logo-fantafavaro.83729d6d25c76d913c90.png" alt="Logo Fantafavaro" />
+            <div class="title-box">
+                <h1 class="titolo">FANTAFAVARO</h1>
+                <span class="sottotitolo">Report</span>
             </div>
         </div>
     </header>
+    <div class="link-box">
+        <a href="/" class="link" title="Torna alla Homepage" rel="noopener noreferrer">Estrattore</a>
+        <a href="/report" class="link" title="Report" rel="noopener noreferrer">Report</a>
+        <a href="/regolamento" class="link" title="Leggi le regole">Regolamento</a>
+        <a href="/storico" class="link" title="Hall of Fame">Storico</a>
+    </div>
     <nav class="sticky-menu">
         <div class="menu-container">
             @for ($i = 0; $i < count($allenatori); $i++)
