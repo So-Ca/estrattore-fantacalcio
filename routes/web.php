@@ -35,22 +35,23 @@ Route::get('/login', function (Request $request) {
     left: 50%;
     transform: translate(-50%,-50%);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: start;
+    gap: 1rem;
     flex-direction: column;">' .
         ($request->input('current_url') ? '<input name="current_url" type="hidden" value="' . urlencode($request->input('current_url')) . '" />' : '')
         . '
     <div>
-
-   <label for="user">Utente</label><br>
-   <input id="user" type="text" name="user" />
+   <span style="display:block;text-align:center;font-size:20px;">🔒</span>
+   <label for="user" style="font-size:20px;">Utente</label><br>
+   <input id="user" style="font-size:20px;" type="text" name="user" />
    </div>
    <div>
-   <label for="password">Password</label><br>
-   <input id="password" type="password" name="password" />
+   <label for="password" style="font-size:20px;">Password</label><br>
+   <input id="password" style="font-size:20px;" type="password" name="password" />
    </div>
    <div>
-   <input id="submit" type="submit" />
+   <input id="submit" type="submit" value="Accedi" />
 
    <input type="hidden" name="_token" value="' . csrf_token() . '" />
    </div>
