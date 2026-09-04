@@ -406,9 +406,23 @@ const Section = () => {
     <div className={style["section"]}>
       <Helmet><title>Fantafavaro | Estrattore</title></Helmet>
       <div className={style["btn-section"]}>
-        <div className={style["box-contatori"]}>
-          <div className={style["contatore-estratti"]}>{'Estratti: ' + estratti.length + ' / ' + (estratti.length + nonEstratti.length)}</div>
-          <div className={style["contatore-acquistati"]}>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</div>
+        <div className={style["box-contatori-wrapper"]}>
+          <div className={style["box-contatori"]}>
+            <div className={style["contatore-estratti"]}>{'Estratti: ' + estratti.length + ' / ' + (estratti.length + nonEstratti.length)}</div>
+            <div className={style["contatore-acquistati"]}>{'Acquistati: ' + Object.values(gAssegnati).map((allenatore) => allenatore.length).reduce((total, num) => total + num) + ' / ' + estratti.length}</div>
+          </div>
+          <a
+            href={apiHost + "/api/giocatori/download"}
+            className={style["download-giocatori"]}
+            title="Scarica giocatori.json"
+            aria-label="Scarica giocatori.json"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 3v12" />
+              <path d="M7 10l5 5 5-5" />
+              <path d="M5 20h14" />
+            </svg>
+          </a>
         </div>
         {/* <button onClick={toggleEstratti} className={style["btn-mostra-estratti"]}>{estrattiVisibile ? "Nascondi Lista Estratti" : "Mostra Lista Estratti"}</button> */}
         {role === 'admin' && <button disabled={isDoingRequest} onClick={estrai} className={style["btn-estrai"]}>Estrai</button>}

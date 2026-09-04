@@ -81,6 +81,35 @@ $mainFont: "Roboto Flex";
   max-height: 75px;
 }
 
+.box-contatori-wrapper{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.download-giocatori{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  color: $logoColorBlack;
+  border: 1px solid $logoColorYellow;
+  border-radius: 5px;
+  background: rgb(42, 137, 68, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+.download-giocatori:hover{
+  cursor: pointer;
+  box-shadow: 0 0 5px $logoColorBlack;
+}
+.download-giocatori:active{
+  background: $logoColorBlack;
+  color: $logoColorYellow;
+}
+
 .btn-big-reset{
   margin: 1% auto;
   font-family: $titleFont;
@@ -533,6 +562,16 @@ $mainFont: "Roboto Flex";
   }
   .span-gia-assegnato{
     display: none;
+  }
+}
+
+@media (max-width: 750px){
+  .btn-section{
+    flex-wrap: wrap;
+  }
+  .btn-estrai,
+  .btn-big-reset{
+    flex: 1 1 100%;
   }
 }
 

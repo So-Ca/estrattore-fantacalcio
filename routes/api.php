@@ -17,6 +17,9 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 
 
 Route::middleware([EnsureJsonsExist::class])->group(function () {
+    Route::get('/giocatori/download', [GiocatoreController::class, 'downloadGiocatori'])
+        ->name('download-giocatori');
+
     Route::get('/giocatori/{tipo?}', [GiocatoreController::class, 'getGiocatori'])
         ->middleware(EnsureGiocatoriSubsetIsValid::class)
         ->name('list-giocatori');

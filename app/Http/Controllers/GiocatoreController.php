@@ -46,6 +46,20 @@ class GiocatoreController extends Controller
     }
 
     /**
+     * Restituisce il file giocatori.json come download.
+     * 
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
+    function downloadGiocatori()
+    {
+        $fileName = 'giocatori_' . now('+02:00')->format('Y-m-d_H-i-s') . '.json';
+
+        return Storage::download($this->giocatori_path, $fileName, [
+            'Content-Type' => 'application/json',
+        ]);
+    }
+
+    /**
      * Restituisce il giocatore con l'id passato nella richiesta.
      * 
      * @author Valerio Porporato <valerio.porpo@gmail.com>
