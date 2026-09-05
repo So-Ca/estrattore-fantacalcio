@@ -60,6 +60,43 @@ class GiocatoreController extends Controller
     }
 
     /**
+     * Esporta in CSV i giocatori acquistati nel formato: nome squadra, id giocatore, costo di acquisto.
+     * 
+     * @return \Symfony\Component\HttpFoundation\StreamedResponse
+     */
+    function exportGiocatori()
+    {
+        $giocatori = Storage::json($this->giocatori_path);
+        $allenatori = Storage::json($this->allenatori_path);
+
+        $squadraById = [];
+        foreach ($allenatori as $allenatore) {
+            $squadraById[$allenatore['Id']] = $allenatore['Squadra'];
+        }
+
+        $fileName = 'giocatori_export_' . now('+02:00')->format('Y-m-d_H-i-s') . '.csv';
+
+        return response()->streamDownload(function () use ($giocatori, $squadraById) {
+            $handle = fopen('php://output', 'w');
+            fputcsv($handle, ['Nome Squadra', 'Id Giocatore', 'Costo Acquisto']);
+
+            foreach ($giocatori as $giocatore) {
+                if (isset($giocatore['AllenatoreId']) && isset($giocatore['Prezzo'])) {
+                    fputcsv($handle, [
+                        $squadraById[$giocatore['AllenatoreId']] ?? '',
+                        $giocatore['Id'],
+                        $giocatore['Prezzo'],
+                    ]);
+                }
+            }
+
+            fclose($handle);
+        }, $fileName, [
+            'Content-Type' => 'text/csv',
+        ]);
+    }
+
+    /**
      * Restituisce il giocatore con l'id passato nella richiesta.
      * 
      * @author Valerio Porporato <valerio.porpo@gmail.com>

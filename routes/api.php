@@ -20,6 +20,9 @@ Route::middleware([EnsureJsonsExist::class])->group(function () {
     Route::get('/giocatori/download', [GiocatoreController::class, 'downloadGiocatori'])
         ->name('download-giocatori');
 
+    Route::get('/giocatori/export', [GiocatoreController::class, 'exportGiocatori'])
+        ->name('export-giocatori');
+
     Route::get('/giocatori/{tipo?}', [GiocatoreController::class, 'getGiocatori'])
         ->middleware(EnsureGiocatoriSubsetIsValid::class)
         ->name('list-giocatori');

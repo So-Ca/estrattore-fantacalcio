@@ -449,7 +449,7 @@ const Section = () => {
         {allenatori}
       </div>
 
-      {estrattiVisibile && (
+      {role === 'admin' && estrattiVisibile && (
         <div className={style["lista-intera"]}>
           <h3 className={style["h3-lista-intera"]}>Giocatori Estratti:</h3>
           <div style={{display: 'flex', justifyContent : 'center'}}>
